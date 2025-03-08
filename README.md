@@ -1,2 +1,2 @@
-# agisaga.hithub.io
-Genisis of Artificial Super Intelligence
+# agisaga.github.io
+Genesis of Artificial Super Intelligence
