@@ -1,4 +1,4 @@
-The ASI Saga encompasses the journey from the inception of AI to the creation and integration of superintelligent systems that surpass human cognitive abilities. This narrative can be explored through the following key phases:
+This narrative can be explored through the following key phases:
 
 ## Genesis of Artificial Intelligence (AI)
 
