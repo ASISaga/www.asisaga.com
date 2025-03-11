@@ -1,8 +1,15 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+header {
+  background-color: black;
+  color: white;
+  }
+
 
 .navigation {
   display: inline;
 }
+
+@import "{{ site.theme }}";
+
