@@ -4,40 +4,44 @@
 {% include head-custom-google-analytics.html %}
 
     <header>
-      <h1 class="title">{{ site.title | default: site.github.repository_name }}</h1>
-      <div class="owner">
-      <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a></p>
-      </div>
+
+        <!-- You can set your favicon here -->
+        <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico'  | relative_url }}">
+
+        <h1 class="title">{{ site.title | default: site.github.repository_name }}</h1>
       
+        <div class="owner">
+            <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a></p>
+        </div>
+
+        <nav>
+          <ul>
+            {% for nav in site.data.nav %}
+              {% if nav.subcategories != null %}
+                <li>
+                  <a href="{{ site.url }}{{ nav.url }}">{{ nav.title }} ▼</a>
+                  <ul>
+                  {% for subcategory in nav.subcategories %}
+                    <li><a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+                  {% endfor %}
+                  </ul>
+                </li>
+              {% elsif nav.title == page.title %}
+                 <li class="active">
+                   <a href="{{ nav.url }}">{{ nav.title }}</a>
+                 </li>
+              {% else %} 
+                <li>
+                  <a href="{{ site.url }}{{ nav.href }}">{{ nav.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </nav> 
+
     </header>
 
 
-<!-- You can set your favicon here -->
-<link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico'  | relative_url }}">
 
-<nav>
-  <ul>
-    {% for nav in site.data.nav %}
-      {% if nav.subcategories != null %}
-        <li>
-          <a href="{{ site.url }}{{ nav.url }}">{{ nav.title }} ▼</a>
-          <ul>
-          {% for subcategory in nav.subcategories %}
-            <li><a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
-          {% endfor %}
-          </ul>
-        </li>
-      {% elsif nav.title == page.title %}
-         <li class="active">
-           <a href="{{ nav.url }}">{{ nav.title }}</a>
-         </li>
-      {% else %} 
-        <li>
-          <a href="{{ site.url }}{{ nav.href }}">{{ nav.title }}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</nav> 
 
 <!-- end custom head snippets -->
