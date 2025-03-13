@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Startup Metrics Table</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Startup Metrics Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRNlt0n9Eyq3XtyDxhdBKlOstj3BMm7YfZj3UOx9F" crossorigin="anonymous">
 </head>
 <body>
-  <header>
+  <header class="bg-primary text-white text-center py-4">
     <h1>Startup Metrics Dashboard</h1>
   </header>
-  <main>
-    <table class="metrics-table">
-      <thead>
+  <main class="container my-5">
+    <table class="table table-striped table-hover">
+      <thead class="table-primary">
         <tr>
-          <th>Metric</th>
-          <th>Description</th>
-          <th>Value</th>
+          <th scope="col">Metric</th>
+          <th scope="col">Description</th>
+          <th scope="col">Value</th>
         </tr>
       </thead>
       <tbody>
@@ -63,5 +64,7 @@
       </tbody>
     </table>
   </main>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76A8f10bJo+H5aZZL2d1l9VIvudK59J3tyqr5yySdfAzV/+EmfxyLf6EGfj9LXB" crossorigin="anonymous"></script>
 </body>
 </html>
