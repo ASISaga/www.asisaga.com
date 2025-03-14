@@ -14,12 +14,12 @@
     /* Sidebar Styles */
     .sidebar {
       width: 250px;
-      height: 100vh;
-      background-color: #343a40;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 60px;
+      transition: all 0.3s;
+    }
+
+    .sidebar.collapsed {
+      width: 0;
+      overflow: hidden;
     }
 
     .sidebar a {
@@ -36,22 +36,29 @@
     /* Main Content Styles */
     .main-content {
       margin-left: 250px;
-      padding: 20px;
+      transition: margin-left 0.3s;
       flex-grow: 1;
+    }
+
+    .main-content.collapsed {
+      margin-left: 0;
     }
   </style>
 </head>
 <body>
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div id="sidebar" class="sidebar bg-dark">
     <a href="#">Home</a>
     <a href="#metrics">Metrics</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
 
+  <!-- Toggle Button -->
+  <button id="toggleButton" class="btn btn-primary m-3" style="position: fixed; top: 10px; left: 10px;">Toggle Sidebar</button>
+
   <!-- Main Content -->
-  <div class="main-content">
+  <div id="mainContent" class="main-content">
     <header class="bg-primary text-white text-center py-4">
       <h1>Startup Metrics Dashboard</h1>
     </header>
@@ -94,21 +101,3 @@
           <tr>
             <td>Monthly Recurring Revenue (MRR)</td>
             <td>Predictable monthly revenue.</td>
-            <td>₹1,20,000</td>
-          </tr>
-          <tr>
-            <td>Churn Rate</td>
-            <td>Percentage of users who stop using the product.</td>
-            <td>5%</td>
-          </tr>
-          <tr>
-            <td>Growth Rate</td>
-            <td>Speed of revenue or user growth.</td>
-            <td>20% YoY</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-  </div>
-</body>
-</html>
