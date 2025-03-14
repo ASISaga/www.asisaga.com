@@ -1,11 +1,13 @@
 - title: "Home"
   href: "/"
 
-- title: "Business Operating System"
-  href: "/news/"
+- title: "Blog"
+  href: "/blog/"
 
 - title: "Realm of Agents"
   subcategories:
+    - subtitle: "Agent Operating System"
+      subhref: "#"
     - subtitle: "Purpose Driven Agent"
       subhref: "#"
     - subtitle: "Github Agent"
