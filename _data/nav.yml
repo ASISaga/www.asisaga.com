@@ -1,3 +1,19 @@
+title: "Startup Metrics Dashboard"
+baseurl: "" # Leave it blank for local development
+url: "http://example.com" # Your site URL
+
+nav_links:
+  - title: "Home"
+    url: "/"
+  - title: "Metrics"
+    url: "/metrics/"
+  - title: "About"
+    url: "/about/"
+  - title: "Contact"
+    url: "/contact/"
+
+
+
 - title: "Home"
   href: "/"
 
