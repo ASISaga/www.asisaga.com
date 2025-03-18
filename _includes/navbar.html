@@ -1,3 +1,28 @@
+<nav class="navigation">
+  <ul>
+    {% for nav in site.data.nav %}
+      {% if nav.subcategories != null %}
+        <li>
+          <a href="{{ site.url }}{{ nav.url }}">{{ nav.title }} ▼</a>
+          <ul>
+            {% for subcategory in nav.subcategories %}
+              <li><a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% elsif nav.title == page.title %}
+        <li class="active">
+          <a href="{{ nav.url }}">{{ nav.title }}</a>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ site.url }}{{ nav.href }}">{{ nav.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
@@ -23,28 +48,3 @@
     </div>
   </div>
 </nav>
-
-<nav class="navigation">
-      <ul>
-        {% for nav in site.data.nav %}
-          {% if nav.subcategories != null %}
-            <li>
-              <a href="{{ site.url }}{{ nav.url }}">{{ nav.title }} ▼</a>
-              <ul>
-              {% for subcategory in nav.subcategories %}
-                <li><a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
-              {% endfor %}
-              </ul>
-            </li>
-          {% elsif nav.title == page.title %}
-             <li class="active">
-               <a href="{{ nav.url }}">{{ nav.title }}</a>
-             </li>
-          {% else %} 
-            <li>
-              <a href="{{ site.url }}{{ nav.href }}">{{ nav.title }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </nav> 
