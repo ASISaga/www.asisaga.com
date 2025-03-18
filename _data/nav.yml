@@ -17,8 +17,8 @@ nav_links:
 - title: "Home"
   href: "/"
 
-- title: "Blog"
-  href: "/blog/"
+- title: "Entreprenuer"
+  href: "/Entreprenuer/"
 
 - title: "Realm of Agents"
   subcategories:
