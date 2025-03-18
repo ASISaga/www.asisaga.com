@@ -1,6 +1,6 @@
-title: "Startup Metrics Dashboard"
-baseurl: "" # Leave it blank for local development
-url: "http://example.com" # Your site URL
+#title: "Startup Metrics Dashboard"
+#baseurl: "" # Leave it blank for local development
+#url: "http://example.com" # Your site URL
 
 # Site navigation links
 - title: "Home"
