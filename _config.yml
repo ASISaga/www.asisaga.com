@@ -8,9 +8,10 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-defaults:
+# The defaults section allows you to set default values for certain variables
+  # The scope key defines the default values for specific types of files
   - scope:
       path: "" # Applies to all files in your site
       type: "html" # Targets only HTML files
-    values:
+    values: # Default values for the specified scope
       layout: default # The name of the layout you want to apply
