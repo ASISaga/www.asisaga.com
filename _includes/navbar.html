@@ -16,9 +16,9 @@
       <ul class="navbar-nav">
         {% for nav in site.data.nav %}
           {% if nav.subcategories != null %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}{{ nav.href }}">{{ nav.title }} ▼</a>
-              <ul class="dropdown-menu">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{{ site.url }}{{ nav.href }}">{{ nav.title }} ▼</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for subcategory in nav.subcategories %}
                   <li class="dropdown-item"><a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
                 {% endfor %}
