@@ -21,6 +21,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for subcategory in nav.subcategories %}
                   <li><a class="dropdown-item my-1" href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+                  <li><hr class="dropdown-divider"></li>
                 {% endfor %}
               </ul>
             </li>
