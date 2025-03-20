@@ -11,14 +11,10 @@
         <h1 class="title"><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a>{{ site.title | default: site.github.repository_name }}</h1>
       
         <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
-        
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+        <!-- Include the Navigation Bar -->
+        {% include navbar.html %}
+
     </header>
 
 <!-- end custom head snippets -->
