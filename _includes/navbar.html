@@ -17,7 +17,7 @@
         {% for nav in site.data.nav %}
           {% if nav.subcategories != null %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}{{ nav.url }}">{{ nav.title }} ▼</a>
+              <a class="nav-link" href="{{ site.url }}{{ nav.href }}">{{ nav.title }} ▼</a>
               <ul class="dropdown-menu">
                 {% for subcategory in nav.subcategories %}
                   <li class="dropdown-item"><a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
