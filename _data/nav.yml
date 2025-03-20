@@ -9,6 +9,9 @@
 - title: "Entrepreneur"
   href: "/entrepreneur/"
 
+- title: "Startup"
+  href: "/startup/"
+
 - title: "Realm of Agents"
   subcategories:
     - subtitle: "Agent Operating System"
