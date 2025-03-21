@@ -1,0 +1,84 @@
+name: LinkedIn OAuth Full Flow
+
+on:
+  workflow_dispatch:
+    inputs:
+      auth_code:
+        description: 'LinkedIn Authorization Code (after user consent)'
+        required: false
+      use_api:
+        description: 'Set to true to call the LinkedIn API with the access token'
+        default: 'false'
+        required: false
+
+jobs:
+  linkedin-oauth:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Step 1 - Request an Authorization Code.
+      # If it is a first-time request, the permission request timed out, or was manually revoked by the member: the browser is redirected to
+      # LinkedIn's authorization consent window.
+      # When the member completes the authorization process, the browser is redirected to the URL provided in the redirect_uri query parameter.
+      # If there is an existing permission grant from the member: the authorization screen is bypassed and the member is immediately redirected to
+      # the URL provided in the redirect_uri query parameter.
+
+      if: ${{ github.event.inputs.auth_code == '' }}
+      env:
+        CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+        REDIRECT_URI: https://asisaga.com/businesscontinuum/linkedin-callback
+      id: generate-url
+      # Construct the LinkedIn authorization URL
+      # Redirect to the LinkedIn authorization URL
+      # Output the authorization URL
+      run: |
+        AUTH_URL="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=$CLIENT_ID&redirect_uri=$REDIRECT_URI&scope=r_liteprofile%20r_emailaddress%20w_member_social"
+        echo "Triggering LinkedIn authorization request..."
+        curl -L "$AUTH_URL"
+        echo "auth_url=$AUTH_URL" >> $GITHUB_OUTPUT
+
+    - name: Step 2 - Exchange Authorization Code for Access Token
+      if: ${{ github.event.inputs.auth_code != '' }}
+      env:
+        CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+        AUTH_CODE: ${{ github.event.inputs.auth_code }}
+        REDIRECT_URI: https://your-redirect-uri.com
+      id: exchange
+      # Make a POST request to LinkedIn to exchange the authorization code for an access token
+      # Extract the access token from the response
+      # Output the access token
+      run: |
+        echo "Step 2: Exchanging the Authorization Code for an Access Token"
+        echo "-----------------------------------------------------------------"
+        RESPONSE=$(curl -s -X POST \
+          -H "Content-Type: application/x-www-form-urlencoded" \
+          -d "grant_type=authorization_code" \
+          -d "code=$AUTH_CODE" \
+          -d "redirect_uri=$REDIRECT_URI" \
+          -d "client_id=$CLIENT_ID" \
+          -d "client_secret=$CLIENT_SECRET" \
+          https://www.linkedin.com/oauth/v2/accessToken)
+        echo "Response: $RESPONSE"
+        ACCESS_TOKEN=$(echo "$RESPONSE" | jq -r '.access_token')
+        if [ "$ACCESS_TOKEN" == "null" ] || [ -z "$ACCESS_TOKEN" ]; then
+          echo "Failed to retrieve an access token."
+          exit 1
+        fi
+        echo "Access Token: $ACCESS_TOKEN"
+        echo "access_token=$ACCESS_TOKEN" >> $GITHUB_OUTPUT
+
+    - name: Step 3 - Use the Access Token to Call LinkedIn API
+      if: ${{ github.event.inputs.use_api == 'true' && github.event.inputs.auth_code != '' }}
+      env:
+        ACCESS_TOKEN: ${{ steps.exchange.outputs.access_token }}
+      # Make a GET request to LinkedIn API using the access token
+      run: |
+        echo "Step 3: Using the Access Token to Access LinkedIn API"
+        echo "-------------------------------------------------------"
+        API_RESPONSE=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+          "https://api.linkedin.com/v2/me")
+        echo "LinkedIn API Response: $API_RESPONSE"
