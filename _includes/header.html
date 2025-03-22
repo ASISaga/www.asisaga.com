@@ -11,9 +11,9 @@
     <div class="row align-items-end">
         <!-- A Bootstrap row with 'align-items-end' to vertically align the content to the bottom -->
 
-        <div id="titleblock" class="col-12 col-md-3 d-flex justify-content-between">
+        <div id="titleblock" class="col-12 col-md-3">
             <!-- A div with Bootstrap classes 'col-12' and 'col-md-3' for a column that spans 12 out of 12 columns on small screens
-              and 3 out of 12 columns on medium and larger screens. Added 'd-flex' and 'justify-content-between' to align items within. -->
+              and 3 out of 12 columns on medium and larger screens -->
 
             <!-- You can set your favicon here -->
             <link id="favicon" rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
@@ -41,21 +41,13 @@
                 <!-- A paragraph with a class 'tagline' displaying the site's description. 
                      If 'site.description' is not set, it defaults to the GitHub project tagline. -->
             </a>
-
-            <!-- Navbar for mobile devices -->
-            <div id="navbar" class="d-md-none">
-                <!-- A div with Bootstrap class 'd-md-none' to hide the navbar on medium and larger screens -->
-                {% include navbar.html %}
-                <!-- This line includes the navigation bar from 'navbar.html'. 
-                     The 'navbar.html' file should contain the code for the site's navigation bar. -->
-            </div>
         </div>
 
-        <!-- Navbar for medium and larger screens -->
-        <div id="navbar" class="col-12 col-md-9 d-none d-md-flex justify-content-md-start">
+        <!-- Navbar -->
+        <div id="navbar" class="col-12 col-md-9 d-flex justify-content-start">
             <!-- A div with Bootstrap classes 'col-12' and 'col-md-9' for a column that spans 12 out of 12 columns on small screens and 9 out of 12 columns on medium and larger screens -->
-            <!-- The 'd-none d-md-flex' class hides the navbar on small screens and shows it as a flex container on medium and larger screens -->
-            <!-- 'justify-content-md-start' aligns the content to the start (left) on medium and larger screens -->
+            <!-- The 'd-flex' class makes the div a flex container, and 'justify-content-start' aligns the content to the start (left) -->
+            <!-- Include the Navigation Bar -->
             {% include navbar.html %}
             <!-- This line includes the navigation bar from 'navbar.html'. 
                  The 'navbar.html' file should contain the code for the site's navigation bar. -->

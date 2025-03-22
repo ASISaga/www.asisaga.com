@@ -1,37 +1,80 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- A Bootstrap navbar with classes 'navbar-expand-lg' to expand on large screens, 'navbar-dark' for dark theme, and 'bg-primary' for primary background color -->
+
   <button
     class="navbar-toggler"
     type="button"
-    data-bs-toggle="collapse"
+    data-bs-toggle="dropdown"
     data-bs-target="#navbarNav"
     aria-controls="navbarNav"
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
     <span class="navbar-toggler-icon"></span>
+    <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
+         The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
+         The 'aria-*' attributes provide accessibility information. -->
   </button>
 
   <div class="container-fluid">
+    <!-- A div with class 'container-fluid' for a full-width container -->
+
     <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- A div with classes 'collapse' and 'navbar-collapse' to collapse the navbar on small screens. 
+           The 'id' attribute is used to target this element with the button. -->
+
       <ul class="navbar-nav">
+        <!-- An unordered list with class 'navbar-nav' for the navigation items -->
+
         {% for nav in site.data.nav %}
+          <!-- Loop through each item in the 'nav' data file -->
+
           {% if nav.subcategories != null %}
+            <!-- If the navigation item has subcategories -->
+
             <li class="nav-item dropdown">
+              <!-- A list item with classes 'nav-item' and 'dropdown' for dropdown menu -->
+
               <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{{ site.url }}{{ nav.href }}">{{ nav.title }}</a>
+              <!-- A link with classes 'nav-link' and 'dropdown-toggle' to toggle the dropdown menu. 
+                   The 'data-bs-toggle' attribute specifies the dropdown behavior. 
+                   The 'href' attribute links to the navigation item's URL. -->
+
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- An unordered list with class 'dropdown-menu' for the dropdown items. 
+                     The 'aria-labelledby' attribute links to the dropdown toggle button for accessibility. -->
+
                 {% for subcategory in nav.subcategories %}
+                  <!-- Loop through each subcategory -->
+
                   <li><a class="dropdown-item my-1" href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+                  <!-- A list item with a link to the subcategory. 
+                       The link has class 'dropdown-item' and 'my-1' for margin. -->
+
                   <li><hr class="dropdown-divider"></li>
+                  <!-- A horizontal rule with class 'dropdown-divider' to separate the dropdown items -->
                 {% endfor %}
               </ul>
             </li>
+
           {% elsif nav.title == page.title %}
+            <!-- If the navigation item's title matches the current page title -->
+
             <li class="nav-item active">
+              <!-- A list item with classes 'nav-item' and 'active' to highlight the current page -->
+
               <a class="nav-link" href="{{ nav.url }}">{{ nav.title }}</a>
+              <!-- A link with class 'nav-link' to the navigation item's URL -->
             </li>
+
           {% else %}
+            <!-- If the navigation item does not have subcategories and does not match the current page title -->
+
             <li class="nav-item">
+              <!-- A list item with class 'nav-item' -->
+
               <a class="nav-link" href="{{ site.url }}{{ nav.href }}">{{ nav.title }}</a>
+              <!-- A link with class 'nav-link' to the navigation item's URL -->
             </li>
           {% endif %}
         {% endfor %}
