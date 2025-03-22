@@ -13,28 +13,31 @@
 
         <div id="titleblock" class="col-12 col-md-6">
             <!-- A div with Bootstrap classes 'col-12' and 'col-md-6' for a column that spans 12 out of 12 columns on small screens and 6 out of 12 columns on medium and larger screens -->
-            <!-- You can set your favicon here -->
-            <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
-            <!-- This link tag sets the favicon for the website. 
-                 The 'href' attribute uses a Jekyll filter 'relative_url' to ensure the correct path to the favicon. -->
 
-            <h1 id="home-block" class="title">
-                <!-- The main title of the page with a class 'title' -->
-                <a id="home" href="{{ site.github.owner_url }}" class="avatar">
-                    <!-- A link to the GitHub owner's URL with a class 'avatar' -->
-                    <img src="{{ site.github.owner_gravatar_url }}" width="48" height="48">
-                    <!-- An image tag displaying the GitHub owner's Gravatar image. 
-                         The 'width' and 'height' attributes set the size of the image. -->
-                    <span id="site-title" class="h4 text-primary">{{ site.title | default: site.github.repository_name }}</span>
-                    <!-- The title of the site with Bootstrap classes 'h4' for heading size and 'text-primary' for primary text color. 
+            <!-- You can set your favicon here -->
+            <link id="favicon" rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+            <!-- This link tag sets the favicon for the website. 
+                    The 'href' attribute uses a Jekyll filter 'relative_url' to ensure the correct path to the favicon. -->
+            
+            <a id="home" href="{{ site.github.owner_url }}" class="avatar">
+                <!-- A link to the GitHub owner's URL with a class 'avatar' -->
+
+                <img src="{{ site.github.owner_gravatar_url }}" width="48" height="48">
+                <!-- An image tag displaying the GitHub owner's Gravatar image. 
+                     The 'width' and 'height' attributes set the size of the image. -->
+
+                <h1 id="home-block" class="title">
+                    <!-- The main title of the page with a class 'title' -->
+                    {{ site.title | default: site.github.repository_name }}
+                    <!-- The title of the site. 
                          If 'site.title' is not set, it defaults to the GitHub repository name. -->
-                </a>
-            </h1>
-          
-            <!-- Tagline -->
-            <p id="tagline" class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
-            <!-- A paragraph with a class 'tagline' displaying the site's description. 
-                 If 'site.description' is not set, it defaults to the GitHub project tagline. -->
+                </h1>
+              
+                <!-- Tagline -->
+                <p id="tagline" class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
+                <!-- A paragraph with a class 'tagline' displaying the site's description. 
+                     If 'site.description' is not set, it defaults to the GitHub project tagline. -->
+            </a>
         </div>
 
         <!-- Navbar -->
