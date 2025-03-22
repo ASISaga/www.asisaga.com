@@ -22,13 +22,15 @@
                 <!-- The main title of the page with a class 'title' -->
                 <a href="{{ site.github.owner_url }}" class="avatar">
                     <!-- A link to the GitHub owner's URL with a class 'avatar' -->
+                    
                     <img src="{{ site.github.owner_gravatar_url }}" width="48" height="48">
                     <!-- An image tag displaying the GitHub owner's Gravatar image. 
                          The 'width' and 'height' attributes set the size of the image. -->
+
+                    <span>{{ site.title | default: site.github.repository_name }}</span>
+                    <!-- The title of the site. 
+                        If 'site.title' is not set, it defaults to the GitHub repository name. -->
                 </a>
-                {{ site.title | default: site.github.repository_name }}
-                <!-- The title of the site. 
-                     If 'site.title' is not set, it defaults to the GitHub repository name. -->
             </h1>
           
             <!-- Tagline -->
