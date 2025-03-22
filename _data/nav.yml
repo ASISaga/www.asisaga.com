@@ -6,12 +6,19 @@
 - title: "Home"
   href: "/"
 
+# business-continuum
+- title: "Business Continuum"
+  href: "/business-continuum/"
+
+# Entrepreneur
 - title: "Entrepreneur"
   href: "/entrepreneur/"
 
+# Startup
 - title: "Startup"
   href: "/startup/"
 
+# Realm of Agents
 - title: "Realm of Agents"
   subcategories:
     - subtitle: "Agent Operating System"
