@@ -2,19 +2,51 @@
 
 <!-- Setup Google Analytics -->
 {% include head-custom-google-analytics.html %}
+<!-- This line includes a custom Google Analytics setup file. 
+     The file 'head-custom-google-analytics.html' should contain the necessary code to integrate Google Analytics. -->
 
-    <header>
+<header class="container-fluid">
+    <!-- The header element with a Bootstrap class 'container-fluid' for a full-width container -->
 
-        <!-- You can set your favicon here -->
-        <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico'  | relative_url }}">
+    <div class="row align-items-center">
+        <!-- A Bootstrap row with 'align-items-center' to vertically center the content -->
 
-        <h1 class="title"><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a>{{ site.title | default: site.github.repository_name }}</h1>
-      
-        <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
+        <div id="titleblock" class="col-12 col-md-6">
+            <!-- A div with Bootstrap classes 'col-12' and 'col-md-6' for a column that spans 12 out of 12 columns on small screens and 6 out of 12 columns on medium and larger screens -->
+            <!-- You can set your favicon here -->
+            <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+            <!-- This link tag sets the favicon for the website. 
+                 The 'href' attribute uses a Jekyll filter 'relative_url' to ensure the correct path to the favicon. -->
 
-        <!-- Include the Navigation Bar -->
-        {% include navbar.html %}
+            <h1 class="title">
+                <!-- The main title of the page with a class 'title' -->
+                <a href="{{ site.github.owner_url }}" class="avatar">
+                    <!-- A link to the GitHub owner's URL with a class 'avatar' -->
+                    <img src="{{ site.github.owner_gravatar_url }}" width="48" height="48">
+                    <!-- An image tag displaying the GitHub owner's Gravatar image. 
+                         The 'width' and 'height' attributes set the size of the image. -->
+                </a>
+                {{ site.title | default: site.github.repository_name }}
+                <!-- The title of the site. 
+                     If 'site.title' is not set, it defaults to the GitHub repository name. -->
+            </h1>
+          
+            <!-- Tagline -->
+            <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
+            <!-- A paragraph with a class 'tagline' displaying the site's description. 
+                 If 'site.description' is not set, it defaults to the GitHub project tagline. -->
+        </div>
 
-    </header>
+        <!-- Navbar -->
+        <div id="navbar" class="col-12 col-md-6">
+            <!-- A div with Bootstrap classes 'col-12' and 'col-md-6' for a column that spans 12 out of 12 columns on small screens and 6 out of 12 columns on medium and larger screens -->
+            <!-- Include the Navigation Bar -->
+            {% include navbar.html %}
+            <!-- This line includes the navigation bar from 'navbar.html'. 
+                 The 'navbar.html' file should contain the code for the site's navigation bar. -->
+        </div>
+    </div>
+</header>
 
 <!-- end custom head snippets -->
+<!-- This comment indicates the end of the custom head snippets section -->

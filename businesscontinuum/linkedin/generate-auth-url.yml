@@ -1,0 +1,39 @@
+name: Generate LinkedIn Auth URL
+
+on:
+  workflow_dispatch: # Manually triggered
+    inputs:
+      client_id:
+        description: 'LinkedIn Client ID'
+        required: true
+      redirect_uri:
+        description: 'Redirect URI'
+        required: true
+
+jobs:
+  generate-auth-url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate LinkedIn Auth URL
+        id: generate
+        env:
+          CLIENT_ID: ${{ github.event.inputs.client_id }}
+          REDIRECT_URI: ${{ github.event.inputs.redirect_uri }}
+          SCOPE: "r_liteprofile r_emailaddress w_member_social"
+        run: |
+          AUTH_URL="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=$CLIENT_ID&redirect_uri=$REDIRECT_URI&scope=$SCOPE"
+          echo "Generated Auth URL: $AUTH_URL"
+          echo "auth_url=$AUTH_URL" >> $GITHUB_ENV
+
+      - name: Output Auth URL
+        run: echo "Auth URL is: ${{ env.auth_url }}"
+
+      - name: Save Auth URL to Artifact
+        run: echo "${{ env.auth_url }}" > auth_url.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linkedin-auth-url
+          path: auth_url.txt
