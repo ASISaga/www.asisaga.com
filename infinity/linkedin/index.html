@@ -1,0 +1,21 @@
+---
+layout: default
+title: Infinity
+---
+
+
+<h1>Log in with LinkedIn</h1>
+<button id="login-with-linkedin" class="btn btn-default">
+    <img id="login-img" src="{{ '/assets/images/LinkedIn-SignIn-Default.png' | relative_url }}" alt="Log in">
+</button>
+
+<style>
+    #login-with-linkedin img:hover {
+        content: url("{{ '/assets/images/LinkedIn-SignIn-Hover.png' | relative_url }}");
+    }
+    #login-with-linkedin img:active {
+        content: url("{{ '/assets/images/LinkedIn-SignIn-Active.png' | relative_url }}");
+    }
+</style>
+
+<script src="auth.js"></script>
