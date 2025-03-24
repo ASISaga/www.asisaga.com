@@ -3,7 +3,11 @@
 
   <a class="navbar-brand" href="/">
     <img src="{{ '/assets/images/favicon.ico' | relative_url }}" width="48" height="48" class="d-inline-block align-top" alt="ASI Saga">
-    <Span>ASI Saga</Span>
+
+    <!-- The main title of the page with a class 'title' and a margin start of 2 for spacing -->
+    <!-- The title of the site. If 'site.title' is not set, it defaults to the GitHub repository name. -->
+    <h1 id="home-block" class="title ms-2">{{ site.title | default: site.github.repository_name }}</h1>
+
     <!-- Tagline -->
     <p id="tagline" class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
   </a>
