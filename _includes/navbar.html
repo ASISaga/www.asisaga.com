@@ -2,23 +2,15 @@
   <!-- A Bootstrap navbar with classes 'navbar-expand-lg' to expand on large screens, 'navbar-dark' for dark theme, and 'bg-primary' for primary background color -->
 
   <a class="navbar-brand" href="#">
-    <img src="{{ '/assets/images/favicon.ico' | relative_url }}" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+    <img src="{{ '/assets/images/favicon.ico' | relative_url }}" width="48" height="48" class="d-inline-block align-top" alt="ASI Saga">
     ASI Saga
   </a>
 
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
+      The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
+      The 'aria-*' attributes provide accessibility information. -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-    <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
-         The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
-         The 'aria-*' attributes provide accessibility information. -->
   </button>
 
   <div class="container-fluid">
