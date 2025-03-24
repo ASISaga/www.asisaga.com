@@ -35,7 +35,7 @@
             <li class="nav-item dropdown">
               <!-- A list item with classes 'nav-item' and 'dropdown' for dropdown menu -->
 
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{{ site.url }}{{ nav.href }}">{{ nav.title }}</a>
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{{ site.url }}{{ nav.url }}">{{ nav.title }}</a>
               <!-- A link with classes 'nav-link' and 'dropdown-toggle' to toggle the dropdown menu. 
                    The 'data-bs-toggle' attribute specifies the dropdown behavior. 
                    The 'href' attribute links to the navigation item's URL. -->
@@ -47,7 +47,7 @@
                 {% for subcategory in nav.subcategories %}
                   <!-- Loop through each subcategory -->
 
-                  <li><a class="dropdown-item my-1" href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+                  <li><a class="dropdown-item my-1" href="{{ site.url }}{{ subcategory.url }}">{{ subcategory.subtitle }}</a></li>
                   <!-- A list item with a link to the subcategory. 
                        The link has class 'dropdown-item' and 'my-1' for margin. -->
 

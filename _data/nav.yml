@@ -1,29 +1,25 @@
-#title: "Startup Metrics Dashboard"
-#baseurl: "" # Leave it blank for local development
-#url: "http://example.com" # Your site URL
-
 # Site navigation links
 - title: "Home"
-  href: "/"
+  url: "/"
 
 # Business Infinity
 - title: "Business Infinity"
-  href: "/business-infinity/"
+  url: "/business-infinity/"
 
 # Entrepreneur
 - title: "Entrepreneur"
-  href: "/entrepreneur/"
+  url: "/entrepreneur/"
 
 # Startup
 - title: "Startup"
-  href: "/startup/"
+  url: "/startup/"
 
 # Realm of Agents
 - title: "Realm of Agents"
   subcategories:
-    - subtitle: "Agent Operating System"
-      subhref: "#"
-    - subtitle: "Purpose Driven Agent"
-      subhref: "#"
-    - subtitle: "Github Agent"
-      subhref: "#"
+    - title: "Agent Operating System"
+      url: "#"
+    - title: "Purpose Driven Agent"
+      url: "#"
+    - title: "Github Agent"
+      url: "#"
