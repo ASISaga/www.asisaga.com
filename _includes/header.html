@@ -8,22 +8,23 @@
 <header class="container-fluid">
     <!-- The header element with a Bootstrap class 'container-fluid' for a full-width container -->
 
-    <div class="row align-items-end">
+    <!-- You can set your favicon here -->
+    <link id="favicon" rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+    <!-- This link tag sets the favicon for the website. 
+            The 'href' attribute uses a Jekyll filter 'relative_url' to ensure the correct path to the favicon. -->
+    
+    <!-- div class="row align-items-end" -->
         <!-- A Bootstrap row with 'align-items-end' to vertically align the content to the bottom -->
 
-        <div id="titleblock" class="col-12 col-md-3">
+        <!-- div id="titleblock" class="col-12 col-md-3"-->
             <!-- A div with Bootstrap classes 'col-12' and 'col-md-3' for a column that spans 12 out of 12 columns on small screens
               and 3 out of 12 columns on medium and larger screens -->
 
-            <!-- You can set your favicon here -->
-            <link id="favicon" rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
-            <!-- This link tag sets the favicon for the website. 
-                    The 'href' attribute uses a Jekyll filter 'relative_url' to ensure the correct path to the favicon. -->
             
-            <a id="home" href="{{ site.github.owner_url }}" class="text-decoration-none link-light">
+            <!-- a id="home" href="{{ site.github.owner_url }}" class="text-decoration-none link-light" -->
                 <!-- A link to the GitHub owner's URL with a class 'avatar' -->
 
-                <div class="d-flex align-items-center">
+                <!-- div class="d-flex align-items-center"-->
                     <!-- img src="{{ site.github.owner_gravatar_url }}" width="48" height="48" class="avatar" alt="Avatar"-->
                     <!-- An image tag displaying the GitHub owner's Gravatar image. 
                          The 'width' and 'height' attributes set the size of the image. -->
@@ -33,9 +34,10 @@
                     <!-- h1 id="home-block" class="title ms-2">
                         {{ site.title | default: site.github.repository_name }}
                     </h1 -->
-                </div>
-            </a>
-        </div>
+                <!-- /div -->
+            <!-- /a-->
+        <!-- /div -->
+    <!-- /div -->
 
         <!-- Navbar -->
         <div id="navbar" class="col-12 col-md-9 d-flex justify-content-start">
