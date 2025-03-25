@@ -5,7 +5,7 @@
     <!-- A div with class 'container-fluid' for a full-width container -->
 
     <a class="navbar-brand" href="/">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-md-2">
           <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="img-fluid" alt="ASI Saga">
         </div>
@@ -13,7 +13,7 @@
         <!-- The main title of the page with a class 'title' and a margin start of 2 for spacing -->
         <!-- The title of the site. If 'site.title' is not set, it defaults to the GitHub repository name. -->
         <div class="col-md-7">
-          <h1 id="title" class="title ms-2">{{ site.title | default: site.github.repository_name }}</h1>
+          <h1 id="title" class="title">{{ site.title | default: site.github.repository_name }}</h1>
         </div>
       </div>
 
