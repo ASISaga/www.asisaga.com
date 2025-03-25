@@ -6,7 +6,31 @@
 <header class="container-fluid">
     <!-- The header element with a Bootstrap class 'container-fluid' for a full-width container -->
 
-    
+    <a class="navbar-brand" href="/">
+        <div class="row align-items-center">
+          <div class="col-2 col-md-2 p-0">
+            <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="img-fluid" alt="ASI Saga">
+          </div>
+  
+          <!-- The main title of the page with a class 'title' and a margin start of 2 for spacing -->
+          <!-- The title of the site. If 'site.title' is not set, it defaults to the GitHub repository name. -->
+          <div class="col-8 col-md-6 p-0">
+            <h1 id="title" class="title mb-0">{{ site.title | default: site.github.repository_name }}</h1>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-8">
+            <!-- Tagline -->
+            <p id="tagline" class="fs-6 mb-0">{{ site.description | default: site.github.project_tagline }}</p>
+          </div>
+        </div>
+        <div class="col-md-8">
+            <!-- Include the Navigation Bar -->
+            {% include navbar.html %}
+        </div>
+    </a>
+      
     <!-- div class="row align-items-end" -->
         <!-- A Bootstrap row with 'align-items-end' to vertically align the content to the bottom -->
 
@@ -34,8 +58,6 @@
              12 out of 12 columns on small screens 
              and 9 out of 12 columns on medium and larger screens -->
             <!-- The 'd-flex' class makes the div a flex container, and 'justify-content-start' aligns the content to the start (left) -->
-            <!-- Include the Navigation Bar -->
-            {% include navbar.html %}
             <!-- This line includes the navigation bar from 'navbar.html'. 
                  The 'navbar.html' file should contain the code for the site's navigation bar. -->
         <!--/div-->

@@ -1,30 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <!-- A Bootstrap navbar with classes 'navbar-expand-lg' to expand on large screens, 'navbar-dark' for dark theme, and 'bg-primary' for primary background color -->
 
-  <div class="container-fluid">
-    <!-- A div with class 'container-fluid' for a full-width container -->
-
-    <a class="navbar-brand" href="/">
-      <div class="row align-items-center">
-        <div class="col-2 col-md-2 p-0">
-          <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="img-fluid" alt="ASI Saga">
-        </div>
-
-        <!-- The main title of the page with a class 'title' and a margin start of 2 for spacing -->
-        <!-- The title of the site. If 'site.title' is not set, it defaults to the GitHub repository name. -->
-        <div class="col-8 col-md-6 p-0">
-          <h1 id="title" class="title mb-0">{{ site.title | default: site.github.repository_name }}</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-8">
-          <!-- Tagline -->
-          <p id="tagline" class="fs-6 mb-0">{{ site.description | default: site.github.project_tagline }}</p>
-        </div>
-      </div>
-    </a>
-
     <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
         The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
         The 'aria-*' attributes provide accessibility information. -->
@@ -93,5 +69,4 @@
         {% endfor %}
       </ul>
     </div>
-  </div>
 </nav>
