@@ -28,16 +28,16 @@
                   <p id="tagline" class="fs-6 mb-0">{{ site.description | default: site.github.project_tagline }}</p>
               </div>
               <div class="col-md-8">
-            <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
-                The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
-                The 'aria-*' attributes provide accessibility information. -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                </div>
+              </div>
           </div>
         </a>
 
+        <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
+            The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
+            The 'aria-*' attributes provide accessibility information. -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
           <!-- Include the Navigation Bar -->
         {% include navbar.html %}
