@@ -12,13 +12,13 @@
 
         <!-- The main title of the page with a class 'title' and a margin start of 2 for spacing -->
         <!-- The title of the site. If 'site.title' is not set, it defaults to the GitHub repository name. -->
-        <div class="col-md-7 p-0">
+        <div class="col-md-6 p-0">
           <h1 id="title" class="title mb-0">{{ site.title | default: site.github.repository_name }}</h1>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-8">
           <!-- Tagline -->
           <p id="tagline" class="fs-6 mb-0">{{ site.description | default: site.github.project_tagline }}</p>
         </div>
