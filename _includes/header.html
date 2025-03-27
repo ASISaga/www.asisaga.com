@@ -32,21 +32,23 @@
           </div>
         </a>
 
-        <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
-            The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
-            The 'aria-*' attributes provide accessibility information. -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="row align-items-end">
+        <!-- A Bootstrap row with 'align-items-end' to vertically align the content to the bottom -->
 
-          <!-- Include the Navigation Bar -->
-        {% include navbar.html %}
+          <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
+              The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
+              The 'aria-*' attributes provide accessibility information. -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+            <!-- Include the Navigation Bar -->
+          {% include navbar.html %}
+        </div>
       
 </nav>
 
       
-    <!-- div class="row align-items-end" -->
-        <!-- A Bootstrap row with 'align-items-end' to vertically align the content to the bottom -->
 
         <!-- div id="titleblock" class="col-12 col-md-3"-->
             <!-- A div with Bootstrap classes 'col-12' and 'col-md-3' for a column that spans 12 out of 12 columns on small screens
