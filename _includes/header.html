@@ -35,9 +35,10 @@
         <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
         The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
         The 'aria-*' attributes provide accessibility information. -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="nav-menu-mobile" class="navbar-toggler d-lg-none position-absolute" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="bottom: 10px; right: 10px;">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Added 'd-lg-none' to hide on large screens, 'position-absolute' for absolute positioning, and inline styles for bottom-right placement on small screens. -->
   
         <div id="nav-menu" class="row align-items-end mt-auto">
         <!-- Replaced 'style="align-items: flex-end; margin-top: auto;"' with Bootstrap classes 'align-items-end' and 'mt-auto' for alignment. -->
