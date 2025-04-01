@@ -8,10 +8,10 @@
   subcategories:
     # Entrepreneur
     - title: "Entrepreneur"
-      url: "/entrepreneur/"
+      url: "/business-infinity/entrepreneur/"
     # Startup
     - title: "Startup"
-      url: "/startup/"
+      url: "/business-infinity/startup/"
 
 # Realm of Agents
 - title: "Realm of Agents"
