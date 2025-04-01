@@ -8,48 +8,12 @@ title: ASI Saga
     <div class="row">
         <div class="col">
             <div class="row">
-                <div class="col-md-5 mb-4 me-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="{% site.data.products.github_agent.image %}" alt="GitHub Agent Logo" class="card-img-top mb-3" style="max-height: 100px; object-fit: contain;">
-                            <h4 class="card-title">{% site.data.products.github_agent.title %}</h4>
-                            <p class="summary">{% site.data.products.github_agent.summary %}</p>
-                            <a href="{% site.data.products.github_agent.url %}" id="github-agent" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="{% site.data.products.purpose_driven_agent.image %}" alt="Purpose Driven Agent Logo" class="card-img-top mb-3" style="max-height: 100px; object-fit: contain;">
-                            <h4 class="card-title">{% site.data.products.purpose_driven_agent.title %}</h4>
-                            <p class="summary">{% site.data.products.purpose_driven_agent.summary %}</p>
-                            <a href="{% site.data.products.purpose_driven_agent.url %}" id="purpose-driven-agent" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+                {% include product-card.html product=site.data.products.github_agent}
+                {% include product-card.html product=site.data.products.purpose_driven_agent %}
             </div>
             <div class="row">
-                <div class="col-md-5 mb-4 me-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="{% site.data.products.agent_operating_system.image %}" alt="Agent Operating System Logo" class="card-img-top mb-3" style="max-height: 100px; object-fit: contain;">
-                            <h4 class="card-title">{% site.data.products.agent_operating_system.title %}</h4>
-                            <p class="summary">{% site.data.products.agent_operating_system.summary %}</p>
-                            <a href="{% site.data.products.agent_operating_system.url %}" id="agent-operating-system" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="{% site.data.products.business_infinity.image %}" alt="Business Infinity Logo" class="card-img-top mb-3" style="max-height: 100px; object-fit: contain;">
-                            <h4 class="card-title">{% site.data.products.business_infinity.title %}</h4>
-                            <p class="summary">{% site.data.products.business_infinity.summary %}</p>
-                            <a href="{% site.data.products.business_infinity.url %}" id="business-infinity" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+                {% include product-card.html product=site.data.products.agent_operating_system %}
+                {% include product-card.html product=site.data.products.business_infinity %}
             </div>
         </div>
     </div>
