@@ -5,14 +5,13 @@
 # Business Infinity
 - title: "Business Infinity"
   url: "/business-infinity/"
-
-# Entrepreneur
-- title: "Entrepreneur"
-  url: "/entrepreneur/"
-
-# Startup
-- title: "Startup"
-  url: "/startup/"
+  subcategories:
+    # Entrepreneur
+    - title: "Entrepreneur"
+      url: "/entrepreneur/"
+    # Startup
+    - title: "Startup"
+      url: "/startup/"
 
 # Realm of Agents
 - title: "Realm of Agents"
