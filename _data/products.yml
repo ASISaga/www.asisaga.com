@@ -1,24 +1,32 @@
 products:
 
-  - title: GitHub Agent
-    logo: "/assets/images/github-agent.png"
-    summary: "Explore the capabilities of GitHub Agent, designed to assist with your development needs seamlessly."
-    url: "/realm-of-agents/github-agent/"
+github_agent:
+  title: "GitHub Agent"
+  summary: "Explore the capabilities of GitHub Agent, designed to assist with your development needs seamlessly."
+  image: "/assets/images/github-agent.png"
+  url: "/realm-of-agents/github-agent"
+  id: "github_agent"
 
-  - title: Purpose Driven Agent
-    logo: "/assets/images/purpose-driven-agent.png"
-    summary: "A perpetual, autonomous agent, that operates on the basis of purpose, rather than a specific task."
-    url: "/realm-of-agents/purpose-driven-agent/"
+purpose_driven_agent:
+  title: "Purpose Driven Agent"
+  summary: "A perpetual, autonomous agent, that operates on the basis of purpose, rather than a specific task."
+  image: "/assets/images/purpose-driven-agent.png"
+  url: "/realm-of-agents/purpose-driven-agent"
+  id: "purpose_driven_agent"
 
-  - title: Agent Operating System
-    logo: "/assets/images/agent-operating-system.png"
-    summary: "An Operating System of perpetual, autonomous agents that can be used to build any application."
-    url: "/realm-of-agents/agent-operating-system/"
+agent_operating_system:
+  title: "Agent Operating System"
+  summary: "An Operating System of perpetual, autonomous agents that can be used to build any application."
+  image: "/assets/images/agent-operating-system.png"
+  url: "/realm-of-agents/agent-operating-system"
+  id: "agent_operating_system"
 
-  - title: Business Infinity
-    logo: "/assets/images/business-infinity.png"
-    summary: "A cutting-edge platform for business automation, built on top of Agent Operating System, tailored to drive business growth and innovation."
-    url: "/business-infinity/"
+business_infinity:
+  title: "Business Infinity"
+  summary: "A cutting-edge platform for business automation, built on top of Agent Operating System, tailored to drive business growth and innovation."
+  image: "/assets/images/business-infinity.png"
+  url: "/business-infinity"
+  id: "business_infinity"
 
 product1:
   title: "Product 1"
