@@ -13,14 +13,22 @@ title: ASI Saga
             
             <!-- First row of product cards -->
             <div class="row">
-                {% include product-card.html product="github_agent" %} <!-- Includes the product card for GitHub Agent -->
-                {% include product-card.html product="purpose_driven_agent" %} <!-- Includes the product card for Purpose-Driven Agent -->
+                <div class="col-md-6">
+                    {% include product-card.html product="github_agent" %} <!-- Includes the product card for GitHub Agent -->
+                </div>
+                <div class="col-md-6">
+                    {% include product-card.html product="purpose_driven_agent" %} <!-- Includes the product card for Purpose-Driven Agent -->
+                </div>
             </div>
             
             <!-- Second row of product cards -->
             <div class="row">
-                {% include product-card.html product="agent_operating_system" %} <!-- Includes the product card for Agent Operating System -->
-                {% include product-card.html product="business_infinity" %} <!-- Includes the product card for Business Infinity -->
+                <div class="col-md-6">
+                    {% include product-card.html product="agent_operating_system" %} <!-- Includes the product card for Agent Operating System -->
+                </div>
+                <div class="col-md-6">
+                    {% include product-card.html product="business_infinity" %} <!-- Includes the product card for Business Infinity -->
+                </div>
             </div>
         </div>
     </div>
