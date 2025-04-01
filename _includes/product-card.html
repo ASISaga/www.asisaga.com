@@ -1,6 +1,6 @@
 <div class="col-md-5 mb-4">
-    <div class="card h-100">
-        <div class="card-body">
+    <div class="card h-100 d-flex">
+        <div class="card-body d-flex flex-column">
             <div class="row align-items-center">
                 <div class="col-2">
                     <img src="{{ site.data.products[include.product].image }}" alt="{{ site.data.products[include.product].title }}" class="img-fluid object-fit-contain h-auto">
@@ -9,8 +9,9 @@
                     <h4 class="card-title">{{ site.data.products[include.product].title }}</h4>
                 </div>
             </div>
-            <p class="summary">{{ site.data.products[include.product].summary }}</p>
-            <a href="{{ site.data.products[include.product].url }}" id="{{ site.data.products[include.product].id }}" class="btn btn-primary">Learn More</a>
+            <p class="tagline fst-italic fs-5">{{ site.data.products[include.product].tagline }}</p>
+            <p class="description">{{ site.data.products[include.product].description }}</p>
+            <a href="{{ site.data.products[include.product].url }}" id="{{ site.data.products[include.product].id }}" class="btn btn-primary mt-auto">Learn More</a>
         </div>
     </div>
 </div>
