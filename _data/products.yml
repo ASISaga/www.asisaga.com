@@ -20,3 +20,17 @@ products:
     summary: "A cutting-edge platform for business automation, built on top of Agent Operating System, tailored to drive business growth and innovation."
     url: "/business-infinity/"
 
+product1:
+  title: "Product 1"
+  summary: "This is Product 1."
+  image: "/assets/images/product1.jpg"
+  url: "/products/product1"
+  id: "product1"
+
+product2:
+  title: "Product 2"
+  summary: "This is Product 2."
+  image: "/assets/images/product2.jpg"
+  url: "/products/product2"
+  id: "product2"
+
