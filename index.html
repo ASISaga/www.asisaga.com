@@ -4,16 +4,23 @@ title: ASI Saga
 ---
 
 <!-- Main Content -->
-<div class="container mt-5">
+<div class="container-fluid mt-5">
+    <!-- Bootstrap container-fluid for full-width layout with top margin -->
     <div class="row">
+        <!-- Bootstrap row to organize content -->
         <div class="col">
+            <!-- Bootstrap column to hold product cards -->
+            
+            <!-- First row of product cards -->
             <div class="row">
-                {% include product-card.html product="github_agent" %}
-                {% include product-card.html product="purpose_driven_agent" %}
+                {% include product-card.html product="github_agent" %} <!-- Includes the product card for GitHub Agent -->
+                {% include product-card.html product="purpose_driven_agent" %} <!-- Includes the product card for Purpose-Driven Agent -->
             </div>
+            
+            <!-- Second row of product cards -->
             <div class="row">
-                {% include product-card.html product="agent_operating_system" %}
-                {% include product-card.html product="business_infinity" %}
+                {% include product-card.html product="agent_operating_system" %} <!-- Includes the product card for Agent Operating System -->
+                {% include product-card.html product="business_infinity" %} <!-- Includes the product card for Business Infinity -->
             </div>
         </div>
     </div>
