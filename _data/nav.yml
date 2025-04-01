@@ -15,13 +15,14 @@
 
 # Realm of Agents
 - title: "Realm of Agents"
+  url: "/realm-of-agents/"
   subcategories:
     - title: "Agent Operating System"
-      url: "#"
+      url: "/realm-of-agents/agent-operating-system/"
     - title: "Purpose Driven Agent"
-      url: "#"
+      url: "/realm-of-agents/purpose-driven-agent/"
     - title: "Github Agent"
-      url: "#"
+      url: "/realm-of-agents/github-agent/"
 
 # About
 - title: "About"
