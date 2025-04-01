@@ -23,9 +23,11 @@
             <!-- Product description -->
             <p class="description">{{ site.data.products[include.product].description }}</p>
             <!-- Button linking to the product's detailed page -->
-            <a href="{{ site.data.products[include.product].url }}" 
-               id="{{ site.data.products[include.product].id }}" 
-               class="btn btn-primary mt-md-3">Learn More</a>
+            <div class="d-inline-block mt-md-3">
+                <a href="{{ site.data.products[include.product].url }}" 
+                   id="{{ site.data.products[include.product].id }}" 
+                   class="btn btn-primary">Learn More</a>
+            </div>
         </div>
     </div>
 </div>
