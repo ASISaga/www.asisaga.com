@@ -1,17 +1,31 @@
-<div class="col-md-5 mb-4">
+<div class="col-12 mb-4">
+    <!-- Outer container for the product card, now full-width -->
     <div class="card h-100 d-flex">
+        <!-- Card body with flexbox for vertical alignment -->
         <div class="card-body d-flex flex-column">
+            <!-- Row for product image and title -->
             <div class="row align-items-center">
+                <!-- Column for product image -->
                 <div class="col-2">
-                    <img src="{{ site.data.products[include.product].image }}" alt="{{ site.data.products[include.product].title }}" class="img-fluid object-fit-contain h-auto">
+                    <!-- Product image sourced dynamically from site data -->
+                    <img src="{{ site.data.products[include.product].image }}" 
+                         alt="{{ site.data.products[include.product].title }}" 
+                         class="img-fluid object-fit-contain h-auto">
                 </div>
+                <!-- Column for product title -->
                 <div class="col-10">
+                    <!-- Product title sourced dynamically from site data -->
                     <h4 class="card-title">{{ site.data.products[include.product].title }}</h4>
                 </div>
             </div>
+            <!-- Product tagline styled as italic and slightly larger font -->
             <p class="tagline fst-italic fs-5">{{ site.data.products[include.product].tagline }}</p>
+            <!-- Product description -->
             <p class="description">{{ site.data.products[include.product].description }}</p>
-            <a href="{{ site.data.products[include.product].url }}" id="{{ site.data.products[include.product].id }}" class="btn btn-primary mt-auto">Learn More</a>
+            <!-- Button linking to the product's detailed page -->
+            <a href="{{ site.data.products[include.product].url }}" 
+               id="{{ site.data.products[include.product].id }}" 
+               class="btn btn-primary mt-auto mt-md-3">Learn More</a>
         </div>
     </div>
 </div>
