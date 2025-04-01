@@ -1,22 +1,22 @@
 products:
 
-  - title: {% site.data.products.github_agent.title %}
+  - title: GitHub Agent
     logo: "/assets/images/github-agent.png"
     summary: "Explore the capabilities of GitHub Agent, designed to assist with your development needs seamlessly."
     url: "/realm-of-agents/github-agent/"
 
-  - title: {% site.data.products.purpose_driven_agent.title %}
+  - title: Purpose Driven Agent
     logo: "/assets/images/purpose-driven-agent.png"
-    summary: "A powerful agent focused on delivering results tailored to your objectives."
+    summary: "A perpetual, autonomous agent, that operates on the basis of purpose, rather than a specific task."
     url: "/realm-of-agents/purpose-driven-agent/"
 
-  - title: {% site.data.products.agent_operating_system.title %}
+  - title: Agent Operating System
     logo: "/assets/images/agent-operating-system.png"
-    summary: "An advanced system designed for optimal performance and user experience."
+    summary: "An Operating System of perpetual, autonomous agents that can be used to build any application."
     url: "/realm-of-agents/agent-operating-system/"
 
-  - title: {% site.data.products.business_infinity.title %}
+  - title: Business Infinity
     logo: "/assets/images/business-infinity.png"
-    summary: "An advanced system designed for optimal performance and user experience."
-    url: "/realm-of-agents/business-infinity/"
+    summary: "A cutting-edge platform for business automation, built on top of Agent Operating System, tailored to drive business growth and innovation."
+    url: "/business-infinity/"
 
