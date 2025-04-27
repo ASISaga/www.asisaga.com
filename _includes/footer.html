@@ -1,27 +1,23 @@
 <footer class="mt-auto">
     <div class="container my-5">
         <div id="main" role="main">
-          <div class="download-bar">
-            <div class="inner">
-              {% if site.show_downloads %}
-              <a href="{{ site.github.tar_url }}" class="download-button tar"><span>Download</span></a>
-              <a href="{{ site.github.zip_url }}" class="download-button zip"><span>Download</span></a>
-              {% endif %}
+            <div class="download-bar">
+                <div class="inner">
+                    {% if site.show_downloads %}
+                    <a href="{{ site.github.tar_url }}" class="download-button tar"><span>Download</span></a>
+                    <a href="{{ site.github.zip_url }}" class="download-button zip"><span>Download</span></a>
+                    {% endif %}
+                </div>
+                <!-- Decorative elements for styling the corners of the download bar -->
+                <span class="blc"></span>
+                <span class="trc"></span>
             </div>
-            <!-- Decorative elements for styling the corners of the download bar -->
-            <span class="blc"></span><span class="trc"></span>
-          </div>
         </div>
-      </div>
+    </div>
 
     <div class="current-section">
         <a href="#top">Scroll to top</a>
-        {% if site.show_downloads %}
-        <a href="{{ site.github.tar_url }}" class="tar">tar</a>
-        <a href="{{ site.github.zip_url }}" class="zip">zip</a>
-        <a href="{{ site.github.repository_url }}" class="code">source code</a>
-        {% endif %}
-      </div>
+    </div>
 
     <!-- Decorative Footer Section -->
     <div class="bg-dark text-white py-4 mt-5">
@@ -31,13 +27,16 @@
                     <p class="mb-0">&copy; 2025 ASI Saga. All rights reserved.</p>
                 </div>
                 <div id="social-media" class="col-md-auto">
-                    <p class="mb-0">Follow us on <a href="#" class="text-primary">LinkedIn</a> | <a href="#" class="text-primary">Twitter</a> | <a href="{{ site.github.owner_url }}">GitHub</a></p>
-                  </div>
+                    <p class="mb-0">Follow us on 
+                        <a href="#" class="text-primary">LinkedIn</a> | 
+                        <a href="#" class="text-primary">Twitter</a> | 
+                        <a href="{{ site.github.owner_url }}">GitHub</a>
+                    </p>
+                </div>
                 <div class="col-md-auto">
                     <a href="/sitemap/" class="text-primary">Sitemap</a>
                 </div>
             </div>
         </div>
     </div>
-  
 </footer>
