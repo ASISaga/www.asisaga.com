@@ -1,73 +1,37 @@
 <div class="collapse navbar-collapse" id="navbarNav">
-  <!-- A div with classes 'collapse' and 'navbar-collapse' to collapse the navbar on small screens. 
-       The 'id' attribute is used to target this element with the button. -->
-
-  <ul class="navbar-nav">
-    <!-- An unordered list with class 'navbar-nav' for the navigation items -->
-
-    {% for nav in site.data.nav %}
-      <!-- Loop through each item in the 'nav' data file -->
-
-      {% if nav.subcategories != null %}
-        <!-- If the navigation item has subcategories -->
-
-        <li class="nav-item dropdown">
-          <!-- A list item with classes 'nav-item' and 'dropdown' for dropdown menu -->
-
-          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{{ site.url }}{{ nav.url }}">
-            {{ nav.title }}
-          </a>
-          <!-- A link with classes 'nav-link' and 'dropdown-toggle' to toggle the dropdown menu. 
-               The 'data-bs-toggle' attribute specifies the dropdown behavior. 
-               The 'href' attribute links to the navigation item's URL. -->
-
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <!-- An unordered list with class 'dropdown-menu' for the dropdown items. 
-                 The 'aria-labelledby' attribute links to the dropdown toggle button for accessibility. -->
-
-            {% for subcategory in nav.subcategories %}
-              <!-- Loop through each subcategory -->
-
-              <li>
-                <a class="dropdown-item my-1" href="{{ site.url }}{{ subcategory.url }}">
-                  {{ subcategory.title }}
-                </a>
-              </li>
-              <!-- A list item with a link to the subcategory. 
-                   The link has class 'dropdown-item' and 'my-1' for margin. -->
-
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <!-- A horizontal rule with class 'dropdown-divider' to separate the dropdown items -->
-            {% endfor %}
-          </ul>
-        </li>
-
-      {% elsif nav.title == page.title %}
-        <!-- If the navigation item's title matches the current page title -->
-
-        <li class="nav-item active">
-          <!-- A list item with classes 'nav-item' and 'active' to highlight the current page -->
-
-          <a class="nav-link" href="{{ nav.url }}">
-            {{ nav.title }}
-          </a>
-          <!-- A link with class 'nav-link' to the navigation item's URL -->
-        </li>
-
-      {% else %}
-        <!-- If the navigation item does not have subcategories and does not match the current page title -->
-
-        <li class="nav-item">
-          <!-- A list item with class 'nav-item' -->
-
-          <a class="nav-link" href="{{ site.url }}{{ nav.url }}">
-            {{ nav.title }}
-          </a>
-          <!-- A link with class 'nav-link' to the navigation item's URL -->
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+    <ul class="navbar-nav">
+        {% for nav in site.data.nav %}
+            {% if nav.subcategories != null %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{{ site.url }}{{ nav.url }}">
+                        {{ nav.title }}
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% for subcategory in nav.subcategories %}
+                            <li>
+                                <a class="dropdown-item" href="{{ site.url }}{{ subcategory.url }}">
+                                    {{ subcategory.title }}
+                                </a>
+                            </li>
+                            {% if forloop.last == false %}
+                                <li><hr class="dropdown-divider"></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% elsif nav.title == page.title %}
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="{{ nav.url }}">
+                        {{ nav.title }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ site.url }}{{ nav.url }}">
+                        {{ nav.title }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </div>

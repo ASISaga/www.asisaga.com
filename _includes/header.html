@@ -1,85 +1,36 @@
 <!-- Setup Google Analytics -->
 {% include head-custom-google-analytics.html %}
-<!-- This line includes a custom Google Analytics setup file. 
-     The file 'head-custom-google-analytics.html' should contain the necessary code to integrate Google Analytics. -->
 
 <header class="container-fluid">
-    <!-- The header element with a Bootstrap class 'container-fluid' for a full-width container -->
+    <!-- Full-width header container -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <!-- A Bootstrap navbar with classes 'navbar-expand-lg' to expand on large screens, 'navbar-dark' for dark theme, and 'bg-primary' for primary background color -->
-      
-        <a class="navbar-brand" href="/">
-          <div class="row align-items-center">
-            <div class="col-2 col-md-2 p-0">
-              <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="img-fluid" alt="ASI Saga">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <!-- Navbar with shadow for a modern look -->
+
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <div class="row align-items-center">
+                <div class="col-2 col-md-2 p-0">
+                    <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="img-fluid rounded-circle" alt="ASI Saga">
+                </div>
+
+                <div class="col-8 col-md-6 p-0">
+                    <h1 id="title" class="title mb-0 text-light">{{ site.title | default: site.github.repository_name }}</h1>
+                </div>
             </div>
-      
-            <!-- The main title of the page with a class 'title' and a margin start of 2 for spacing -->
-            <!-- The title of the site. If 'site.title' is not set, it defaults to the GitHub repository name. -->
-            <div class="col-8 col-md-6 p-0">
-              <h1 id="title" class="title mb-0">{{ site.title | default: site.github.repository_name }}</h1>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p id="tagline" class="fs-6 mb-0 text-light">{{ site.description | default: site.github.project_tagline }}</p>
+                </div>
             </div>
-          </div>
-      
-          <div class="row">
-              <div class="col-md-4">
-                  <!-- Tagline -->
-                  <p id="tagline" class="fs-6 mb-0">{{ site.description | default: site.github.project_tagline }}</p>
-              </div>
-              <div class="col-md-8">
-              </div>
-          </div>
         </a>
 
-        <!-- A button with class 'navbar-toggler' to toggle the navigation bar on small screens. 
-        The 'data-bs-toggle' attribute specifies the collapse behavior, and 'data-bs-target' specifies the target element. 
-        The 'aria-*' attributes provide accessibility information. -->
         <button id="nav-menu-mobile" class="navbar-toggler d-lg-none position-absolute" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="bottom: 10px; right: 10px;">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Added 'd-lg-none' to hide on large screens, 'position-absolute' for absolute positioning, and inline styles for bottom-right placement on small screens. -->
-  
-        <div id="nav-menu" class="row align-items-end mt-auto">
-        <!-- Replaced 'style="align-items: flex-end; margin-top: auto;"' with Bootstrap classes 'align-items-end' and 'mt-auto' for alignment. -->
 
-            <!-- Include the Navigation Bar -->
-          {% include navbar.html %}
+        <div id="nav-menu" class="collapse navbar-collapse justify-content-end">
+            {% include navbar.html %}
         </div>
-      
-</nav>
-
-      
-
-        <!-- div id="titleblock" class="col-12 col-md-3"-->
-            <!-- A div with Bootstrap classes 'col-12' and 'col-md-3' for a column that spans 12 out of 12 columns on small screens
-              and 3 out of 12 columns on medium and larger screens -->
-
-            
-            <!-- a id="home" href="{{ site.github.owner_url }}" class="text-decoration-none link-light" -->
-                <!-- A link to the GitHub owner's URL with a class 'avatar' -->
-
-                <!-- div class="d-flex align-items-center"-->
-                    <!-- img src="{{ site.github.owner_gravatar_url }}" width="48" height="48" class="avatar" alt="Avatar"-->
-                    <!-- An image tag displaying the GitHub owner's Gravatar image. 
-                         The 'width' and 'height' attributes set the size of the image. -->
-
-                <!-- /div -->
-            <!-- /a-->
-        <!-- /div -->
-    <!-- /div -->
-
-        <!-- Navbar -->
-        <!--div id="navbar" class="col-12 col-md-9 d-flex justify-content-start"-->
-            <!-- A div with Bootstrap classes 'col-12' and 'col-md-9' for a column that spans 
-             12 out of 12 columns on small screens 
-             and 9 out of 12 columns on medium and larger screens -->
-            <!-- The 'd-flex' class makes the div a flex container, and 'justify-content-start' aligns the content to the start (left) -->
-            <!-- This line includes the navigation bar from 'navbar.html'. 
-                 The 'navbar.html' file should contain the code for the site's navigation bar. -->
-        <!--/div-->
-    <!--/div-->
+    </nav>
 </header>
-
-<!-- end custom head snippets -->
-<!-- This comment indicates the end of the custom head snippets section -->
