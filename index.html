@@ -6,13 +6,14 @@ title: ASI Saga
 <!-- Main Content -->
 <div class="container-fluid mt-5">
     <!-- Bootstrap container-fluid for full-width layout with top margin -->
-    <div class="row">
-        <!-- Bootstrap row to organize content -->
-        <div class="col">
-            <!-- Bootstrap column to hold product cards -->
-            
+    <div class="row justify-content-center">
+        <!-- Center align the content -->
+        <div class="col-lg-10">
+            <!-- Bootstrap column with a larger width for better layout -->
+
             <!-- First row of product cards -->
-            <div class="row">
+            <div class="row mb-4">
+                <!-- Add margin-bottom for spacing between rows -->
                 <div class="col-md-6">
                     {% include product-card.html product="github_agent" %} <!-- Includes the product card for GitHub Agent -->
                 </div>
@@ -20,7 +21,7 @@ title: ASI Saga
                     {% include product-card.html product="purpose_driven_agent" %} <!-- Includes the product card for Purpose-Driven Agent -->
                 </div>
             </div>
-            
+
             <!-- Second row of product cards -->
             <div class="row">
                 <div class="col-md-6">
