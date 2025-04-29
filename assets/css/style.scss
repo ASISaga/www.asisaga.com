@@ -11,3 +11,68 @@ header {
 .bg-primary {
   background-color: rgb(55, 53, 54) !important;
 }
+
+// Custom card styles for product cards
+.product-card {
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+  background: $card-bg !important;
+  border: none;
+  overflow: hidden;
+}
+.product-card:hover {
+  box-shadow: 0 8px 32px rgba(55, 53, 54, 0.18), 0 3px 12px rgba(0,0,0,0.12);
+  transform: translateY(-4px) scale(1.01);
+}
+.product-card-img {
+  max-width: 72px;
+  max-height: 72px;
+  border-radius: 0.75rem;
+  background: $gray-100;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.product-card-title {
+  font-family: $headings-font-family;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: $primary;
+  margin-bottom: 0.25rem;
+}
+.product-card-tagline {
+  font-size: 1.1rem;
+  color: $secondary;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.product-card-description {
+  color: $body-color;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.product-card-btn {
+  border-radius: 2rem;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background: $primary;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(55,53,54,0.08);
+  transition: background 0.2s;
+}
+.product-card-btn:hover {
+  background: darken($primary, 8%);
+  color: #fff;
+}
+
+// Responsive adjustments
+@media (max-width: 576px) {
+  .product-card-img {
+    max-width: 56px;
+    max-height: 56px;
+  }
+  .product-card-title {
+    font-size: 1.1rem;
+  }
+}
