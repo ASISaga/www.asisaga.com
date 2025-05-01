@@ -38,6 +38,189 @@ header {
   background-color: $header-bg !important;
 }
 
+// === Navbar Main Custom Class (Bootstrap Encapsulated) ===
+.navbar-main {
+  font-family: $font-family-base;
+  background: $header-bg;
+  color: $white;
+  width: 100%;
+  @extend .container-fluid;
+  @extend .navbar;
+  @extend .navbar-expand-lg;
+  @extend .navbar-dark;
+  @extend .bg-primary;
+  @extend .shadow-sm;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0 0 1.25rem 1.25rem;
+  box-shadow: 0 2px 12px $box-shadow-dark;
+  .navbar-main__collapse {
+    @extend .collapse;
+    @extend .navbar-collapse;
+    @extend .justify-content-end;
+  }
+  .navbar-main__nav {
+    @extend .navbar-nav;
+    @extend .ms-auto;
+    @extend .mb-2;
+    @extend .mb-lg-0;
+  }
+  .navbar-main__item {
+    @extend .nav-item;
+  }
+  .navbar-main__item--dropdown {
+    @extend .dropdown;
+  }
+  .navbar-main__item--active .navbar-main__link {
+    color: $secondary !important;
+    font-weight: 700;
+  }
+  .navbar-main__link {
+    @extend .nav-link;
+    @extend .px-3;
+    @extend .fw-semibold;
+    color: $white !important;
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+    transition: color 0.15s;
+    &:hover, &.active {
+      color: lighten($primary, 48%) !important;
+    }
+  }
+  .navbar-main__link--dropdown {
+    @extend .dropdown-toggle;
+  }
+  .navbar-main__dropdown-menu {
+    @extend .dropdown-menu;
+    background: $body-bg;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 12px $box-shadow-dark;
+  }
+  .navbar-main__dropdown-item {
+    @extend .dropdown-item;
+    color: $body-color;
+    font-weight: 500;
+    &:hover {
+      background: lighten($primary, 48%);
+      color: $primary;
+    }
+  }
+  .navbar-main__dropdown-divider {
+    @extend .dropdown-divider;
+    border-color: $gray-100;
+  }
+  @media (max-width: 576px) {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+    .navbar-main__link {
+      font-size: 0.98rem;
+      padding-left: 0.7rem;
+      padding-right: 0.7rem;
+    }
+    .navbar-main__dropdown-menu {
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+// === Site Header Custom Class (Bootstrap Encapsulated) ===
+.site-header {
+  font-family: $font-family-base;
+  background: $header-bg;
+  color: $white;
+  width: 100%;
+  .site-header__navbar {
+    @extend .container-fluid;
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .navbar-dark;
+    @extend .bg-primary;
+    @extend .shadow-sm;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0 0 1.25rem 1.25rem;
+    box-shadow: 0 2px 12px $box-shadow-dark;
+  }
+  .site-header__brand {
+    @extend .d-flex;
+    @extend .align-items-center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  .site-header__titlebar {
+    @extend .row;
+    @extend .align-items-center;
+    margin: 0;
+  }
+  .site-header__logo-col {
+    @extend .col-2;
+    @extend .p-0;
+  }
+  .site-header__logo-img {
+    max-width: 48px;
+    max-height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px $box-shadow-img;
+  }
+  .site-header__title-col {
+    @extend .col-8;
+    @extend .p-0;
+  }
+  .site-header__title {
+    font-family: $font-family-base;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 4px $box-shadow-dark;
+  }
+  .site-header__tagline-row {
+    @extend .row;
+    margin: 0;
+  }
+  .site-header__tagline-col {
+    @extend .col-md-4;
+  }
+  .site-header__tagline {
+    font-size: 1rem;
+    color: $secondary;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+  .site-header__toggler {
+    @extend .navbar-toggler;
+    @extend .d-lg-none;
+    @extend .position-absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .site-header__toggler-icon {
+    @extend .navbar-toggler-icon;
+  }
+  .site-header__nav {
+    @extend .collapse;
+    @extend .navbar-collapse;
+    @extend .justify-content-end;
+  }
+  @media (max-width: 576px) {
+    .site-header__title {
+      font-size: 1.1rem;
+    }
+    .site-header__logo-img {
+      max-width: 36px;
+      max-height: 36px;
+    }
+    .site-header__tagline {
+      font-size: 0.95rem;
+    }
+    .site-header__navbar {
+      border-radius: 0 0 0.75rem 0.75rem;
+    }
+  }
+}
+
 // Custom card styles for product cards
 .product-card {
   border-radius: 1.25rem;
@@ -59,12 +242,29 @@ header {
   object-fit: contain;
   box-shadow: 0 2px 8px $box-shadow-img;
 }
+.product-card-img-main {
+  @extend .product-card-img;
+  @extend .img-fluid;
+}
+.product-card-img-col {
+  @extend .col-2;
+  @extend .d-flex;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+}
+.product-card-content-col {
+  @extend .col-10;
+}
 .product-card-title {
   font-family: $font-family-base;
   font-size: 1.35rem;
   font-weight: 600;
   color: $primary;
   margin-bottom: 0.25rem;
+}
+.product-card-title-main {
+  @extend .card-title;
+  @extend .product-card-title;
 }
 .product-card-tagline {
   font-size: 1.1rem;
@@ -90,6 +290,34 @@ header {
 .product-card-btn:hover {
   background: darken($primary, 8%);
   color: $white;
+}
+.product-card-btn-main {
+  @extend .btn;
+  @extend .product-card-btn;
+}
+.product-card-link-wrapper {
+  @extend .d-inline-block;
+  @extend .mt-md-3;
+}
+.product-card-outer {
+  @extend .col-12;
+  @extend .mb-4;
+}
+.product-card-main {
+  @extend .card;
+  @extend .product-card;
+  @extend .h-100;
+  @extend .d-flex;
+}
+.product-card-body {
+  @extend .card-body;
+  @extend .d-flex;
+  @extend .flex-column;
+}
+.product-card-row {
+  @extend .row;
+  @extend .align-items-center;
+  @extend .mb-2;
 }
 
 // Entrepreneur Metrics Section
@@ -301,15 +529,30 @@ header {
   border-radius: 1.5rem;
   box-shadow: 0 4px 32px $box-shadow-light;
 }
-
+.about-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.about-col-main {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .about-intro-card {
   border-radius: 1.25rem;
   box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
   background: $body-bg !important;
   border: none;
   overflow: hidden;
+  margin-bottom: 2rem;
+  width: 100%;
 }
-
+.about-intro-card-body {
+  padding: 2rem 1.5rem;
+}
 .about-title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -317,7 +560,6 @@ header {
   letter-spacing: 0.01em;
   text-align: center;
 }
-
 .about-lead {
   font-size: 1.15rem;
   color: $secondary;
@@ -325,14 +567,28 @@ header {
   font-weight: 500;
   text-align: center;
 }
-
 .about-summary {
   font-size: 1.1rem;
   color: $secondary;
   font-style: italic;
   font-weight: 500;
+  margin-bottom: 2rem;
+  width: 100%;
 }
-
+.about-summary-text {
+  text-align: center;
+}
+.about-phase-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.about-phase-col {
+  flex: 1 1 250px;
+  max-width: 320px;
+  display: flex;
+}
 .about-phase-card {
   border-radius: 1.25rem;
   box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
@@ -341,8 +597,14 @@ header {
   overflow: hidden;
   padding: 1.5rem 1rem;
   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
+.about-phase-card-body {
+  width: 100%;
+}
 .about-phase-title {
   font-size: 1.15rem;
   font-weight: 600;
@@ -350,12 +612,43 @@ header {
   margin-bottom: 0.5rem;
   text-align: center;
 }
-
 .about-phase-desc {
   color: $body-color;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .about-row, .about-phase-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-phase-col {
+    max-width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 1.3rem;
+  }
+  .about-lead, .about-summary {
+    font-size: 1rem;
+  }
+  .about-phase-title {
+    font-size: 1rem;
+  }
+  .about-phase-desc {
+    font-size: 0.98rem;
+  }
+  .about-intro-card, .about-phase-card {
+    padding: 1rem 0.5rem;
+    border-radius: 0.75rem;
+  }
+  .about-page-container {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-radius: 0.75rem;
+  }
 }
 
 // Business Infinity Section
@@ -738,6 +1031,151 @@ header {
   }
 }
 
+// LinkedIn Image Button Styles
+.image-button .hover-img,
+.image-button .active-img {
+    display: none;
+}
+
+.image-button:hover .default-img {
+    display: none;
+}
+.image-button:hover .hover-img {
+    display: inline;
+}
+
+.image-button:active .hover-img {
+    display: none;
+}
+.image-button:active .active-img {
+    display: inline;
+}
+
+// LinkedIn Sign In Button unified custom class
+.linkedin-signin-btn {
+  @extend .btn;
+  @extend .btn-light;
+  border-radius: 0.5rem;
+  padding: 0.25rem 1.5rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px $box-shadow-dark;
+  display: inline-flex;
+  align-items: center;
+  background: $white;
+  transition: background 0.2s;
+  &:hover {
+    background: lighten($primary, 48%);
+  }
+  &:active {
+    background: darken($primary, 4%);
+  }
+  .default-img, .hover-img, .active-img {
+    height: 32px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// === Footer Section (Bootstrap Encapsulated) ===
+.footer-section {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: $header-bg;
+  @extend .mt-auto;
+  @extend .pt-4;
+  @extend .pb-0;
+  @extend .text-white;
+  width: 100%;
+
+  .footer-download-bar {
+    @extend .container;
+    @extend .my-5;
+  }
+  .download-bar {
+    @extend .row;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+    background: $primary;
+    border-radius: 0.75rem;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.5rem;
+    .inner {
+      @extend .col-auto;
+      display: flex;
+      gap: 1rem;
+    }
+    .download-button {
+      @extend .btn;
+      @extend .btn-light;
+      color: $primary;
+      font-weight: 600;
+      border-radius: 2rem;
+      padding: 0.5rem 1.5rem;
+      margin: 0 0.25rem;
+      &:hover {
+        background: lighten($primary, 48%);
+        color: $primary;
+      }
+    }
+    .tar, .zip {
+      margin-left: 0.5rem;
+    }
+    .blc, .trc {
+      display: none;
+    }
+  }
+  .footer-current-section {
+    @extend .text-center;
+    @extend .mb-3;
+    a {
+      color: $white;
+      text-decoration: underline;
+      &:hover { color: $primary; }
+    }
+  }
+  .footer-bottom {
+    background: $header-bg;
+    @extend .py-4;
+    @extend .mt-5;
+    .footer-bottom-container {
+      @extend .container;
+      @extend .text-center;
+    }
+    .footer-bottom-row {
+      @extend .row;
+      @extend .align-items-center;
+      @extend .justify-content-center;
+    }
+    .footer-bottom-col {
+      @extend .col-md-auto;
+      @extend .mb-2;
+    }
+    .footer-link {
+      color: $primary;
+      text-decoration: underline;
+      &:hover { color: lighten($primary, 20%); text-decoration: none; }
+    }
+    .footer-social {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 576px) {
+    .footer-download-bar, .footer-bottom-container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    .footer-bottom-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-bottom-col {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
 @media (max-width: 576px) {
   .product-card-img {
     max-width: 56px;
@@ -851,8 +1289,8 @@ header {
 
 // Responsive container for main content
 .main-content-container {
-  @extend .container-fluid;
-  @extend .mt-5;
+  @extend .container;
+  @extend .my-5;
 }
 
 // Card grid row

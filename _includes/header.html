@@ -1,36 +1,28 @@
 <!-- Setup Google Analytics -->
 {% include head-custom-google-analytics.html %}
 
-<header class="container-fluid">
-    <!-- Full-width header container -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-        <!-- Navbar with shadow for a modern look -->
-
-        <a class="navbar-brand d-flex align-items-center" href="/">
-            <div id="titlebar" class="row align-items-center">
-                <div class="col-2 col-md-2 p-0">
-                    <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="img-fluid rounded-circle" alt="ASI Saga">
-                </div>
-
-                <div class="col-8 col-md-6 p-0">
-                    <h1 id="title" class="title mb-0 text-light">{{ site.title | default: site.github.repository_name }}</h1>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <p id="tagline" class="fs-6 mb-0 text-light">{{ site.description | default: site.github.project_tagline }}</p>
-                </div>
-            </div>
-        </a>
-
-        <button id="nav-menu-mobile" class="navbar-toggler d-lg-none position-absolute" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="bottom: 10px; right: 10px;">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div id="nav-menu" class="collapse navbar-collapse justify-content-end">
-            {% include navbar.html %}
+<header class="site-header">
+  <nav class="site-header__navbar">
+    <a class="site-header__brand" href="/">
+      <div class="site-header__titlebar">
+        <div class="site-header__logo-col">
+          <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="site-header__logo-img" alt="ASI Saga">
         </div>
-    </nav>
+        <div class="site-header__title-col">
+          <h1 id="title" class="site-header__title">{{ site.title | default: site.github.repository_name }}</h1>
+        </div>
+      </div>
+      <div class="site-header__tagline-row">
+        <div class="site-header__tagline-col">
+          <p id="tagline" class="site-header__tagline">{{ site.description | default: site.github.project_tagline }}</p>
+        </div>
+      </div>
+    </a>
+    <button id="nav-menu-mobile" class="site-header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="site-header__toggler-icon"></span>
+    </button>
+    <div id="nav-menu" class="site-header__nav">
+      {% include navbar.html %}
+    </div>
+  </nav>
 </header>

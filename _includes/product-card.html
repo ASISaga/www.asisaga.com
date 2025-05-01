@@ -1,22 +1,22 @@
-<div class="col-12 mb-4">
-    <div class="card product-card h-100 d-flex">
-        <div class="card-body d-flex flex-column">
-            <div class="row align-items-center mb-2">
-                <div class="col-2 d-flex justify-content-center align-items-center">
+<div class="product-card-outer">
+    <div class="product-card-main">
+        <div class="product-card-body">
+            <div class="product-card-row">
+                <div class="product-card-img-col">
                     <img src="{{ site.data.products[include.product].image }}" 
                          alt="{{ site.data.products[include.product].title }}" 
-                         class="product-card-img img-fluid">
+                         class="product-card-img-main">
                 </div>
-                <div class="col-10">
-                    <h4 class="card-title product-card-title">{{ site.data.products[include.product].title }}</h4>
+                <div class="product-card-content-col">
+                    <h4 class="product-card-title-main">{{ site.data.products[include.product].title }}</h4>
                 </div>
             </div>
             <p class="product-card-tagline">{{ site.data.products[include.product].tagline }}</p>
             <p class="product-card-description">{{ site.data.products[include.product].description }}</p>
-            <div class="d-inline-block mt-md-3">
+            <div class="product-card-link-wrapper">
                 <a href="{{ site.data.products[include.product].url }}" 
                    id="{{ site.data.products[include.product].id }}" 
-                   class="btn product-card-btn">Learn More</a>
+                   class="product-card-btn-main">Learn More</a>
             </div>
         </div>
     </div>
