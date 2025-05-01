@@ -1,40 +1,24 @@
 <footer class="footer-section">
-    <div class="footer-download-bar">
-        <div id="main" role="main">
-            <div class="download-bar">
-                <div class="inner">
-                    {% if site.show_downloads %}
-                    <a href="{{ site.github.tar_url }}" class="download-button tar"><span>Download</span></a>
-                    <a href="{{ site.github.zip_url }}" class="download-button zip"><span>Download</span></a>
-                    {% endif %}
-                </div>
-                <span class="blc"></span>
-                <span class="trc"></span>
-            </div>
+  <div class="footer-section__current">
+    <a href="#top">Scroll to top</a>
+  </div>
+  <div class="footer-section__bottom">
+    <div class="footer-section__container">
+      <div class="footer-section__row">
+        <div class="footer-section__col">
+          <p class="footer-section__copyright">&copy; 2025 ASI Saga. All rights reserved.</p>
         </div>
-    </div>
-
-    <div class="footer-current-section">
-        <a href="#top">Scroll to top</a>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="footer-bottom-container">
-            <div class="footer-bottom-row">
-                <div class="footer-bottom-col">
-                    <p class="footer-copyright">&copy; 2025 ASI Saga. All rights reserved.</p>
-                </div>
-                <div id="social-media" class="footer-bottom-col">
-                    <p class="footer-social">Follow us on 
-                        <a href="#" class="footer-link">LinkedIn</a> | 
-                        <a href="#" class="footer-link">Twitter</a> | 
-                        <a href="{{ site.github.owner_url }}">GitHub</a>
-                    </p>
-                </div>
-                <div class="footer-bottom-col">
-                    <a href="/sitemap/" class="footer-link">Sitemap</a>
-                </div>
-            </div>
+        <div class="footer-section__col">
+          <p class="footer-section__social">Follow us on 
+            <a href="#" class="footer-section__link">LinkedIn</a> |
+            <a href="#" class="footer-section__link">Twitter</a> |
+            <a href="{{ site.github.owner_url }}" class="footer-section__link">GitHub</a>
+          </p>
         </div>
+        <div class="footer-section__col">
+          <a href="/sitemap/" class="footer-section__link">Sitemap</a>
+        </div>
+      </div>
     </div>
+  </div>
 </footer>
