@@ -17,6 +17,22 @@ $warning: #ffc107;
 $info: #0dcaf0;
 $danger: #dc3545;
 
+// === Consistent Font Family, Size, and Color Scheme ===
+$font-family-base: 'Inter', 'Segoe UI', Arial, sans-serif;
+$font-size-base: 1rem;
+$font-size-lg: 1.15rem;
+$font-size-xl: 2rem;
+$font-size-section-title: 2.2rem;
+$font-size-card-title: 1.35rem;
+$font-size-small: 0.98rem;
+
+body, .body-consistent {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
 // Import all of Bootstrap's SCSS in one go
 @import "bootstrap/bootstrap";
 
@@ -302,6 +318,9 @@ header {
 // Custom card styles for product cards
 .product-card {
   @include reusable-card;
+  @extend .card;
+  @extend .h-100;
+  @extend .d-flex;
   transition: box-shadow 0.2s, transform 0.2s;
   background: $body-bg !important;
   border: none;
@@ -334,7 +353,7 @@ header {
 }
 .product-card-title {
   font-family: $font-family-base;
-  font-size: 1.35rem;
+  font-size: $font-size-card-title;
   font-weight: 600;
   color: $primary;
   margin-bottom: 0.25rem;
@@ -431,7 +450,7 @@ header {
 }
 .entrepreneur-metrics-title {
   font-family: $font-family-base;
-  font-size: 2rem;
+  font-size: $font-size-xl;
   font-weight: 700;
   color: $primary;
   letter-spacing: 0.01em;
@@ -439,7 +458,7 @@ header {
   @extend .mb-4;
 }
 .entrepreneur-metrics-lead {
-  font-size: 1.15rem;
+  font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
   font-weight: 500;
@@ -507,7 +526,7 @@ header {
 
 .startup-title {
   font-family: $font-family-base;
-  font-size: 2.5rem;
+  font-size: $font-size-section-title;
   font-weight: 700;
   color: $primary;
   letter-spacing: 0.01em;
@@ -516,7 +535,7 @@ header {
 }
 
 .startup-description {
-  font-size: 1.2rem;
+  font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
   margin-bottom: 2.5rem;
@@ -634,7 +653,7 @@ header {
   @extend .p-4;
 }
 .about-title {
-  font-size: 2.2rem;
+  font-size: $font-size-section-title;
   font-weight: 700;
   color: $primary;
   letter-spacing: 0.01em;
@@ -642,7 +661,7 @@ header {
   @extend .mb-3;
 }
 .about-lead {
-  font-size: 1.15rem;
+  font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
   font-weight: 500;
@@ -650,7 +669,7 @@ header {
   @extend .mb-3;
 }
 .about-summary {
-  font-size: 1.1rem;
+  font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
   font-weight: 500;
@@ -687,7 +706,7 @@ header {
   @extend .w-100;
 }
 .about-phase-title {
-  font-size: 1.15rem;
+  font-size: $font-size-lg;
   font-weight: 600;
   color: $primary;
   @extend .mb-2;
@@ -695,7 +714,7 @@ header {
 }
 .about-phase-desc {
   color: $body-color;
-  font-size: 1rem;
+  font-size: $font-size-base;
   @extend .mb-2;
   @extend .text-center;
 }
@@ -711,16 +730,16 @@ header {
 }
 @media (max-width: 576px) {
   .about-title {
-    font-size: 1.3rem;
+    font-size: $font-size-small;
   }
   .about-lead, .about-summary {
-    font-size: 1rem;
+    font-size: $font-size-small;
   }
   .about-phase-title {
-    font-size: 1rem;
+    font-size: $font-size-small;
   }
   .about-phase-desc {
-    font-size: 0.98rem;
+    font-size: $font-size-small;
   }
   .about-intro-card, .about-phase-card {
     padding: 1rem 0.5rem;
@@ -745,7 +764,7 @@ header {
   }
 
   .business-infinity-title {
-    font-size: 2.2rem;
+    font-size: $font-size-section-title;
     font-weight: 700;
     color: $primary;
     letter-spacing: 0.01em;
@@ -753,7 +772,7 @@ header {
     margin-bottom: 3rem;
   }
   .business-infinity-tagline {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
     font-weight: 700;
@@ -774,14 +793,14 @@ header {
     }
   }
   .business-infinity-card-title {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     font-weight: 600;
     color: $primary;
     margin-bottom: 0.5rem;
   }
   .business-infinity-card-text {
     color: $body-color;
-    font-size: 1rem;
+    font-size: $font-size-base;
     margin-bottom: 0.5rem;
   }
   .business-infinity-conclusion {
@@ -821,7 +840,7 @@ header {
     }
   }
   .privacy-policy-title {
-    font-size: 2.2rem;
+    font-size: $font-size-section-title;
     font-weight: 700;
     color: $primary;
     letter-spacing: 0.01em;
@@ -829,7 +848,7 @@ header {
     margin-bottom: 1.5rem;
   }
   .privacy-policy-lead {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
     font-weight: 700;
@@ -837,7 +856,7 @@ header {
     margin-bottom: 0;
   }
   .privacy-policy-card-title {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     font-weight: 600;
     color: $primary;
     margin-bottom: 0.5rem;
@@ -845,7 +864,7 @@ header {
   }
   .privacy-policy-card-text {
     color: $body-color;
-    font-size: 1rem;
+    font-size: $font-size-base;
     margin-bottom: 0;
   }
   .privacy-policy-link {
@@ -901,7 +920,7 @@ header {
   }
   .agent-os-title {
     font-family: $font-family-base;
-    font-size: 2rem;
+    font-size: $font-size-xl;
     font-weight: 700;
     color: $primary;
     letter-spacing: 0.01em;
@@ -909,7 +928,7 @@ header {
     margin-bottom: 1.5rem;
   }
   .agent-os-summary {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
     font-weight: 500;
@@ -923,10 +942,10 @@ header {
       padding: 1rem 0.5rem;
     }
     .agent-os-title {
-      font-size: 1.3rem;
+      font-size: $font-size-small;
     }
     .agent-os-summary {
-      font-size: 1rem;
+      font-size: $font-size-small;
     }
   }
 }
@@ -973,7 +992,7 @@ header {
   }
   .purpose-driven-agent-title {
     font-family: $font-family-base;
-    font-size: 2rem;
+    font-size: $font-size-xl;
     font-weight: 700;
     color: $primary;
     letter-spacing: 0.01em;
@@ -981,7 +1000,7 @@ header {
     margin-bottom: 1.5rem;
   }
   .purpose-driven-agent-summary {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
     font-weight: 500;
@@ -995,10 +1014,10 @@ header {
       padding: 1rem 0.5rem;
     }
     .purpose-driven-agent-title {
-      font-size: 1.3rem;
+      font-size: $font-size-small;
     }
     .purpose-driven-agent-summary {
-      font-size: 1rem;
+      font-size: $font-size-small;
     }
   }
 }
@@ -1045,7 +1064,7 @@ header {
   }
   .github-agent-title {
     font-family: $font-family-base;
-    font-size: 2rem;
+    font-size: $font-size-xl;
     font-weight: 700;
     color: $primary;
     letter-spacing: 0.01em;
@@ -1053,7 +1072,7 @@ header {
     margin-bottom: 1.5rem;
   }
   .github-agent-summary {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
     font-weight: 500;
@@ -1067,10 +1086,10 @@ header {
       padding: 1rem 0.5rem;
     }
     .github-agent-title {
-      font-size: 1.3rem;
+      font-size: $font-size-small;
     }
     .github-agent-summary {
-      font-size: 1rem;
+      font-size: $font-size-small;
     }
   }
 }
@@ -1193,32 +1212,32 @@ header {
     max-height: 56px;
   }
   .product-card-title {
-    font-size: 1.1rem;
+    font-size: $font-size-small;
   }
   .entrepreneur-metrics-card {
     padding: 1rem 0.5rem;
   }
   .entrepreneur-metrics-title {
-    font-size: 1.3rem;
+    font-size: $font-size-small;
     margin-bottom: 1rem;
   }
   .entrepreneur-metrics-lead {
-    font-size: 1rem;
+    font-size: $font-size-small;
     margin-bottom: 1rem;
   }
   .metrics-table th, .metrics-table td {
     padding: 0.5rem 0.5rem;
-    font-size: 0.98rem;
+    font-size: $font-size-small;
   }
   .startup-title {
-    font-size: 1.5rem;
+    font-size: $font-size-small;
   }
   .startup-description {
-    font-size: 1rem;
+    font-size: $font-size-small;
   }
   .startup-table td, .startup-table th {
     padding: 0.7rem 0.5rem;
-    font-size: 0.98rem;
+    font-size: $font-size-small;
   }
   .startup-section {
     padding-top: 1.2rem;
@@ -1229,16 +1248,16 @@ header {
     border-radius: 0.75rem;
   }
   .about-title {
-    font-size: 1.3rem;
+    font-size: $font-size-small;
   }
   .about-lead, .about-summary {
-    font-size: 1rem;
+    font-size: $font-size-small;
   }
   .about-phase-title {
-    font-size: 1rem;
+    font-size: $font-size-small;
   }
   .about-phase-desc {
-    font-size: 0.98rem;
+    font-size: $font-size-small;
   }
   .about-intro-card, .about-phase-card {
     padding: 1rem 0.5rem;
@@ -1271,15 +1290,19 @@ header {
   @extend .fw-bold;
   @extend .text-primary;
   @extend .mb-3;
+  font-family: $font-family-base;
+  font-size: $font-size-xl;
 }
 .typography-lead {
   @extend .lead;
   @extend .text-secondary;
   @extend .mb-2;
+  font-size: $font-size-lg;
 }
 .typography-paragraph {
   @extend .text-body;
   @extend .mb-2;
+  font-size: $font-size-base;
 }
 
 // Unified button style
