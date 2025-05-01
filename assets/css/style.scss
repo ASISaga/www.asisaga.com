@@ -545,6 +545,8 @@ header {
   }
 }
 .about-row {
+  @extend .flex-column;
+  @extend .align-items-center;
   @extend .d-flex;
   @extend .justify-content-center;
   @extend .mb-4;
@@ -594,6 +596,8 @@ header {
   @extend .text-center;
 }
 .about-phase-row {
+  @extend .flex-column;
+  @extend .align-items-center;
   @extend .d-flex;
   @extend .flex-wrap;
   @extend .justify-content-center;
@@ -631,9 +635,10 @@ header {
   @extend .text-center;
 }
 @media (max-width: 768px) {
-  .about-row, .about-phase-row {
-    @extend .flex-column;
-    @extend .align-items-center;
+  .about-row,
+  .about-phase-row {
+    flex-direction: column;
+    align-items: center;
   }
   .about-phase-col {
     max-width: 100%;
