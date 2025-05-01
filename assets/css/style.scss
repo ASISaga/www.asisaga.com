@@ -78,11 +78,10 @@ header {
   @extend .navbar-expand-lg;
   @extend .navbar-dark;
   @extend .bg-primary;
-  @extend .shadow-sm;
+  box-shadow: 0 2px 12px $box-shadow-dark;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-radius: 0 0 1.25rem 1.25rem;
-  box-shadow: 0 2px 12px $box-shadow-dark;
   .navbar-main__collapse {
     @extend .collapse;
     @extend .navbar-collapse;
