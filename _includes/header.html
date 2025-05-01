@@ -4,12 +4,12 @@
 <header class="site-header">
   <nav class="site-header__navbar">
     <a class="site-header__brand" href="/">
-      <div class="site-header__titlebar">
-        <div class="site-header__logo-col">
+      <div class="header-grid row align-items-center g-0">
+        <div class="col-auto">
           <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="site-header__logo-img" alt="ASI Saga">
         </div>
-        <div class="site-header__title-col">
-          <h1 id="title" class="site-header__title">{{ site.title | default: site.github.repository_name }}</h1>
+        <div class="col">
+          <h1 id="title" class="site-header__title mb-0">{{ site.title | default: site.github.repository_name }}</h1>
         </div>
       </div>
       <div class="site-header__tagline-row">

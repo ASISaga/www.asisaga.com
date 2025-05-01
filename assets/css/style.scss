@@ -243,6 +243,49 @@ header {
   }
 }
 
+// === Header Grid Custom Class (Bootstrap Encapsulated) ===
+.header-grid {
+  @extend .row;
+  @extend .align-items-center;
+  @extend .g-0;
+  width: 100%;
+  margin: 0;
+  .col-auto {
+    @extend .d-flex;
+    @extend .align-items-center;
+    padding-right: 0.5rem;
+  }
+  .col {
+    @extend .d-flex;
+    @extend .align-items-center;
+    padding-left: 0.5rem;
+  }
+  img {
+    max-width: 48px;
+    max-height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px $box-shadow-img;
+  }
+  h1 {
+    font-family: $font-family-base;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 4px $box-shadow-dark;
+  }
+  @media (max-width: 576px) {
+    img {
+      max-width: 36px;
+      max-height: 36px;
+    }
+    h1 {
+      font-size: 1.1rem;
+    }
+  }
+}
+
 // Custom card styles for product cards
 .product-card {
   @include reusable-card;
