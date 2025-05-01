@@ -1,18 +1,24 @@
 ---
 ---
 
-dummy{
-  display: none;  
+dummy {
+  display: none;
 }
 
-// Import all of Bootstrap's SCSS in one go
-@import "bootstrap/bootstrap";
-
-// Add missing Bootstrap color variables for highlight classes
+// Bootstrap theme color variables (must be defined before import)
+$primary: #007bff;
+$secondary: #6c757d;
+$body-bg: #fff;
+$body-color: #212529;
+$white: #fff;
+$gray-100: #f8f9fa;
 $success: #198754;
 $warning: #ffc107;
 $info: #0dcaf0;
 $danger: #dc3545;
+
+// Import all of Bootstrap's SCSS in one go
+@import "bootstrap/bootstrap";
 
 // Custom variables
 $header-bg: rgb(55, 53, 54);
