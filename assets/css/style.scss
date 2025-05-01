@@ -10,6 +10,15 @@ dummy{
 @import "bootstrap/mixins";
 @import "bootstrap/utilities";
 
+// Import Bootstrap component SCSS files for @extend support
+@import "bootstrap/containers";
+@import "bootstrap/navbar";
+@import "bootstrap/dropdown";
+@import "bootstrap/card";
+@import "bootstrap/grid";
+@import "bootstrap/type";
+@import "bootstrap/buttons";
+@import "bootstrap/utilities";
 
 // Add missing Bootstrap color variables for highlight classes
 $success: #198754;
