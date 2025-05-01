@@ -5,18 +5,22 @@ dummy{
   display: none;  
 }
 
+// Core Bootstrap imports first
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-@import "bootstrap/utilities";
 
-// Import Bootstrap component SCSS files for @extend support
+// Required for Bootstrap components
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+
+// Then component imports
 @import "bootstrap/containers";
 @import "bootstrap/navbar";
 @import "bootstrap/dropdown";
 @import "bootstrap/card";
 @import "bootstrap/grid";
-@import "bootstrap/type";
 @import "bootstrap/buttons";
 @import "bootstrap/utilities";
 
