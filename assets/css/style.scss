@@ -415,7 +415,9 @@ header {
     font-weight: 600;
     color: $primary;
     margin-bottom: 0.5rem;
-    @extend .h4;
+    @extend .fs-4;
+    @extend .fw-bold;
+    @extend .mb-3;
     @extend .text-primary;
   }
   .business-infinity-card-text {
