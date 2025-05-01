@@ -23,8 +23,6 @@ $box-shadow-hover-light: rgba(55, 53, 54, 0.18);
 $box-shadow-hover-dark: rgba(0,0,0,0.12);
 $box-shadow-img: rgba(0,0,0,0.04);
 
-@import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
-
 header {
   background-color: $header-bg;
   color: $white;
@@ -148,6 +146,14 @@ header {
   box-shadow: 0 4px 32px $box-shadow-light;
 }
 
+.startup-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .startup-title {
   font-family: $font-family-base;
   font-size: 2.5rem;
@@ -155,6 +161,7 @@ header {
   color: $primary;
   letter-spacing: 0.01em;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .startup-description {
@@ -162,6 +169,12 @@ header {
   color: $secondary;
   font-style: italic;
   margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.startup-table-responsive {
+  width: 100%;
+  overflow-x: auto;
 }
 
 .startup-table-wrapper {
@@ -172,8 +185,11 @@ header {
 }
 
 .startup-table {
+  width: 100%;
   margin-bottom: 0;
   background: transparent;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .startup-table-head th {
@@ -182,6 +198,7 @@ header {
   font-size: 1.1rem;
   font-weight: 600;
   border: none;
+  text-align: center;
 }
 
 .startup-table td, .startup-table th {
@@ -202,6 +219,32 @@ header {
 
 .startup-table tbody tr:hover {
   background: lighten($primary, 48%);
+}
+
+// Highlight classes for table span elements
+.startup-highlight-success {
+  font-weight: 700;
+  color: $success !important;
+}
+.startup-highlight-primary {
+  font-weight: 700;
+  color: $primary !important;
+}
+.startup-highlight-warning {
+  font-weight: 700;
+  color: $warning !important;
+}
+.startup-highlight-info {
+  font-weight: 700;
+  color: $info !important;
+}
+.startup-highlight-danger {
+  font-weight: 700;
+  color: $danger !important;
+}
+.startup-highlight-secondary {
+  font-weight: 700;
+  color: $secondary !important;
 }
 
 @media (max-width: 576px) {
@@ -241,3 +284,6 @@ header {
     border-radius: 0.75rem;
   }
 }
+
+// Import Bootstrap at the end
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
