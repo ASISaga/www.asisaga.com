@@ -382,18 +382,15 @@ header {
     color: $primary;
     letter-spacing: 0.01em;
     text-align: center;
-    margin-bottom: 2rem;
-    @extend .mb-5;
+    margin-bottom: 3rem;
   }
   .business-infinity-tagline {
     font-size: 1.15rem;
     color: $secondary;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 2.5rem;
-    @extend .fw-bold;
-    @extend .mb-5;
+    margin-bottom: 3rem;
   }
   .business-infinity-linkedin {
     text-align: end;
