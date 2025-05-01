@@ -1,30 +1,80 @@
----
----
-
 dummy {
   display: none;
 }
 
-// Bootstrap theme color variables (must be defined before import)
-$primary: #007bff;
-$secondary: #6c757d;
-$body-bg: #fff;
-$body-color: #212529;
-$white: #fff;
-$gray-100: #f8f9fa;
-$success: #198754;
-$warning: #ffc107;
-$info: #0dcaf0;
-$danger: #dc3545;
+// === Color System: Centralized Color Variables ===
+$color-primary: #007bff;
+$color-secondary: #6c757d;
+$color-success: #198754;
+$color-warning: #ffc107;
+$color-info: #0dcaf0;
+$color-danger: #dc3545;
+$color-white: #fff;
+$color-gray-100: #f8f9fa;
+$color-body-bg: #fff;
+$color-body: #212529;
+$color-header-bg: rgb(55, 53, 54);
 
-// === Consistent Font Family, Size, and Color Scheme ===
+// Bootstrap theme color variables (must be defined before import)
+$primary: $color-primary;
+$secondary: $color-secondary;
+$success: $color-success;
+$warning: $color-warning;
+$info: $color-info;
+$danger: $color-danger;
+$white: $color-white;
+$gray-100: $color-gray-100;
+$body-bg: $color-body-bg;
+$body-color: $color-body;
+
+// === Font System: Centralized Font Variables ===
 $font-family-base: 'Inter', 'Segoe UI', Arial, sans-serif;
+$font-family-heading: $font-family-base;
+$font-family-monospace: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+
 $font-size-base: 1rem;
+$font-size-sm: 0.98rem;
+$font-size-md: 1.08rem;
 $font-size-lg: 1.15rem;
 $font-size-xl: 2rem;
 $font-size-section-title: 2.2rem;
 $font-size-card-title: 1.35rem;
-$font-size-small: 0.98rem;
+$font-size-table: 1.05rem;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// === Dimensions System: Centralized Spacing, Border, and Radius Variables ===
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 3rem;
+
+$container-max-width: 900px;
+$card-radius: 1.25rem;
+$section-radius: 1.5rem;
+$card-radius-sm: 0.75rem;
+$img-radius: 0.75rem;
+$logo-radius: 50%;
+
+$box-shadow-light: rgba(55, 53, 54, 0.12);
+$box-shadow-dark: rgba(0,0,0,0.08);
+$box-shadow-hover-light: rgba(55, 53, 54, 0.18);
+$box-shadow-hover-dark: rgba(0,0,0,0.12);
+$box-shadow-img: rgba(0,0,0,0.04);
+
+// === Sizes System: Centralized Sizing Variables ===
+$size-logo: 48px;
+$size-logo-sm: 36px;
+$size-card-img: 72px;
+$size-card-img-sm: 56px;
+$size-container-max: 900px;
+$size-phase-col-max: 320px;
+$size-agent-col-max: 700px;
+$size-linkedin-img: 32px;
 
 body, .body-consistent {
   font-family: $font-family-base;
@@ -37,12 +87,7 @@ body, .body-consistent {
 @import "bootstrap/bootstrap";
 
 // Custom variables
-$header-bg: rgb(55, 53, 54);
-$box-shadow-light: rgba(55, 53, 54, 0.12);
-$box-shadow-dark: rgba(0,0,0,0.08);
-$box-shadow-hover-light: rgba(55, 53, 54, 0.18);
-$box-shadow-hover-dark: rgba(0,0,0,0.12);
-$box-shadow-img: rgba(0,0,0,0.04);
+$header-bg: $color-header-bg;
 
 header {
   background-color: $header-bg;
@@ -55,7 +100,7 @@ header {
 
 // === Reusable Card and Section Mixins ===
 @mixin reusable-card {
-  border-radius: 1.25rem;
+  border-radius: $card-radius;
   box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
   background: $body-bg !important;
   border: none;
@@ -66,9 +111,9 @@ header {
   font-family: $font-family-base;
   color: $body-color;
   background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
-  border-radius: 1.5rem;
+  border-radius: $section-radius;
   box-shadow: 0 4px 32px $box-shadow-light;
-  max-width: 900px;
+  max-width: $container-max-width;
   margin-left: auto;
   margin-right: auto;
 }
@@ -85,9 +130,9 @@ header {
   @extend .navbar-dark;
   @extend .bg-primary;
   @extend .shadow-sm;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-radius: 0 0 1.25rem 1.25rem;
+  padding-top: $spacing-sm;
+  padding-bottom: $spacing-sm;
+  border-radius: 0 0 $card-radius $card-radius;
   box-shadow: 0 2px 12px $box-shadow-dark;
   .navbar-main__collapse {
     @extend .collapse;
@@ -110,7 +155,7 @@ header {
     @extend .nav-item;
     .navbar-main__link {
       color: $secondary !important;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
   }
   .navbar-main__link {
@@ -118,7 +163,7 @@ header {
     @extend .px-3;
     @extend .fw-semibold;
     color: $white !important;
-    font-size: 1.08rem;
+    font-size: $font-size-md;
     letter-spacing: 0.01em;
     transition: color 0.15s;
     &:hover, &.active {
@@ -131,13 +176,13 @@ header {
   .navbar-main__dropdown-menu {
     @extend .dropdown-menu;
     background: $body-bg;
-    border-radius: 0.75rem;
+    border-radius: $card-radius-sm;
     box-shadow: 0 2px 12px $box-shadow-dark;
   }
   .navbar-main__dropdown-item {
     @extend .dropdown-item;
     color: $body-color;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     &:hover {
       background: lighten($primary, 48%);
       color: $primary;
@@ -148,16 +193,16 @@ header {
     border-color: $gray-100;
   }
   @media (max-width: 576px) {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    border-radius: 0 0 0.75rem 0.75rem;
+    padding-top: $spacing-xs;
+    padding-bottom: $spacing-xs;
+    border-radius: 0 0 $card-radius-sm $card-radius-sm;
     .navbar-main__link {
-      font-size: 0.98rem;
-      padding-left: 0.7rem;
-      padding-right: 0.7rem;
+      font-size: $font-size-sm;
+      padding-left: $spacing-sm;
+      padding-right: $spacing-sm;
     }
     .navbar-main__dropdown-menu {
-      border-radius: 0.5rem;
+      border-radius: $card-radius-sm;
     }
   }
 }
@@ -175,15 +220,15 @@ header {
     @extend .navbar-dark;
     @extend .bg-primary;
     @extend .shadow-sm;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 0 0 1.25rem 1.25rem;
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-sm;
+    border-radius: 0 0 $card-radius $card-radius;
     box-shadow: 0 2px 12px $box-shadow-dark;
   }
   .site-header__brand {
     @extend .d-flex;
     @extend .align-items-center;
-    gap: 0.5rem;
+    gap: $spacing-sm;
     text-decoration: none;
   }
   .site-header__titlebar {
@@ -196,9 +241,9 @@ header {
     @extend .p-0;
   }
   .site-header__logo-img {
-    max-width: 48px;
-    max-height: 48px;
-    border-radius: 50%;
+    max-width: $size-logo;
+    max-height: $size-logo;
+    border-radius: $logo-radius;
     box-shadow: 0 2px 8px $box-shadow-img;
   }
   .site-header__title-col {
@@ -206,9 +251,9 @@ header {
     @extend .p-0;
   }
   .site-header__title {
-    font-family: $font-family-base;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: $font-family-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
     color: $white;
     margin-bottom: 0;
     letter-spacing: 0.01em;
@@ -222,7 +267,7 @@ header {
     @extend .col-md-4;
   }
   .site-header__tagline {
-    font-size: 1rem;
+    font-size: $font-size-base;
     color: $secondary;
     font-style: italic;
     margin-bottom: 0;
@@ -244,17 +289,17 @@ header {
   }
   @media (max-width: 576px) {
     .site-header__title {
-      font-size: 1.1rem;
+      font-size: $font-size-sm;
     }
     .site-header__logo-img {
-      max-width: 36px;
-      max-height: 36px;
+      max-width: $size-logo-sm;
+      max-height: $size-logo-sm;
     }
     .site-header__tagline {
-      font-size: 0.95rem;
+      font-size: $font-size-sm;
     }
     .site-header__navbar {
-      border-radius: 0 0 0.75rem 0.75rem;
+      border-radius: 0 0 $card-radius-sm $card-radius-sm;
     }
   }
 }
@@ -269,48 +314,48 @@ header {
   .col-auto {
     @extend .d-flex;
     @extend .align-items-center;
-    padding-right: 0.5rem;
+    padding-right: $spacing-sm;
   }
   .col {
     @extend .d-flex;
     @extend .flex-column;
     @extend .align-items-start;
-    padding-left: 0.5rem;
+    padding-left: $spacing-sm;
   }
   img {
-    max-width: 48px;
-    max-height: 48px;
-    border-radius: 50%;
+    max-width: $size-logo;
+    max-height: $size-logo;
+    border-radius: $logo-radius;
     box-shadow: 0 2px 8px $box-shadow-img;
   }
   h1 {
-    font-family: $font-family-base;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: $font-family-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
     color: $white;
     margin-bottom: 0;
     letter-spacing: 0.01em;
     text-shadow: 0 1px 4px $box-shadow-dark;
   }
   #tagline, .site-header__tagline {
-    font-size: 1rem;
+    font-size: $font-size-base;
     color: $secondary;
     font-style: italic;
-    margin-top: 0.25rem;
+    margin-top: $spacing-xs;
     margin-bottom: 0;
     width: 100%;
     @extend .text-wrap;
   }
   @media (max-width: 576px) {
     img {
-      max-width: 36px;
-      max-height: 36px;
+      max-width: $size-logo-sm;
+      max-height: $size-logo-sm;
     }
     h1 {
-      font-size: 1.1rem;
+      font-size: $font-size-sm;
     }
     #tagline, .site-header__tagline {
-      font-size: 0.95rem;
+      font-size: $font-size-sm;
     }
   }
 }
@@ -331,9 +376,9 @@ header {
   transform: translateY(-4px) scale(1.01);
 }
 .product-card-img {
-  max-width: 72px;
-  max-height: 72px;
-  border-radius: 0.75rem;
+  max-width: $size-card-img;
+  max-height: $size-card-img;
+  border-radius: $img-radius;
   background: $gray-100;
   object-fit: contain;
   box-shadow: 0 2px 8px $box-shadow-img;
@@ -352,32 +397,32 @@ header {
   @extend .col-10;
 }
 .product-card-title {
-  font-family: $font-family-base;
+  font-family: $font-family-heading;
   font-size: $font-size-card-title;
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
   color: $primary;
-  margin-bottom: 0.25rem;
+  margin-bottom: $spacing-xs;
 }
 .product-card-title-main {
   @extend .card-title;
   @extend .product-card-title;
 }
 .product-card-tagline {
-  font-size: 1.1rem;
+  font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
-  margin-bottom: 0.5rem;
+  margin-bottom: $spacing-sm;
 }
 .product-card-description {
   color: $body-color;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: $font-size-base;
+  margin-bottom: $spacing-lg;
 }
 .product-card-btn {
   border-radius: 2rem;
-  font-weight: 500;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
+  font-weight: $font-weight-medium;
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-base;
   background: $primary;
   color: $white;
   box-shadow: 0 2px 8px $box-shadow-dark;
@@ -438,7 +483,7 @@ header {
   @extend .flex-column;
   @extend .align-items-center;
   @extend .mw-100;
-  max-width: 900px;
+  max-width: $container-max-width;
 }
 .entrepreneur-metrics-card {
   @include reusable-card;
@@ -449,9 +494,9 @@ header {
   @extend .w-100;
 }
 .entrepreneur-metrics-title {
-  font-family: $font-family-base;
+  font-family: $font-family-heading;
   font-size: $font-size-xl;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $primary;
   letter-spacing: 0.01em;
   @extend .text-center;
@@ -461,7 +506,7 @@ header {
   font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   @extend .text-center;
   @extend .mb-4;
 }
@@ -471,9 +516,9 @@ header {
 }
 .metrics-table {
   background: $gray-100;
-  border-radius: 0.75rem;
+  border-radius: $card-radius-sm;
   overflow: hidden;
-  font-size: 1.05rem;
+  font-size: $font-size-table;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -481,8 +526,8 @@ header {
 .metrics-table-head th {
   background: $primary;
   color: $white;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-lg;
   @extend .text-center;
 }
 .metrics-table th, .metrics-table td {
@@ -492,7 +537,7 @@ header {
   @extend .px-4;
   border-top: none;
   border-bottom: 1px solid $gray-100;
-  font-size: 1.05rem;
+  font-size: $font-size-table;
 }
 .metrics-table tbody tr:last-child td {
   border-bottom: none;
@@ -507,30 +552,30 @@ header {
 // Startup Section Styles
 .startup-section {
   @include reusable-section;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
   @media (max-width: 576px) {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0.75rem;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-radius: $card-radius-sm;
   }
 }
 
 .startup-container {
-  max-width: 900px;
+  max-width: $size-container-max;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
 }
 
 .startup-title {
-  font-family: $font-family-base;
+  font-family: $font-family-heading;
   font-size: $font-size-section-title;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $primary;
   letter-spacing: 0.01em;
-  margin-bottom: 1.5rem;
+  margin-bottom: $spacing-lg;
   text-align: center;
 }
 
@@ -548,7 +593,7 @@ header {
 }
 
 .startup-table-wrapper {
-  border-radius: 1.25rem;
+  border-radius: $card-radius-sm;
   overflow: hidden;
   box-shadow: 0 2px 16px $box-shadow-light;
   background: $white;
@@ -565,8 +610,8 @@ header {
 .startup-table-head th {
   background: $primary;
   color: $white;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
   border: none;
   text-align: center;
 }
@@ -576,7 +621,7 @@ header {
   padding: 1.15rem 1.25rem;
   border-top: none;
   border-bottom: 1px solid $gray-100;
-  font-size: 1.05rem;
+  font-size: $font-size-table;
 }
 
 .startup-table tbody tr:last-child td {
@@ -593,39 +638,39 @@ header {
 
 // Highlight classes for table span elements
 .startup-highlight-success {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $success !important;
 }
 .startup-highlight-primary {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $primary !important;
 }
 .startup-highlight-warning {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $warning !important;
 }
 .startup-highlight-info {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $info !important;
 }
 .startup-highlight-danger {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $danger !important;
 }
 .startup-highlight-secondary {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $secondary !important;
 }
 
 // About Page Styles
 .about-page-container {
   @include reusable-section;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
   @media (max-width: 576px) {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0.75rem;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-radius: $card-radius-sm;
   }
 }
 .about-row {
@@ -642,7 +687,7 @@ header {
   @extend .flex-column;
   @extend .align-items-center;
   @extend .mw-100;
-  max-width: 900px;
+  max-width: $container-max-width;
 }
 .about-intro-card {
   @include reusable-card;
@@ -654,7 +699,7 @@ header {
 }
 .about-title {
   font-size: $font-size-section-title;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $primary;
   letter-spacing: 0.01em;
   @extend .text-center;
@@ -664,7 +709,7 @@ header {
   font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   @extend .text-center;
   @extend .mb-3;
 }
@@ -672,7 +717,7 @@ header {
   font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   @extend .mb-4;
   @extend .w-100;
 }
@@ -685,12 +730,12 @@ header {
   @extend .d-flex;
   @extend .flex-wrap;
   @extend .justify-content-center;
-  gap: 1.5rem;
+  gap: $spacing-lg;
 }
 .about-phase-col {
   @extend .flex-grow-1;
   @extend .mw-100;
-  max-width: 320px;
+  max-width: $size-phase-col-max;
   @extend .d-flex;
 }
 .about-phase-card {
@@ -707,7 +752,7 @@ header {
 }
 .about-phase-title {
   font-size: $font-size-lg;
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
   color: $primary;
   @extend .mb-2;
   @extend .text-center;
@@ -730,87 +775,87 @@ header {
 }
 @media (max-width: 576px) {
   .about-title {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-lead, .about-summary {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-phase-title {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-phase-desc {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-intro-card, .about-phase-card {
-    padding: 1rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-md $spacing-sm;
+    border-radius: $card-radius-sm;
   }
   .about-page-container {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0.75rem;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-radius: $card-radius-sm;
   }
 }
 
 // Business Infinity Section
 .business-infinity-section {
   @include reusable-section;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
   @media (max-width: 576px) {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0.75rem;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-radius: $card-radius-sm;
   }
 
   .business-infinity-title {
     font-size: $font-size-section-title;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: $primary;
     letter-spacing: 0.01em;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: $spacing-xl;
   }
   .business-infinity-tagline {
     font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: $spacing-xl;
   }
   .business-infinity-linkedin {
     text-align: end;
-    margin-bottom: 2rem;
+    margin-bottom: $spacing-lg;
   }
   .business-infinity-card {
     @include reusable-card;
-    margin-bottom: 1.5rem;
-    padding: 1.5rem 1rem;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-lg $spacing-md;
     @media (max-width: 576px) {
-      padding: 1rem 0.5rem;
-      border-radius: 0.75rem;
+      padding: $spacing-md $spacing-sm;
+      border-radius: $card-radius-sm;
     }
   }
   .business-infinity-card-title {
     font-size: $font-size-lg;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     color: $primary;
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-sm;
   }
   .business-infinity-card-text {
     color: $body-color;
     font-size: $font-size-base;
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-sm;
   }
   .business-infinity-conclusion {
     text-align: center;
     margin-top: 2.5rem;
     .business-infinity-card-title {
-      margin-bottom: 1rem;
+      margin-bottom: $spacing-md;
     }
     .fw-bold {
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
   }
 }
@@ -818,48 +863,48 @@ header {
 // Privacy Policy Section Styles
 .privacy-policy-section {
   @include reusable-section;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
   @media (max-width: 576px) {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0.75rem;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-radius: $card-radius-sm;
   }
   .privacy-policy-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: $spacing-lg;
   }
   .privacy-policy-card {
     @include reusable-card;
-    padding: 1.5rem 1rem;
+    padding: $spacing-lg $spacing-md;
     margin-bottom: 0;
     @media (max-width: 576px) {
-      padding: 1rem 0.5rem;
-      border-radius: 0.75rem;
+      padding: $spacing-md $spacing-sm;
+      border-radius: $card-radius-sm;
     }
   }
   .privacy-policy-title {
     font-size: $font-size-section-title;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: $primary;
     letter-spacing: 0.01em;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
   }
   .privacy-policy-lead {
     font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     text-align: center;
     margin-bottom: 0;
   }
   .privacy-policy-card-title {
     font-size: $font-size-lg;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     color: $primary;
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-sm;
     text-align: left;
   }
   .privacy-policy-card-text {
@@ -869,7 +914,7 @@ header {
   }
   .privacy-policy-link {
     color: $primary;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     text-decoration: underline;
     &:hover {
       color: darken($primary, 8%);
@@ -881,11 +926,11 @@ header {
 // Agent Operating System Section
 .agent-os-section {
   @include reusable-section;
-  padding: 3rem 1rem;
-  margin: 2rem auto;
+  padding: $spacing-xl $spacing-md;
+  margin: $spacing-lg auto;
   @media (max-width: 576px) {
-    padding: 1.2rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-lg $spacing-sm;
+    border-radius: $card-radius-sm;
   }
 
   .agent-os-container {
@@ -904,7 +949,7 @@ header {
   }
   .agent-os-col {
     width: 100%;
-    max-width: 700px;
+    max-width: $size-agent-col-max;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -912,40 +957,40 @@ header {
   }
   .agent-os-card {
     @include reusable-card;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
     width: 100%;
   }
   .agent-os-card-body {
     padding: 2rem 1.5rem;
   }
   .agent-os-title {
-    font-family: $font-family-base;
+    font-family: $font-family-heading;
     font-size: $font-size-xl;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: $primary;
     letter-spacing: 0.01em;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
   }
   .agent-os-summary {
     font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     text-align: center;
     margin-bottom: 0;
   }
   @media (max-width: 576px) {
-    padding: 1.2rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-lg $spacing-sm;
+    border-radius: $card-radius-sm;
     .agent-os-card-body {
-      padding: 1rem 0.5rem;
+      padding: $spacing-md $spacing-sm;
     }
     .agent-os-title {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
     }
     .agent-os-summary {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
     }
   }
 }
@@ -953,11 +998,11 @@ header {
 // Purpose Driven Agent Section
 .purpose-driven-agent-section {
   @include reusable-section;
-  padding: 3rem 1rem;
-  margin: 2rem auto;
+  padding: $spacing-xl $spacing-md;
+  margin: $spacing-lg auto;
   @media (max-width: 576px) {
-    padding: 1.2rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-lg $spacing-sm;
+    border-radius: $card-radius-sm;
   }
 
   .purpose-driven-agent-container {
@@ -976,7 +1021,7 @@ header {
   }
   .purpose-driven-agent-col {
     width: 100%;
-    max-width: 700px;
+    max-width: $size-agent-col-max;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -984,40 +1029,40 @@ header {
   }
   .purpose-driven-agent-card {
     @include reusable-card;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
     width: 100%;
   }
   .purpose-driven-agent-card-body {
     padding: 2rem 1.5rem;
   }
   .purpose-driven-agent-title {
-    font-family: $font-family-base;
+    font-family: $font-family-heading;
     font-size: $font-size-xl;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: $primary;
     letter-spacing: 0.01em;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
   }
   .purpose-driven-agent-summary {
     font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     text-align: center;
     margin-bottom: 0;
   }
   @media (max-width: 576px) {
-    padding: 1.2rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-lg $spacing-sm;
+    border-radius: $card-radius-sm;
     .purpose-driven-agent-card-body {
-      padding: 1rem 0.5rem;
+      padding: $spacing-md $spacing-sm;
     }
     .purpose-driven-agent-title {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
     }
     .purpose-driven-agent-summary {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
     }
   }
 }
@@ -1025,11 +1070,11 @@ header {
 // GitHub Agent Section
 .github-agent-section {
   @include reusable-section;
-  padding: 3rem 1rem;
-  margin: 2rem auto;
+  padding: $spacing-xl $spacing-md;
+  margin: $spacing-lg auto;
   @media (max-width: 576px) {
-    padding: 1.2rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-lg $spacing-sm;
+    border-radius: $card-radius-sm;
   }
 
   .github-agent-container {
@@ -1048,7 +1093,7 @@ header {
   }
   .github-agent-col {
     width: 100%;
-    max-width: 700px;
+    max-width: $size-agent-col-max;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1056,40 +1101,40 @@ header {
   }
   .github-agent-card {
     @include reusable-card;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
     width: 100%;
   }
   .github-agent-card-body {
     padding: 2rem 1.5rem;
   }
   .github-agent-title {
-    font-family: $font-family-base;
+    font-family: $font-family-heading;
     font-size: $font-size-xl;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: $primary;
     letter-spacing: 0.01em;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
   }
   .github-agent-summary {
     font-size: $font-size-lg;
     color: $secondary;
     font-style: italic;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     text-align: center;
     margin-bottom: 0;
   }
   @media (max-width: 576px) {
-    padding: 1.2rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-lg $spacing-sm;
+    border-radius: $card-radius-sm;
     .github-agent-card-body {
-      padding: 1rem 0.5rem;
+      padding: $spacing-md $spacing-sm;
     }
     .github-agent-title {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
     }
     .github-agent-summary {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
     }
   }
 }
@@ -1118,9 +1163,9 @@ header {
 .linkedin-signin-btn {
   @extend .btn;
   @extend .btn-light;
-  border-radius: 0.5rem;
-  padding: 0.25rem 1.5rem;
-  font-weight: 500;
+  border-radius: $card-radius-sm;
+  padding: $spacing-xs $spacing-lg;
+  font-weight: $font-weight-medium;
   box-shadow: 0 2px 8px $box-shadow-dark;
   display: inline-flex;
   align-items: center;
@@ -1133,7 +1178,7 @@ header {
     background: darken($primary, 4%);
   }
   .default-img, .hover-img, .active-img {
-    height: 32px;
+    height: $size-linkedin-img;
     width: auto;
     margin: 0;
     padding: 0;
@@ -1192,12 +1237,12 @@ header {
   &__copyright {
     @extend .mb-0;
     @extend .fw-light;
-    font-size: 1rem;
+    font-size: $font-size-base;
   }
   @media (max-width: 576px) {
     .footer-section__row {
       flex-direction: column;
-      gap: 0.5rem;
+      gap: $spacing-xs;
     }
     .footer-section__col {
       width: 100%;
@@ -1208,65 +1253,65 @@ header {
 
 @media (max-width: 576px) {
   .product-card-img {
-    max-width: 56px;
-    max-height: 56px;
+    max-width: $size-card-img-sm;
+    max-height: $size-card-img-sm;
   }
   .product-card-title {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .entrepreneur-metrics-card {
-    padding: 1rem 0.5rem;
+    padding: $spacing-md $spacing-sm;
   }
   .entrepreneur-metrics-title {
-    font-size: $font-size-small;
-    margin-bottom: 1rem;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-md;
   }
   .entrepreneur-metrics-lead {
-    font-size: $font-size-small;
-    margin-bottom: 1rem;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-md;
   }
   .metrics-table th, .metrics-table td {
-    padding: 0.5rem 0.5rem;
-    font-size: $font-size-small;
+    padding: $spacing-xs $spacing-xs;
+    font-size: $font-size-sm;
   }
   .startup-title {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .startup-description {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .startup-table td, .startup-table th {
-    padding: 0.7rem 0.5rem;
-    font-size: $font-size-small;
+    padding: $spacing-sm $spacing-xs;
+    font-size: $font-size-sm;
   }
   .startup-section {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0.75rem;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-radius: $card-radius-sm;
   }
   .startup-table-wrapper {
-    border-radius: 0.75rem;
+    border-radius: $card-radius-sm;
   }
   .about-title {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-lead, .about-summary {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-phase-title {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-phase-desc {
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
   .about-intro-card, .about-phase-card {
-    padding: 1rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: $spacing-md $spacing-sm;
+    border-radius: $card-radius-sm;
   }
   .about-page-container {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0.75rem;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-radius: $card-radius-sm;
   }
 }
 
@@ -1290,7 +1335,7 @@ header {
   @extend .fw-bold;
   @extend .text-primary;
   @extend .mb-3;
-  font-family: $font-family-base;
+  font-family: $font-family-heading;
   font-size: $font-size-xl;
 }
 .typography-lead {
@@ -1311,7 +1356,7 @@ header {
   @extend .btn-primary;
   @extend .btn-lg;
   border-radius: 2rem;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   background: $primary;
   color: $white;
   transition: background 0.2s;
