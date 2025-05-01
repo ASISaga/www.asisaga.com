@@ -397,11 +397,11 @@ header {
     margin-bottom: 2rem;
   }
   .business-infinity-card {
-    @extend .card;
+    // Bootstrap card styles applied manually since @extend .card is not available
+    background-color: $body-bg !important;
+    border: none;
     border-radius: 1.25rem;
     box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-    background: $body-bg !important;
-    border: none;
     overflow: hidden;
     margin-bottom: 1.5rem;
     padding: 1.5rem 1rem;
@@ -431,6 +431,320 @@ header {
     }
     .fw-bold {
       font-weight: 700;
+    }
+  }
+}
+
+// Privacy Policy Section Styles
+.privacy-policy-section {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px $box-shadow-light;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 576px) {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-radius: 0.75rem;
+  }
+  .privacy-policy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .privacy-policy-card {
+    background-color: $body-bg !important;
+    border: none;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+    overflow: hidden;
+    padding: 1.5rem 1rem;
+    margin-bottom: 0;
+    @media (max-width: 576px) {
+      padding: 1rem 0.5rem;
+      border-radius: 0.75rem;
+    }
+  }
+  .privacy-policy-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: $primary;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .privacy-policy-lead {
+    font-size: 1.15rem;
+    color: $secondary;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .privacy-policy-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  .privacy-policy-card-text {
+    color: $body-color;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .privacy-policy-link {
+    color: $primary;
+    font-weight: 600;
+    text-decoration: underline;
+    &:hover {
+      color: darken($primary, 8%);
+      text-decoration: none;
+    }
+  }
+}
+
+// Agent Operating System Section
+.agent-os-section {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  padding: 3rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px $box-shadow-light;
+  max-width: 900px;
+  margin: 2rem auto;
+
+  .agent-os-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .agent-os-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .agent-os-col {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .agent-os-card {
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+    background: $body-bg !important;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .agent-os-card-body {
+    padding: 2rem 1.5rem;
+  }
+  .agent-os-title {
+    font-family: $font-family-base;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    @extend .mb-3;
+    @extend .text-primary;
+  }
+  .agent-os-summary {
+    font-size: 1.15rem;
+    color: $secondary;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+    @extend .text-secondary;
+  }
+  @media (max-width: 576px) {
+    padding: 1.2rem 0.5rem;
+    border-radius: 0.75rem;
+    .agent-os-card-body {
+      padding: 1rem 0.5rem;
+    }
+    .agent-os-title {
+      font-size: 1.3rem;
+    }
+    .agent-os-summary {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Purpose Driven Agent Section
+.purpose-driven-agent-section {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  padding: 3rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px $box-shadow-light;
+  max-width: 900px;
+  margin: 2rem auto;
+
+  .purpose-driven-agent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .purpose-driven-agent-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .purpose-driven-agent-col {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .purpose-driven-agent-card {
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+    background: $body-bg !important;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .purpose-driven-agent-card-body {
+    padding: 2rem 1.5rem;
+  }
+  .purpose-driven-agent-title {
+    font-family: $font-family-base;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    @extend .mb-3;
+    @extend .text-primary;
+  }
+  .purpose-driven-agent-summary {
+    font-size: 1.15rem;
+    color: $secondary;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+    @extend .text-secondary;
+  }
+  @media (max-width: 576px) {
+    padding: 1.2rem 0.5rem;
+    border-radius: 0.75rem;
+    .purpose-driven-agent-card-body {
+      padding: 1rem 0.5rem;
+    }
+    .purpose-driven-agent-title {
+      font-size: 1.3rem;
+    }
+    .purpose-driven-agent-summary {
+      font-size: 1rem;
+    }
+  }
+}
+
+// GitHub Agent Section
+.github-agent-section {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  padding: 3rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px $box-shadow-light;
+  max-width: 900px;
+  margin: 2rem auto;
+
+  .github-agent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .github-agent-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .github-agent-col {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .github-agent-card {
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+    background: $body-bg !important;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .github-agent-card-body {
+    padding: 2rem 1.5rem;
+  }
+  .github-agent-title {
+    font-family: $font-family-base;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    @extend .mb-3;
+    @extend .text-primary;
+  }
+  .github-agent-summary {
+    font-size: 1.15rem;
+    color: $secondary;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+    @extend .text-secondary;
+  }
+  @media (max-width: 576px) {
+    padding: 1.2rem 0.5rem;
+    border-radius: 0.75rem;
+    .github-agent-card-body {
+      padding: 1rem 0.5rem;
+    }
+    .github-agent-title {
+      font-size: 1.3rem;
+    }
+    .github-agent-summary {
+      font-size: 1rem;
     }
   }
 }
@@ -497,6 +811,92 @@ header {
     padding-bottom: 1.2rem;
     border-radius: 0.75rem;
   }
+}
+
+// === Utility Classes for Consistency and Bootstrap Encapsulation ===
+
+// Consistent font and color for body
+.body-consistent {
+  font-family: $font-family-base;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
+// Spacing utilities for consistent margins and paddings
+.spacing-section {
+  @extend .mb-4;
+  @extend .p-3;
+}
+
+// Typography utilities for headings and paragraphs
+.typography-heading {
+  @extend .fw-bold;
+  @extend .text-primary;
+  @extend .mb-3;
+}
+.typography-lead {
+  @extend .lead;
+  @extend .text-secondary;
+  @extend .mb-2;
+}
+.typography-paragraph {
+  @extend .text-body;
+  @extend .mb-2;
+}
+
+// Unified button style
+.button-unified {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  border-radius: 2rem;
+  font-weight: 500;
+  background: $primary;
+  color: $white;
+  transition: background 0.2s;
+  &:hover {
+    background: darken($primary, 8%);
+    color: $white;
+  }
+}
+
+// Responsive container for main content
+.main-content-container {
+  @extend .container-fluid;
+  @extend .mt-5;
+}
+
+// Card grid row
+.card-row {
+  @extend .row;
+  @extend .mb-4;
+}
+
+// Card column
+.card-col {
+  @extend .col-md-6;
+}
+
+// Main card column (for centering content)
+.card-col-main {
+  @extend .col-lg-10;
+  @extend .mx-auto;
+}
+
+// Section title wrapper
+.section-title {
+  @extend .text-center;
+  @extend .mb-5;
+}
+
+// Call to action row
+.cta-row {
+  @extend .row;
+  @extend .mt-5;
+}
+.cta-col {
+  @extend .col;
+  @extend .text-center;
 }
 
 // Import Bootstrap at the end

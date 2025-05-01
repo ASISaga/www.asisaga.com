@@ -4,44 +4,39 @@ title: ASI Saga
 ---
 
 <!-- Main Content -->
-<div class="container-fluid mt-5">
-    <!-- Bootstrap container-fluid for full-width layout with top margin -->
-    <div class="row justify-content-center">
-        <!-- Center align the content -->
-        <div class="col-lg-10">
-            <!-- Bootstrap column with a larger width for better layout -->
-
+<div class="main-content-container">
+    <div class="card-row">
+        <div class="card-col-main">
             <!-- Section Title -->
-            <div class="text-center mb-5">
-                <h1 class="display-4 text-primary">Welcome to ASI Saga</h1>
-                <p class="lead text-secondary">Explore our innovative agents designed to revolutionize your workflow.</p>
+            <div class="section-title">
+                <h1 class="typography-heading">Welcome to ASI Saga</h1>
+                <p class="typography-lead">Explore our innovative agents designed to revolutionize your workflow.</p>
             </div>
 
             <!-- First row of product cards -->
-            <div class="row mb-4">
-                <!-- Add margin-bottom for spacing between rows -->
-                <div class="col-md-6">
-                    {% include product-card.html product="github_agent" %} <!-- Includes the product card for GitHub Agent -->
+            <div class="card-row">
+                <div class="card-col">
+                    {% include product-card.html product="github_agent" %}
                 </div>
-                <div class="col-md-6">
-                    {% include product-card.html product="purpose_driven_agent" %} <!-- Includes the product card for Purpose-Driven Agent -->
+                <div class="card-col">
+                    {% include product-card.html product="purpose_driven_agent" %}
                 </div>
             </div>
 
             <!-- Second row of product cards -->
-            <div class="row">
-                <div class="col-md-6">
-                    {% include product-card.html product="agent_operating_system" %} <!-- Includes the product card for Agent Operating System -->
+            <div class="card-row">
+                <div class="card-col">
+                    {% include product-card.html product="agent_operating_system" %}
                 </div>
-                <div class="col-md-6">
-                    {% include product-card.html product="business_infinity" %} <!-- Includes the product card for Business Infinity -->
+                <div class="card-col">
+                    {% include product-card.html product="business_infinity" %}
                 </div>
             </div>
 
             <!-- Call to Action Section -->
-            <div class="row mt-5">
-                <div class="col text-center">
-                    <a href="/about/" class="btn btn-primary btn-lg">Learn More About Us</a>
+            <div class="cta-row">
+                <div class="cta-col">
+                    <a href="/about/" class="button-unified">Learn More About Us</a>
                 </div>
             </div>
         </div>
