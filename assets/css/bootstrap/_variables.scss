@@ -1,0 +1,38 @@
+// Bootstrap variables (minimal set for color, font, and spacing)
+$primary: #007bff !default;
+$secondary: #6c757d !default;
+$success: #198754 !default;
+$info: #0dcaf0 !default;
+$warning: #ffc107 !default;
+$danger: #dc3545 !default;
+$white: #fff !default;
+$black: #000 !default;
+$gray-100: #f8f9fa !default;
+$body-bg: #fff !default;
+$body-color: #212529 !default;
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+// ...add more variables as needed for your customizations...
+
+// Bootstrap color and font variables
+$primary: #007bff;
+$secondary: #6c757d;
+$body-bg: #fff;
+$body-color: #212529;
+$gray-100: #f8f9fa;
+$white: #fff;
+$black: #000;
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Add missing Bootstrap color variables for highlight classes
+$success: #198754;
+$warning: #ffc107;
+$info: #0dcaf0;
+$danger: #dc3545;
+
+// Custom variables
+$header-bg: rgb(55, 53, 54);
+$box-shadow-light: rgba(55, 53, 54, 0.12);
+$box-shadow-dark: rgba(0,0,0,0.08);
+$box-shadow-hover-light: rgba(55, 53, 54, 0.18);
+$box-shadow-hover-dark: rgba(0,0,0,0.12);
+$box-shadow-img: rgba(0,0,0,0.04);

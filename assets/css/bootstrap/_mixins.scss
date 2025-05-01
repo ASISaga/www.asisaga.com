@@ -1,0 +1,11 @@
+// Bootstrap mixins (minimal set for responsive and utility classes)
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+@mixin transition($transition...) {
+  transition: $transition;
+}
+// ...add more mixins as needed for your customizations...

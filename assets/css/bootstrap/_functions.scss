@@ -1,0 +1,5 @@
+// Bootstrap functions (minimal set)
+@function rgba($color, $alpha) {
+  @return unquote("rgba(#{red($color)}, #{green($color)}, #{blue($color)}, #{$alpha})");
+}
+// ...add more functions as needed for your customizations...

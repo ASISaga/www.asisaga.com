@@ -1,0 +1,10 @@
+// Bootstrap utilities (minimal set for spacing and typography)
+// Example utility generator for margin-bottom
+@mixin mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+// Example utility generator for padding
+@mixin p-3 {
+  padding: 1rem !important;
+}
+// ...add more utility mixins as needed for your customizations...
