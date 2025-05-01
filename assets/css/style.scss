@@ -5,25 +5,8 @@ dummy{
   display: none;  
 }
 
-// Core Bootstrap imports first
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-
-// Required for Bootstrap components
-@import "bootstrap/root";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-
-// Then component imports
-@import "bootstrap/containers";
-@import "bootstrap/navbar";
-@import "bootstrap/dropdown";
-@import "bootstrap/card";
-@import "bootstrap/grid";
-@import "bootstrap/buttons";
-@import "bootstrap/utilities"; // This includes all utilities including shadows
-@import "bootstrap/collapse"; // Ensure collapse is imported for @extend usage
+// Import all of Bootstrap's SCSS in one go
+@import "bootstrap/bootstrap";
 
 // Add missing Bootstrap color variables for highlight classes
 $success: #198754;
