@@ -257,7 +257,8 @@ header {
   }
   .col {
     @extend .d-flex;
-    @extend .align-items-center;
+    @extend .flex-column;
+    @extend .align-items-start;
     padding-left: 0.5rem;
   }
   img {
@@ -275,6 +276,15 @@ header {
     letter-spacing: 0.01em;
     text-shadow: 0 1px 4px $box-shadow-dark;
   }
+  #tagline, .site-header__tagline {
+    font-size: 1rem;
+    color: $secondary;
+    font-style: italic;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+    width: 100%;
+    @extend .text-wrap;
+  }
   @media (max-width: 576px) {
     img {
       max-width: 36px;
@@ -282,6 +292,9 @@ header {
     }
     h1 {
       font-size: 1.1rem;
+    }
+    #tagline, .site-header__tagline {
+      font-size: 0.95rem;
     }
   }
 }
