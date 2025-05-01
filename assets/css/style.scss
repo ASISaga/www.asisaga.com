@@ -4,35 +4,47 @@
 dummy {
   display: none;
 }
-$card-bg: #fff;
-$gray-100: #f8f9fa;
+
+// Bootstrap color and font variables
 $primary: #007bff;
 $secondary: #6c757d;
+$body-bg: #fff;
 $body-color: #212529;
-$headings-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$gray-100: #f8f9fa;
+$white: #fff;
+$black: #000;
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Custom variables
+$header-bg: rgb(55, 53, 54);
+$box-shadow-light: rgba(55, 53, 54, 0.12);
+$box-shadow-dark: rgba(0,0,0,0.08);
+$box-shadow-hover-light: rgba(55, 53, 54, 0.18);
+$box-shadow-hover-dark: rgba(0,0,0,0.12);
+$box-shadow-img: rgba(0,0,0,0.04);
 
 @import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
 
 header {
-  background-color: rgb(55, 53, 54);
-  color: white;
-  }
+  background-color: $header-bg;
+  color: $white;
+}
 
 .bg-primary {
-  background-color: rgb(55, 53, 54) !important;
+  background-color: $header-bg !important;
 }
 
 // Custom card styles for product cards
 .product-card {
   border-radius: 1.25rem;
-  box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
   transition: box-shadow 0.2s, transform 0.2s;
-  background: $card-bg !important;
+  background: $body-bg !important;
   border: none;
   overflow: hidden;
 }
 .product-card:hover {
-  box-shadow: 0 8px 32px rgba(55, 53, 54, 0.18), 0 3px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 32px $box-shadow-hover-light, 0 3px 12px $box-shadow-hover-dark;
   transform: translateY(-4px) scale(1.01);
 }
 .product-card-img {
@@ -41,10 +53,10 @@ header {
   border-radius: 0.75rem;
   background: $gray-100;
   object-fit: contain;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px $box-shadow-img;
 }
 .product-card-title {
-  font-family: $headings-font-family;
+  font-family: $font-family-base;
   font-size: 1.35rem;
   font-weight: 600;
   color: $primary;
@@ -67,32 +79,32 @@ header {
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
   background: $primary;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(55,53,54,0.08);
+  color: $white;
+  box-shadow: 0 2px 8px $box-shadow-dark;
   transition: background 0.2s;
 }
 .product-card-btn:hover {
   background: darken($primary, 8%);
-  color: #fff;
+  color: $white;
 }
 
 // Entrepreneur Metrics Section
 .entrepreneur-metrics-container {
-  font-family: $headings-font-family;
+  font-family: $font-family-base;
   color: $body-color;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
 .entrepreneur-metrics-card {
   border-radius: 1.25rem;
-  box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
-  background: $card-bg !important;
+  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+  background: $body-bg !important;
   border: none;
   overflow: hidden;
   padding: 2rem 1.5rem;
 }
 .entrepreneur-metrics-title {
-  font-family: $headings-font-family;
+  font-family: $font-family-base;
   font-size: 2rem;
   font-weight: 700;
   color: $primary;
@@ -116,7 +128,7 @@ header {
 }
 .metrics-table th {
   background: $primary;
-  color: #fff;
+  color: $white;
   font-weight: 600;
   font-size: 1.1rem;
 }
