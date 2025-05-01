@@ -253,6 +253,73 @@ header {
   color: $secondary !important;
 }
 
+// About Page Styles
+.about-page-container {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px $box-shadow-light;
+}
+
+.about-intro-card {
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+  background: $body-bg !important;
+  border: none;
+  overflow: hidden;
+}
+
+.about-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: $primary;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  color: $secondary;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
+}
+
+.about-summary {
+  font-size: 1.1rem;
+  color: $secondary;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.about-phase-card {
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+  background: $white !important;
+  border: none;
+  overflow: hidden;
+  padding: 1.5rem 1rem;
+  height: 100%;
+}
+
+.about-phase-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: $primary;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.about-phase-desc {
+  color: $body-color;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
 @media (max-width: 576px) {
   .product-card-img {
     max-width: 56px;
@@ -287,6 +354,27 @@ header {
     border-radius: 0.75rem;
   }
   .startup-table-wrapper {
+    border-radius: 0.75rem;
+  }
+  .about-title {
+    font-size: 1.3rem;
+  }
+  .about-lead, .about-summary {
+    font-size: 1rem;
+  }
+  .about-phase-title {
+    font-size: 1rem;
+  }
+  .about-phase-desc {
+    font-size: 0.98rem;
+  }
+  .about-intro-card, .about-phase-card {
+    padding: 1rem 0.5rem;
+    border-radius: 0.75rem;
+  }
+  .about-page-container {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
     border-radius: 0.75rem;
   }
 }
