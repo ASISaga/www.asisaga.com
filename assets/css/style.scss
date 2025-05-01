@@ -23,6 +23,7 @@ dummy{
 @import "bootstrap/grid";
 @import "bootstrap/buttons";
 @import "bootstrap/utilities";
+@import "bootstrap/utilities/shadows"; // Added shadows utility
 
 // Add missing Bootstrap color variables for highlight classes
 $success: #198754;
