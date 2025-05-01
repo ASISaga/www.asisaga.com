@@ -43,6 +43,26 @@ header {
   background-color: $header-bg !important;
 }
 
+// === Reusable Card and Section Mixins ===
+@mixin reusable-card {
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+  background: $body-bg !important;
+  border: none;
+  overflow: hidden;
+}
+
+@mixin reusable-section {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px $box-shadow-light;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // === Navbar Main Custom Class (Bootstrap Encapsulated) ===
 .navbar-main {
   font-family: $font-family-base;
@@ -228,8 +248,7 @@ header {
 
 // Custom card styles for product cards
 .product-card {
-  border-radius: 1.25rem;
-  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+  @include reusable-card;
   transition: box-shadow 0.2s, transform 0.2s;
   background: $body-bg !important;
   border: none;
@@ -348,11 +367,7 @@ header {
   align-items: center;
 }
 .entrepreneur-metrics-card {
-  border-radius: 1.25rem;
-  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-  background: $body-bg !important;
-  border: none;
-  overflow: hidden;
+  @include reusable-card;
   padding: 2rem 1.5rem;
   width: 100%;
 }
@@ -416,11 +431,14 @@ header {
 
 // Startup Section Styles
 .startup-section {
-  background: linear-gradient(135deg, lighten($primary, 45%) 0%, $white 100%);
+  @include reusable-section;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 32px $box-shadow-light;
+  @media (max-width: 576px) {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-radius: 0.75rem;
+  }
 }
 
 .startup-container {
@@ -526,13 +544,14 @@ header {
 
 // About Page Styles
 .about-page-container {
-  font-family: $font-family-base;
-  color: $body-color;
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  @include reusable-section;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 32px $box-shadow-light;
+  @media (max-width: 576px) {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-radius: 0.75rem;
+  }
 }
 .about-row {
   display: flex;
@@ -547,11 +566,7 @@ header {
   align-items: center;
 }
 .about-intro-card {
-  border-radius: 1.25rem;
-  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-  background: $body-bg !important;
-  border: none;
-  overflow: hidden;
+  @include reusable-card;
   margin-bottom: 2rem;
   width: 100%;
 }
@@ -595,11 +610,7 @@ header {
   display: flex;
 }
 .about-phase-card {
-  border-radius: 1.25rem;
-  box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-  background: $white !important;
-  border: none;
-  overflow: hidden;
+  @include reusable-card;
   padding: 1.5rem 1rem;
   height: 100%;
   width: 100%;
@@ -658,16 +669,9 @@ header {
 
 // Business Infinity Section
 .business-infinity-section {
-  font-family: $font-family-base;
-  color: $body-color;
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  @include reusable-section;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 32px $box-shadow-light;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
   @media (max-width: 576px) {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
@@ -695,12 +699,7 @@ header {
     margin-bottom: 2rem;
   }
   .business-infinity-card {
-    // Bootstrap card styles applied manually since @extend .card is not available
-    background-color: $body-bg !important;
-    border: none;
-    border-radius: 1.25rem;
-    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-    overflow: hidden;
+    @include reusable-card;
     margin-bottom: 1.5rem;
     padding: 1.5rem 1rem;
     @media (max-width: 576px) {
@@ -733,16 +732,9 @@ header {
 
 // Privacy Policy Section Styles
 .privacy-policy-section {
-  font-family: $font-family-base;
-  color: $body-color;
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  @include reusable-section;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 32px $box-shadow-light;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
   @media (max-width: 576px) {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
@@ -754,11 +746,7 @@ header {
     gap: 1.5rem;
   }
   .privacy-policy-card {
-    background-color: $body-bg !important;
-    border: none;
-    border-radius: 1.25rem;
-    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-    overflow: hidden;
+    @include reusable-card;
     padding: 1.5rem 1rem;
     margin-bottom: 0;
     @media (max-width: 576px) {
@@ -807,14 +795,13 @@ header {
 
 // Agent Operating System Section
 .agent-os-section {
-  font-family: $font-family-base;
-  color: $body-color;
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  @include reusable-section;
   padding: 3rem 1rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 32px $box-shadow-light;
-  max-width: 900px;
   margin: 2rem auto;
+  @media (max-width: 576px) {
+    padding: 1.2rem 0.5rem;
+    border-radius: 0.75rem;
+  }
 
   .agent-os-container {
     display: flex;
@@ -839,11 +826,7 @@ header {
     padding: 0;
   }
   .agent-os-card {
-    border-radius: 1.25rem;
-    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-    background: $body-bg !important;
-    border: none;
-    overflow: hidden;
+    @include reusable-card;
     margin-bottom: 1.5rem;
     width: 100%;
   }
@@ -884,14 +867,13 @@ header {
 
 // Purpose Driven Agent Section
 .purpose-driven-agent-section {
-  font-family: $font-family-base;
-  color: $body-color;
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  @include reusable-section;
   padding: 3rem 1rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 32px $box-shadow-light;
-  max-width: 900px;
   margin: 2rem auto;
+  @media (max-width: 576px) {
+    padding: 1.2rem 0.5rem;
+    border-radius: 0.75rem;
+  }
 
   .purpose-driven-agent-container {
     display: flex;
@@ -916,11 +898,7 @@ header {
     padding: 0;
   }
   .purpose-driven-agent-card {
-    border-radius: 1.25rem;
-    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-    background: $body-bg !important;
-    border: none;
-    overflow: hidden;
+    @include reusable-card;
     margin-bottom: 1.5rem;
     width: 100%;
   }
@@ -961,14 +939,13 @@ header {
 
 // GitHub Agent Section
 .github-agent-section {
-  font-family: $font-family-base;
-  color: $body-color;
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  @include reusable-section;
   padding: 3rem 1rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 32px $box-shadow-light;
-  max-width: 900px;
   margin: 2rem auto;
+  @media (max-width: 576px) {
+    padding: 1.2rem 0.5rem;
+    border-radius: 0.75rem;
+  }
 
   .github-agent-container {
     display: flex;
@@ -993,11 +970,7 @@ header {
     padding: 0;
   }
   .github-agent-card {
-    border-radius: 1.25rem;
-    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
-    background: $body-bg !important;
-    border: none;
-    overflow: hidden;
+    @include reusable-card;
     margin-bottom: 1.5rem;
     width: 100%;
   }
