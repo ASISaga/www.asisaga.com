@@ -358,6 +358,86 @@ header {
   text-align: center;
 }
 
+// Business Infinity Section
+.business-infinity-section {
+  font-family: $font-family-base;
+  color: $body-color;
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px $box-shadow-light;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 576px) {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-radius: 0.75rem;
+  }
+
+  .business-infinity-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: $primary;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-bottom: 2rem;
+    @extend .mb-5;
+  }
+  .business-infinity-tagline {
+    font-size: 1.15rem;
+    color: $secondary;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    @extend .fw-bold;
+    @extend .mb-5;
+  }
+  .business-infinity-linkedin {
+    text-align: end;
+    margin-bottom: 2rem;
+  }
+  .business-infinity-card {
+    @extend .card;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
+    background: $body-bg !important;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1rem;
+    @media (max-width: 576px) {
+      padding: 1rem 0.5rem;
+      border-radius: 0.75rem;
+    }
+  }
+  .business-infinity-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 0.5rem;
+    @extend .h4;
+    @extend .text-primary;
+  }
+  .business-infinity-card-text {
+    color: $body-color;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .business-infinity-conclusion {
+    text-align: center;
+    margin-top: 2.5rem;
+    .business-infinity-card-title {
+      margin-bottom: 1rem;
+    }
+    .fw-bold {
+      font-weight: 700;
+    }
+  }
+}
+
 @media (max-width: 576px) {
   .product-card-img {
     max-width: 56px;
