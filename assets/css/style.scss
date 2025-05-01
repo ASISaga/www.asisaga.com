@@ -90,9 +90,12 @@ header {
   .navbar-main__item--dropdown {
     @extend .dropdown;
   }
-  .navbar-main__item--active .navbar-main__link {
-    color: $secondary !important;
-    font-weight: 700;
+  .navbar-main__item--active {
+    @extend .nav-item;
+    .navbar-main__link {
+      color: $secondary !important;
+      font-weight: 700;
+    }
   }
   .navbar-main__link {
     @extend .nav-link;
