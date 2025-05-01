@@ -15,6 +15,12 @@ $white: #fff;
 $black: #000;
 $font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+// Add missing Bootstrap color variables for highlight classes
+$success: #198754;
+$warning: #ffc107;
+$info: #0dcaf0;
+$danger: #dc3545;
+
 // Custom variables
 $header-bg: rgb(55, 53, 54);
 $box-shadow-light: rgba(55, 53, 54, 0.12);
