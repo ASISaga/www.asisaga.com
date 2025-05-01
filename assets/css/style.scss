@@ -23,6 +23,7 @@ dummy{
 @import "bootstrap/grid";
 @import "bootstrap/buttons";
 @import "bootstrap/utilities"; // This includes all utilities including shadows
+@import "bootstrap/collapse"; // Ensure collapse is imported for @extend usage
 
 // Add missing Bootstrap color variables for highlight classes
 $success: #198754;
