@@ -127,44 +127,44 @@ header {
   background: $header-bg;
   color: $white;
   width: 100%;
-  @extend .container-fluid;
-  @extend .navbar;
-  @extend .navbar-expand-lg;
-  @extend .navbar-dark;
-  @extend .bg-primary;
-  @extend .shadow-sm;
+  @include container-fluid();
+  @include navbar();
+  @include navbar-expand-lg();
+  @include navbar-dark();
+  @include bg-primary();
+  @include shadow-sm();
   padding-top: $spacing-sm;
   padding-bottom: $spacing-sm;
   border-radius: 0 0 $card-radius $card-radius;
   box-shadow: 0 2px 12px $box-shadow-dark;
   .navbar-main__collapse {
-    @extend .collapse;
-    @extend .navbar-collapse;
-    @extend .justify-content-end;
+    @include collapse();
+    @include navbar-collapse();
+    @include justify-content-end();
   }
   .navbar-main__nav {
-    @extend .navbar-nav;
-    @extend .ms-auto;
-    @extend .mb-2;
-    @extend .mb-lg-0;
+    @include navbar-nav();
+    @include ms-auto();
+    @include mb-2();
+    @include mb-lg-0();
   }
   .navbar-main__item {
-    @extend .nav-item;
+    @include nav-item();
   }
   .navbar-main__item--dropdown {
-    @extend .dropdown;
+    @include dropdown();
   }
   .navbar-main__item--active {
-    @extend .nav-item;
+    @include nav-item();
     .navbar-main__link {
       color: $secondary !important;
       font-weight: $font-weight-bold;
     }
   }
   .navbar-main__link {
-    @extend .nav-link;
-    @extend .px-3;
-    @extend .fw-semibold;
+    @include nav-link();
+    @include px-3();
+    @include fw-semibold();
     color: $white !important;
     font-size: $font-size-md;
     letter-spacing: 0.01em;
@@ -174,16 +174,16 @@ header {
     }
   }
   .navbar-main__link--dropdown {
-    @extend .dropdown-toggle;
+    @include dropdown-toggle();
   }
   .navbar-main__dropdown-menu {
-    @extend .dropdown-menu;
+    @include dropdown-menu();
     background: $body-bg;
     border-radius: $card-radius-sm;
     box-shadow: 0 2px 12px $box-shadow-dark;
   }
   .navbar-main__dropdown-item {
-    @extend .dropdown-item;
+    @include dropdown-item();
     color: $body-color;
     font-weight: $font-weight-medium;
     &:hover {
@@ -192,7 +192,7 @@ header {
     }
   }
   .navbar-main__dropdown-divider {
-    @extend .dropdown-divider;
+    @include dropdown-divider();
     border-color: $gray-100;
   }
   @media (max-width: 576px) {
@@ -217,31 +217,31 @@ header {
   color: $white;
   width: 100%;
   .site-header__navbar {
-    @extend .container-fluid;
-    @extend .navbar;
-    @extend .navbar-expand-lg;
-    @extend .navbar-dark;
-    @extend .bg-primary;
-    @extend .shadow-sm;
+    @include container-fluid();
+    @include navbar();
+    @include navbar-expand-lg();
+    @include navbar-dark();
+    @include bg-primary();
+    @include shadow-sm();
     padding-top: $spacing-sm;
     padding-bottom: $spacing-sm;
     border-radius: 0 0 $card-radius $card-radius;
     box-shadow: 0 2px 12px $box-shadow-dark;
   }
   .site-header__brand {
-    @extend .d-flex;
-    @extend .align-items-center;
+    display: flex;
+    align-items: center;
     gap: $spacing-sm;
     text-decoration: none;
   }
   .site-header__titlebar {
-    @extend .row;
-    @extend .align-items-center;
+    display: flex;
+    align-items: center;
     margin: 0;
   }
   .site-header__logo-col {
-    @extend .col-2;
-    @extend .p-0;
+    flex: 0 0 auto;
+    padding: 0;
   }
   .site-header__logo-img {
     max-width: $size-logo;
@@ -250,8 +250,8 @@ header {
     box-shadow: 0 2px 8px $box-shadow-img;
   }
   .site-header__title-col {
-    @extend .col-8;
-    @extend .p-0;
+    flex: 1 1 auto;
+    padding: 0;
   }
   .site-header__title {
     font-family: $font-family-heading;
@@ -263,11 +263,11 @@ header {
     text-shadow: 0 1px 4px $box-shadow-dark;
   }
   .site-header__tagline-row {
-    @extend .row;
+    display: flex;
     margin: 0;
   }
   .site-header__tagline-col {
-    @extend .col-md-4;
+    flex: 0 0 auto;
   }
   .site-header__tagline {
     font-size: $font-size-base;
@@ -276,19 +276,19 @@ header {
     margin-bottom: 0;
   }
   .site-header__toggler {
-    @extend .navbar-toggler;
-    @extend .d-lg-none;
-    @extend .position-absolute;
+    @include navbar-toggler();
+    display: none;
+    position: absolute;
     bottom: 10px;
     right: 10px;
   }
   .site-header__toggler-icon {
-    @extend .navbar-toggler-icon;
+    @include navbar-toggler-icon();
   }
   .site-header__nav {
-    @extend .collapse;
-    @extend .navbar-collapse;
-    @extend .justify-content-end;
+    @include collapse();
+    @include navbar-collapse();
+    @include justify-content-end();
   }
   @media (max-width: 576px) {
     .site-header__title {
@@ -309,20 +309,20 @@ header {
 
 // === Header Grid Custom Class (Bootstrap Encapsulated) ===
 .header-grid {
-  @extend .row;
-  @extend .align-items-center;
-  @extend .g-0;
+  display: flex;
+  align-items: center;
+  gap: 0;
   width: 100%;
   margin: 0;
   .col-auto {
-    @extend .d-flex;
-    @extend .align-items-center;
+    display: flex;
+    align-items: center;
     padding-right: $spacing-sm;
   }
   .col {
-    @extend .d-flex;
-    @extend .flex-column;
-    @extend .align-items-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding-left: $spacing-sm;
   }
   img {
@@ -347,7 +347,7 @@ header {
     margin-top: $spacing-xs;
     margin-bottom: 0;
     width: 100%;
-    @extend .text-wrap;
+    word-break: break-word;
   }
   @media (max-width: 576px) {
     img {
@@ -365,14 +365,14 @@ header {
 
 // === Header Brand Row Custom Class (Bootstrap Encapsulated) ===
 .header-brand-row {
-  @extend .d-flex;
-  @extend .flex-row;
-  @extend .align-items-center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: $spacing-sm;
   width: 100%;
   .header-logo {
-    @extend .d-flex;
-    @extend .align-items-center;
+    display: flex;
+    align-items: center;
     margin-right: $spacing-sm;
     img {
       max-width: $size-logo;
@@ -382,9 +382,9 @@ header {
     }
   }
   .header-title {
-    @extend .d-flex;
-    @extend .flex-column;
-    @extend .justify-content-center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h1 {
       font-family: $font-family-heading;
       font-size: $font-size-xl;
@@ -401,7 +401,7 @@ header {
       margin-top: $spacing-xs;
       margin-bottom: 0;
       width: 100%;
-      @extend .text-wrap;
+      word-break: break-word;
     }
   }
   @media (max-width: 576px) {
@@ -422,9 +422,8 @@ header {
 // Custom card styles for product cards
 .product-card {
   @include reusable-card;
-  @extend .card;
-  @extend .h-100;
-  @extend .d-flex;
+  display: flex;
+  height: 100%;
   transition: box-shadow 0.2s, transform 0.2s;
   background: $body-bg !important;
   border: none;
@@ -443,17 +442,22 @@ header {
   box-shadow: 0 2px 8px $box-shadow-img;
 }
 .product-card-img-main {
-  @extend .product-card-img;
-  @extend .img-fluid;
+  @include img-fluid();
+  max-width: $size-card-img;
+  max-height: $size-card-img;
+  border-radius: $img-radius;
+  background: $gray-100;
+  object-fit: contain;
+  box-shadow: 0 2px 8px $box-shadow-img;
 }
 .product-card-img-col {
-  @extend .col-2;
-  @extend .d-flex;
-  @extend .justify-content-center;
-  @extend .align-items-center;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .product-card-content-col {
-  @extend .col-10;
+  flex: 1 1 auto;
 }
 .product-card-title {
   font-family: $font-family-heading;
@@ -463,8 +467,11 @@ header {
   margin-bottom: $spacing-xs;
 }
 .product-card-title-main {
-  @extend .card-title;
-  @extend .product-card-title;
+  font-family: $font-family-heading;
+  font-size: $font-size-card-title;
+  font-weight: $font-weight-semibold;
+  color: $primary;
+  margin-bottom: $spacing-xs;
 }
 .product-card-tagline {
   font-size: $font-size-lg;
@@ -492,65 +499,68 @@ header {
   color: $white;
 }
 .product-card-btn-main {
-  @extend .btn;
-  @extend .product-card-btn;
+  border-radius: 2rem;
+  font-weight: $font-weight-medium;
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-base;
+  background: $primary;
+  color: $white;
+  box-shadow: 0 2px 8px $box-shadow-dark;
+  transition: background 0.2s;
 }
 .product-card-link-wrapper {
-  @extend .d-inline-block;
-  @extend .mt-md-3;
+  display: inline-block;
+  margin-top: $spacing-md;
 }
 .product-card-outer {
-  @extend .col-12;
-  @extend .mb-4;
+  flex: 0 0 auto;
+  margin-bottom: $spacing-lg;
 }
 .product-card-main {
-  @extend .card;
-  @extend .product-card;
-  @extend .h-100;
-  @extend .d-flex;
+  display: flex;
+  height: 100%;
 }
 .product-card-body {
-  @extend .card-body;
-  @extend .d-flex;
-  @extend .flex-column;
+  display: flex;
+  flex-direction: column;
 }
 .product-card-row {
-  @extend .row;
-  @extend .align-items-center;
-  @extend .mb-2;
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-sm;
 }
 
 // Entrepreneur Metrics Section
 .entrepreneur-metrics-container {
-  @extend .d-flex;
-  @extend .flex-column;
-  @extend .align-items-center;
-  @extend .mt-5;
-  @extend .mb-5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-lg;
   font-family: $font-family-base;
   color: $body-color;
 }
 .entrepreneur-metrics-row {
-  @extend .w-100;
-  @extend .d-flex;
-  @extend .justify-content-center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .entrepreneur-metrics-col {
-  @extend .w-100;
-  @extend .mx-auto;
-  @extend .d-flex;
-  @extend .flex-column;
-  @extend .align-items-center;
-  @extend .mw-100;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: $container-max-width;
 }
 .entrepreneur-metrics-card {
   @include reusable-card;
-  @extend .p-4;
-  @extend .w-100;
+  padding: $spacing-lg;
+  width: 100%;
 }
 .entrepreneur-metrics-card-body {
-  @extend .w-100;
+  width: 100%;
 }
 .entrepreneur-metrics-title {
   font-family: $font-family-heading;
@@ -558,20 +568,20 @@ header {
   font-weight: $font-weight-bold;
   color: $primary;
   letter-spacing: 0.01em;
-  @extend .text-center;
-  @extend .mb-4;
+  text-align: center;
+  margin-bottom: $spacing-lg;
 }
 .entrepreneur-metrics-lead {
   font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
   font-weight: $font-weight-medium;
-  @extend .text-center;
-  @extend .mb-4;
+  text-align: center;
+  margin-bottom: $spacing-lg;
 }
 .entrepreneur-metrics-table-responsive {
-  @extend .w-100;
-  @extend .table-responsive;
+  width: 100%;
+  overflow-x: auto;
 }
 .metrics-table {
   background: $gray-100;
@@ -587,13 +597,12 @@ header {
   color: $white;
   font-weight: $font-weight-semibold;
   font-size: $font-size-lg;
-  @extend .text-center;
+  text-align: center;
 }
 .metrics-table th, .metrics-table td {
-  @extend .align-middle;
-  @extend .text-center;
-  @extend .py-3;
-  @extend .px-4;
+  vertical-align: middle;
+  text-align: center;
+  padding: $spacing-sm $spacing-md;
   border-top: none;
   border-bottom: 1px solid $gray-100;
   font-size: $font-size-table;
@@ -733,94 +742,91 @@ header {
   }
 }
 .about-row {
-  @extend .flex-column;
-  @extend .align-items-center;
-  @extend .d-flex;
-  @extend .justify-content-center;
-  @extend .mb-4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-lg;
 }
 .about-col-main {
-  @extend .w-100;
-  @extend .mx-auto;
-  @extend .d-flex;
-  @extend .flex-column;
-  @extend .align-items-center;
-  @extend .mw-100;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: $container-max-width;
 }
 .about-intro-card {
   @include reusable-card;
-  @extend .mb-4;
-  @extend .w-100;
+  margin-bottom: $spacing-lg;
+  width: 100%;
 }
 .about-intro-card-body {
-  @extend .p-4;
+  padding: $spacing-lg;
 }
 .about-title {
   font-size: $font-size-section-title;
   font-weight: $font-weight-bold;
   color: $primary;
   letter-spacing: 0.01em;
-  @extend .text-center;
-  @extend .mb-3;
+  text-align: center;
+  margin-bottom: $spacing-lg;
 }
 .about-lead {
   font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
   font-weight: $font-weight-medium;
-  @extend .text-center;
-  @extend .mb-3;
+  text-align: center;
+  margin-bottom: $spacing-lg;
 }
 .about-summary {
   font-size: $font-size-lg;
   color: $secondary;
   font-style: italic;
   font-weight: $font-weight-medium;
-  @extend .mb-4;
-  @extend .w-100;
+  margin-bottom: $spacing-lg;
+  width: 100%;
 }
 .about-summary-text {
-  @extend .text-center;
+  text-align: center;
 }
 .about-phase-row {
-  @extend .flex-column;
-  @extend .align-items-center;
-  @extend .d-flex;
-  @extend .flex-wrap;
-  @extend .justify-content-center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: $spacing-lg;
 }
 .about-phase-col {
-  @extend .flex-grow-1;
-  @extend .mw-100;
+  flex-grow: 1;
   max-width: $size-phase-col-max;
-  @extend .d-flex;
+  display: flex;
 }
 .about-phase-card {
   @include reusable-card;
-  @extend .p-4;
-  @extend .h-100;
-  @extend .w-100;
-  @extend .d-flex;
-  @extend .flex-column;
-  @extend .justify-content-center;
+  padding: $spacing-lg;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .about-phase-card-body {
-  @extend .w-100;
+  width: 100%;
 }
 .about-phase-title {
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $primary;
-  @extend .mb-2;
-  @extend .text-center;
+  margin-bottom: $spacing-sm;
+  text-align: center;
 }
 .about-phase-desc {
   color: $body-color;
   font-size: $font-size-base;
-  @extend .mb-2;
-  @extend .text-center;
+  margin-bottom: $spacing-sm;
+  text-align: center;
 }
 @media (max-width: 768px) {
   .about-row,
@@ -1220,14 +1226,12 @@ header {
 
 // LinkedIn Sign In Button unified custom class
 .linkedin-signin-btn {
-  @extend .btn;
-  @extend .btn-light;
+  display: inline-flex;
+  align-items: center;
   border-radius: $card-radius-sm;
   padding: $spacing-xs $spacing-lg;
   font-weight: $font-weight-medium;
   box-shadow: 0 2px 8px $box-shadow-dark;
-  display: inline-flex;
-  align-items: center;
   background: $white;
   transition: background 0.2s;
   &:hover {
@@ -1249,17 +1253,17 @@ header {
   font-family: $font-family-base;
   color: $body-color;
   background: $header-bg;
-  @extend .pt-4;
-  @extend .pb-0;
-  @extend .mt-5;
+  padding-top: $spacing-lg;
+  padding-bottom: 0;
+  margin-top: $spacing-lg;
   a {
     color: $primary;
     text-decoration: underline;
     &:hover { color: lighten($primary, 20%); text-decoration: none; }
   }
   &__current {
-    @extend .text-center;
-    @extend .mb-3;
+    text-align: center;
+    margin-bottom: $spacing-lg;
     a {
       color: $white;
       text-decoration: underline;
@@ -1268,19 +1272,18 @@ header {
   }
   &__bottom {
     background: $header-bg;
-    @extend .py-4;
+    padding: $spacing-lg;
     .footer-section__container {
-      @extend .container;
-      @extend .text-center;
+      text-align: center;
     }
     .footer-section__row {
-      @extend .row;
-      @extend .align-items-center;
-      @extend .justify-content-center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .footer-section__col {
-      @extend .col-md-auto;
-      @extend .mb-2;
+      flex: 0 0 auto;
+      margin-bottom: $spacing-sm;
       text-align: center;
     }
     .footer-section__link {
@@ -1290,12 +1293,12 @@ header {
     }
     .footer-section__social {
       margin-bottom: 0;
-      @extend .fw-semibold;
+      font-weight: $font-weight-semibold;
     }
   }
   &__copyright {
-    @extend .mb-0;
-    @extend .fw-light;
+    margin-bottom: 0;
+    font-weight: $font-weight-light;
     font-size: $font-size-base;
   }
   @media (max-width: 576px) {
@@ -1385,35 +1388,31 @@ header {
 
 // Spacing utilities for consistent margins and paddings
 .spacing-section {
-  @extend .mb-4;
-  @extend .p-3;
+  margin-bottom: $spacing-lg;
+  padding: $spacing-md;
 }
 
 // Typography utilities for headings and paragraphs
 .typography-heading {
-  @extend .fw-bold;
-  @extend .text-primary;
-  @extend .mb-3;
+  font-weight: $font-weight-bold;
+  color: $primary;
+  margin-bottom: $spacing-lg;
   font-family: $font-family-heading;
   font-size: $font-size-xl;
 }
 .typography-lead {
-  @extend .lead;
-  @extend .text-secondary;
-  @extend .mb-2;
   font-size: $font-size-lg;
+  color: $secondary;
+  margin-bottom: $spacing-sm;
 }
 .typography-paragraph {
-  @extend .text-body;
-  @extend .mb-2;
+  color: $body-color;
+  margin-bottom: $spacing-sm;
   font-size: $font-size-base;
 }
 
 // Unified button style
 .button-unified {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
   border-radius: 2rem;
   font-weight: $font-weight-medium;
   background: $primary;
@@ -1427,39 +1426,40 @@ header {
 
 // Responsive container for main content
 .main-content-container {
-  @extend .container;
-  @extend .my-5;
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-lg;
 }
 
 // Card grid row
 .card-row {
-  @extend .row;
-  @extend .mb-4;
+  display: flex;
+  margin-bottom: $spacing-lg;
 }
 
 // Card column
 .card-col {
-  @extend .col-md-6;
+  flex: 0 0 auto;
 }
 
 // Main card column (for centering content)
 .card-col-main {
-  @extend .col-lg-10;
-  @extend .mx-auto;
+  flex: 0 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Section title wrapper
 .section-title {
-  @extend .text-center;
-  @extend .mb-5;
+  text-align: center;
+  margin-bottom: $spacing-lg;
 }
 
 // Call to action row
 .cta-row {
-  @extend .row;
-  @extend .mt-5;
+  display: flex;
+  margin-top: $spacing-lg;
 }
 .cta-col {
-  @extend .col;
-  @extend .text-center;
+  flex: 1 1 auto;
+  text-align: center;
 }
