@@ -363,6 +363,62 @@ header {
   }
 }
 
+// === Header Brand Row Custom Class (Bootstrap Encapsulated) ===
+.header-brand-row {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .align-items-center;
+  gap: $spacing-sm;
+  width: 100%;
+  .header-logo {
+    @extend .d-flex;
+    @extend .align-items-center;
+    margin-right: $spacing-sm;
+    img {
+      max-width: $size-logo;
+      max-height: $size-logo;
+      border-radius: $logo-radius;
+      box-shadow: 0 2px 8px $box-shadow-img;
+    }
+  }
+  .header-title {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .justify-content-center;
+    h1 {
+      font-family: $font-family-heading;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $white;
+      margin-bottom: 0;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 4px $box-shadow-dark;
+    }
+    #tagline, .site-header__tagline {
+      font-size: $font-size-base;
+      color: $secondary;
+      font-style: italic;
+      margin-top: $spacing-xs;
+      margin-bottom: 0;
+      width: 100%;
+      @extend .text-wrap;
+    }
+  }
+  @media (max-width: 576px) {
+    gap: $spacing-xs;
+    .header-logo img {
+      max-width: $size-logo-sm;
+      max-height: $size-logo-sm;
+    }
+    .header-title h1 {
+      font-size: $font-size-sm;
+    }
+    .header-title #tagline, .header-title .site-header__tagline {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
 // Custom card styles for product cards
 .product-card {
   @include reusable-card;

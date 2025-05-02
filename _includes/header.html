@@ -4,17 +4,17 @@
 <header class="site-header">
   <nav class="site-header__navbar">
     <a class="site-header__brand" href="/">
-      <div class="header-grid row align-items-center g-0 flex-column flex-md-row">
-        <div class="col-auto">
+      <div class="header-brand-row">
+        <div class="header-logo">
           <img src="{{ '/assets/images/favicon.ico' | relative_url }}" class="site-header__logo-img" alt="ASI Saga">
         </div>
-        <div class="col">
-          <h1 id="title" class="site-header__title mb-0">{{ site.title | default: site.github.repository_name }}</h1>
-          <p id="tagline" class="site-header__tagline mt-1 mb-0">{{ site.description | default: site.github.project_tagline }}</p>
+        <div class="header-title">
+          <h1 id="title" class="site-header__title">{{ site.title | default: site.github.repository_name }}</h1>
+          <p id="tagline" class="site-header__tagline">{{ site.description | default: site.github.project_tagline }}</p>
         </div>
       </div>
     </a>
-    <button id="nav-menu-mobile" class="site-header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button id="nav-menu-mobile" class="site-header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="site-header__toggler-icon"></span>
     </button>
     <div id="nav-menu" class="site-header__nav">
