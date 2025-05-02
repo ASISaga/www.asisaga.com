@@ -5,6 +5,8 @@ dummy {
   display: none;
 }
 
+@import "bootstrap/bootstrap";
+
 // === Color System: Centralized Color Variables ===
 $color-primary: #007bff;
 $color-secondary: #6c757d;
@@ -85,9 +87,6 @@ body, .body-consistent {
   color: $body-color;
   background-color: $body-bg;
 }
-
-// Import all of Bootstrap's SCSS in one go
-@import "bootstrap/bootstrap";
 
 // Custom variables
 $header-bg: $color-header-bg;
