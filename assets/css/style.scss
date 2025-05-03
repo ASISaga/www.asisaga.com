@@ -1,24 +1,10 @@
 ---
 ---
 
-dummy{
-  display: none
+dummy {
+  display: none;
 }
 
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/variables-dark";
-@import "bootstrap/maps";
-@import "bootstrap/mixins";
-@import "bootstrap/utilities";
-@import "bootstrap/root";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/containers";
-@import "bootstrap/grid";
-@import "bootstrap/navbar";
-@import "bootstrap/dropdown";
 @import "bootstrap/bootstrap";
 
 // === Color System: Centralized Color Variables ===
@@ -134,45 +120,50 @@ header {
   margin-right: auto;
 }
 
-// === Navbar Main Custom Class (Bootstrap Classes) ===
+// === Navbar Main Custom Class (Bootstrap Encapsulated) ===
 .navbar-main {
   font-family: $font-family-base;
   background: $header-bg;
   color: $white;
   width: 100%;
+  @include container-fluid();
+  @include navbar();
+  @include navbar-expand-lg();
+  @include navbar-dark();
+  @include bg-primary();
+  @include shadow-sm();
   padding-top: $spacing-sm;
   padding-bottom: $spacing-sm;
   border-radius: 0 0 $card-radius $card-radius;
   box-shadow: 0 2px 12px $box-shadow-dark;
-  &.navbar {
-    --bs-navbar-padding-x: 0;
-    --bs-navbar-padding-y: 0.5rem;
-  }
-  &.navbar-dark {
-    --bs-navbar-color: #{$white};
-    --bs-navbar-hover-color: #{lighten($primary, 48%)};
-    --bs-navbar-active-color: #{$secondary};
-  }
   .navbar-main__collapse {
-    justify-content: flex-end;
+    @include collapse();
+    @include navbar-collapse();
+    @include justify-content-end();
   }
   .navbar-main__nav {
-    margin-left: auto;
-    margin-bottom: 0.5rem;
-    @include media-breakpoint-up(lg) {
-      margin-bottom: 0;
-    }
+    @include navbar-nav();
+    @include ms-auto();
+    @include mb-2();
+    @include mb-lg-0();
   }
   .navbar-main__item {
-    &.active .navbar-main__link {
+    @include nav-item();
+  }
+  .navbar-main__item--dropdown {
+    @include dropdown();
+  }
+  .navbar-main__item--active {
+    @include nav-item();
+    .navbar-main__link {
       color: $secondary !important;
       font-weight: $font-weight-bold;
     }
   }
   .navbar-main__link {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-weight: $font-weight-semibold;
+    @include nav-link();
+    @include px-3();
+    @include fw-semibold();
     color: $white !important;
     font-size: $font-size-md;
     letter-spacing: 0.01em;
@@ -181,12 +172,17 @@ header {
       color: lighten($primary, 48%) !important;
     }
   }
+  .navbar-main__link--dropdown {
+    @include dropdown-toggle();
+  }
   .navbar-main__dropdown-menu {
+    @include dropdown-menu();
     background: $body-bg;
     border-radius: $card-radius-sm;
     box-shadow: 0 2px 12px $box-shadow-dark;
   }
   .navbar-main__dropdown-item {
+    @include dropdown-item();
     color: $body-color;
     font-weight: $font-weight-medium;
     &:hover {
@@ -195,6 +191,7 @@ header {
     }
   }
   .navbar-main__dropdown-divider {
+    @include dropdown-divider();
     border-color: $gray-100;
   }
   @media (max-width: 576px) {
