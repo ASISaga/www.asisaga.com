@@ -3,20 +3,178 @@ layout: default
 title: Purpose Driven Agent
 ---
 
-<!-- Purpose Driven Agent Section -->
-<div class="purpose-driven-agent-section">
-  <div class="purpose-driven-agent-container">
-    <div class="purpose-driven-agent-row">
-      <div class="purpose-driven-agent-col">
-        <div class="purpose-driven-agent-card">
-          <div class="purpose-driven-agent-card-body">
-            <h1 class="purpose-driven-agent-title">{{ site.data.products.purpose_driven_agent.title }}</h1>
-            <p class="purpose-driven-agent-summary">
-              {{ site.data.products.purpose_driven_agent.description }}
-            </p>
-          </div>
-        </div>
+<!-- 
+Purpose Driven Agent product page
+This page showcases the Purpose Driven Agent framework, its architecture, components, and applications
+Uses Bootstrap components for responsive design and consistent styling
+-->
+<div class="purpose-agent-container">
+  <!-- Hero section with product introduction -->
+  <section class="purpose-hero-section">
+    <div class="purpose-hero-content">
+      <h1 class="purpose-hero-title">Purpose Driven Agent</h1>
+      <p class="purpose-hero-subtitle">A framework for goal-oriented AI agents</p>
+      <p class="purpose-hero-description">
+        Build intelligent agents that combine learning capabilities, knowledge management, and reasoning to achieve specific goals and purposes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Architecture section with diagram -->
+  <section class="purpose-architecture-section">
+    <h2 class="purpose-section-title">Agent Architecture</h2>
+    <div class="purpose-architecture-container">
+      <p class="purpose-architecture-description">
+        The Purpose Driven Agent framework implements a modular architecture that combines specialized agent types to create comprehensive AI capabilities.
+      </p>
+      
+      <!-- Architecture diagram or visual representation -->
+      <div class="purpose-architecture-diagram">
+        <!-- Placeholder for actual diagram image -->
+        <img src="{{ '/assets/images/purpose-driven-architecture.png' | relative_url }}" alt="Purpose Driven Agent Architecture" class="purpose-diagram-image">
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Components section showing the different agent types -->
+  <section class="purpose-components-section">
+    <h2 class="purpose-section-title">Core Components</h2>
+    <div class="purpose-components-grid">
+      <!-- Component 1: Learning Agent -->
+      <div class="purpose-component-card">
+        <h3 class="purpose-component-title">Learning Agent</h3>
+        <p class="purpose-component-description">
+          Implements continuous learning capabilities, allowing the agent to improve from experience and adapt to new situations.
+        </p>
+        <ul class="purpose-component-features">
+          <li class="purpose-feature-item">Pattern recognition</li>
+          <li class="purpose-feature-item">Adaptive behavior</li>
+          <li class="purpose-feature-item">Experience-based optimization</li>
+        </ul>
+      </div>
+
+      <!-- Component 2: Knowledge Agent -->
+      <div class="purpose-component-card">
+        <h3 class="purpose-component-title">Knowledge Agent</h3>
+        <p class="purpose-component-description">
+          Manages information gathering, storage, and retrieval to build and maintain a comprehensive knowledge base.
+        </p>
+        <ul class="purpose-component-features">
+          <li class="purpose-feature-item">Information organization</li>
+          <li class="purpose-feature-item">Context-aware retrieval</li>
+          <li class="purpose-feature-item">Knowledge integration</li>
+        </ul>
+      </div>
+
+      <!-- Component 3: Intelligence Agent -->
+      <div class="purpose-component-card">
+        <h3 class="purpose-component-title">Intelligence Agent</h3>
+        <p class="purpose-component-description">
+          Provides reasoning, planning, and decision-making capabilities based on available knowledge and objectives.
+        </p>
+        <ul class="purpose-component-features">
+          <li class="purpose-feature-item">Logical reasoning</li>
+          <li class="purpose-feature-item">Strategic planning</li>
+          <li class="purpose-feature-item">Goal-oriented decisions</li>
+        </ul>
+      </div>
+
+      <!-- Component 4: Coder Agent (Specialized Implementation) -->
+      <div class="purpose-component-card">
+        <h3 class="purpose-component-title">Coder Agent</h3>
+        <p class="purpose-component-description">
+          Specialized implementation that focuses on software development tasks and code generation.
+        </p>
+        <ul class="purpose-component-features">
+          <li class="purpose-feature-item">Code generation</li>
+          <li class="purpose-feature-item">Best practice implementation</li>
+          <li class="purpose-feature-item">Testing and validation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation example section with code sample -->
+  <section class="purpose-implementation-section">
+    <h2 class="purpose-section-title">Implementation Example</h2>
+    <div class="purpose-implementation-container">
+      <p class="purpose-implementation-description">
+        Creating a specialized agent using the Purpose Driven Agent framework is straightforward through inheritance and customization.
+      </p>
+      
+      <!-- Code example in a styled code block -->
+      <div class="purpose-code-example">
+        <pre class="purpose-code-block"><code class="language-python">
+from PurposeDrivenAgent.CoderAgent import CoderAgent
+
+class CustomCodingAssistant(CoderAgent):
+    def __init__(self, specialization="web_development"):
+        """
+        Initialize a custom coding assistant with a specific specialization.
+        
+        :param specialization: Area of coding expertise, e.g., web_development, data_science
+        """
+        super().__init__()  # Initialize the base CoderAgent
+        self.specialization = specialization
+        
+    def generate_solution(self, problem_description):
+        """
+        Generate code solution based on problem description.
+        
+        :param problem_description: Description of the coding problem
+        :return: Generated code solution
+        """
+        # Custom implementation for solution generation
+        solution = self._analyze_problem(problem_description)
+        code = self._generate_code(solution)
+        
+        return self._validate_and_optimize(code)
+        </code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications section -->
+  <section class="purpose-applications-section">
+    <h2 class="purpose-section-title">Applications</h2>
+    <div class="purpose-applications-grid">
+      <!-- Application 1 -->
+      <div class="purpose-application-card">
+        <h3 class="purpose-application-title">Software Development</h3>
+        <p class="purpose-application-description">
+          Create coding assistants that help developers write, test, and maintain high-quality code across different languages and frameworks.
+        </p>
+      </div>
+
+      <!-- Application 2 -->
+      <div class="purpose-application-card">
+        <h3 class="purpose-application-title">Business Process Automation</h3>
+        <p class="purpose-application-description">
+          Build agents that automate complex business workflows by combining knowledge of processes with adaptive learning capabilities.
+        </p>
+      </div>
+
+      <!-- Application 3 -->
+      <div class="purpose-application-card">
+        <h3 class="purpose-application-title">Research and Analysis</h3>
+        <p class="purpose-application-description">
+          Develop research assistants that gather information, analyze patterns, and generate insights across various domains and disciplines.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action section -->
+  <section class="purpose-cta-section">
+    <div class="purpose-cta-container">
+      <h2 class="purpose-cta-title">Start Building Purpose-Driven Agents</h2>
+      <p class="purpose-cta-description">
+        Explore the framework and create intelligent agents tailored to your specific needs and objectives.
+      </p>
+      <div class="purpose-cta-buttons">
+        <a href="https://github.com/asisaga/PurposeDrivenAgent" class="purpose-cta-button" target="_blank">View on GitHub</a>
+        <a href="{{ site.linkedin_username }}" class="purpose-cta-button purpose-cta-button-outline" target="_blank">Contact Us</a>
+      </div>
+    </div>
+  </section>
 </div>

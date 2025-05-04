@@ -3,81 +3,112 @@ layout: default
 title: Business Infinity
 ---
 
-<!-- Main Content -->
-<div class="business-infinity-section">
-    <h1 class="business-infinity-title">Business Infinity</h1>
-    <p class="business-infinity-tagline">Elevating Startups, beyond the Enterprises</p>
-
-    <div class="business-infinity-linkedin">
-        {%- include linkedin.html -%}
+<!-- 
+Business Infinity product page
+This page introduces the Business Infinity product, its features, benefits and use cases
+Uses Bootstrap's responsive grid system and components for layout and design
+-->
+<div class="business-infinity-container">
+  <!-- Hero section with product introduction -->
+  <section class="business-hero-section">
+    <div class="business-hero-content">
+      <h1 class="business-hero-title">Business Infinity</h1>
+      <p class="business-hero-subtitle">AI-powered business acceleration platform</p>
+      <p class="business-hero-description">
+        Leverage artificial intelligence to streamline operations, identify growth opportunities, and scale your business efficiently.
+      </p>
+      <!-- Primary call-to-action button -->
+      <div class="business-hero-cta">
+        <a href="#features" class="business-cta-button">Explore Features</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Resource Constraints -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Break Free from Resource Constraints</h2>
-        <p class="business-infinity-card-text">Startups often operate on lean budgets and limited personnel. With Infinity, you gain access to a perpetual network of autonomous AI agents delivering enterprise-grade capabilities at a fraction of conventional costs. Focus your resources on innovation while our agents handle the heavy lifting, empowering you to compete with giants without overspending.</p>
-    </div>
+  <!-- Key features section with feature cards -->
+  <section id="features" class="business-features-section">
+    <h2 class="business-section-title">Key Features</h2>
+    <div class="business-features-grid">
+      <!-- Feature 1: Business Analysis -->
+      <div class="business-feature-card">
+        <div class="business-feature-icon">
+          <!-- Icon placeholder or Font Awesome icon can be used here -->
+          <i class="business-icon-analysis"></i>
+        </div>
+        <h3 class="business-feature-title">Comprehensive Business Analysis</h3>
+        <p class="business-feature-description">
+          Gain deep insights into your business operations with AI-powered analytics that identify inefficiencies and growth opportunities.
+        </p>
+      </div>
 
-    <!-- Rapid Innovation -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Ignite Rapid Innovation</h2>
-        <p class="business-infinity-card-text">In the fast-paced world of startups, speed is everything. Infinity replaces outdated business processes with an agile ecosystem of self-optimizing AI agents that turn bold ideas into reality instantly. With every action executed with precision, you remain perpetually ahead of the curve.</p>
-    </div>
+      <!-- Feature 2: Strategy Development -->
+      <div class="business-feature-card">
+        <div class="business-feature-icon">
+          <i class="business-icon-strategy"></i>
+        </div>
+        <h3 class="business-feature-title">Intelligent Strategy Development</h3>
+        <p class="business-feature-description">
+          Create data-driven business strategies tailored to your industry, market conditions, and business goals.
+        </p>
+      </div>
 
-    <!-- Operational Harmony -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Achieve Operational Harmony</h2>
-        <p class="business-infinity-card-text">Juggling disjointed systems and chaotic workflows can stall growth. Infinity unifies strategy, operations, analytics, and support into one seamless network, ensuring your startup moves forward without friction.</p>
+      <!-- Feature 3: Operations Automation -->
+      <div class="business-feature-card">
+        <div class="business-feature-icon">
+          <i class="business-icon-automation"></i>
+        </div>
+        <h3 class="business-feature-title">Operations Automation</h3>
+        <p class="business-feature-description">
+          Streamline repetitive tasks across all business functions with intelligent automation solutions.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <!-- Informed Decisions -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Empower Instant, Informed Decisions</h2>
-        <p class="business-infinity-card-text">Strategic choices amid uncertainty can be paralyzing. The AI agents of Infinity continuously analyze real-time data to provide actionable insights, replacing guesswork with clarity and transforming every decision into a step toward sustained growth.</p>
+  <!-- Use cases section with tabs for different business segments -->
+  <section class="business-use-cases-section">
+    <h2 class="business-section-title">Who Can Benefit</h2>
+    <div class="business-use-cases-nav">
+      <!-- Tab navigation for different user segments -->
+      <ul class="business-tabs-list" role="tablist">
+        <li class="business-tab-item">
+          <a href="{{ site.url }}/business-infinity/entrepreneur/" class="business-tab-link">Entrepreneurs</a>
+        </li>
+        <li class="business-tab-item">
+          <a href="{{ site.url }}/business-infinity/startup/" class="business-tab-link">Startups</a>
+        </li>
+      </ul>
     </div>
+  </section>
 
-    <!-- Scaling Challenges -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Scale Without Limits</h2>
-        <p class="business-infinity-card-text">Growth often meets roadblocks when scaling costs and talent run dry. Infinity delivers an adaptive, always-on workforce that grows with your ambitions, ensuring your innovation continuously outpaces traditional enterprise models.</p>
-    </div>
+  <!-- Testimonials section -->
+  <section class="business-testimonials-section">
+    <h2 class="business-section-title">What Our Users Say</h2>
+    <div class="business-testimonials-container">
+      <!-- Testimonial 1 -->
+      <div class="business-testimonial-card">
+        <p class="business-testimonial-text">
+          "Business Infinity helped me identify inefficiencies in my operations and increased productivity by 40% within three months."
+        </p>
+        <div class="business-testimonial-author">
+          <p class="business-testimonial-name">John Doe</p>
+          <p class="business-testimonial-company">CEO, Tech Startup Inc.</p>
+        </div>
+      </div>
 
-    <!-- Market Uncertainty -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Predict with Precision in an Uncertain World</h2>
-        <p class="business-infinity-card-text">Volatile market trends challenge every startup. The AI agents of Infinity harness predictive analytics and strategic foresight to anticipate shifts before they happen, turning risk into opportunity.</p>
+      <!-- Additional testimonials can be added here -->
     </div>
+  </section>
 
-    <!-- Customer Engagement -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Drive Customer Loyalty with Smart Engagement</h2>
-        <p class="business-infinity-card-text">Customer acquisition and retention can be daunting. Infinity transforms every customer interaction into tailored, data-driven experiences, fostering lasting loyalty and turning casual users into passionate advocates.</p>
+  <!-- Contact section -->
+  <section class="business-contact-section">
+    <div class="business-contact-container">
+      <h2 class="business-section-title">Ready to Transform Your Business?</h2>
+      <p class="business-contact-description">
+        Get started with Business Infinity today and experience the power of AI in business management.
+      </p>
+      <div class="business-contact-actions">
+        <a href="{{ site.linkedin_username }}" class="business-contact-button" target="_blank">Contact Us</a>
+      </div>
     </div>
-
-    <!-- Financial Management -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Optimize Financial Intelligence, Effortlessly</h2>
-        <p class="business-infinity-card-text">Cash flow management and budgeting are constant challenges. With Infinity, financial data becomes a strategic asset. Real-time monitoring, predictive budgeting, and resource optimization let you focus on growth while our AI agents manage fiscal strategy seamlessly.</p>
-    </div>
-
-    <!-- Team Creativity -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Ignite Team Creativity and Cultivate Culture</h2>
-        <p class="business-infinity-card-text">Your team is your startup's heart—but operational burdens can stifle creativity. Infinity automates routine tasks and streamlines decision-making, freeing your team to focus on innovation and nurturing a vibrant culture.</p>
-    </div>
-
-    <!-- Data Overload -->
-    <div class="business-infinity-card">
-        <h2 class="business-infinity-card-title">Convert Data Overload into Strategic Clarity</h2>
-        <p class="business-infinity-card-text">In today's digital age, abundant data can overwhelm rather than empower. Infinity sifts through the noise to deliver precise, actionable insights, turning information overload into a competitive advantage.</p>
-    </div>
-
-    <!-- Conclusion -->
-    <div class="business-infinity-conclusion">
-        <h2 class="business-infinity-card-title">Elevate Your Vision</h2>
-        <p>Infinity is more than a tool—it's the catalyst that propels startups beyond traditional limitations. Imagine a future where every challenge is a gateway to extraordinary success and limitless possibilities.</p>
-        <p class="fw-bold">Infinity elevates your startup, way beyond the limits of today's enterprises, and catapults it into a future of unlimited possibilities.</p>
-        <p class="fw-bold">Unleash the full potential of your business with Infinity.</p>
-    </div>
+  </section>
 </div>
-<!-- End Main Content -->

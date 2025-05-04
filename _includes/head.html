@@ -1,8 +1,12 @@
 <head>
-    <meta charset="utf-8">
+    <!-- 
+    Head component containing all meta tags, title, CSS, and JavaScript resources
+    This component sets up the document metadata and loads all required resources for the site
+    -->
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
     <script  type="module" src="{{ '/assets/js/script.js' | relative_url }}"></script>

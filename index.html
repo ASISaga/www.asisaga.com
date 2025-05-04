@@ -3,42 +3,39 @@ layout: default
 title: ASI Saga
 ---
 
-<!-- Main Content -->
-<div class="main-content-container">
-    <div class="card-row">
-        <div class="card-col-main">
-            <!-- Section Title -->
-            <div class="section-title">
-                <h1 class="typography-heading">Welcome to ASI Saga</h1>
-                <p class="typography-lead">Explore our innovative agents designed to revolutionize your workflow.</p>
-            </div>
-
-            <!-- First row of product cards -->
-            <div class="card-row">
-                <div class="card-col">
-                    {% include product-card.html product="github_agent" %}
-                </div>
-                <div class="card-col">
-                    {% include product-card.html product="purpose_driven_agent" %}
-                </div>
-            </div>
-
-            <!-- Second row of product cards -->
-            <div class="card-row">
-                <div class="card-col">
-                    {% include product-card.html product="agent_operating_system" %}
-                </div>
-                <div class="card-col">
-                    {% include product-card.html product="business_infinity" %}
-                </div>
-            </div>
-
-            <!-- Call to Action Section -->
-            <div class="cta-row">
-                <div class="cta-col">
-                    <a href="/about/" class="button-unified">Learn More About Us</a>
-                </div>
-            </div>
-        </div>
+<!-- 
+Homepage main content
+This is the website's landing page that displays featured products and introduces visitors to ASI Saga
+The page uses Bootstrap grid system for responsive layout and Jekyll's Liquid templating for dynamic content
+-->
+<div class="home-container">
+  <!-- Hero section with main headline and introduction -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to ASI Saga</h1>
+      <p class="hero-description">Exploring the journey towards Artificial Super Intelligence and its impact on our future.</p>
     </div>
+  </section>
+
+  <!-- Featured products section displaying products from _data/products.yml -->
+  <section class="products-section">
+    <h2 class="section-title">Our Products</h2>
+    <div class="products-grid">
+      <!-- Loop through site.data.products and display each product using product-card component -->
+      {% for product in site.data.products %}
+        <div class="product-item">
+          {% include product-card.html product=product %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Call to action section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to explore more?</h2>
+      <p class="cta-description">Learn about our mission and vision for the future of AI.</p>
+      <a href="{{ site.url }}/about/" class="cta-button">About Us</a>
+    </div>
+  </section>
 </div>

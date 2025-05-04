@@ -1,30 +1,44 @@
+<!-- 
+Navigation bar component that dynamically generates menu items based on site.data.nav
+This component handles three types of navigation items:
+1. Dropdown menus with subcategories
+2. Active page highlighting
+3. Regular navigation links
+-->
 <ul class="navbar">
     {% for nav in site.data.nav %}
         {% if nav.subcategories != null %}
+            <!-- Dropdown menu item with subcategories -->
             <li class="navbar-item">
+                <!-- Parent dropdown link that toggles dropdown visibility -->
                 <a class="navbar-link" href="{{ site.url }}{{ nav.url }}" id="navbarDropdown{{ forloop.index }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ nav.title }}
                 </a>
+                <!-- Dropdown menu container -->
                 <ul class="navbar-dropdown" aria-labelledby="navbarDropdown{{ forloop.index }}">
                     {% for subcategory in nav.subcategories %}
+                        <!-- Individual dropdown menu item -->
                         <li class="navbar-dropdown-item-container">
                             <a class="navbar-dropdown-item" href="{{ site.url }}{{ subcategory.url }}">
                                 {{ subcategory.title }}
                             </a>
                         </li>
                         {% if forloop.last == false %}
+                            <!-- Divider between dropdown items (except after the last item) -->
                             <li class="navbar-divider"></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
             </li>
         {% elsif nav.title == page.title %}
+            <!-- Active menu item (current page) -->
             <li class="navbar-item-active">
                 <a class="navbar-link" href="{{ nav.url }}">
                     {{ nav.title }}
                 </a>
             </li>
         {% else %}
+            <!-- Standard menu item -->
             <li class="navbar-item">
                 <a class="navbar-link" href="{{ site.url }}{{ nav.url }}">
                     {{ nav.title }}

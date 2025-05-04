@@ -1,11 +1,77 @@
 ---
 layout: default
-title: Sitemap
+description: A comprehensive sitemap of the ASI Saga website, showing all pages and their hierarchical structure for easy navigation.
 ---
 
-<h1>Sitemap</h1>
-<ul>
-    {% for page in site.pages %}
-        <li><a href="{{ page.url }}">{{ page.title | default: page.url }}</a></li>
-    {% endfor %}
-</ul>
+<!-- 
+Sitemap page main content
+This page provides a hierarchical list of all pages on the website for easy navigation
+Uses unordered lists with custom styling for hierarchical representation
+-->
+<div class="sitemap-container">
+  <!-- Page header section -->
+  <section class="sitemap-header-section">
+    <h1 class="sitemap-title">Sitemap</h1>
+    <p class="sitemap-subtitle">A complete overview of our website structure</p>
+  </section>
+
+  <!-- Main sitemap navigation list -->
+  <section class="sitemap-content-section">
+    <div class="sitemap-list-container">
+      <ul class="sitemap-list">
+        <!-- Home page link -->
+        <li class="sitemap-item">
+          <a href="{{ site.url }}/" class="sitemap-link">Home</a>
+        </li>
+        
+        <!-- About section -->
+        <li class="sitemap-item">
+          <a href="{{ site.url }}/about/" class="sitemap-link">About</a>
+        </li>
+        
+        <!-- Products section with nested sub-items -->
+        <li class="sitemap-item sitemap-parent">
+          <span class="sitemap-parent-title">Products</span>
+          <ul class="sitemap-sublist">
+            <!-- Realm of Agents section -->
+            <li class="sitemap-subitem sitemap-parent">
+              <a href="{{ site.url }}/realm-of-agents/" class="sitemap-link">Realm of Agents</a>
+              <ul class="sitemap-sublist">
+                <li class="sitemap-subitem">
+                  <a href="{{ site.url }}/realm-of-agents/purpose-driven-agent/" class="sitemap-link">Purpose Driven Agent</a>
+                </li>
+                <li class="sitemap-subitem">
+                  <a href="{{ site.url }}/realm-of-agents/github-agent/" class="sitemap-link">GitHub Agent</a>
+                </li>
+                <li class="sitemap-subitem">
+                  <a href="{{ site.url }}/realm-of-agents/agent-operating-system/" class="sitemap-link">Agent Operating System</a>
+                </li>
+              </ul>
+            </li>
+            
+            <!-- Business Infinity section -->
+            <li class="sitemap-subitem sitemap-parent">
+              <a href="{{ site.url }}/business-infinity/" class="sitemap-link">Business Infinity</a>
+              <ul class="sitemap-sublist">
+                <li class="sitemap-subitem">
+                  <a href="{{ site.url }}/business-infinity/entrepreneur/" class="sitemap-link">Entrepreneur</a>
+                </li>
+                <li class="sitemap-subitem">
+                  <a href="{{ site.url }}/business-infinity/startup/" class="sitemap-link">Startup</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        
+        <!-- Legal and utility pages -->
+        <li class="sitemap-item">
+          <a href="{{ site.url }}/business-infinity/privacy-policy.html" class="sitemap-link">Privacy Policy</a>
+        </li>
+        <li class="sitemap-item">
+          <a href="{{ site.url }}/sitemap/" class="sitemap-link">Sitemap</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

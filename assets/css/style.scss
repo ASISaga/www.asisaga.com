@@ -218,19 +218,45 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
   }
 }
 
-.navbar-item, .navbar-item-active {
+// Navbar item - holds dropdown state
+.navbar-item {
   position: relative;
   margin: 0 0.25rem;
   
   @media (max-width: 991.98px) {
     margin: 0.25rem 0;
   }
+  
+  // Bootstrap dropdown states
+  &:hover > .navbar-dropdown {
+    display: block;
+  }
+  
+  // Apply Bootstrap .dropdown class behavior
+  &[data-bs-toggle="dropdown"] {
+    cursor: pointer;
+  }
+  
+  &.show > .navbar-dropdown {
+    display: block;
+  }
 }
 
-.navbar-item-active .navbar-link {
-  color: lighten($primary, 40%);
+// Active navbar item - separate class for active state
+.navbar-item-active {
+  position: relative;
+  margin: 0 0.25rem;
+  
+  @media (max-width: 991.98px) {
+    margin: 0.25rem 0;
+  }
+  
+  .navbar-link {
+    color: lighten($primary, 40%);
+  }
 }
 
+// Navbar link - acts as dropdown toggle for items with dropdowns
 .navbar-link {
   display: block;
   padding: 0.5rem 0.75rem;
@@ -243,6 +269,7 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
     color: lighten($primary, 40%);
   }
   
+  // Apply Bootstrap .dropdown-toggle class behavior for dropdown links
   &[data-bs-toggle="dropdown"] {
     position: relative;
     
@@ -259,6 +286,7 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
   }
 }
 
+// Dropdown menu - holds dropdown items
 .navbar-dropdown {
   position: absolute;
   z-index: 1000;
@@ -275,23 +303,25 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 0.25rem;
   
-  &[data-bs-popper] {
-    top: 100%;
-    left: 0;
-    margin-top: 0.125rem;
-  }
+  // Apply Bootstrap .dropdown-menu positioning
+  top: 100%;
+  left: 0;
+  margin-top: 0.125rem;
   
+  // Apply Bootstrap .show behavior for the dropdown menu
   .navbar-item.show & {
     display: block;
   }
 }
 
+// Dropdown item container
 .navbar-dropdown-item-container {
   position: relative;
   padding: 0;
   margin: 0;
 }
 
+// Dropdown item 
 .navbar-dropdown-item {
   display: block;
   width: 100%;
@@ -312,6 +342,7 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
   }
 }
 
+// Dropdown divider
 .navbar-divider {
   height: 0;
   margin: 0.5rem 0;

@@ -1,24 +1,37 @@
-<footer class="footer-section">
-  <div class="footer-section__current">
-    <a href="#top">Scroll to top</a>
-  </div>
-  <div class="footer-section__bottom">
-    <div class="footer-section__container">
-      <div class="footer-section__row">
-        <div class="footer-section__col">
-          <p class="footer-section__copyright">&copy; 2025 ASI Saga. All rights reserved.</p>
+<!-- 
+Site footer component that appears at the bottom of each page
+Contains copyright information, social media links, and secondary navigation
+-->
+<footer class="site-footer">
+  <div class="site-footer__container">
+    <!-- Copyright section with dynamic year and site title from config -->
+    <div class="site-footer__copyright">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | default: site.github.repository_name }}. All rights reserved.</p>
+    </div>
+    
+    <!-- Social media links section -->
+    <div class="site-footer__social">
+      <!-- LinkedIn integration if configured -->
+      {% if site.linkedin_username %}
+        <div class="site-footer__social-item">
+          {% include linkedin.html %}
         </div>
-        <div class="footer-section__col">
-          <p class="footer-section__social">Follow us on 
-            <a href="#" class="footer-section__link">LinkedIn</a> |
-            <a href="#" class="footer-section__link">Twitter</a> |
-            <a href="{{ site.github.owner_url }}" class="footer-section__link">GitHub</a>
-          </p>
-        </div>
-        <div class="footer-section__col">
-          <a href="/sitemap/" class="footer-section__link">Sitemap</a>
-        </div>
-      </div>
+      {% endif %}
+      
+      <!-- Additional social media icons can be added here -->
+    </div>
+    
+    <!-- Secondary footer navigation (optional) -->
+    <div class="site-footer__links">
+      <ul class="site-footer__nav-list">
+        <li class="site-footer__nav-item">
+          <a href="{{ site.url }}/about/" class="site-footer__nav-link">About</a>
+        </li>
+        <li class="site-footer__nav-item">
+          <a href="{{ site.url }}/sitemap/" class="site-footer__nav-link">Sitemap</a>
+        </li>
+        <!-- Additional footer links can be added here -->
+      </ul>
     </div>
   </div>
 </footer>
