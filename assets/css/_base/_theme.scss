@@ -193,3 +193,133 @@ a {
 code, pre, kbd {
   font-family: var(--font-family-monospace, $font-family-monospace);
 }
+
+// Theme file with color utilities based on our centralized color palette
+
+// Color utility classes for background colors
+.bg-primary { background-color: $primary !important; }
+.bg-primary-light { background-color: $primary-light !important; }
+.bg-primary-dark { background-color: $primary-dark !important; }
+
+.bg-secondary { background-color: $secondary !important; }
+.bg-secondary-light { background-color: $secondary-light !important; }
+.bg-secondary-dark { background-color: $secondary-dark !important; }
+
+.bg-brand-blue { background-color: $brand-blue !important; }
+.bg-brand-red { background-color: $brand-red !important; }
+.bg-brand-green { background-color: $brand-green !important; }
+
+// Text color utility classes
+.text-primary { color: $primary !important; }
+.text-primary-light { color: $primary-light !important; }
+.text-primary-dark { color: $primary-dark !important; }
+
+.text-secondary { color: $secondary !important; }
+.text-secondary-light { color: $secondary-light !important; }
+.text-secondary-dark { color: $secondary-dark !important; }
+
+.text-brand-blue { color: $brand-blue !important; }
+.text-brand-red { color: $brand-red !important; }
+.text-brand-green { color: $brand-green !important; }
+
+// Border color utility classes
+.border-primary { border-color: $primary !important; }
+.border-secondary { border-color: $secondary !important; }
+.border-light { border-color: $border-color !important; }
+.border-dark { border-color: $border-color-dark !important; }
+
+// Link color overrides
+.link-primary {
+  color: $primary;
+  text-decoration: none;
+  
+  &:hover, &:focus {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+}
+
+.link-secondary {
+  color: $secondary;
+  text-decoration: none;
+  
+  &:hover, &:focus {
+    color: $secondary-dark;
+    text-decoration: underline;
+  }
+}
+
+// Theme color classes for buttons
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  
+  &:hover, &:focus, &:active {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  
+  &:hover, &:focus, &:active {
+    background-color: $secondary-dark;
+    border-color: $secondary-dark;
+  }
+}
+
+.btn-outline-primary {
+  color: $primary;
+  border-color: $primary;
+  
+  &:hover, &:focus, &:active {
+    background-color: $primary;
+    color: $light;
+  }
+}
+
+// Dark mode color adjustments
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #{$body-bg-dark};
+    --bs-body-color: #{$body-color-light};
+  }
+  
+  .border-light {
+    border-color: $border-color-dark !important;
+  }
+  
+  .text-dark {
+    color: $light !important;
+  }
+  
+  .bg-light {
+    background-color: $dark !important;
+  }
+}
+
+// Custom theme color classes for components
+.card-theme {
+  border-color: $border-color;
+  background-color: $body-bg;
+  color: $body-color;
+  
+  @media (prefers-color-scheme: dark) {
+    border-color: $border-color-dark;
+    background-color: $body-bg-dark;
+    color: $body-color-light;
+  }
+}
+
+// Gradient background classes
+.gradient-primary {
+  background: linear-gradient(135deg, $primary, $primary-dark);
+  color: $light;
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, $secondary, $secondary-dark);
+  color: $light;
+}

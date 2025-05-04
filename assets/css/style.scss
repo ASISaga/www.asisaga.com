@@ -61,6 +61,36 @@ dummy{
   --font-weight-medium: #{$font-weight-medium};
   --font-weight-semibold: #{$font-weight-semibold};
   --font-weight-bold: #{$font-weight-bold};
+  
+  // Define color palette variables for global access
+  --color-primary: #{$primary};
+  --color-primary-light: #{$primary-light};
+  --color-primary-dark: #{$primary-dark};
+  
+  --color-secondary: #{$secondary};
+  --color-secondary-light: #{$secondary-light};
+  --color-secondary-dark: #{$secondary-dark};
+  
+  --color-success: #{$success};
+  --color-info: #{$info};
+  --color-warning: #{$warning};
+  --color-danger: #{$danger};
+  --color-light: #{$light};
+  --color-dark: #{$dark};
+  
+  // Brand specific colors
+  --color-brand-blue: #{$brand-blue};
+  --color-brand-red: #{$brand-red};
+  --color-brand-green: #{$brand-green};
+  
+  // Background colors
+  --color-bg: #{$body-bg};
+  --color-bg-dark: #{$body-bg-dark};
+  
+  // Text colors
+  --color-text: #{$body-color};
+  --color-text-light: #{$body-color-light};
+  --color-text-muted: #{$text-muted};
 }
 
 // Override Bootstrap with custom theme variables
