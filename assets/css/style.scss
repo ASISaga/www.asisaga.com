@@ -541,6 +541,267 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
   }
 }
 
+// Main content area
+.site-main {
+  width: 100%;
+  min-height: 50vh;
+  padding: 1rem 0;
+  
+  .site-content {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1320px;
+  }
+}
+
+// Homepage specific styles
+.home-container {
+  width: 100%;
+  
+  // Hero section
+  .hero-section {
+    background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 4rem 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    
+    .hero-content {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $primary;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+      font-size: $font-size-lg;
+      color: $secondary;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  // Products grid
+  .products-section {
+    margin-bottom: 3rem;
+    
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: calc(var(--bs-gutter-x) * -0.5);
+      margin-left: calc(var(--bs-gutter-x) * -0.5);
+      
+      .product-item {
+        flex: 0 0 auto;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-bottom: 1.5rem;
+        
+        @media (min-width: 768px) {
+          width: 50%;
+        }
+        
+        @media (min-width: 992px) {
+          width: 33.333333%;
+        }
+      }
+    }
+  }
+  
+  // Call to action section
+  .cta-section {
+    background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 3rem 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    
+    .cta-content {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+    
+    .cta-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $primary;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-description {
+      color: $secondary;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      font-weight: $font-weight-medium;
+      text-align: center;
+      padding: 0.5rem 1.5rem;
+      font-size: $font-size-base;
+      line-height: 1.5;
+      border-radius: 50rem;
+      color: $white;
+      background-color: $primary;
+      border: 1px solid $primary;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      
+      &:hover {
+        background-color: darken($primary, 7.5%);
+        border-color: darken($primary, 10%);
+        color: $white;
+      }
+    }
+  }
+}
+
+// About page specific styles
+.about-container {
+  width: 100%;
+  
+  // Header section
+  .about-header-section {
+    background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 3rem 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $primary;
+    margin-bottom: 1rem;
+  }
+  
+  .about-subtitle {
+    font-size: $font-size-lg;
+    color: $secondary;
+    margin-bottom: 0;
+  }
+  
+  // Mission and vision section
+  .about-mission-section {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .about-section-content {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  
+  .about-section-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $primary;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  .about-section-text {
+    margin-bottom: 1.5rem;
+    color: $body-color;
+  }
+  
+  // Team section
+  .about-team-section {
+    background: $gray-100;
+    border-radius: $border-radius;
+    padding: 3rem 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    
+    .about-team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .about-team-member {
+      background: $white;
+      padding: 1.5rem;
+      border-radius: $border-radius-sm;
+      box-shadow: $box-shadow;
+      flex: 0 0 100%;
+      max-width: 100%;
+      
+      @media (min-width: 768px) {
+        flex: 0 0 calc(50% - 2rem);
+        max-width: calc(50% - 2rem);
+      }
+    }
+    
+    .about-team-member-name {
+      font-weight: $font-weight-bold;
+      color: $primary;
+      margin-bottom: 0.25rem;
+    }
+    
+    .about-team-member-role {
+      color: $secondary;
+      font-weight: $font-weight-medium;
+      margin-bottom: 1rem;
+    }
+    
+    .about-team-member-bio {
+      margin-bottom: 0;
+    }
+  }
+  
+  // Contact section
+  .about-contact-section {
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+  }
+  
+  .about-contact-links {
+    margin-top: 1.5rem;
+  }
+  
+  .about-contact-link {
+    display: inline-block;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    font-size: $font-size-base;
+    line-height: 1.5;
+    border-radius: 50rem;
+    color: $white;
+    background-color: $primary;
+    border: 1px solid $primary;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+    
+    &:hover {
+      background-color: darken($primary, 7.5%);
+      border-color: darken($primary, 10%);
+      color: $white;
+    }
+  }
+}
+
 // Footer
 .footer-section {
   padding-top: 1.5rem;
