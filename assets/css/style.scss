@@ -227,12 +227,12 @@ header {
   color: $white;
   width: 100%;
   .site-header__navbar {
-    @include container();
-    @include navbar();
-    @include navbar-expand-lg();
-    @include navbar-dark();
-    @include bg-primary();
-    @include shadow-sm();
+    @extend .container;
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .navbar-dark;
+    @extend .bg-primary;
+    @extend .shadow-sm;
     padding-top: $spacing-sm;
     padding-bottom: $spacing-sm;
     border-radius: 0 0 $card-radius $card-radius;
