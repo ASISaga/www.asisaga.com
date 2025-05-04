@@ -8,6 +8,7 @@ dummy{
 // Import base styles
 @import "_base/variables";
 @import "_base/common";
+@import "_base/theme"; // Added theme file for consistency across pages
 
 // Import bootstrap main files globally
 @import "bootstrap/functions";
@@ -16,6 +17,12 @@ dummy{
 @import "bootstrap/maps";
 @import "bootstrap/mixins";
 @import "bootstrap/utilities";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/containers";
+@import "bootstrap/grid";
 
 // Import components
 @import "_components/header";
@@ -37,4 +44,29 @@ dummy{
 // Import responsive utilities
 @import "_base/responsive";
 
-dummy { display: none; }
+// Override Bootstrap with custom theme variables
+.custom-container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, #{$section-padding-x});
+  padding-left: var(--bs-gutter-x, #{$section-padding-x});
+  margin-right: auto;
+  margin-left: auto;
+  max-width: map-get($container-max-widths, 'xxl');
+}
+
+// Ensure consistent typography across all pages
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $dark;
+    color: $light;
+  }
+}

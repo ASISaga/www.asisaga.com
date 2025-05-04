@@ -23,21 +23,47 @@ $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
 
+// Theme colors - variations
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
+$secondary-light: lighten($secondary, 10%);
+$secondary-dark: darken($secondary, 10%);
+
 // Body settings
 $body-bg: $white;
 $body-color: $gray-900;
 
-// Header background (customizable)
+// Header settings for consistency
 $header-bg: $primary;
+$header-color: $white;
+$header-padding-y: 1rem;
+$header-padding-x: 1rem;
 
-// Font settings
+// Footer settings for consistency
+$footer-bg: $gray-800;
+$footer-color: $gray-200;
+$footer-padding-y: 2rem;
+$footer-padding-x: 1rem;
+
+// Typography - Font families
 $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
                    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", 
                    "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-headings: $font-family-base;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Typography - Font sizes
 $font-size-base: 1rem;
 $font-size-sm: $font-size-base * 0.875;
 $font-size-lg: $font-size-base * 1.25;
 $font-size-xl: $font-size-base * 2;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
 
 // Font weights
 $font-weight-normal: 400;
@@ -50,6 +76,19 @@ $line-height-base: 1.5;
 $line-height-sm: 1.25;
 $line-height-lg: 2;
 
+// Headings
+$headings-margin-bottom: 0.5rem;
+$headings-font-family: $font-family-headings;
+$headings-font-weight: $font-weight-bold;
+$headings-line-height: 1.2;
+$headings-color: $primary;
+
+// Links
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
 // Border radius
 $border-radius-sm: 0.2rem;
 $border-radius: 0.25rem;
@@ -60,6 +99,28 @@ $border-radius-xl: 0.5rem;
 $box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
 $box-shadow: 0 .5rem 1rem rgba($black, .15);
 $box-shadow-lg: 0 1rem 3rem rgba($black, .175);
+
+// Component specific variables
+$card-border-radius: $border-radius;
+$card-border-color: $gray-300;
+$card-box-shadow: $box-shadow-sm;
+$card-header-bg: $gray-200;
+$card-header-color: $gray-800;
+
+$btn-font-weight: $font-weight-medium;
+$btn-border-radius: $border-radius;
+$btn-padding-y: 0.375rem;
+$btn-padding-x: 0.75rem;
+
+$navbar-padding-y: 0.5rem;
+$navbar-padding-x: 1rem;
+$navbar-nav-link-padding-x: 0.5rem;
+$navbar-light-color: $gray-700;
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+$navbar-dark-color: $gray-300;
+$navbar-dark-hover-color: $white;
+$navbar-dark-active-color: $white;
 
 // Spacing for consistent margins/padding
 $spacer: 1rem;
@@ -99,3 +160,11 @@ $zindex-modal-backdrop: 1040;
 $zindex-modal: 1050;
 $zindex-popover: 1060;
 $zindex-tooltip: 1070;
+
+// Theme specific variables for consistent sections
+$section-padding-y: 2rem;
+$section-padding-x: 1rem;
+$section-bg-light: $light;
+$section-bg-dark: $gray-800;
+$section-bg-primary: rgba($primary, 0.1);
+$section-bg-secondary: rgba($secondary, 0.1);

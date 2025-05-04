@@ -1,0 +1,166 @@
+// Theme file for consistent styling across all pages
+
+// Core body styles
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
+// Typography - Consistent heading styles
+h1, .h1 { 
+  font-size: $h1-font-size; 
+  color: $headings-color;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+h2, .h2 { 
+  font-size: $h2-font-size; 
+  color: $headings-color;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+h3, .h3 { 
+  font-size: $h3-font-size; 
+  color: $headings-color;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+h4, .h4 { 
+  font-size: $h4-font-size; 
+  color: $headings-color;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+h5, .h5 { 
+  font-size: $h5-font-size; 
+  color: $headings-color;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+h6, .h6 { 
+  font-size: $h6-font-size; 
+  color: $headings-color;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+
+// Link styling
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+// Consistent header styling
+.site-header {
+  background-color: $header-bg;
+  color: $header-color;
+  padding: $header-padding-y $header-padding-x;
+  
+  .navbar-brand {
+    color: $white;
+    
+    &:hover {
+      color: rgba($white, 0.9);
+    }
+  }
+  
+  .navbar-nav .nav-link {
+    color: rgba($white, 0.8);
+    
+    &:hover, &.active {
+      color: $white;
+    }
+  }
+}
+
+// Consistent footer styling
+.site-footer {
+  background-color: $footer-bg;
+  color: $footer-color;
+  padding: $footer-padding-y $footer-padding-x;
+  
+  a {
+    color: $gray-400;
+    
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+// Section styling for consistency
+.section {
+  padding: $section-padding-y $section-padding-x;
+  
+  &.section-light {
+    background-color: $section-bg-light;
+  }
+  
+  &.section-dark {
+    background-color: $section-bg-dark;
+    color: $white;
+  }
+  
+  &.section-primary {
+    background-color: $section-bg-primary;
+  }
+  
+  &.section-secondary {
+    background-color: $section-bg-secondary;
+  }
+}
+
+// Card styling for consistency
+.card {
+  border-radius: $card-border-radius;
+  border-color: $card-border-color;
+  box-shadow: $card-box-shadow;
+  
+  .card-header {
+    background-color: $card-header-bg;
+    color: $card-header-color;
+  }
+}
+
+// Button styling for consistency
+.btn {
+  font-weight: $btn-font-weight;
+  border-radius: $btn-border-radius;
+  padding: $btn-padding-y $btn-padding-x;
+}
+
+// Theme-consistent utility classes
+.text-primary { color: $primary !important; }
+.text-secondary { color: $secondary !important; }
+.text-light { color: $light !important; }
+.text-dark { color: $dark !important; }
+
+.bg-primary { background-color: $primary !important; }
+.bg-secondary { background-color: $secondary !important; }
+.bg-light { background-color: $light !important; }
+.bg-dark { background-color: $dark !important; }
+
+// Add consistent box shadow utilities
+.shadow-sm { box-shadow: $box-shadow-sm !important; }
+.shadow { box-shadow: $box-shadow !important; }
+.shadow-lg { box-shadow: $box-shadow-lg !important; }
+
+// Add border radius utilities for consistency
+.rounded { border-radius: $border-radius !important; }
+.rounded-sm { border-radius: $border-radius-sm !important; }
+.rounded-lg { border-radius: $border-radius-lg !important; }
+.rounded-xl { border-radius: $border-radius-xl !important; }

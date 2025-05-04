@@ -204,3 +204,93 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+// Responsive utilities for consistent behavior across devices
+
+// Responsive typography
+@include media-breakpoint-down(md) {
+  h1, .h1 { font-size: $h1-font-size * 0.8; }
+  h2, .h2 { font-size: $h2-font-size * 0.8; }
+  h3, .h3 { font-size: $h3-font-size * 0.8; }
+}
+
+@include media-breakpoint-down(sm) {
+  h1, .h1 { font-size: $h1-font-size * 0.7; }
+  h2, .h2 { font-size: $h2-font-size * 0.7; }
+  h3, .h3 { font-size: $h3-font-size * 0.7; }
+  h4, .h4 { font-size: $h4-font-size * 0.9; }
+}
+
+// Responsive spacing
+@include media-breakpoint-down(md) {
+  .section {
+    padding: ($section-padding-y * 0.75) ($section-padding-x * 0.75);
+  }
+  
+  .site-header {
+    padding: ($header-padding-y * 0.75) ($header-padding-x * 0.75);
+  }
+  
+  .site-footer {
+    padding: ($footer-padding-y * 0.75) ($footer-padding-x * 0.75);
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .section {
+    padding: ($section-padding-y * 0.5) ($section-padding-x * 0.5);
+  }
+  
+  .site-header {
+    padding: ($header-padding-y * 0.5) ($header-padding-x * 0.5);
+  }
+  
+  .site-footer {
+    padding: ($footer-padding-y * 0.5) ($footer-padding-x * 0.5);
+  }
+}
+
+// Ensure images are responsive
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+// Ensure tables are responsive
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Responsive visibility helpers
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .d-#{$breakpoint}-none {
+    @include media-breakpoint-up($breakpoint) {
+      display: none !important;
+    }
+  }
+  
+  .d-#{$breakpoint}-block {
+    @include media-breakpoint-up($breakpoint) {
+      display: block !important;
+    }
+  }
+  
+  .d-#{$breakpoint}-flex {
+    @include media-breakpoint-up($breakpoint) {
+      display: flex !important;
+    }
+  }
+}
+
+// Fix for navbar on mobile devices
+@include media-breakpoint-down(md) {
+  .site-header .navbar-collapse {
+    background-color: $header-bg;
+    padding: 0.5rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+  }
+}
