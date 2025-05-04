@@ -297,9 +297,9 @@ header {
     @extend .navbar-toggler-icon;
   }
   .site-header__nav {
-    @include collapse();
-    @include navbar-collapse();
-    @include justify-content-end();
+    @extend .collapse;
+    @extend .navbar-collapse;
+    @extend .justify-content-end;
   }
   @media (max-width: 576px) {
     .site-header__title {
