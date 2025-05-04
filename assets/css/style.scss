@@ -286,14 +286,14 @@ header {
     margin-bottom: 0;
   }
   .site-header__toggler {
-    @include navbar-toggler();
+    @extend .navbar-toggler;
     display: none;
     position: absolute;
     bottom: 10px;
     right: 10px;
   }
   .site-header__toggler-icon {
-    @include navbar-toggler-icon();
+    @extend .navbar-toggler-icon;
   }
   .site-header__nav {
     @include collapse();
