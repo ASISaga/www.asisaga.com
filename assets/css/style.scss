@@ -100,12 +100,12 @@ body, .body-consistent {
 }
 
 header {
-  background-color: $header-bg;
+  background-color: $color-header-bg;
   color: $white;
 }
 
 .bg-primary {
-  background-color: $header-bg !important;
+  background-color: $color-header-bg !important;
 }
 
 // === Reusable Card and Section Mixins ===
@@ -132,7 +132,7 @@ header {
 // === Navbar Main Custom Class (Bootstrap Encapsulated) ===
 .navbar-main {
   font-family: $font-family-base;
-  background: $header-bg;
+  background: $color-header-bg;
   color: $white;
   width: 100%;
   @extend .container;
@@ -224,7 +224,7 @@ header {
 // === Site Header Custom Class (Bootstrap Encapsulated) ===
 .site-header {
   font-family: $font-family-base;
-  background: $header-bg;
+  background: $color-header-bg;
   color: $white;
   width: 100%;
   .site-header__navbar {
@@ -1263,7 +1263,7 @@ header {
 .footer-section {
   font-family: $font-family-base;
   color: $body-color;
-  background: $header-bg;
+  background: $color-header-bg;
   padding-top: $spacing-lg;
   padding-bottom: 0;
   margin-top: $spacing-lg;
@@ -1282,7 +1282,7 @@ header {
     }
   }
   &__bottom {
-    background: $header-bg;
+    background: $color-header-bg;
     padding: $spacing-lg;
     .footer-section__container {
       text-align: center;
