@@ -17,7 +17,6 @@ $gray-100: #f8f9fa;
 $body-bg: #fff;
 $body-color: #212529;
 $header-bg: rgb(55, 53, 54);
-
 $font-family-base: 'Inter', 'Segoe UI', Arial, sans-serif;
 $font-size-base: 1rem;
 $font-size-lg: 1.15rem;
@@ -25,40 +24,23 @@ $font-size-sm: 0.98rem;
 $font-size-xl: 2rem;
 $font-weight-bold: 700;
 $font-weight-medium: 500;
-
 $border-radius: 1.25rem;
 $border-radius-sm: 0.75rem;
 $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
 
-// Import Bootstrap for theming
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/containers";
-@import "bootstrap/bootstrap";
-
-// Base body and header styles
-body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  color: $body-color;
-  background-color: $body-bg;
-}
-
-header {
-  background-color: $header-bg;
-  color: $white;
-}
-
-// Navbar encapsulation, using Bootstrap utilities
+// Navbar
 .navbar-main {
-  @extend .navbar, .navbar-expand-lg, .navbar-dark, .bg-primary, .shadow-sm;
+  @import "bootstrap/navbar";
+  @import "bootstrap/nav";
+  @import "bootstrap/containers";
+  @import "bootstrap/utilities";
+  font-family: $font-family-base;
   background: $header-bg;
   border-radius: 0 0 $border-radius $border-radius;
-  .navbar-main__container {@extend .container;}
-  .navbar-main__collapse {@extend .collapse, .navbar-collapse, .justify-content-end;}
-  .navbar-main__nav {@extend .navbar-nav, .ms-auto, .mb-2, .mb-lg-0;}
-  .navbar-main__item {@extend .nav-item;}
+  .navbar-main__container { @extend .container; }
+  .navbar-main__collapse { @extend .collapse, .navbar-collapse, .justify-content-end; }
+  .navbar-main__nav { @extend .navbar-nav, .ms-auto, .mb-2, .mb-lg-0; }
+  .navbar-main__item { @extend .nav-item; }
   .navbar-main__link {
     @extend .nav-link, .px-3, .fw-semibold;
     color: $white !important;
@@ -68,47 +50,61 @@ header {
   }
 }
 
-// Card encapsulation, using Bootstrap utilities
+// Product Card
 .product-card {
-  @extend .card, .shadow-sm;
+  @import "bootstrap/card";
+  @import "bootstrap/buttons";
+  @import "bootstrap/utilities";
   border-radius: $border-radius;
   border: none;
   background: $body-bg;
+  box-shadow: $box-shadow;
   transition: box-shadow 0.2s, transform 0.2s;
   &:hover {
     box-shadow: 0 8px 32px rgba(55, 53, 54, 0.18), 0 3px 12px rgba(0,0,0,0.12);
     transform: translateY(-4px) scale(1.01);
   }
-}
-.product-card-title {
-  @extend .card-title, .fw-bold, .text-primary, .mb-2;
-  font-size: $font-size-lg;
-}
-.product-card-description {
-  @extend .card-text, .mb-4;
-  color: $body-color;
-}
-.product-card-btn {
-  @extend .btn, .btn-primary, .rounded-pill, .fw-medium, .px-4, .py-2;
-  font-size: $font-size-base;
+  .product-card-title {
+    @extend .card-title, .fw-bold, .text-primary, .mb-2;
+    font-size: $font-size-lg;
+  }
+  .product-card-description {
+    @extend .card-text, .mb-4;
+    color: $body-color;
+  }
+  .product-card-btn {
+    @extend .btn, .btn-primary, .rounded-pill, .fw-medium, .px-4, .py-2;
+    font-size: $font-size-base;
+  }
 }
 
-// Section encapsulation, using Bootstrap utilities
+// Section
 .section {
-  @extend .container, .py-5, .mb-5;
+  @import "bootstrap/containers";
+  @import "bootstrap/grid";
+  @import "bootstrap/utilities";
   background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  @extend .container, .py-5, .mb-5;
+  .section-title {
+    @extend .text-center, .fw-bold, .mb-4, .text-primary;
+    font-size: $font-size-xl;
+  }
+  .section-lead {
+    @extend .text-center, .mb-4, .text-secondary, .fst-italic;
+    font-size: $font-size-lg;
+  }
 }
 
-// Typography utilities
-.section-title {
-  @extend .text-center, .fw-bold, .mb-4, .text-primary;
-  font-size: $font-size-xl;
-}
-.section-lead {
-  @extend .text-center, .mb-4, .text-secondary, .fst-italic;
-  font-size: $font-size-lg;
+// Footer
+.footer-section {
+  @import "bootstrap/utilities";
+  @extend .py-4, .mt-5;
+  background: $header-bg;
+  color: $white;
+  text-align: center;
+  a { color: $primary; text-decoration: underline; &:hover { color: lighten($primary, 20%); } }
 }
 
 // Responsive adjustments
@@ -119,11 +115,4 @@ header {
   .section-title { font-size: $font-size-sm; }
 }
 
-// Footer encapsulation
-.footer-section {
-  @extend .py-4, .mt-5;
-  background: $header-bg;
-  color: $white;
-  text-align: center;
-  a { color: $primary; text-decoration: underline; &:hover { color: lighten($primary, 20%); } }
-}
+dummy { display: none; }
