@@ -5,12 +5,6 @@ dummy{
   display: none
 }
 
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/containers";
-@import "bootstrap/bootstrap";
-
 // === Color System: Centralized Color Variables ===
 $color-primary: #007bff;
 $color-secondary: #6c757d;
@@ -85,15 +79,25 @@ $size-phase-col-max: 320px;
 $size-agent-col-max: 700px;
 $size-linkedin-img: 32px;
 
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/containers";
+@import "bootstrap/bootstrap";
+
+dummy{
+  display: none
+}
+
+// Custom variables
+$header-bg: $color-header-bg;
+
 body, .body-consistent {
   font-family: $font-family-base;
   font-size: $font-size-base;
   color: $body-color;
   background-color: $body-bg;
 }
-
-// Custom variables
-$header-bg: $color-header-bg;
 
 header {
   background-color: $header-bg;
