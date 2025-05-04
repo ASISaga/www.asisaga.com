@@ -1,0 +1,206 @@
+// Responsive adjustments
+@media (max-width: 576px) {
+  .navbar-main { border-radius: 0 0 $border-radius-sm $border-radius-sm; }
+  .product-card { border-radius: $border-radius-sm; }
+  .section { border-radius: $border-radius-sm; }
+  .section-title { font-size: $font-size-lg; }
+}
+
+// Responsive utilities
+
+// Hide elements based on screen size
+.d-none-xs {
+  @media (max-width: 575.98px) {
+    display: none !important;
+  }
+}
+
+.d-none-sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    display: none !important;
+  }
+}
+
+.d-none-md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    display: none !important;
+  }
+}
+
+.d-none-lg {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    display: none !important;
+  }
+}
+
+.d-none-xl {
+  @media (min-width: 1200px) and (max-width: 1399.98px) {
+    display: none !important;
+  }
+}
+
+.d-none-xxl {
+  @media (min-width: 1400px) {
+    display: none !important;
+  }
+}
+
+// Show elements based on screen size
+.d-block-xs {
+  @media (max-width: 575.98px) {
+    display: block !important;
+  }
+}
+
+.d-block-sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    display: block !important;
+  }
+}
+
+.d-block-md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    display: block !important;
+  }
+}
+
+.d-block-lg {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    display: block !important;
+  }
+}
+
+.d-block-xl {
+  @media (min-width: 1200px) and (max-width: 1399.98px) {
+    display: block !important;
+  }
+}
+
+.d-block-xxl {
+  @media (min-width: 1400px) {
+    display: block !important;
+  }
+}
+
+// Text alignment responsive utilities
+.text-center-xs {
+  @media (max-width: 575.98px) {
+    text-align: center !important;
+  }
+}
+
+.text-center-sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    text-align: center !important;
+  }
+}
+
+.text-center-md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    text-align: center !important;
+  }
+}
+
+// Margin adjustments for responsive layouts
+.mt-xs {
+  @media (max-width: 575.98px) {
+    margin-top: 1rem !important;
+  }
+}
+
+.mt-sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    margin-top: 1rem !important;
+  }
+}
+
+.mt-md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    margin-top: 1rem !important;
+  }
+}
+
+.mb-xs {
+  @media (max-width: 575.98px) {
+    margin-bottom: 1rem !important;
+  }
+}
+
+.mb-sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    margin-bottom: 1rem !important;
+  }
+}
+
+.mb-md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    margin-bottom: 1rem !important;
+  }
+}
+
+// Font size adjustments for different screen sizes
+.fs-responsive-xl {
+  font-size: $font-size-xl;
+  
+  @media (max-width: 991.98px) {
+    font-size: $font-size-lg;
+  }
+  
+  @media (max-width: 575.98px) {
+    font-size: $font-size-base * 1.5;
+  }
+}
+
+.fs-responsive-lg {
+  font-size: $font-size-lg;
+  
+  @media (max-width: 991.98px) {
+    font-size: $font-size-base * 1.1;
+  }
+  
+  @media (max-width: 575.98px) {
+    font-size: $font-size-base;
+  }
+}
+
+// Flex adjustments for responsive layouts
+.flex-column-reverse-xs {
+  @media (max-width: 575.98px) {
+    flex-direction: column-reverse !important;
+  }
+}
+
+.flex-column-xs {
+  @media (max-width: 575.98px) {
+    flex-direction: column !important;
+  }
+}
+
+.align-items-center-xs {
+  @media (max-width: 575.98px) {
+    align-items: center !important;
+  }
+}
+
+.justify-content-center-xs {
+  @media (max-width: 575.98px) {
+    justify-content: center !important;
+  }
+}
+
+// Container padding adjustments
+.container-fluid-xs {
+  @media (max-width: 575.98px) {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+}
+
+// Image responsive adjustments
+.img-fluid-centered {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

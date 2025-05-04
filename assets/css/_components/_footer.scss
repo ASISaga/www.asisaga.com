@@ -1,0 +1,77 @@
+// Footer styling
+.site-footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+  background: $header-bg; // Use the same background as header for consistency
+  color: $white;
+  
+  .site-footer__container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1320px;
+  }
+  
+  .site-footer__copyright {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0;
+    }
+  }
+  
+  .site-footer__social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    
+    .site-footer__social-item {
+      margin: 0 0.5rem;
+    }
+  }
+  
+  .site-footer__links {
+    text-align: center;
+  }
+  
+  .site-footer__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .site-footer__nav-item {
+    padding: 0 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .site-footer__nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+    
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 767.98px) {
+    .site-footer__nav-list {
+      flex-direction: column;
+    }
+    
+    .site-footer__nav-item {
+      padding: 0.25rem 0;
+    }
+  }
+}
