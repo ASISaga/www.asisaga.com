@@ -6,6 +6,7 @@ dummy{
 }
 
 // === Color System: Centralized Color Variables ===
+// These variables define the main color palette for the website, including primary, secondary, and semantic colors.
 $color-primary: #007bff;
 $color-secondary: #6c757d;
 $color-success: #198754;
@@ -31,6 +32,7 @@ $body-bg: $color-body-bg;
 $body-color: $color-body;
 
 // === Font System: Centralized Font Variables ===
+// These variables define the font families, sizes, and weights for consistent typography.
 $font-family-base: 'Inter', 'Segoe UI', Arial, sans-serif;
 $font-family-heading: $font-family-base;
 $font-family-monospace: 'Fira Mono', 'Consolas', 'Menlo', monospace;
@@ -50,6 +52,7 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
 // === Dimensions System: Centralized Spacing, Border, and Radius Variables ===
+// These variables control spacing, border radius, and shadow for layout consistency.
 $spacing-xs: 0.25rem;
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
@@ -70,6 +73,7 @@ $box-shadow-hover-dark: rgba(0,0,0,0.12);
 $box-shadow-img: rgba(0,0,0,0.04);
 
 // === Sizes System: Centralized Sizing Variables ===
+// These variables define standard sizes for logos, cards, containers, etc.
 $size-logo: 48px;
 $size-logo-sm: 36px;
 $size-card-img: 72px;
@@ -79,19 +83,15 @@ $size-phase-col-max: 320px;
 $size-agent-col-max: 700px;
 $size-linkedin-img: 32px;
 
+// Import Bootstrap dependencies in correct order for custom theming
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/containers";
 @import "bootstrap/bootstrap";
 
-dummy{
-  display: none
-}
-
-// Custom variables
-$header-bg: $color-header-bg;
-
+// === Base Body and Header Styles ===
+// These classes ensure consistent font, color, and background for the body and header.
 body, .body-consistent {
   font-family: $font-family-base;
   font-size: $font-size-base;
@@ -109,6 +109,7 @@ header {
 }
 
 // === Reusable Card and Section Mixins ===
+// Use these mixins to create consistent card and section containers throughout the site.
 @mixin reusable-card {
   border-radius: $card-radius;
   box-shadow: 0 4px 24px $box-shadow-light, 0 1.5px 6px $box-shadow-dark;
