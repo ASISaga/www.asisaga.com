@@ -10,6 +10,10 @@ dummy{
 @import "_base/common";
 @import "_base/theme"; // Added theme file for consistency across pages
 
+// Define missing Bootstrap variables
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
 // Import bootstrap main files globally
 @import "bootstrap/functions";
 @import "bootstrap/variables";
