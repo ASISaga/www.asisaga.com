@@ -1,39 +1,35 @@
-<div class="navbar-main">
-    <div class="navbar-main__collapse" id="navbarNav">
-        <ul class="navbar-main__nav">
-            {% for nav in site.data.nav %}
-                {% if nav.subcategories != null %}
-                    <li class="navbar-main__item dropdown">
-                        <a class="navbar-main__link dropdown-toggle" href="{{ site.url }}{{ nav.url }}" id="navbarDropdown{{ forloop.index }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ nav.title }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ forloop.index }}">
-                            {% for subcategory in nav.subcategories %}
-                                <li>
-                                    <a class="dropdown-item" href="{{ site.url }}{{ subcategory.url }}">
-                                        {{ subcategory.title }}
-                                    </a>
-                                </li>
-                                {% if forloop.last == false %}
-                                    <li><hr class="dropdown-divider"></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </li>
-                {% elsif nav.title == page.title %}
-                    <li class="navbar-main__item--active">
-                        <a class="navbar-main__link" href="{{ nav.url }}">
-                            {{ nav.title }}
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="navbar-main__item">
-                        <a class="navbar-main__link" href="{{ site.url }}{{ nav.url }}">
-                            {{ nav.title }}
-                        </a>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
-</div>
+<ul class="navbar">
+    {% for nav in site.data.nav %}
+        {% if nav.subcategories != null %}
+            <li class="navbar-item">
+                <a class="navbar-link" href="{{ site.url }}{{ nav.url }}" id="navbarDropdown{{ forloop.index }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ nav.title }}
+                </a>
+                <ul class="navbar-dropdown" aria-labelledby="navbarDropdown{{ forloop.index }}">
+                    {% for subcategory in nav.subcategories %}
+                        <li class="navbar-dropdown-item-container">
+                            <a class="navbar-dropdown-item" href="{{ site.url }}{{ subcategory.url }}">
+                                {{ subcategory.title }}
+                            </a>
+                        </li>
+                        {% if forloop.last == false %}
+                            <li class="navbar-divider"></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+        {% elsif nav.title == page.title %}
+            <li class="navbar-item-active">
+                <a class="navbar-link" href="{{ nav.url }}">
+                    {{ nav.title }}
+                </a>
+            </li>
+        {% else %}
+            <li class="navbar-item">
+                <a class="navbar-link" href="{{ site.url }}{{ nav.url }}">
+                    {{ nav.title }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
