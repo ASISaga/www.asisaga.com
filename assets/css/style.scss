@@ -5,7 +5,7 @@ dummy{
   display: none;
 }
 
-// Centralized color and font variables for theme
+// Theme variables
 $primary: #007bff;
 $secondary: #6c757d;
 $success: #198754;
@@ -28,103 +28,222 @@ $border-radius: 1.25rem;
 $border-radius-sm: 0.75rem;
 $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
 
+// Import bootstrap main files globally - this approach allows us to use Bootstrap's classes while still defining custom classes
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/variables-dark";
+@import "bootstrap/maps";
+@import "bootstrap/mixins";
+@import "bootstrap/utilities";
+
 // Navbar
 .navbar-main {
-  @import "bootstrap/functions";
-  @import "bootstrap/variables";
-  @import "bootstrap/variables-dark";
-  @import "bootstrap/maps";
-  @import "bootstrap/mixins";
-  @import "bootstrap/navbar";
-  @import "bootstrap/nav";
-  @import "bootstrap/containers";
-  @import "bootstrap/utilities";
   font-family: $font-family-base;
   background: $header-bg;
   border-radius: 0 0 $border-radius $border-radius;
-  .navbar-main__container { @extend .container; }
-  .navbar-main__collapse { @extend .collapse, .navbar-collapse, .justify-content-end; }
-  .navbar-main__nav { @extend .navbar-nav, .ms-auto, .mb-2, .mb-lg-0; }
-  .navbar-main__item { @extend .nav-item; }
+  padding: 1rem;
+  
+  .navbar-main__brand {
+    color: $white;
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    font-size: 1.25rem;
+  }
+  
+  .navbar-main__container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1320px;
+  }
+  
+  .navbar-main__toggler {
+    padding: 0.25rem 0.75rem;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.25rem;
+    color: $white;
+  }
+  
+  .navbar-main__collapse {
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 991.98px) {
+      display: none;
+      &.show {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  }
+  
+  .navbar-main__nav {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-left: auto;
+    
+    @media (max-width: 991.98px) {
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .navbar-main__item {
+    display: list-item;
+  }
+  
   .navbar-main__link {
-    @extend .nav-link, .px-3, .fw-semibold;
-    color: $white !important;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: $white;
+    text-decoration: none;
     font-size: $font-size-base;
+    font-weight: 600;
     transition: color 0.15s;
-    &:hover, &.active { color: lighten($primary, 48%) !important; }
+    
+    &:hover, &.active {
+      color: lighten($primary, 48%);
+    }
   }
 }
 
 // Product Card
 .product-card {
-  @import "bootstrap/functions";
-  @import "bootstrap/variables";
-  @import "bootstrap/variables-dark";
-  @import "bootstrap/maps";
-  @import "bootstrap/mixins";
-  @import "bootstrap/card";
-  @import "bootstrap/buttons";
-  @import "bootstrap/utilities";
+  display: flex;
+  flex-direction: column;
   border-radius: $border-radius;
   border: none;
   background: $body-bg;
   box-shadow: $box-shadow;
   transition: box-shadow 0.2s, transform 0.2s;
+  min-width: 0;
+  word-wrap: break-word;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  
   &:hover {
     box-shadow: 0 8px 32px rgba(55, 53, 54, 0.18), 0 3px 12px rgba(0,0,0,0.12);
     transform: translateY(-4px) scale(1.01);
   }
+  
   .product-card-title {
-    @extend .card-title, .fw-bold, .text-primary, .mb-2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: $font-weight-bold;
+    color: $primary;
     font-size: $font-size-lg;
   }
+  
   .product-card-description {
-    @extend .card-text, .mb-4;
+    margin-bottom: 1.5rem;
     color: $body-color;
+    flex-grow: 1;
   }
+  
   .product-card-btn {
-    @extend .btn, .btn-primary, .rounded-pill, .fw-medium, .px-4, .py-2;
+    display: inline-block;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.5rem 1.5rem;
     font-size: $font-size-base;
+    line-height: 1.5;
+    border-radius: 50rem;
+    color: $white;
+    background-color: $primary;
+    border: 1px solid $primary;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+    
+    &:hover {
+      background-color: darken($primary, 7.5%);
+      border-color: darken($primary, 10%);
+      color: $white;
+    }
   }
 }
 
 // Section
 .section {
-  @import "bootstrap/functions";
-  @import "bootstrap/variables";
-  @import "bootstrap/variables-dark";
-  @import "bootstrap/maps";
-  @import "bootstrap/mixins";
-  @import "bootstrap/containers";
-  @import "bootstrap/grid";
-  @import "bootstrap/utilities";
   background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  @extend .container, .py-5, .mb-5;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1320px;
+  
   .section-title {
-    @extend .text-center, .fw-bold, .mb-4, .text-primary;
+    text-align: center;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1.5rem;
+    color: $primary;
     font-size: $font-size-xl;
   }
+  
   .section-lead {
-    @extend .text-center, .mb-4, .text-secondary, .fst-italic;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: $secondary;
+    font-style: italic;
     font-size: $font-size-lg;
+  }
+  
+  .section-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+  }
+  
+  .section-column {
+    flex: 0 0 auto;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+    
+    @media (min-width: 992px) {
+      width: 33.333333%;
+    }
   }
 }
 
 // Footer
 .footer-section {
-  @import "bootstrap/functions";
-  @import "bootstrap/variables";
-  @import "bootstrap/variables-dark";
-  @import "bootstrap/maps";
-  @import "bootstrap/mixins";
-  @import "bootstrap/utilities";
-  @extend .py-4, .mt-5;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 3rem;
   background: $header-bg;
   color: $white;
   text-align: center;
-  a { color: $primary; text-decoration: underline; &:hover { color: lighten($primary, 20%); } }
+  
+  a { 
+    color: $primary; 
+    text-decoration: underline; 
+    
+    &:hover { 
+      color: lighten($primary, 20%); 
+    }
+  }
 }
 
 // Responsive adjustments
@@ -132,7 +251,7 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
   .navbar-main { border-radius: 0 0 $border-radius-sm $border-radius-sm; }
   .product-card { border-radius: $border-radius-sm; }
   .section { border-radius: $border-radius-sm; }
-  .section-title { font-size: $font-size-sm; }
+  .section-title { font-size: $font-size-lg; }
 }
 
 dummy { display: none; }
