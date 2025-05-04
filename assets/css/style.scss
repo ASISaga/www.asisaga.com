@@ -5,15 +5,6 @@ dummy{
   display: none;
 }
 
-// Import base styles
-@import "_base/variables";
-@import "_base/common";
-@import "_base/theme"; // Added theme file for consistency across pages
-
-// Define missing Bootstrap variables
-$link-decoration: none !default;
-$link-hover-decoration: underline !default;
-
 // Import bootstrap main files globally
 @import "bootstrap/functions";
 @import "bootstrap/variables";
@@ -27,6 +18,14 @@ $link-hover-decoration: underline !default;
 @import "bootstrap/images";
 @import "bootstrap/containers";
 @import "bootstrap/grid";
+
+// Import base styles
+@import "_base/variables";
+@import "_base/common";
+@import "_base/theme"; // Added theme file for consistency across pages
+// Import responsive utilities
+@import "_base/responsive";
+
 
 // Import components
 @import "_components/header";
@@ -45,8 +44,6 @@ $link-hover-decoration: underline !default;
 @import "pages/about";
 // Add new page imports here as needed
 
-// Import responsive utilities
-@import "_base/responsive";
 
 // Typography consistency
 :root {
