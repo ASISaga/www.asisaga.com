@@ -30,6 +30,11 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
 
 // Navbar
 .navbar-main {
+  @import "bootstrap/functions";
+  @import "bootstrap/variables";
+  @import "bootstrap/variables-dark";
+  @import "bootstrap/maps";
+  @import "bootstrap/mixins";
   @import "bootstrap/navbar";
   @import "bootstrap/nav";
   @import "bootstrap/containers";
@@ -52,6 +57,11 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
 
 // Product Card
 .product-card {
+  @import "bootstrap/functions";
+  @import "bootstrap/variables";
+  @import "bootstrap/variables-dark";
+  @import "bootstrap/maps";
+  @import "bootstrap/mixins";
   @import "bootstrap/card";
   @import "bootstrap/buttons";
   @import "bootstrap/utilities";
@@ -80,6 +90,11 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
 
 // Section
 .section {
+  @import "bootstrap/functions";
+  @import "bootstrap/variables";
+  @import "bootstrap/variables-dark";
+  @import "bootstrap/maps";
+  @import "bootstrap/mixins";
   @import "bootstrap/containers";
   @import "bootstrap/grid";
   @import "bootstrap/utilities";
@@ -99,6 +114,11 @@ $box-shadow: 0 4px 24px rgba(55, 53, 54, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
 
 // Footer
 .footer-section {
+  @import "bootstrap/functions";
+  @import "bootstrap/variables";
+  @import "bootstrap/variables-dark";
+  @import "bootstrap/maps";
+  @import "bootstrap/mixins";
   @import "bootstrap/utilities";
   @extend .py-4, .mt-5;
   background: $header-bg;
