@@ -130,7 +130,7 @@ header {
   background: $header-bg;
   color: $white;
   width: 100%;
-  @include container-fluid();
+  @include container();
   @include navbar();
   @include navbar-expand-lg();
   @include navbar-dark();
@@ -220,7 +220,7 @@ header {
   color: $white;
   width: 100%;
   .site-header__navbar {
-    @include container-fluid();
+    @include container();
     @include navbar();
     @include navbar-expand-lg();
     @include navbar-dark();
