@@ -2,8 +2,8 @@
 
 // Core body styles
 body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
+  font-family: var(--font-family-primary, $font-family-base);
+  font-size: var(--font-size-base, $font-size-base);
   line-height: $line-height-base;
   color: $body-color;
   background-color: $body-bg;
@@ -16,6 +16,7 @@ h1, .h1 {
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   margin-bottom: $headings-margin-bottom;
+  font-family: var(--font-family-headings, $font-family-base);
 }
 h2, .h2 { 
   font-size: $h2-font-size; 
@@ -23,6 +24,7 @@ h2, .h2 {
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   margin-bottom: $headings-margin-bottom;
+  font-family: var(--font-family-headings, $font-family-base);
 }
 h3, .h3 { 
   font-size: $h3-font-size; 
@@ -30,6 +32,7 @@ h3, .h3 {
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   margin-bottom: $headings-margin-bottom;
+  font-family: var(--font-family-headings, $font-family-base);
 }
 h4, .h4 { 
   font-size: $h4-font-size; 
@@ -37,6 +40,7 @@ h4, .h4 {
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   margin-bottom: $headings-margin-bottom;
+  font-family: var(--font-family-headings, $font-family-base);
 }
 h5, .h5 { 
   font-size: $h5-font-size; 
@@ -44,6 +48,7 @@ h5, .h5 {
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   margin-bottom: $headings-margin-bottom;
+  font-family: var(--font-family-headings, $font-family-base);
 }
 h6, .h6 { 
   font-size: $h6-font-size; 
@@ -51,6 +56,7 @@ h6, .h6 {
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   margin-bottom: $headings-margin-bottom;
+  font-family: var(--font-family-headings, $font-family-base);
 }
 
 // Link styling
@@ -105,6 +111,18 @@ a {
 // Section styling for consistency
 .section {
   padding: $section-padding-y $section-padding-x;
+  margin-bottom: 2rem;
+  
+  .section-title {
+    font-family: var(--font-family-headings, $font-family-base);
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+  }
+  
+  .section-content {
+    font-family: var(--font-family-primary, $font-family-base);
+    line-height: $line-height-base;
+  }
   
   &.section-light {
     background-color: $section-bg-light;
@@ -133,6 +151,11 @@ a {
   .card-header {
     background-color: $card-header-bg;
     color: $card-header-color;
+    font-family: var(--font-family-headings, $font-family-base);
+  }
+  
+  .card-body {
+    font-family: var(--font-family-primary, $font-family-base);
   }
 }
 
@@ -141,6 +164,7 @@ a {
   font-weight: $btn-font-weight;
   border-radius: $btn-border-radius;
   padding: $btn-padding-y $btn-padding-x;
+  font-family: var(--font-family-primary, $font-family-base);
 }
 
 // Theme-consistent utility classes
@@ -164,3 +188,8 @@ a {
 .rounded-sm { border-radius: $border-radius-sm !important; }
 .rounded-lg { border-radius: $border-radius-lg !important; }
 .rounded-xl { border-radius: $border-radius-xl !important; }
+
+// Consistent monospace font for code elements
+code, pre, kbd {
+  font-family: var(--font-family-monospace, $font-family-monospace);
+}

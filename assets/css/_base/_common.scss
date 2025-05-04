@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
+  font-family: var(--font-family-primary, $font-family-base);
+  font-size: var(--font-size-base, $font-size-base);
   line-height: 1.5;
   color: $body-color;
   background-color: $body-bg;
@@ -25,7 +25,7 @@ body {
 // Typography elements
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: $font-family-base;
+  font-family: var(--font-family-headings, $font-family-base);
   font-weight: $font-weight-bold;
   color: $primary;
   margin-top: 0;
@@ -34,9 +34,7 @@ h1, h2, h3, h4, h5, h6,
 
 // Basic list styling
 ul, ol {
-  list-style-position: inside;
   padding-left: 2rem;
-  margin-top: 0;
   margin-bottom: 1rem;
 }
 
@@ -61,6 +59,12 @@ img {
   height: auto;
 }
 
+// Common form element styling
+input, select, textarea, button {
+  font-family: var(--font-family-primary, $font-family-base);
+  font-size: var(--font-size-base, $font-size-base);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -75,20 +79,21 @@ img {
 
 // Common link styling
 a {
-  color: $primary;
-  text-decoration: none;
+  color: $link-color;
+  text-decoration: $link-decoration;
+  transition: color 0.2s ease-in-out;
   
   &:hover {
-    color: darken($primary, 15%);
-    text-decoration: underline;
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
   }
 }
 
 // Default container for consistent content width
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
   max-width: 1320px;
@@ -159,11 +164,18 @@ a {
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-family: var(--font-family-primary, $font-family-base);
 }
 
 // Remove focus outline for mouse users, keep for keyboard
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+// Code styling
+code, pre, kbd {
+  font-family: var(--font-family-monospace, $font-family-monospace);
 }
 
 // Standard button styles

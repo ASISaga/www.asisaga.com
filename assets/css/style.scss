@@ -44,6 +44,25 @@ dummy{
 // Import responsive utilities
 @import "_base/responsive";
 
+// Typography consistency
+:root {
+  // Define font family variables for consistent typography
+  --font-family-primary: #{$font-family-base};
+  --font-family-headings: #{$font-family-base};
+  --font-family-monospace: #{$font-family-monospace};
+  
+  // Define font size variables
+  --font-size-base: #{$font-size-base};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-lg: #{$font-size-lg};
+  
+  // Define font weights
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+}
+
 // Override Bootstrap with custom theme variables
 .custom-container {
   width: 100%;
@@ -56,12 +75,43 @@ dummy{
 
 // Ensure consistent typography across all pages
 body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
   line-height: $line-height-base;
   color: $body-color;
   background-color: $body-bg;
 }
+
+// Typography consistency classes
+.font-primary {
+  font-family: var(--font-family-primary) !important;
+}
+
+.font-heading {
+  font-family: var(--font-family-headings) !important;
+}
+
+.font-mono {
+  font-family: var(--font-family-monospace) !important;
+}
+
+// Ensure heading consistency
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-family-headings);
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+  margin-bottom: $headings-margin-bottom;
+}
+
+// Custom font sizing utility classes
+.text-xs { font-size: calc(var(--font-size-base) * 0.75); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: calc(var(--font-size-base) * 1.5); }
+.text-2xl { font-size: calc(var(--font-size-base) * 2); }
 
 // Dark mode support
 @media (prefers-color-scheme: dark) {
