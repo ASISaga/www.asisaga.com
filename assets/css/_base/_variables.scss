@@ -1,56 +1,58 @@
 // Core color palette
-// Primary colors
+// Primary and secondary colors only
 $primary: #0d6efd;
-$primary-light: #3d8bfd;
-$primary-dark: #0a58ca;
-
-// Secondary colors
 $secondary: #6c757d;
-$secondary-light: #a7acb1;
-$secondary-dark: #495057;
 
-// Additional colors
+// Essential utility colors
 $success: #198754;
-$info: #0dcaf0;
-$warning: #ffc107;
 $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #212529;
+$info: #0dcaf0;      // Restored for theme.scss compatibility
+$warning: #ffc107;    // Restored for theme.scss compatibility
 
 // Background colors
 $body-bg: #ffffff;
 $body-bg-dark: #121212;
-$header-bg: $secondary-dark; // Header background color
 
 // Text colors
 $body-color: $dark;
 $body-color-light: $light;
-$header-color: $dark; // Header text color
 $text-muted: #6c757d;
-
-// Link colors
-$link-color: $primary;
-$link-hover-color: $primary-dark;
 
 // Border colors
 $border-color: #dee2e6;
-$border-color-dark: #495057;
+$border-color-dark: #495057;  // Restored for theme.scss compatibility
 
-// Brand specific colors
-$brand-blue: #1877f2;
-$brand-red: #e4002b;
-$brand-green: #00a651;
+// Generate derived colors using SCSS functions
+$primary-light: lighten($primary, 15%);
+$primary-dark: darken($primary, 10%);
+$secondary-light: lighten($secondary, 25%);
+$secondary-dark: darken($secondary, 10%);
+
+// Link colors based on primary
+$link-color: $primary;
+$link-hover-color: $primary-dark;
+
+// Header colors based on secondary
+$header-bg: $secondary-dark;
+$header-color: $light;
+
+// Brand colors needed for theme.scss
+$brand-blue: #0275d8;   // Restored for theme.scss compatibility
+$brand-red: #d9534f;    // Restored for theme.scss compatibility
+$brand-green: #5cb85c;  // Restored for theme.scss compatibility
 
 // Create color maps for theme variations
 $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
   "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "info":       $info,     // Restored in theme map
+  "warning":    $warning   // Restored in theme map
 );
 
 // Font-related variables

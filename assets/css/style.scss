@@ -5,148 +5,99 @@ dummy{
   display: none;
 }
 
-@import "_base/variables";
-
-// Import bootstrap main files globally
+// Import Bootstrap variables and functions first
 @import "bootstrap/functions";
 @import "bootstrap/variables";
-@import "bootstrap/variables-dark";
-@import "bootstrap/maps";
 @import "bootstrap/mixins";
-@import "bootstrap/utilities";
-@import "bootstrap/root";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/containers";
-@import "bootstrap/grid";
 
-// Import base styles
-@import "_base/common";
-@import "_base/theme"; // Added theme file for consistency across pages
-// Import responsive utilities
-@import "_base/responsive";
+// Import our base variables
+@import "_base/variables";
 
-// Import components
-@import "_components/header";
-@import "_components/product-card";
-@import "_components/section";
-@import "_components/layout";
-@import "_components/footer";
+// Import Bootstrap
+@import "bootstrap/bootstrap";
 
-// Import section-specific styles
-@import "sections/business-infinity";
-@import "sections/realm-of-agents";
-// Add new section imports here as needed
-
-// Import page-specific styles
-@import "pages/home";
-@import "pages/about";
-// Add new page imports here as needed
-
-// Typography consistency
-:root {
-  // Define font family variables for consistent typography
-  --font-family-primary: #{$font-family-base};
-  --font-family-headings: #{$font-family-base};
-  --font-family-monospace: #{$font-family-monospace};
-  
-  // Define font size variables
-  --font-size-base: #{$font-size-base};
-  --font-size-sm: #{$font-size-sm};
-  --font-size-lg: #{$font-size-lg};
-  
-  // Define font weights
-  --font-weight-normal: #{$font-weight-normal};
-  --font-weight-medium: #{$font-weight-medium};
-  --font-weight-semibold: #{$font-weight-semibold};
-  --font-weight-bold: #{$font-weight-bold};
-  
-  // Define color palette variables for global access
-  --color-primary: #{$primary};
-  --color-primary-light: #{$primary-light};
-  --color-primary-dark: #{$primary-dark};
-  
-  --color-secondary: #{$secondary};
-  --color-secondary-light: #{$secondary-light};
-  --color-secondary-dark: #{$secondary-dark};
-  
-  --color-success: #{$success};
-  --color-info: #{$info};
-  --color-warning: #{$warning};
-  --color-danger: #{$danger};
-  --color-light: #{$light};
-  --color-dark: #{$dark};
-  
-  // Brand specific colors
-  --color-brand-blue: #{$brand-blue};
-  --color-brand-red: #{$brand-red};
-  --color-brand-green: #{$brand-green};
-  
-  // Background colors
-  --color-bg: #{$body-bg};
-  --color-bg-dark: #{$body-bg-dark};
-  
-  // Text colors
-  --color-text: #{$body-color};
-  --color-text-light: #{$body-color-light};
-  --color-text-muted: #{$text-muted};
-}
-
-// Override Bootstrap with custom theme variables
-.custom-container {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, #{$section-padding-x});
-  padding-left: var(--bs-gutter-x, #{$section-padding-x});
-  margin-right: auto;
-  margin-left: auto;
-  max-width: map-get($container-max-widths, 'xxl');
-}
-
-// Ensure consistent typography across all pages
+// Site-wide styles
 body {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-base);
-  line-height: $line-height-base;
+  font-family: $font-family-base;
   color: $body-color;
   background-color: $body-bg;
 }
 
-// Typography consistency classes
-.font-primary {
-  font-family: var(--font-family-primary) !important;
+// Simplified color scheme application
+.site-header {
+  background-color: $header-bg;
+  color: $header-color;
 }
 
-.font-heading {
-  font-family: var(--font-family-headings) !important;
+.site-footer {
+  background-color: $secondary;
+  color: $light;
 }
 
-.font-mono {
-  font-family: var(--font-family-monospace) !important;
+// Link styles
+a {
+  color: $link-color;
+  text-decoration: none;
+  
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
 }
 
-// Ensure heading consistency
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: var(--font-family-headings);
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
+// Button customization - use fewer variations
+.btn-primary, .btn-secondary {
+  font-weight: $font-weight-medium;
+}
+
+// Card customization
+.card {
+  border-color: $border-color;
+}
+
+.card-header {
+  background-color: $light;
+}
+
+// Hero section
+.hero-section {
+  background-color: $primary-light;
+  color: $dark;
+}
+
+// Feature section
+.feature-section {
+  background-color: $light;
+}
+
+// CTA section
+.cta-section {
+  background-color: $secondary-light;
+}
+
+// Apply consistent spacing
+.section {
+  padding: $section-padding-y $section-padding-x;
+}
+
+// Typography enhancements
+h1, h2, h3, h4, h5, h6 {
   color: $headings-color;
   margin-bottom: $headings-margin-bottom;
 }
 
-// Custom font sizing utility classes
-.text-xs { font-size: calc(var(--font-size-base) * 0.75); }
-.text-sm { font-size: var(--font-size-sm); }
-.text-base { font-size: var(--font-size-base); }
-.text-lg { font-size: var(--font-size-lg); }
-.text-xl { font-size: calc(var(--font-size-base) * 1.5); }
-.text-2xl { font-size: calc(var(--font-size-base) * 2); }
+// Utility classes for consistent colors
+.text-primary-light { color: $primary-light; }
+.text-primary-dark { color: $primary-dark; }
+.text-secondary-light { color: $secondary-light; }
+.text-secondary-dark { color: $secondary-dark; }
 
-// Dark mode support
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: $dark;
-    color: $light;
-  }
-}
+.bg-primary-light { background-color: $primary-light; }
+.bg-primary-dark { background-color: $primary-dark; }
+.bg-secondary-light { background-color: $secondary-light; }
+.bg-secondary-dark { background-color: $secondary-dark; }
+
+// Import page-specific styles
+@import "pages/home";
+@import "pages/about";
+@import "pages/products";
