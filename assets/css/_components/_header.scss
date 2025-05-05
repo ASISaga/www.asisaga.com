@@ -94,6 +94,15 @@
     color: $white;
     flex-shrink: 0; // Prevent toggler from shrinking
     margin-left: 0.5rem; // Add some space between title and toggler
+    position: relative; // Add position relative
+    z-index: 1030; // Set high z-index to keep on top
+    transition: none; // Prevent any transition that might cause movement
+    
+    &:focus, &:active {
+      outline: none;
+      box-shadow: none;
+      transform: none; // Prevent any transform on click
+    }
     
     @media (min-width: 992px) {
       display: none;
@@ -124,6 +133,13 @@
       overflow: hidden;
       flex-direction: column;
       align-items: flex-start;
+      position: absolute; // Position the menu absolutely
+      top: 100%; // Position below the header
+      left: 0;
+      right: 0;
+      background-color: $header-bg;
+      padding: 1rem;
+      z-index: 1020;
       
       &:not(.show) {
         display: none;
