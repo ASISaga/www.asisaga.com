@@ -1,5 +1,54 @@
 // Theme file for consistent styling across all pages
 
+// Custom theme variables
+// These definitions need to be before their usage
+
+// Header & footer variables
+$header-bg: #343a40 !default;
+$header-color: #fff !default;
+$header-padding-y: 1rem !default;
+$header-padding-x: 1.5rem !default;
+
+$footer-bg: #343a40 !default;
+$footer-color: #fff !default;
+$footer-padding-y: 2rem !default;
+$footer-padding-x: 1.5rem !default;
+
+// Section variables
+$section-padding-y: 3rem !default;
+$section-padding-x: 0 !default;
+$section-bg-light: #f8f9fa !default;
+$section-bg-dark: #343a40 !default;
+$section-bg-primary: rgba(0, 123, 255, 0.1) !default;
+$section-bg-secondary: rgba(108, 117, 125, 0.1) !default;
+
+// Card variables
+$card-border-radius: 0.25rem !default;
+$card-border-color: rgba(0, 0, 0, 0.125) !default;
+$card-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !default;
+$card-header-bg: #f8f9fa !default;
+$card-header-color: #343a40 !default;
+
+// Border variables
+$border-color: #dee2e6 !default;
+$border-color-dark: #495057 !default;
+$border-radius-xl: 0.5rem !default;
+
+// Custom color theme variables
+$primary-light: lighten($primary, 15%) !default;
+$primary-dark: darken($primary, 15%) !default;
+$secondary-light: lighten($secondary, 15%) !default;
+$secondary-dark: darken($secondary, 15%) !default;
+
+// Brand colors
+$brand-blue: #0275d8 !default;
+$brand-red: #d9534f !default;
+$brand-green: #5cb85c !default;
+
+// Dark mode variables
+$body-bg-dark: #212529 !default;
+$body-color-light: #f8f9fa !default;
+
 // Core body styles
 body {
   font-family: var(--font-family-primary, $font-family-base);
