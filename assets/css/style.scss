@@ -97,7 +97,13 @@ h1, h2, h3, h4, h5, h6 {
 .bg-secondary-light { background-color: $secondary-light; }
 .bg-secondary-dark { background-color: $secondary-dark; }
 
+// Import component-specific styles
+@import "_components/header";
+@import "_components/footer";
+@import "_components/layout";
+@import "_components/product-card";
+@import "_components/section";
+
 // Import page-specific styles
 @import "pages/home";
 @import "pages/about";
-@import "pages/products";
