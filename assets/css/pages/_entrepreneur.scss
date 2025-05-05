@@ -1,0 +1,183 @@
+// Entrepreneur page specific styles
+.entrepreneur-container {
+  // Container styles
+}
+
+// Hero section
+.entrepreneur-hero-section {
+  @extend .hero-section;
+  padding: $spacer * 4 0;
+  
+  .entrepreneur-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .entrepreneur-hero-title {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer * 1.5;
+  }
+  
+  .entrepreneur-hero-description {
+    font-size: $font-size-lg;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// Challenges section
+.entrepreneur-challenges-section {
+  padding: $spacer * 3 0;
+  
+  .entrepreneur-section-title {
+    text-align: center;
+    margin-bottom: $spacer * 3;
+  }
+  
+  .entrepreneur-challenges-grid {
+    @extend .container;
+    @extend .row;
+    justify-content: center;
+  }
+  
+  .entrepreneur-challenge-card {
+    @extend .col-md-4;
+    padding: $spacer * 2;
+    margin-bottom: $spacer * 2;
+    text-align: center;
+    
+    .entrepreneur-challenge-title {
+      margin-bottom: $spacer;
+    }
+    
+    .entrepreneur-challenge-description {
+      color: $gray-700;
+    }
+  }
+}
+
+// Solutions section
+.entrepreneur-solutions-section {
+  background-color: $light;
+  padding: $spacer * 3 0;
+  
+  .entrepreneur-section-title {
+    text-align: center;
+    margin-bottom: $spacer * 3;
+  }
+  
+  .entrepreneur-solutions-container {
+    @extend .container;
+  }
+  
+  .entrepreneur-solution-item {
+    @extend .row;
+    margin-bottom: $spacer * 3;
+    align-items: flex-start;
+    
+    .entrepreneur-solution-icon {
+      @extend .col-md-2;
+      text-align: center;
+      font-size: 2.5rem;
+      color: $primary;
+    }
+    
+    .entrepreneur-solution-content {
+      @extend .col-md-10;
+    }
+    
+    .entrepreneur-solution-title {
+      margin-bottom: $spacer;
+    }
+    
+    .entrepreneur-solution-description {
+      margin-bottom: $spacer;
+    }
+    
+    .entrepreneur-solution-features {
+      @extend .list-unstyled;
+      
+      .entrepreneur-feature-item {
+        padding-left: $spacer * 1.5;
+        position: relative;
+        margin-bottom: $spacer * 0.5;
+        
+        &:before {
+          content: "\2022";
+          color: $primary;
+          font-weight: bold;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+// Success story section
+.entrepreneur-success-section {
+  padding: $spacer * 3 0;
+  
+  .entrepreneur-section-title {
+    text-align: center;
+    margin-bottom: $spacer * 3;
+  }
+  
+  .entrepreneur-success-story {
+    @extend .container;
+    max-width: 800px;
+  }
+  
+  .entrepreneur-testimonial {
+    background-color: $primary-light;
+    border-radius: $border-radius;
+    padding: $spacer * 2;
+    border-left: 4px solid $primary;
+    margin: 0;
+    
+    .entrepreneur-testimonial-text {
+      font-style: italic;
+      margin-bottom: $spacer;
+    }
+    
+    .entrepreneur-testimonial-footer {
+      text-align: right;
+      
+      .entrepreneur-testimonial-author {
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+// CTA section
+.entrepreneur-cta-section {
+  @extend .cta-section;
+  text-align: center;
+  padding: $spacer * 4 0;
+  
+  .entrepreneur-cta-container {
+    @extend .container;
+    max-width: 700px;
+  }
+  
+  .entrepreneur-cta-title {
+    margin-bottom: $spacer * 1.5;
+  }
+  
+  .entrepreneur-cta-description {
+    margin-bottom: $spacer * 2;
+  }
+  
+  .entrepreneur-cta-buttons {
+    margin-top: $spacer * 2;
+  }
+  
+  .entrepreneur-cta-button {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-lg;
+    padding: $spacer ($spacer * 2);
+  }
+}

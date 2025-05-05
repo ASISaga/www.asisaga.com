@@ -1,0 +1,210 @@
+// GitHub Agent page specific styles
+.github-agent-container {
+  // Container styles
+}
+
+// Hero section
+.github-hero-section {
+  @extend .hero-section;
+  padding: $spacer * 4 0;
+  
+  .github-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .github-hero-title {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer;
+  }
+  
+  .github-hero-subtitle {
+    font-size: $font-size-lg;
+    margin-bottom: $spacer * 1.5;
+  }
+  
+  .github-hero-description {
+    margin-bottom: $spacer * 2;
+  }
+}
+
+// Features section
+.github-features-section {
+  padding: $spacer * 3 0;
+  
+  .github-section-title {
+    text-align: center;
+    margin-bottom: $spacer * 3;
+  }
+  
+  .github-features-grid {
+    @extend .container;
+    @extend .row;
+    justify-content: center;
+  }
+  
+  .github-feature-card {
+    @extend .col-md-4;
+    padding: $spacer * 2;
+    margin-bottom: $spacer * 2;
+    height: 100%;
+    border-left: 4px solid $primary;
+    background-color: $white;
+    border-radius: $border-radius;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $box-shadow;
+    }
+    
+    .github-feature-icon {
+      font-size: 2.5rem;
+      color: $primary;
+      margin-bottom: $spacer;
+    }
+    
+    .github-feature-title {
+      margin-bottom: $spacer;
+    }
+    
+    .github-feature-description {
+      margin-bottom: $spacer;
+    }
+    
+    .github-feature-list {
+      @extend .list-unstyled;
+      
+      .github-feature-item {
+        position: relative;
+        padding-left: $spacer * 1.5;
+        margin-bottom: $spacer * 0.5;
+        
+        &:before {
+          content: "\2713";
+          color: $success;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+// Technical section
+.github-technical-section {
+  background-color: $light;
+  padding: $spacer * 3 0;
+  
+  .github-section-title {
+    text-align: center;
+    margin-bottom: $spacer * 3;
+  }
+  
+  .github-technical-container {
+    @extend .container;
+    max-width: 900px;
+  }
+  
+  .github-technical-description {
+    margin-bottom: $spacer * 2;
+  }
+  
+  .github-code-example {
+    background-color: $white;
+    border-radius: $border-radius;
+    padding: $spacer;
+    box-shadow: $box-shadow-sm;
+    
+    .github-code-title {
+      margin-bottom: $spacer;
+      color: $primary;
+    }
+    
+    .github-code-block {
+      background-color: $dark;
+      color: $light;
+      padding: $spacer * 1.5;
+      border-radius: $border-radius;
+      font-family: $font-family-monospace;
+      margin: $spacer 0;
+      overflow-x: auto;
+    }
+  }
+}
+
+// Use cases section
+.github-use-cases-section {
+  padding: $spacer * 4 0;
+  
+  .github-section-title {
+    text-align: center;
+    margin-bottom: $spacer * 3;
+  }
+  
+  .github-use-cases-grid {
+    @extend .container;
+    @extend .row;
+    justify-content: center;
+  }
+  
+  .github-use-case-card {
+    @extend .col-md-4;
+    background-color: $primary-light;
+    border-radius: $border-radius;
+    padding: $spacer * 2;
+    margin-bottom: $spacer * 2;
+    height: 100%;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $box-shadow;
+    }
+    
+    .github-use-case-title {
+      color: $primary;
+      margin-bottom: $spacer;
+    }
+    
+    .github-use-case-description {
+      color: $gray-700;
+    }
+  }
+}
+
+// CTA section
+.github-cta-section {
+  @extend .cta-section;
+  padding: $spacer * 3 0;
+  text-align: center;
+  
+  .github-cta-container {
+    @extend .container;
+    max-width: 700px;
+  }
+  
+  .github-cta-title {
+    margin-bottom: $spacer * 1.5;
+  }
+  
+  .github-cta-description {
+    margin-bottom: $spacer * 2;
+  }
+  
+  .github-cta-buttons {
+    margin-top: $spacer * 2;
+  }
+  
+  .github-cta-button {
+    @extend .btn;
+    @extend .btn-primary;
+    margin: 0 $spacer;
+    padding: $spacer ($spacer * 1.5);
+    
+    &.github-cta-button-outline {
+      @extend .btn-outline-primary;
+    }
+  }
+}
