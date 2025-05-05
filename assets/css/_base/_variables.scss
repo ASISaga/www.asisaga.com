@@ -20,7 +20,7 @@ $dark: #212529;
 // Background colors
 $body-bg: #ffffff;
 $body-bg-dark: #121212;
-$header-bg: #f8f9fa; // Header background color
+$header-bg: $secondary-dark; // Header background color
 
 // Text colors
 $body-color: $dark;
@@ -68,6 +68,8 @@ $font-weight-bold:            700;
 $font-size-base:              1rem;
 $font-size-sm:                $font-size-base * 0.875;
 $font-size-lg:                $font-size-base * 1.25;
+$font-size-xl:                $font-size-base * 1.5 !default;
+$font-size-2xl:               $font-size-base * 2 !default;
 
 // Line heights
 $line-height-base:            1.5;
