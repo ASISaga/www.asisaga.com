@@ -7,6 +7,10 @@ dummy{
 
 @import "_base/variables";
 
+// Define missing font size variables
+$font-size-xl: $font-size-base * 1.5 !default;
+$font-size-2xl: $font-size-base * 2 !default;
+
 // Import bootstrap main files globally
 @import "bootstrap/functions";
 @import "bootstrap/variables";
