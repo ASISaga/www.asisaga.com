@@ -8,7 +8,7 @@
   
   .site-header__navbar {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; // Change from 'wrap' to 'nowrap' to prevent wrapping
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -24,18 +24,23 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    overflow: hidden; // Prevent content overflow
+    flex: 1; // Allow brand to take available space but shrink if needed
     
     .header-brand-row {
       display: flex;
       align-items: center;
+      min-width: 0; // Allow the row to shrink below its content size
       
       .header-logo {
         margin-right: 1rem;
+        flex-shrink: 0; // Prevent logo from shrinking
       }
       
       .header-title {
         display: flex;
         flex-direction: column;
+        overflow: hidden; // Prevent overflow
       }
     }
     
@@ -50,17 +55,35 @@
     margin: 0;
     font-size: 1.5rem;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // Add ellipsis for long text
+    
+    @media (max-width: 575.98px) {
+      font-size: 1.25rem; // Slightly smaller on very small screens
+    }
   }
   
   .site-header__tagline {
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
     font-size: $font-size-sm;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // Add ellipsis for long text
+    
+    @media (max-width: 575.98px) {
+      font-size: 0.75rem; // Slightly smaller on very small screens
+    }
   }
   
   .site-header__logo-img {
     height: 40px;
     width: auto;
+    
+    @media (max-width: 575.98px) {
+      height: 32px; // Slightly smaller on very small screens
+    }
   }
   
   .site-header__toggler {
@@ -69,6 +92,8 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 0.25rem;
     color: $white;
+    flex-shrink: 0; // Prevent toggler from shrinking
+    margin-left: 0.5rem; // Add some space between title and toggler
     
     @media (min-width: 992px) {
       display: none;
