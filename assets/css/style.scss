@@ -27,7 +27,6 @@ dummy{
 // Import responsive utilities
 @import "_base/responsive";
 
-
 // Import components
 @import "_components/header";
 @import "_components/product-card";
@@ -44,7 +43,6 @@ dummy{
 @import "pages/home";
 @import "pages/about";
 // Add new page imports here as needed
-
 
 // Typography consistency
 :root {
