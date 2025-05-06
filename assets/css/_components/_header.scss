@@ -96,12 +96,17 @@
     margin-left: 0.5rem; // Add some space between title and toggler
     position: relative; // Add position relative
     z-index: 1030; // Set high z-index to keep on top
-    transition: none; // Prevent any transition that might cause movement
+    transition: background-color 0.3s ease; // Add transition for button background only
     
     &:focus, &:active {
       outline: none;
       box-shadow: none;
       transform: none; // Prevent any transform on click
+      background-color: rgba(255,255,255,0.1); // Subtle background change on click
+    }
+    
+    &:hover {
+      background-color: rgba(255,255,255,0.1); // Subtle hover effect
     }
     
     @media (min-width: 992px) {
@@ -129,7 +134,6 @@
     
     @media (max-width: 991.98px) {
       width: 100%;
-      transition: height 0.3s ease;
       overflow: hidden;
       flex-direction: column;
       align-items: flex-start;
@@ -138,19 +142,25 @@
       left: 0;
       right: 0;
       background-color: $header-bg;
-      padding: 1rem;
+      padding: 0;
+      max-height: 0;
+      opacity: 0;
       z-index: 1020;
-      
-      &:not(.show) {
-        display: none;
-      }
-      
-      &.collapse:not(.show) {
-        display: none;
-      }
+      transition: all 0.3s ease-in-out; // Smooth transition for height and opacity
       
       &.show {
         display: flex;
+        max-height: 500px; // Enough height for content
+        opacity: 1;
+        padding: 1rem;
+      }
+      
+      &:not(.show) {
+        display: flex; // Always flex but with max-height: 0 and opacity: 0
+      }
+      
+      &.collapse:not(.show) {
+        display: flex; // Always flex but with max-height: 0 and opacity: 0
       }
     }
   }
