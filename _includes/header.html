@@ -21,12 +21,11 @@ Contains the site's logo, navigation menu, and optional mobile navigation toggle
       </div>
     </a>
     <!-- Mobile navigation menu toggle button (only visible on small screens) -->
-    <button id="nav-menu-mobile" class="site-header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="site-header__toggler-icon"></span>
+    <button class="site-header-toggler" type="button" aria-controls="site-header-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="site-header-toggler-icon"></span>
     </button>
     <!-- Navigation menu container that collapses on mobile -->
-    <div id="nav-menu" class="site-header__nav">
-      <!-- Include the navigation bar component -->
+    <div id="site-header-nav" class="site-header-nav">
       {% include navbar.html %}
     </div>
   </nav>

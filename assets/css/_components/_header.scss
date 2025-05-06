@@ -86,35 +86,23 @@
     }
   }
   
-  .site-header__toggler {
+  .site-header-toggler {
+    @include button-variant(transparent, $header-bg, $white);
+    display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: transparent;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 0.25rem;
     color: $white;
-    flex-shrink: 0; // Prevent toggler from shrinking
-    margin-left: 0.5rem; // Add some space between title and toggler
-    position: relative; // Add position relative
-    z-index: 1030; // Set high z-index to keep on top
-    transition: background-color 0.3s ease; // Add transition for button background only
-    
-    &:focus, &:active {
-      outline: none;
-      box-shadow: none;
-      transform: none; // Prevent any transform on click
-      background-color: rgba(255,255,255,0.1); // Subtle background change on click
-    }
-    
-    &:hover {
-      background-color: rgba(255,255,255,0.1); // Subtle hover effect
-    }
-    
-    @media (min-width: 992px) {
-      display: none;
-    }
+    margin-left: 0.5rem;
+    position: relative;
+    z-index: 1030;
+    transition: background-color 0.3s ease;
+    @include media-breakpoint-up(lg) { display: none; }
+    &:focus, &:active { outline: none; box-shadow: none; background-color: rgba(255,255,255,0.1); }
+    &:hover { background-color: rgba(255,255,255,0.1); }
   }
-  
-  .site-header__toggler-icon {
+
+  .site-header-toggler-icon {
     display: inline-block;
     width: 1.5em;
     height: 1.5em;
@@ -124,43 +112,29 @@
     background-position: center;
     background-size: 100%;
   }
-  
-  .site-header__nav {
+
+  .site-header-nav {
     display: flex;
     flex-basis: auto;
     flex-grow: 1;
     align-items: center;
     justify-content: flex-end;
-    
-    @media (max-width: 991.98px) {
+    @include media-breakpoint-down(lg) {
       width: 100%;
       flex-direction: column;
       align-items: flex-start;
-      position: absolute; // Position the menu absolutely
-      top: 100%; // Position below the header
+      position: absolute;
+      top: 100%;
       left: 0;
       right: 0;
       background-color: $header-bg;
       padding: 1rem;
       z-index: 1020;
-      
-      // Remove our custom display logic and allow Bootstrap's collapse class to control visibility
-      &.collapse {
-        display: none;
-        
-        &.show {
-          display: flex;
-        }
-      }
-      
-      &.collapsing {
-        height: 0;
-        overflow: hidden;
-        transition: height 0.35s ease;
-      }
+      display: none;
+      &.show { display: flex; }
     }
   }
-  
+
   .site-header__menu {
     display: flex;
     padding-left: 0;
