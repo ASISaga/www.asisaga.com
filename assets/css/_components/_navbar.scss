@@ -1,0 +1,51 @@
+// Navigation component styling
+// Matches navbar.html component in _includes
+
+.site-navbar {
+  @include flex-between;
+  padding: $spacer * 0.5 0;
+  
+  // Use Bootstrap classes inside our custom class
+  .navbar-brand {
+    font-weight: $font-weight-bold;
+  }
+  
+  .navbar-nav {
+    @include flex-center;
+    
+    .nav-item {
+      margin-left: $spacer;
+      
+      .nav-link {
+        color: $header-color;
+        @include transition(color);
+        
+        &:hover {
+          color: $primary-light;
+        }
+        
+        &.active {
+          color: $primary;
+          font-weight: $font-weight-semibold;
+        }
+      }
+    }
+  }
+  
+  // Mobile menu toggle
+  .navbar-toggler {
+    border: none;
+    color: $header-color;
+    
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  
+  // Responsive behavior
+  @include media-breakpoint-up(lg) {
+    .collapse {
+      display: block;
+    }
+  }
+}

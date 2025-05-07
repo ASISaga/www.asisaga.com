@@ -13,6 +13,13 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+// Core body styles
+body {
+  font-family: $font-family-base;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
 // Common styles shared across pages
 
 // Reset margins and paddings
@@ -30,6 +37,12 @@ h1, h2, h3, h4, h5, h6,
   color: $primary;
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+
+// Typography enhancements
+h1, h2, h3, h4, h5, h6 {
+  color: $headings-color;
+  margin-bottom: $headings-margin-bottom;
 }
 
 // Basic list styling
@@ -86,6 +99,17 @@ a {
   &:hover {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
+  }
+}
+
+// Global link styles
+a {
+  color: $link-color;
+  text-decoration: none;
+  
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
   }
 }
 
@@ -210,6 +234,11 @@ code, pre, kbd {
   }
 }
 
+// Button customization - use fewer variations
+.btn-primary, .btn-secondary {
+  font-weight: $font-weight-medium;
+}
+
 // Spacing
 .mb-0 { margin-bottom: 0 !important; }
 .mb-1 { margin-bottom: 0.25rem !important; }
@@ -330,6 +359,11 @@ code, pre, kbd {
   }
 }
 
+// Apply consistent spacing
+.section {
+  padding: $section-padding-y $section-padding-x;
+}
+
 // Common card layout
 .card-common {
   background-color: var(--color-card-bg);
@@ -349,6 +383,15 @@ code, pre, kbd {
   .card-body {
     padding: 1.25rem;
   }
+}
+
+// Card customization
+.card {
+  border-color: $border-color;
+}
+
+.card-header {
+  background-color: $light;
 }
 
 // Common header/footer elements
@@ -388,3 +431,14 @@ code, pre, kbd {
     }
   }
 }
+
+// Additional color utility classes
+.text-primary-light { color: $primary-light; }
+.text-primary-dark { color: $primary-dark; }
+.text-secondary-light { color: $secondary-light; }
+.text-secondary-dark { color: $secondary-dark; }
+
+.bg-primary-light { background-color: $primary-light; }
+.bg-primary-dark { background-color: $primary-dark; }
+.bg-secondary-light { background-color: $secondary-light; }
+.bg-secondary-dark { background-color: $secondary-dark; }

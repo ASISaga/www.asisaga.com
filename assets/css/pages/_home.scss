@@ -1,107 +1,99 @@
 // Homepage specific styles
+// Uses @extend, @include, and Bootstrap utilities instead of direct CSS declarations
+
 .home-container {
-  width: 100%;
+  @extend .w-100;
   
   // Hero section
   .hero-section {
+    @include flex-center;
+    @include box-shadow-md;
     background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
+    @extend .rounded;
+    @extend .text-center;
+    @extend .mb-5;
     padding: 4rem 1rem;
-    margin-bottom: 3rem;
-    text-align: center;
     
     .hero-content {
+      @extend .mx-auto;
       max-width: 768px;
-      margin: 0 auto;
     }
     
     .hero-title {
+      @extend .fw-bold;
+      @extend .text-primary;
+      @extend .mb-3;
       font-size: $font-size-xl;
-      font-weight: $font-weight-bold;
-      color: $primary;
-      margin-bottom: 1rem;
     }
     
     .hero-description {
+      @extend .text-secondary;
+      @extend .mb-4;
       font-size: $font-size-lg;
-      color: $secondary;
-      margin-bottom: 2rem;
+    }
+
+    .hero-button {
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .rounded-pill;
     }
   }
   
   // Products grid
   .products-section {
-    margin-bottom: 3rem;
+    @extend .mb-5;
+    
+    .products-title {
+      @extend .text-center;
+      @extend .mb-4;
+    }
     
     .products-grid {
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: calc(var(--bs-gutter-x) * -0.5);
-      margin-left: calc(var(--bs-gutter-x) * -0.5);
+      @extend .row;
+      @extend .g-4;
       
       .product-item {
-        flex: 0 0 auto;
-        width: 100%;
-        padding-right: calc(var(--bs-gutter-x) * 0.5);
-        padding-left: calc(var(--bs-gutter-x) * 0.5);
-        margin-bottom: 1.5rem;
-        
-        @media (min-width: 768px) {
-          width: 50%;
-        }
-        
-        @media (min-width: 992px) {
-          width: 33.333333%;
-        }
+        @extend .col-12;
+        @extend .col-md-6;
+        @extend .col-lg-4;
       }
     }
   }
   
   // Call to action section
   .cta-section {
+    @include flex-center;
+    @include box-shadow-sm;
     background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
+    @extend .rounded;
+    @extend .text-center;
+    @extend .mb-5;
     padding: 3rem 1rem;
-    margin-bottom: 3rem;
-    text-align: center;
     
     .cta-content {
+      @extend .mx-auto;
       max-width: 768px;
-      margin: 0 auto;
     }
     
     .cta-title {
+      @extend .fw-bold;
+      @extend .text-primary;
+      @extend .mb-3;
       font-size: $font-size-lg;
-      font-weight: $font-weight-bold;
-      color: $primary;
-      margin-bottom: 1rem;
     }
     
     .cta-description {
-      color: $secondary;
-      margin-bottom: 1.5rem;
+      @extend .text-secondary;
+      @extend .mb-4;
     }
     
     .cta-button {
-      display: inline-block;
-      font-weight: $font-weight-medium;
-      text-align: center;
-      padding: 0.5rem 1.5rem;
-      font-size: $font-size-base;
-      line-height: 1.5;
-      border-radius: 50rem;
-      color: $white;
-      background-color: $primary;
-      border: 1px solid $primary;
-      text-decoration: none;
-      transition: all 0.15s ease-in-out;
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .rounded-pill;
       
       &:hover {
-        background-color: darken($primary, 7.5%);
-        border-color: darken($primary, 10%);
-        color: $white;
+        @include transition(all);
       }
     }
   }

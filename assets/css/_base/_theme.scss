@@ -372,3 +372,140 @@ code, pre, kbd {
   background: linear-gradient(135deg, $secondary, $secondary-dark);
   color: $light;
 }
+
+// Theme variables and theme-specific styling
+// Contains color schemes and theme-level customizations
+
+// CSS Variables for consistent theming throughout the site
+:root {
+  // Primary color scheme
+  --color-primary: #{$primary};
+  --color-primary-light: #{$primary-light};
+  --color-primary-dark: #{$primary-dark};
+  
+  // Secondary color scheme
+  --color-secondary: #{$secondary};
+  --color-secondary-light: #{$secondary-light};
+  --color-secondary-dark: #{$secondary-dark};
+  
+  // Utility colors
+  --color-success: #{$success};
+  --color-danger: #{$danger};
+  --color-warning: #{$warning};
+  --color-info: #{$info};
+  --color-light: #{$light};
+  --color-dark: #{$dark};
+  
+  // Background colors
+  --color-bg: #{$body-bg};
+  --color-bg-dark: #{$body-bg-dark};
+  
+  // Text colors
+  --color-text: #{$body-color};
+  --color-text-light: #{$body-color-light};
+  --color-text-muted: #{$text-muted};
+  
+  // Link colors
+  --color-link: #{$link-color};
+  --color-link-hover: #{$link-hover-color};
+  
+  // Border colors
+  --color-border: #{$border-color};
+  --color-border-dark: #{$border-color-dark};
+  
+  // Component specific colors
+  --color-header-bg: #{$header-bg};
+  --color-header-color: #{$header-color};
+  --color-footer-bg: #{$secondary-dark};
+  --color-footer-color: #{$light};
+}
+
+// Dark mode theme variables
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #{$body-bg-dark};
+    --color-text: #{$body-color-light};
+    --color-border: #{$border-color-dark};
+    
+    // Adjust component colors for dark mode
+    --color-header-bg: #{darken($header-bg, 10%)};
+    --color-footer-bg: #{darken($secondary-dark, 10%)};
+  }
+}
+
+// Theme-specific styling for common elements
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+// Section themes
+.section {
+  padding: $section-padding-y $section-padding-x;
+  
+  &.section-light {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+  
+  &.section-dark {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+  }
+  
+  &.section-primary {
+    background-color: var(--color-primary-light);
+    color: var(--color-dark);
+  }
+  
+  &.section-secondary {
+    background-color: var(--color-secondary-light);
+    color: var(--color-dark);
+  }
+}
+
+// Card theming
+.card {
+  background-color: var(--color-bg);
+  border-color: var(--color-border);
+  
+  .card-header {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+  }
+}
+
+// Button theming - extending Bootstrap's button system
+.btn-outline-primary {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+  }
+}
+
+// Theme color utility classes
+.bg-primary-light { background-color: var(--color-primary-light) !important; }
+.bg-primary-dark { background-color: var(--color-primary-dark) !important; }
+.bg-secondary-light { background-color: var(--color-secondary-light) !important; }
+.bg-secondary-dark { background-color: var(--color-secondary-dark) !important; }
+
+.text-primary-light { color: var(--color-primary-light) !important; }
+.text-primary-dark { color: var(--color-primary-dark) !important; }
+.text-secondary-light { color: var(--color-secondary-light) !important; }
+.text-secondary-dark { color: var(--color-secondary-dark) !important; }
+
+// Documentation comment
+/* 
+  Theme Usage Guidelines:
+  
+  1. Use CSS variables for colors when building components
+  2. For themed sections, use .section with modifiers:
+     - .section.section-light
+     - .section.section-dark
+     - .section.section-primary
+  3. Prefer Bootstrap's utility classes when possible
+  4. Extend Bootstrap components instead of creating custom alternatives
+*/

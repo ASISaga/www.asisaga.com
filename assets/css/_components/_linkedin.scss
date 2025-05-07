@@ -1,0 +1,61 @@
+// LinkedIn component styling
+// Matches linkedin.html component in _includes
+
+.linkedin-badge {
+  @include box-shadow-sm;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-bottom: $spacer;
+  
+  .linkedin-profile {
+    background-color: $light;
+    padding: $spacer;
+    
+    &-header {
+      @include flex-between;
+      margin-bottom: $spacer * 0.75;
+    }
+    
+    &-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      @include box-shadow-sm;
+    }
+    
+    &-info {
+      margin-left: $spacer;
+    }
+    
+    &-name {
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacer * 0.25;
+    }
+    
+    &-title {
+      color: $text-muted;
+      font-size: $font-size-sm;
+      margin-bottom: $spacer * 0.25;
+    }
+    
+    &-company {
+      font-size: $font-size-sm;
+    }
+  }
+  
+  .linkedin-button {
+    background-color: #0077b5;
+    color: white;
+    padding: $spacer * 0.5;
+    text-align: center;
+    font-weight: $font-weight-medium;
+    @include transition;
+    
+    &:hover {
+      background-color: darken(#0077b5, 10%);
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

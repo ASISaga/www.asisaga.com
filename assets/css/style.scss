@@ -1,110 +1,36 @@
 ---
 ---
 
-dummy{
-  display: none;
+dummy {
+    display: none
 }
 
-// Import Bootstrap variables and functions first
+// Bootstrap dependencies
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
-// Import our base variables
+// Base styles - in order of dependency
 @import "_base/variables";
+@import "_base/mixins";
+@import "_base/common";
+@import "_base/typography";
+@import "_base/theme";
+@import "_base/utilities";
 
-// Import Bootstrap
+// Bootstrap components - leverage Bootstrap's styling system
 @import "bootstrap/bootstrap";
 
-// Site-wide styles
-body {
-  font-family: $font-family-base;
-  color: $body-color;
-  background-color: $body-bg;
-}
-
-// Simplified color scheme application
-.site-header {
-  background-color: $header-bg;
-  color: $header-color;
-}
-
-.site-footer {
-  background-color: $secondary;
-  color: $light;
-}
-
-// Link styles
-a {
-  color: $link-color;
-  text-decoration: none;
-  
-  &:hover {
-    color: $link-hover-color;
-    text-decoration: underline;
-  }
-}
-
-// Button customization - use fewer variations
-.btn-primary, .btn-secondary {
-  font-weight: $font-weight-medium;
-}
-
-// Card customization
-.card {
-  border-color: $border-color;
-}
-
-.card-header {
-  background-color: $light;
-}
-
-// Hero section
-.hero-section {
-  background-color: $primary-light;
-  color: $dark;
-}
-
-// Feature section
-.feature-section {
-  background-color: $light;
-}
-
-// CTA section
-.cta-section {
-  background-color: $secondary-light;
-}
-
-// Apply consistent spacing
-.section {
-  padding: $section-padding-y $section-padding-x;
-}
-
-// Typography enhancements
-h1, h2, h3, h4, h5, h6 {
-  color: $headings-color;
-  margin-bottom: $headings-margin-bottom;
-}
-
-// Utility classes for consistent colors
-.text-primary-light { color: $primary-light; }
-.text-primary-dark { color: $primary-dark; }
-.text-secondary-light { color: $secondary-light; }
-.text-secondary-dark { color: $secondary-dark; }
-
-.bg-primary-light { background-color: $primary-light; }
-.bg-primary-dark { background-color: $primary-dark; }
-.bg-secondary-light { background-color: $secondary-light; }
-.bg-secondary-dark { background-color: $secondary-dark; }
-
-// Import component-specific styles
+// Components - UI building blocks
 @import "_components/header";
+@import "_components/navbar";
 @import "_components/footer";
 @import "_components/layout";
 @import "_components/product-card";
 @import "_components/section";
+@import "_components/linkedin";
 
-// Import page-specific styles
+// Pages - page-specific styling
 @import "pages/home";
 @import "pages/about";
 @import "pages/business-infinity";
