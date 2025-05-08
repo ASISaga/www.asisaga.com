@@ -1,4 +1,7 @@
-// Responsive adjustments
+// Custom responsive adjustments that aren't available in Bootstrap
+// Most responsive utilities have been removed as Bootstrap provides them through its utility classes
+
+// Component-specific responsive adjustments
 @media (max-width: 576px) {
   .navbar-main { border-radius: 0 0 $border-radius-sm $border-radius-sm; }
   .product-card { border-radius: $border-radius-sm; }
@@ -6,139 +9,7 @@
   .section-title { font-size: $font-size-lg; }
 }
 
-// Responsive utilities
-
-// Hide elements based on screen size
-.d-none-xs {
-  @media (max-width: 575.98px) {
-    display: none !important;
-  }
-}
-
-.d-none-sm {
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    display: none !important;
-  }
-}
-
-.d-none-md {
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    display: none !important;
-  }
-}
-
-.d-none-lg {
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    display: none !important;
-  }
-}
-
-.d-none-xl {
-  @media (min-width: 1200px) and (max-width: 1399.98px) {
-    display: none !important;
-  }
-}
-
-.d-none-xxl {
-  @media (min-width: 1400px) {
-    display: none !important;
-  }
-}
-
-// Show elements based on screen size
-.d-block-xs {
-  @media (max-width: 575.98px) {
-    display: block !important;
-  }
-}
-
-.d-block-sm {
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    display: block !important;
-  }
-}
-
-.d-block-md {
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    display: block !important;
-  }
-}
-
-.d-block-lg {
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    display: block !important;
-  }
-}
-
-.d-block-xl {
-  @media (min-width: 1200px) and (max-width: 1399.98px) {
-    display: block !important;
-  }
-}
-
-.d-block-xxl {
-  @media (min-width: 1400px) {
-    display: block !important;
-  }
-}
-
-// Text alignment responsive utilities
-.text-center-xs {
-  @media (max-width: 575.98px) {
-    text-align: center !important;
-  }
-}
-
-.text-center-sm {
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    text-align: center !important;
-  }
-}
-
-.text-center-md {
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    text-align: center !important;
-  }
-}
-
-// Margin adjustments for responsive layouts
-.mt-xs {
-  @media (max-width: 575.98px) {
-    margin-top: 1rem !important;
-  }
-}
-
-.mt-sm {
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    margin-top: 1rem !important;
-  }
-}
-
-.mt-md {
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    margin-top: 1rem !important;
-  }
-}
-
-.mb-xs {
-  @media (max-width: 575.98px) {
-    margin-bottom: 1rem !important;
-  }
-}
-
-.mb-sm {
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    margin-bottom: 1rem !important;
-  }
-}
-
-.mb-md {
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    margin-bottom: 1rem !important;
-  }
-}
-
-// Font size adjustments for different screen sizes
+// Custom responsive font sizes not covered by Bootstrap
 .fs-responsive-xl {
   font-size: $font-size-xl;
   
@@ -163,125 +34,16 @@
   }
 }
 
-// Flex adjustments for responsive layouts
-.flex-column-reverse-xs {
-  @media (max-width: 575.98px) {
-    flex-direction: column-reverse !important;
-  }
-}
-
-.flex-column-xs {
-  @media (max-width: 575.98px) {
-    flex-direction: column !important;
-  }
-}
-
-.align-items-center-xs {
-  @media (max-width: 575.98px) {
-    align-items: center !important;
-  }
-}
-
-.justify-content-center-xs {
-  @media (max-width: 575.98px) {
-    justify-content: center !important;
-  }
-}
-
-// Container padding adjustments
-.container-fluid-xs {
-  @media (max-width: 575.98px) {
-    padding-right: 0.5rem !important;
-    padding-left: 0.5rem !important;
-  }
-}
-
-// Image responsive adjustments
-.img-fluid-centered {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// Responsive utilities for consistent behavior across devices
-
-// Responsive typography
-@include media-breakpoint-down(md) {
-  h1, .h1 { font-size: $h1-font-size * 0.8; }
-  h2, .h2 { font-size: $h2-font-size * 0.8; }
-  h3, .h3 { font-size: $h3-font-size * 0.8; }
-}
-
-@include media-breakpoint-down(sm) {
-  h1, .h1 { font-size: $h1-font-size * 0.7; }
-  h2, .h2 { font-size: $h2-font-size * 0.7; }
-  h3, .h3 { font-size: $h3-font-size * 0.7; }
-  h4, .h4 { font-size: $h4-font-size * 0.9; }
-}
-
-// Responsive spacing
+// Custom responsive spacing for sections
 @include media-breakpoint-down(md) {
   .section {
     padding: ($section-padding-y * 0.75) ($section-padding-x * 0.75);
-  }
-  
-  .site-header {
-    padding: ($header-padding-y * 0.75) ($header-padding-x * 0.75);
-  }
-  
-  .site-footer {
-    padding: ($footer-padding-y * 0.75) ($footer-padding-x * 0.75);
   }
 }
 
 @include media-breakpoint-down(sm) {
   .section {
     padding: ($section-padding-y * 0.5) ($section-padding-x * 0.5);
-  }
-  
-  .site-header {
-    padding: ($header-padding-y * 0.5) ($header-padding-x * 0.5);
-  }
-  
-  .site-footer {
-    padding: ($footer-padding-y * 0.5) ($footer-padding-x * 0.5);
-  }
-}
-
-// Ensure images are responsive
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-// Ensure tables are responsive
-.table-responsive {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-// Responsive visibility helpers
-@each $breakpoint in map-keys($grid-breakpoints) {
-  .d-#{$breakpoint}-none {
-    @include media-breakpoint-up($breakpoint) {
-      display: none !important;
-    }
-  }
-  
-  .d-#{$breakpoint}-block {
-    @include media-breakpoint-up($breakpoint) {
-      display: block !important;
-    }
-  }
-  
-  .d-#{$breakpoint}-flex {
-    @include media-breakpoint-up($breakpoint) {
-      display: flex !important;
-    }
   }
 }
 
@@ -294,3 +56,27 @@
     box-shadow: $box-shadow;
   }
 }
+
+/*
+  Note: The following Bootstrap responsive utilities should be used instead of custom classes:
+  
+  - Responsive display utilities: 
+    .d-none, .d-sm-block, .d-md-none, etc.
+  
+  - Responsive text alignment: 
+    .text-center, .text-sm-start, .text-md-end, etc.
+  
+  - Responsive margin/padding: 
+    .mt-3, .mt-sm-5, .mb-md-4, etc.
+  
+  - Responsive flex utilities: 
+    .flex-column, .flex-sm-row, .align-items-md-center, etc.
+  
+  - Responsive image utilities:
+    .img-fluid (no custom classes needed)
+  
+  - Responsive tables:
+    .table-responsive, .table-responsive-md, etc.
+  
+  Bootstrap documentation: https://getbootstrap.com/docs/5.3/utilities/
+*/

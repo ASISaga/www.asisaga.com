@@ -1,121 +1,19 @@
 // Typography styles for ASI Saga website
-// This file contains all font-related styles including font styles, heading styles, 
-// paragraph styles, and text utilities
+// This file contains only typography overrides not covered by Bootstrap
 
-// Base font settings
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $body-color;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-// Headings
+// Custom heading font family (this needs to be kept since it's specific to this project)
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $font-family-headings;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
-  margin-top: 0;
-  margin-bottom: $headings-margin-bottom;
 }
 
-h1, .h1 { font-size: $h1-font-size; }
-h2, .h2 { font-size: $h2-font-size; }
-h3, .h3 { font-size: $h3-font-size; }
-h4, .h4 { font-size: $h4-font-size; }
-h5, .h5 { font-size: $h5-font-size; }
-h6, .h6 { font-size: $h6-font-size; }
-
-// Paragraphs and lists
-p {
-  margin-top: 0;
-  margin-bottom: $spacer;
-}
-
-ul, ol {
-  padding-left: 2rem;
-  margin-top: 0;
-  margin-bottom: $spacer;
-  
-  li {
-    margin-bottom: 0.5rem;
-  }
-}
-
-// Links
-a {
-  color: $link-color;
-  text-decoration: $link-decoration;
-  transition: color 0.2s ease-in-out;
-  
-  &:hover {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
-  }
-}
-
-// Small text
-small, .small {
-  font-size: $font-size-sm;
-}
-
-// Code, pre, kbd
-code, pre, kbd {
-  font-family: $font-family-monospace;
-}
-
-code {
-  font-size: $font-size-sm;
-  color: #d63384;
-  word-wrap: break-word;
-  background-color: $code-bg;
-  padding: 0.2rem 0.4rem;
-  border-radius: $border-radius-sm;
-}
-
-pre {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow: auto;
-  font-size: $font-size-sm;
-  color: $pre-color;
-  background-color: $pre-bg;
-  padding: 1rem;
-  border-radius: $border-radius;
-  
-  code {
-    font-size: inherit;
-    color: inherit;
-    word-break: normal;
-    padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-  }
-}
-
-// Blockquote
+// Custom blockquote styling that differs from Bootstrap
 blockquote {
-  margin: 0 0 1rem;
   padding-left: 1rem;
   border-left: 0.25rem solid $border-color;
-  font-size: $font-size-lg;
   font-style: italic;
   
-  > :last-child {
-    margin-bottom: 0;
-  }
-  
   footer {
-    font-size: $font-size-base;
     font-style: normal;
     color: $text-muted;
     margin-top: 0.5rem;
@@ -126,7 +24,7 @@ blockquote {
   }
 }
 
-// Responsive font sizes
+// Responsive font size adjustments (if needed beyond Bootstrap breakpoints)
 @mixin responsive-headings {
   @include media-breakpoint-up(md) {
     h1, .h1 { font-size: $font-size-base * 3; }
@@ -141,27 +39,15 @@ blockquote {
 // Apply responsive typography
 @include responsive-headings;
 
-// Documentation comments to guide developers
 /*
+  Note: Most typography styles are now handled by Bootstrap.
+  This file only contains project-specific overrides.
+  
   Bootstrap Typography Classes to Use:
-
-  Font Weight:
-  - Use .fw-light, .fw-normal, .fw-medium, .fw-semibold, .fw-bold instead of custom classes
-
-  Text Alignment:
-  - Use .text-start, .text-center, .text-end instead of custom text-left, text-center, text-right
-
-  Text Transformation:
-  - Use .text-uppercase, .text-lowercase, .text-capitalize
-
-  Text Wrapping:
-  - Use .text-wrap, .text-nowrap, .text-break
-  - For text truncation, use the .text-truncate utility
-
-  Text Colors:
-  - Use .text-primary, .text-secondary, .text-success, etc.
-  - Use .text-body, .text-muted for common text colors
-
-  For detailed documentation, refer to Bootstrap documentation:
-  https://getbootstrap.com/docs/5.3/utilities/text/
+  - Font weight: .fw-light, .fw-normal, .fw-bold, etc.
+  - Text alignment: .text-start, .text-center, .text-end
+  - Text transformation: .text-uppercase, .text-lowercase, .text-capitalize
+  - Text colors: .text-primary, .text-secondary, .text-body, .text-muted
+  
+  For more details: https://getbootstrap.com/docs/5.3/utilities/text/
 */

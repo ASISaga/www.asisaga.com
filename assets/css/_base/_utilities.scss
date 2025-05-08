@@ -1,278 +1,36 @@
 // filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\_base\_utilities.scss
-// Helper classes that apply single-purpose styling
+// Custom utilities that aren't available in Bootstrap
+
+// Most utilities have been removed since Bootstrap provides them:
+// - Spacing (margins, padding)
+// - Display
+// - Text alignment and decoration
+// - Font weights
+// - Flex utilities
+// - Width and height
+// - Position
+// - Borders
+// - Colors
+// - Shadows
+// - Visibility
+
+// Only keeping truly custom utility classes:
 
 // -----------------------------------------
-// Spacing utilities
+// Custom text colors (not in Bootstrap)
 // -----------------------------------------
-
-// Margin bottom
-.mb-0 { margin-bottom: 0 !important; }
-.mb-1 { margin-bottom: 0.25rem !important; }
-.mb-2 { margin-bottom: 0.5rem !important; }
-.mb-3 { margin-bottom: 1rem !important; }
-.mb-4 { margin-bottom: 1.5rem !important; }
-.mb-5 { margin-bottom: 3rem !important; }
-.mb-auto { margin-bottom: auto !important; }
-
-// Margin top
-.mt-0 { margin-top: 0 !important; }
-.mt-1 { margin-top: 0.25rem !important; }
-.mt-2 { margin-top: 0.5rem !important; }
-.mt-3 { margin-top: 1rem !important; }
-.mt-4 { margin-top: 1.5rem !important; }
-.mt-5 { margin-top: 3rem !important; }
-.mt-auto { margin-top: auto !important; }
-
-// Margin left/right
-.ms-0 { margin-left: 0 !important; }
-.ms-1 { margin-left: 0.25rem !important; }
-.ms-2 { margin-left: 0.5rem !important; }
-.ms-3 { margin-left: 1rem !important; }
-.me-0 { margin-right: 0 !important; }
-.me-1 { margin-right: 0.25rem !important; }
-.me-2 { margin-right: 0.5rem !important; }
-.me-3 { margin-right: 1rem !important; }
-
-// Padding utilities
-.p-0 { padding: 0 !important; }
-.p-1 { padding: 0.25rem !important; }
-.p-2 { padding: 0.5rem !important; }
-.p-3 { padding: 1rem !important; }
-.p-4 { padding: 1.5rem !important; }
-.p-5 { padding: 3rem !important; }
-
-// -----------------------------------------
-// Display utilities
-// -----------------------------------------
-.d-none { display: none !important; }
-.d-inline { display: inline !important; }
-.d-inline-block { display: inline-block !important; }
-.d-block { display: block !important; }
-.d-flex { display: flex !important; }
-.d-inline-flex { display: inline-flex !important; }
-.d-grid { display: grid !important; }
-
-// -----------------------------------------
-// Text alignment
-// -----------------------------------------
-.text-center { text-align: center !important; }
-.text-start { text-align: left !important; }
-.text-end { text-align: right !important; }
-
-// -----------------------------------------
-// Text decoration & styling
-// -----------------------------------------
-.text-decoration-none { text-decoration: none !important; }
-.text-decoration-underline { text-decoration: underline !important; }
-.text-uppercase { text-transform: uppercase !important; }
-.text-lowercase { text-transform: lowercase !important; }
-.text-capitalize { text-transform: capitalize !important; }
-.text-wrap { white-space: normal !important; }
-.text-nowrap { white-space: nowrap !important; }
-.text-break { word-wrap: break-word !important; word-break: break-word !important; }
-
-// Text truncation
-.text-truncate {
-  @include text-truncate;
-}
-
-// -----------------------------------------
-// Font weight utilities
-// -----------------------------------------
-.fw-light { font-weight: $font-weight-light !important; }
-.fw-normal { font-weight: $font-weight-normal !important; }
-.fw-medium { font-weight: $font-weight-medium !important; }
-.fw-semibold { font-weight: $font-weight-semibold !important; }
-.fw-bold { font-weight: $font-weight-bold !important; }
-
-// -----------------------------------------
-// Line height utilities
-// -----------------------------------------
-.lh-1 { line-height: 1 !important; }
-.lh-sm { line-height: $line-height-sm !important; }
-.lh-base { line-height: $line-height-base !important; }
-.lh-lg { line-height: $line-height-lg !important; }
-
-// -----------------------------------------
-// Flex utilities
-// -----------------------------------------
-.flex-column { flex-direction: column !important; }
-.flex-row { flex-direction: row !important; }
-.flex-wrap { flex-wrap: wrap !important; }
-.flex-nowrap { flex-wrap: nowrap !important; }
-
-// Justify content
-.justify-content-start { justify-content: flex-start !important; }
-.justify-content-end { justify-content: flex-end !important; }
-.justify-content-center { justify-content: center !important; }
-.justify-content-between { justify-content: space-between !important; }
-.justify-content-around { justify-content: space-around !important; }
-
-// Align items
-.align-items-start { align-items: flex-start !important; }
-.align-items-end { align-items: flex-end !important; }
-.align-items-center { align-items: center !important; }
-.align-items-baseline { align-items: baseline !important; }
-.align-items-stretch { align-items: stretch !important; }
-
-// -----------------------------------------
-// Width and height utilities
-// -----------------------------------------
-.w-100 { width: 100% !important; }
-.w-75 { width: 75% !important; }
-.w-50 { width: 50% !important; }
-.w-25 { width: 25% !important; }
-.w-auto { width: auto !important; }
-
-.h-100 { height: 100% !important; }
-.h-75 { height: 75% !important; }
-.h-50 { height: 50% !important; }
-.h-25 { height: 25% !important; }
-.h-auto { height: auto !important; }
-
-// -----------------------------------------
-// Position utilities
-// -----------------------------------------
-.position-static { position: static !important; }
-.position-relative { position: relative !important; }
-.position-absolute { position: absolute !important; }
-.position-fixed { position: fixed !important; }
-.position-sticky { position: sticky !important; }
-
-// -----------------------------------------
-// Border utilities
-// -----------------------------------------
-.border { border: 1px solid $border-color !important; }
-.border-0 { border: 0 !important; }
-.border-top { border-top: 1px solid $border-color !important; }
-.border-end { border-right: 1px solid $border-color !important; }
-.border-bottom { border-bottom: 1px solid $border-color !important; }
-.border-start { border-left: 1px solid $border-color !important; }
-
-// Border radius utilities
-.rounded { border-radius: $border-radius !important; }
-.rounded-sm { border-radius: $border-radius-sm !important; }
-.rounded-lg { border-radius: $border-radius-lg !important; }
-.rounded-xl { border-radius: $border-radius-xl !important; }
-.rounded-pill { border-radius: $border-radius-pill !important; }
-.rounded-circle { border-radius: 50% !important; }
-.rounded-0 { border-radius: 0 !important; }
-
-// -----------------------------------------
-// Color utilities
-// -----------------------------------------
-// Text colors
-.text-primary { color: $primary !important; }
-.text-secondary { color: $secondary !important; }
-.text-success { color: $success !important; }
-.text-danger { color: $danger !important; }
-.text-warning { color: $warning !important; }
-.text-info { color: $info !important; }
-.text-light { color: $light !important; }
-.text-dark { color: $dark !important; }
-.text-muted { color: $text-muted !important; }
-.text-white { color: $white !important; }
-
 .text-primary-light { color: $primary-light !important; }
 .text-primary-dark { color: $primary-dark !important; }
 .text-secondary-light { color: $secondary-light !important; }
 .text-secondary-dark { color: $secondary-dark !important; }
 
-// Background colors
-.bg-primary { background-color: $primary !important; }
-.bg-secondary { background-color: $secondary !important; }
-.bg-success { background-color: $success !important; }
-.bg-danger { background-color: $danger !important; }
-.bg-warning { background-color: $warning !important; }
-.bg-info { background-color: $info !important; }
-.bg-light { background-color: $light !important; }
-.bg-dark { background-color: $dark !important; }
-.bg-white { background-color: $white !important; }
-.bg-transparent { background-color: transparent !important; }
-
+// -----------------------------------------
+// Custom background colors (not in Bootstrap)
+// -----------------------------------------
 .bg-primary-light { background-color: $primary-light !important; }
 .bg-primary-dark { background-color: $primary-dark !important; }
 .bg-secondary-light { background-color: $secondary-light !important; }
 .bg-secondary-dark { background-color: $secondary-dark !important; }
-
-// Border colors
-.border-primary { border-color: $primary !important; }
-.border-secondary { border-color: $secondary !important; }
-.border-light { border-color: $border-color !important; }
-.border-dark { border-color: $border-color-dark !important; }
-
-// -----------------------------------------
-// Shadow utilities
-// -----------------------------------------
-.shadow-sm { box-shadow: $box-shadow-sm !important; }
-.shadow { box-shadow: $box-shadow !important; }
-.shadow-lg { box-shadow: $box-shadow-lg !important; }
-.shadow-none { box-shadow: none !important; }
-
-// -----------------------------------------
-// Overflow utilities
-// -----------------------------------------
-.overflow-auto { overflow: auto !important; }
-.overflow-hidden { overflow: hidden !important; }
-.overflow-visible { overflow: visible !important; }
-.overflow-scroll { overflow: scroll !important; }
-
-// -----------------------------------------
-// Visibility utilities
-// -----------------------------------------
-.visible { visibility: visible !important; }
-.invisible { visibility: hidden !important; }
-
-// -----------------------------------------
-// Accessibility utilities
-// -----------------------------------------
-// Screen reader only class (for accessibility)
-.sr-only {
-  @include sr-only;
-}
-
-// -----------------------------------------
-// Image utilities
-// -----------------------------------------
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-// -----------------------------------------
-// Clearfix utility
-// -----------------------------------------
-.clearfix {
-  &::after {
-    display: block;
-    clear: both;
-    content: "";
-  }
-}
-
-// -----------------------------------------
-// Links
-// -----------------------------------------
-// Standard link styling
-.link-primary {
-  color: $primary;
-  text-decoration: none;
-  
-  &:hover, &:focus {
-    color: $primary-dark;
-    text-decoration: underline;
-  }
-}
-
-.link-secondary {
-  color: $secondary;
-  text-decoration: none;
-  
-  &:hover, &:focus {
-    color: $secondary-dark;
-    text-decoration: underline;
-  }
-}
 
 // -----------------------------------------
 // Skip to main content (Accessibility)
@@ -291,42 +49,5 @@
   }
 }
 
-// -----------------------------------------
-// Media embed utilities
-// -----------------------------------------
-.embed-responsive {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  
-  &::before {
-    display: block;
-    content: "";
-  }
-  
-  iframe, embed, object, video {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-}
-
-.embed-responsive-16by9::before {
-  padding-top: 56.25%;
-}
-
-.embed-responsive-4by3::before {
-  padding-top: 75%;
-}
-
-// -----------------------------------------
-// Media Query Utilities
-// -----------------------------------------
-// These utilities are generated by Bootstrap's responsive utility system
-// Documentation: https://getbootstrap.com/docs/5.3/utilities/display/#hiding-elements
+// Note: For embed-responsive, use Bootstrap's ratio utilities instead:
+// https://getbootstrap.com/docs/5.3/helpers/ratio/

@@ -13,71 +13,33 @@
   --color-secondary-light: #{$secondary-light};
   --color-secondary-dark: #{$secondary-dark};
   
-  // Utility colors
-  --color-success: #{$success};
-  --color-danger: #{$danger};
-  --color-warning: #{$warning};
-  --color-info: #{$info};
-  --color-light: #{$light};
-  --color-dark: #{$dark};
-  
-  // Background colors
-  --color-bg: #{$body-bg};
-  --color-bg-dark: #{$body-bg-dark};
-  
-  // Text colors
-  --color-text: #{$body-color};
-  --color-text-light: #{$body-color-light};
-  --color-text-muted: #{$text-muted};
-  
-  // Link colors
-  --color-link: #{$link-color};
-  --color-link-hover: #{$link-hover-color};
-  
-  // Border colors
-  --color-border: #{$border-color};
-  --color-border-dark: #{$border-color-dark};
-  
-  // Brand colors
+  // Brand colors (custom to this project)
   --color-brand-blue: #{$brand-blue};
   --color-brand-red: #{$brand-red};
   --color-brand-green: #{$brand-green};
-  
-  // Component specific colors
-  --color-header-bg: #{$header-bg};
-  --color-header-color: #{$header-color};
-  --color-footer-bg: #{$footer-bg};
-  --color-footer-color: #{$footer-color};
   
   // Section backgrounds
   --color-section-bg-light: #{$section-bg-light};
   --color-section-bg-dark: #{$section-bg-dark};
   --color-section-bg-primary: #{$section-bg-primary};
   --color-section-bg-secondary: #{$section-bg-secondary};
-  
-  // Card colors
-  --color-card-bg: #{$body-bg};
-  --color-card-header-bg: #{$card-header-bg};
-  --color-card-header-text: #{$card-header-color};
 }
 
 // Dark mode theme variables
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #{$body-bg-dark};
-    --color-text: #{$body-color-light};
-    --color-border: #{$border-color-dark};
-    
-    // Adjust component colors for dark mode
-    --color-header-bg: #{darken($header-bg, 10%)};
-    --color-footer-bg: #{darken($footer-bg, 10%)};
-    --color-card-bg: #{$dark};
-    --color-card-header-bg: #{darken($card-header-bg, 70%)};
-    --color-card-header-text: #{$light};
+    --color-bg: #121212;
+    --color-text: #f8f9fa;
+    --color-border: #495057;
     
     // Section backgrounds for dark mode
-    --color-section-bg-light: #{darken($section-bg-light, 70%)};
-    --color-section-bg-dark: #{darken($section-bg-dark, 10%)};
+    --color-section-bg-light: #343a40;
+    --color-section-bg-dark: #212529;
+  }
+  
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
   }
 }
 
@@ -85,68 +47,42 @@
 .section {
   &.section-light {
     background-color: var(--color-section-bg-light);
-    color: var(--color-text);
   }
   
   &.section-dark {
     background-color: var(--color-section-bg-dark);
-    color: var(--color-text-light);
+    color: #f8f9fa;
   }
   
   &.section-primary {
     background-color: var(--color-section-bg-primary);
-    color: var(--color-text);
   }
   
   &.section-secondary {
     background-color: var(--color-section-bg-secondary);
-    color: var(--color-text);
-  }
-}
-
-// Card theming
-.card-theme {
-  background-color: var(--color-card-bg);
-  border-color: var(--color-border);
-  
-  .card-header {
-    background-color: var(--color-card-header-bg);
-    color: var(--color-card-header-text);
   }
 }
 
 // Gradient backgrounds
 .gradient-primary {
   background: linear-gradient(135deg, $primary, $primary-dark);
-  color: $light;
+  color: #f8f9fa;
 }
 
 .gradient-secondary {
   background: linear-gradient(135deg, $secondary, $secondary-dark);
-  color: $light;
+  color: #f8f9fa;
 }
 
-// Theme-specific link styles
-.link-theme {
-  color: var(--color-link);
-  text-decoration: none;
-  
-  &:hover, &:focus {
-    color: var(--color-link-hover);
-    text-decoration: underline;
-  }
-}
-
-// Documentation comment
 /* 
   Theme Usage Guidelines:
   
-  1. Use CSS variables for colors when building components
+  1. Use CSS variables for consistent colors across components
   2. For themed sections, use .section with modifiers:
      - .section.section-light
      - .section.section-dark
      - .section.section-primary
      - .section.section-secondary
-  3. For themed cards, use .card-theme
-  4. For gradient backgrounds, use .gradient-primary or .gradient-secondary
+  3. For gradient backgrounds, use .gradient-primary or .gradient-secondary
+  4. For most other styling, leverage Bootstrap's built-in utility classes
 */

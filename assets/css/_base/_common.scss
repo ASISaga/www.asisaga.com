@@ -1,56 +1,24 @@
 // Common base styles
-// This file contains general styling for basic elements that aren't typography-specific or theme-specific
-
-// Reset margins and paddings
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-// Base body styling
-body {
-  background-color: $body-bg;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-// Image defaults
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-// Common form element styling
-input, select, textarea, button {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-}
-
-// Default container for consistent content width
-.container {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1320px;
-}
+// Only includes custom styles that aren't covered by Bootstrap
 
 // Remove focus outline for mouse users, keep for keyboard
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-// Section spacing
+// Section spacing (custom to the project)
 .section {
   padding: $section-padding-y $section-padding-x;
 }
 
-// Table defaults
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-  font-family: $font-family-base;
-}
+/*
+  Note: Many common styles have been removed as they're already provided by Bootstrap:
+  - Box-sizing reset
+  - Body background and text adjustments
+  - Image max-width behavior
+  - Form element basic styling
+  - Container styling
+  - Table styling
+  
+  For these elements, rely on Bootstrap's default styling.
+*/

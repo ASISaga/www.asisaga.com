@@ -5,20 +5,21 @@ dummy {
     display: none
 }
 
-// Bootstrap dependencies
+// Bootstrap dependencies - core functions, variables, and mixins
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
-// Base styles - in order of dependency
-@import "_base/variables";
-@import "_base/mixins";
-@import "_base/common";
-@import "_base/typography";
-@import "_base/theme";
-@import "_base/utilities";
+// Base styles - minimal custom overrides
+@import "_base/variables";     // Only custom variables that differ from Bootstrap
+@import "_base/mixins";        // Only custom mixins not provided by Bootstrap
+@import "_base/common";        // Minimal common styles
+@import "_base/typography";    // Typography overrides
+@import "_base/theme";         // Custom theming and dark mode
+@import "_base/utilities";     // Only custom utilities not in Bootstrap
+@import "_base/responsive";    // Only custom responsive utilities
 
-// Bootstrap components - leverage Bootstrap's styling system
+// Bootstrap components - leverage these fully
 @import "bootstrap/bootstrap";
 
 // Components - UI building blocks
