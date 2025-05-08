@@ -14,15 +14,24 @@ $warning: #ffc107;    // Restored for theme.scss compatibility
 // Background colors
 $body-bg: #ffffff;
 $body-bg-dark: #121212;
+$code-bg: #f8f9fa;    // Added for code blocks background color
+$pre-bg: #f8f9fa;     // Added for pre blocks background color
 
 // Text colors
 $body-color: $dark;
 $body-color-light: $light;
 $text-muted: #6c757d;
+$pre-color: #212529;  // Added for pre blocks text color
 
 // Border colors
 $border-color: #dee2e6;
 $border-color-dark: #495057;  // Restored for theme.scss compatibility
+
+// Border radius
+$border-radius: 0.375rem;     // Added for components
+$border-radius-sm: 0.25rem;   // Added for small components
+$border-radius-lg: 0.5rem;    // Added for large components
+$border-radius-pill: 50rem;   // Added for pill shapes
 
 // Generate derived colors using SCSS functions
 $primary-light: lighten($primary, 15%);
