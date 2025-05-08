@@ -1,3 +1,6 @@
+// Core variables for ASI Saga website
+// This file contains all global variables used throughout the site
+
 // Core color palette
 // Primary and secondary colors only
 $primary: #0d6efd;
@@ -8,30 +11,32 @@ $success: #198754;
 $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #212529;
-$info: #0dcaf0;      // Restored for theme.scss compatibility
-$warning: #ffc107;    // Restored for theme.scss compatibility
+$info: #0dcaf0;
+$warning: #ffc107;
+$white: #ffffff;
 
 // Background colors
 $body-bg: #ffffff;
 $body-bg-dark: #121212;
-$code-bg: #f8f9fa;    // Added for code blocks background color
-$pre-bg: #f8f9fa;     // Added for pre blocks background color
+$code-bg: #f8f9fa;
+$pre-bg: #f8f9fa;
 
 // Text colors
 $body-color: $dark;
 $body-color-light: $light;
 $text-muted: #6c757d;
-$pre-color: #212529;  // Added for pre blocks text color
+$pre-color: #212529;
 
 // Border colors
 $border-color: #dee2e6;
-$border-color-dark: #495057;  // Restored for theme.scss compatibility
+$border-color-dark: #495057;
 
 // Border radius
-$border-radius: 0.375rem;     // Added for components
-$border-radius-sm: 0.25rem;   // Added for small components
-$border-radius-lg: 0.5rem;    // Added for large components
-$border-radius-pill: 50rem;   // Added for pill shapes
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-pill: 50rem;
+$border-radius-xl: 0.5rem;
 
 // Generate derived colors using SCSS functions
 $primary-light: lighten($primary, 15%);
@@ -42,15 +47,25 @@ $secondary-dark: darken($secondary, 10%);
 // Link colors based on primary
 $link-color: $primary;
 $link-hover-color: $primary-dark;
+$link-decoration: none;
+$link-hover-decoration: underline;
 
 // Header colors based on secondary
-$header-bg: $secondary-dark;
-$header-color: $light;
+$header-bg: #343a40;
+$header-color: $white;
+$header-padding-y: 1rem;
+$header-padding-x: 1.5rem;
 
-// Brand colors needed for theme.scss
-$brand-blue: #0275d8;   // Restored for theme.scss compatibility
-$brand-red: #d9534f;    // Restored for theme.scss compatibility
-$brand-green: #5cb85c;  // Restored for theme.scss compatibility
+// Footer variables
+$footer-bg: #343a40;
+$footer-color: $white;
+$footer-padding-y: 2rem;
+$footer-padding-x: 1.5rem;
+
+// Brand colors
+$brand-blue: #0275d8;
+$brand-red: #d9534f;
+$brand-green: #5cb85c;
 
 // Create color maps for theme variations
 $theme-colors: (
@@ -60,43 +75,86 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark,
-  "info":       $info,     // Restored in theme map
-  "warning":    $warning   // Restored in theme map
+  "info":       $info,
+  "warning":    $warning
 );
 
 // Font-related variables
 $font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+$font-family-headings: 'Montserrat', $font-family-base;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-// Font weights
-$font-weight-light:           300;
-$font-weight-normal:          400;
-$font-weight-medium:          500;
-$font-weight-semibold:        600;
-$font-weight-bold:            700;
-
 // Font sizes
-$font-size-base:              1rem;
-$font-size-sm:                $font-size-base * 0.875;
-$font-size-lg:                $font-size-base * 1.25;
-$font-size-xl:                $font-size-base * 1.5 !default;
-$font-size-2xl:               $font-size-base * 2 !default;
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-md: 1.125rem;   // 18px
+$font-size-lg: 1.25rem;    // 20px
+$font-size-xl: 1.5rem;     // 24px
+$font-size-2xl: 1.75rem;   // 28px
+$font-size-3xl: 2rem;      // 32px
+$font-size-4xl: 2.5rem;    // 40px
+$font-size-5xl: 3rem;      // 48px
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
 
 // Line heights
-$line-height-base:            1.5;
-$line-height-sm:              1.25;
-$line-height-lg:              2;
+$line-height-tight: 1.25;
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+$line-height-relaxed: 1.75;
+
+// Letter spacing
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
 
 // Headings
-$headings-font-weight:        $font-weight-semibold;
-$headings-line-height:        1.2;
-$headings-margin-bottom:      $font-size-base * 0.5;
-$headings-color:              $body-color;
+$headings-font-weight: $font-weight-semibold;
+$headings-line-height: 1.2;
+$headings-margin-bottom: $font-size-base * 0.5;
+$headings-color: $body-color;
 
-// Spacing variables
+// Button variables
+$btn-font-weight: $font-weight-medium;
+$btn-padding-y: 0.375rem;
+$btn-padding-x: 0.75rem;
+$btn-border-radius: $border-radius;
+
+// Box shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// Heading sizes (derived from font-size-base)
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+// Section variables
 $spacer: 1rem;
 $section-padding-x: 1.5rem;
 $section-padding-y: 3rem;
+$section-bg-light: #f8f9fa;
+$section-bg-dark: #343a40;
+$section-bg-primary: rgba(0, 123, 255, 0.1);
+$section-bg-secondary: rgba(108, 117, 125, 0.1);
+
+// Card variables
+$card-border-radius: 0.25rem;
+$card-border-color: rgba(0, 0, 0, 0.125);
+$card-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$card-header-bg: #f8f9fa;
+$card-header-color: #343a40;
 
 // Responsive breakpoints
 $grid-breakpoints: (

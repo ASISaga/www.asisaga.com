@@ -1,26 +1,5 @@
 // Common base styles
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: var(--font-family-primary, $font-family-base);
-  font-size: var(--font-size-base, $font-size-base);
-  line-height: 1.5;
-  color: $body-color;
-  background-color: $body-bg;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-// Core body styles
-body {
-  font-family: $font-family-base;
-  color: $body-color;
-  background-color: $body-bg;
-}
-
-// Common styles shared across pages
+// This file contains general styling for basic elements that aren't typography-specific or theme-specific
 
 // Reset margins and paddings
 * {
@@ -29,41 +8,11 @@ body {
   box-sizing: border-box;
 }
 
-// Typography elements
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: var(--font-family-headings, $font-family-base);
-  font-weight: $font-weight-bold;
-  color: $primary;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-// Typography enhancements
-h1, h2, h3, h4, h5, h6 {
-  color: $headings-color;
-  margin-bottom: $headings-margin-bottom;
-}
-
-// Basic list styling
-ul, ol {
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-}
-
-// Default spacing for paragraphs
-p {
-  margin-bottom: 1rem;
-}
-
-// Common utility classes
-.text-center {
-  text-align: center;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
+// Base body styling
+body {
+  background-color: $body-bg;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 // Image defaults
@@ -74,43 +23,8 @@ img {
 
 // Common form element styling
 input, select, textarea, button {
-  font-family: var(--font-family-primary, $font-family-base);
-  font-size: var(--font-size-base, $font-size-base);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-// Common link styling
-a {
-  color: $link-color;
-  text-decoration: $link-decoration;
-  transition: color 0.2s ease-in-out;
-  
-  &:hover {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
-  }
-}
-
-// Global link styles
-a {
-  color: $link-color;
-  text-decoration: none;
-  
-  &:hover {
-    color: $link-hover-color;
-    text-decoration: underline;
-  }
+  font-family: $font-family-base;
+  font-size: $font-size-base;
 }
 
 // Default container for consistent content width
@@ -123,65 +37,14 @@ a {
   max-width: 1320px;
 }
 
-// Skip to content link for accessibility
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: $primary;
-  color: white;
-  padding: 8px;
-  z-index: 100;
-
-  &:focus {
-    top: 0;
-  }
+// Remove focus outline for mouse users, keep for keyboard
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
-// Responsive media embeds
-.embed-responsive {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  
-  &::before {
-    display: block;
-    content: "";
-  }
-  
-  iframe,
-  embed,
-  object,
-  video {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-}
-
-// Common 16:9 embed ratio
-.embed-responsive-16by9::before {
-  padding-top: 56.25%;
-}
-
-// Common 4:3 embed ratio
-.embed-responsive-4by3::before {
-  padding-top: 75%;
-}
-
-// Clearfix utility
-.clearfix {
-  &::after {
-    display: block;
-    clear: both;
-    content: "";
-  }
+// Section spacing
+.section {
+  padding: $section-padding-y $section-padding-x;
 }
 
 // Table defaults
@@ -189,256 +52,5 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1rem;
-  font-family: var(--font-family-primary, $font-family-base);
+  font-family: $font-family-base;
 }
-
-// Remove focus outline for mouse users, keep for keyboard
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-// Code styling
-code, pre, kbd {
-  font-family: var(--font-family-monospace, $font-family-monospace);
-}
-
-// Standard button styles
-.btn {
-  display: inline-block;
-  font-weight: $font-weight-medium;
-  line-height: 1.5;
-  color: $body-color;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: $font-size-base;
-  border-radius: $border-radius;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.btn-primary {
-  color: $white;
-  background-color: $primary;
-  border-color: $primary;
-  
-  &:hover {
-    color: $white;
-    background-color: darken($primary, 7.5%);
-    border-color: darken($primary, 10%);
-  }
-}
-
-// Button customization - use fewer variations
-.btn-primary, .btn-secondary {
-  font-weight: $font-weight-medium;
-}
-
-// Spacing
-.mb-0 { margin-bottom: 0 !important; }
-.mb-1 { margin-bottom: 0.25rem !important; }
-.mb-2 { margin-bottom: 0.5rem !important; }
-.mb-3 { margin-bottom: 1rem !important; }
-.mb-4 { margin-bottom: 1.5rem !important; }
-.mb-5 { margin-bottom: 3rem !important; }
-
-.mt-0 { margin-top: 0 !important; }
-.mt-1 { margin-top: 0.25rem !important; }
-.mt-2 { margin-top: 0.5rem !important; }
-.mt-3 { margin-top: 1rem !important; }
-.mt-4 { margin-top: 1.5rem !important; }
-.mt-5 { margin-top: 3rem !important; }
-
-// Common styling elements for the entire website
-
-// Apply the color scheme consistency via CSS variables that can be used across the site
-:root {
-  // Primary color scheme
-  --color-primary: #{$primary};
-  --color-primary-light: #{$primary-light};
-  --color-primary-dark: #{$primary-dark};
-  
-  // Secondary color scheme
-  --color-secondary: #{$secondary};
-  --color-secondary-light: #{$secondary-light};
-  --color-secondary-dark: #{$secondary-dark};
-  
-  // Neutral colors
-  --color-light: #{$light};
-  --color-dark: #{$dark};
-  
-  // Background colors
-  --color-bg: #{$body-bg};
-  --color-bg-dark: #{$body-bg-dark};
-  
-  // Text colors
-  --color-text: #{$body-color};
-  --color-text-light: #{$body-color-light};
-  --color-text-muted: #{$text-muted};
-  
-  // Link colors
-  --color-link: #{$link-color};
-  --color-link-hover: #{$link-hover-color};
-  
-  // Border colors
-  --color-border: #{$border-color};
-  --color-border-dark: #{$border-color-dark};
-  
-  // Brand specific colors
-  --color-brand-blue: #{$brand-blue};
-  --color-brand-red: #{$brand-red};
-  --color-brand-green: #{$brand-green};
-  
-  // Section backgrounds
-  --color-section-bg-light: #{$light};
-  --color-section-bg-dark: #{$dark};
-  --color-section-bg-primary: #{$primary-light};
-  --color-section-bg-secondary: #{$secondary-light};
-  
-  // Component specific colors
-  --color-header-bg: #{$dark};
-  --color-header-text: #{$light};
-  --color-footer-bg: #{$dark};
-  --color-footer-text: #{$light};
-  
-  // Card colors
-  --color-card-bg: #{$body-bg};
-  --color-card-header-bg: #{$primary};
-  --color-card-header-text: #{$light};
-}
-
-// Set up dark mode color variables
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #{$body-bg-dark};
-    --color-text: #{$body-color-light};
-    --color-card-bg: #{$dark};
-    --color-border: #{$border-color-dark};
-  }
-}
-
-// Common button classes
-.btn-common {
-  display: inline-block;
-  font-weight: var(--font-weight-medium);
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
-              border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-// Common section layout
-.section-common {
-  padding: var(--section-padding-y) var(--section-padding-x);
-  margin-bottom: 2rem;
-  
-  &.section-light {
-    background-color: var(--color-section-bg-light);
-    color: var(--color-text);
-  }
-  
-  &.section-dark {
-    background-color: var(--color-section-bg-dark);
-    color: var(--color-text-light);
-  }
-  
-  &.section-primary {
-    background-color: var(--color-section-bg-primary);
-    color: var(--color-text-light);
-  }
-}
-
-// Apply consistent spacing
-.section {
-  padding: $section-padding-y $section-padding-x;
-}
-
-// Common card layout
-.card-common {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 0.25rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  
-  .card-header {
-    background-color: var(--color-card-header-bg);
-    color: var(--color-card-header-text);
-    padding: 0.75rem 1.25rem;
-    border-bottom: 1px solid var(--color-border);
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-  }
-  
-  .card-body {
-    padding: 1.25rem;
-  }
-}
-
-// Card customization
-.card {
-  border-color: $border-color;
-}
-
-.card-header {
-  background-color: $light;
-}
-
-// Common header/footer elements
-.navbar-common {
-  background-color: var(--color-header-bg);
-  padding: 0.5rem 1rem;
-  
-  .navbar-brand {
-    color: var(--color-header-text);
-    
-    &:hover {
-      color: rgba(255, 255, 255, 0.9);
-    }
-  }
-  
-  .nav-link {
-    color: rgba(255, 255, 255, 0.8);
-    
-    &:hover, &.active {
-      color: var(--color-header-text);
-    }
-  }
-}
-
-.footer-common {
-  background-color: var(--color-footer-bg);
-  color: var(--color-footer-text);
-  padding: 2rem 1rem;
-  margin-top: 3rem;
-  
-  a {
-    color: rgba(255, 255, 255, 0.8);
-    
-    &:hover {
-      color: var(--color-footer-text);
-      text-decoration: none;
-    }
-  }
-}
-
-// Additional color utility classes
-.text-primary-light { color: $primary-light; }
-.text-primary-dark { color: $primary-dark; }
-.text-secondary-light { color: $secondary-light; }
-.text-secondary-dark { color: $secondary-dark; }
-
-.bg-primary-light { background-color: $primary-light; }
-.bg-primary-dark { background-color: $primary-dark; }
-.bg-secondary-light { background-color: $secondary-light; }
-.bg-secondary-dark { background-color: $secondary-dark; }
