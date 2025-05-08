@@ -1,0 +1,61 @@
+// Testimonial component
+// Reusable testimonial styling for customer quotes and feedback
+
+.testimonial-section {
+  padding: $spacer * 3 0;
+  background-color: $light;
+  @extend .mb-5;
+  
+  .testimonial-container {
+    @extend .container;
+  }
+  
+  .testimonial-grid {
+    @extend .row;
+    @extend .g-4;
+  }
+  
+  .testimonial-item {
+    @extend .col-12;
+    @extend .col-md-6;
+    @extend .col-lg-4;
+  }
+  
+  .testimonial-card {
+    background-color: $white;
+    border-radius: $border-radius;
+    padding: $spacer * 2;
+    margin-bottom: $spacer * 2;
+    border-left: 4px solid $primary;
+    box-shadow: $box-shadow-sm;
+    height: 100%;
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: $spacer;
+    }
+    
+    .testimonial-author {
+      text-align: right;
+    }
+    
+    .testimonial-name {
+      font-weight: $font-weight-bold;
+      margin-bottom: 0;
+    }
+    
+    .testimonial-company {
+      color: $gray-600;
+      font-size: $font-size-sm;
+    }
+  }
+  
+  // Variants
+  &.testimonial-section-alt {
+    background-color: $white;
+    
+    .testimonial-card {
+      background-color: $light;
+    }
+  }
+}

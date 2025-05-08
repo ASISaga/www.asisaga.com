@@ -1,0 +1,41 @@
+// Section Header component
+// Reusable section title and description styling
+
+.section-header {
+  @extend .text-center;
+  @extend .mb-5;
+  
+  .section-title {
+    @extend .fw-bold;
+    @extend .text-primary;
+    @extend .mb-3;
+    font-size: $font-size-lg;
+  }
+  
+  .section-subtitle {
+    @extend .text-secondary;
+    @extend .mb-3;
+    font-size: calc($font-size-base * 1.15);
+  }
+  
+  .section-description {
+    @extend .text-muted;
+    @extend .mb-4;
+    max-width: 768px;
+    @extend .mx-auto;
+  }
+  
+  &.section-header-left {
+    text-align: left;
+    
+    .section-description {
+      margin-left: 0;
+    }
+  }
+  
+  &.section-header-alt {
+    .section-title {
+      @extend .text-secondary;
+    }
+  }
+}

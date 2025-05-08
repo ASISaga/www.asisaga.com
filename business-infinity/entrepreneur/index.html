@@ -1,50 +1,51 @@
 ---
 layout: default
-title: Entrepreneur
+title: Business Infinity for Entrepreneurs
 ---
 
 <!-- 
-Business Infinity Entrepreneur page
-This page showcases how Business Infinity helps individual entrepreneurs with business planning, 
-strategy development, and operational efficiency
-Uses Bootstrap components for responsive design and consistent styling
+Entrepreneur focused page for Business Infinity product
+This page highlights how Business Infinity helps entrepreneurs
+Uses Bootstrap components for responsive layout and consistent styling
 -->
 <div class="entrepreneur-container">
-  <!-- Hero section with entrepreneur-focused messaging -->
-  <section class="entrepreneur-hero-section">
-    <div class="entrepreneur-hero-content">
-      <h1 class="entrepreneur-hero-title">For Entrepreneurs</h1>
-      <p class="entrepreneur-hero-description">
-        Harness the power of AI to turn your business vision into reality with less effort and higher success rates.
-      </p>
-    </div>
-  </section>
+  <!-- Hero section -->
+  {% include hero.html 
+    title="Business Infinity for Entrepreneurs" 
+    description="Empower your entrepreneurial journey with AI-powered business intelligence and strategic planning."
+    button_text="Learn More" 
+    button_url="#challenges" 
+  %}
 
-  <!-- Entrepreneur challenges section -->
-  <section class="entrepreneur-challenges-section">
-    <h2 class="entrepreneur-section-title">Common Challenges</h2>
+  <!-- Challenges section -->
+  <section id="challenges" class="entrepreneur-challenges-section">
+    {% include section-header.html 
+      title="Entrepreneur Challenges" 
+      description="We understand the unique challenges entrepreneurs face when building and growing their businesses."
+    %}
+    
     <div class="entrepreneur-challenges-grid">
-      <!-- Challenge 1: Limited Resources -->
+      <!-- Challenge 1: Decision Making -->
       <div class="entrepreneur-challenge-card">
-        <h3 class="entrepreneur-challenge-title">Limited Resources</h3>
+        <h3 class="entrepreneur-challenge-title">Decision Making</h3>
         <p class="entrepreneur-challenge-description">
-          Entrepreneurs often face constraints in terms of capital, time, and expertise when starting a new business.
+          Making critical business decisions with limited information and resources.
         </p>
       </div>
-
-      <!-- Challenge 2: Market Analysis -->
+      
+      <!-- Challenge 2: Time Management -->
       <div class="entrepreneur-challenge-card">
-        <h3 class="entrepreneur-challenge-title">Market Analysis</h3>
+        <h3 class="entrepreneur-challenge-title">Time Management</h3>
         <p class="entrepreneur-challenge-description">
-          Understanding market trends, competition, and customer needs requires extensive research and analysis.
+          Balancing multiple roles and responsibilities while focusing on strategic growth.
         </p>
       </div>
-
+      
       <!-- Challenge 3: Business Strategy -->
       <div class="entrepreneur-challenge-card">
         <h3 class="entrepreneur-challenge-title">Business Strategy</h3>
         <p class="entrepreneur-challenge-description">
-          Developing an effective business strategy without previous experience can be daunting and risk-prone.
+          Developing effective long-term plans while navigating short-term challenges.
         </p>
       </div>
     </div>
@@ -52,58 +53,59 @@ Uses Bootstrap components for responsive design and consistent styling
 
   <!-- Solutions section -->
   <section class="entrepreneur-solutions-section">
-    <h2 class="entrepreneur-section-title">How Business Infinity Helps</h2>
+    {% include section-header.html title="How Business Infinity Helps" %}
+    
     <div class="entrepreneur-solutions-container">
-      <!-- Solution 1: Business Planning -->
+      <!-- Solution 1: Strategic Intelligence -->
       <div class="entrepreneur-solution-item">
         <div class="entrepreneur-solution-icon">
-          <i class="entrepreneur-icon-planning"></i>
+          <i class="entrepreneur-icon-intelligence"></i>
         </div>
         <div class="entrepreneur-solution-content">
-          <h3 class="entrepreneur-solution-title">AI-Powered Business Planning</h3>
+          <h3 class="entrepreneur-solution-title">Strategic Intelligence</h3>
           <p class="entrepreneur-solution-description">
-            Develop comprehensive business plans based on market data and industry best practices, with step-by-step guidance.
+            Make informed decisions with AI-powered insights and analysis of market trends and opportunities.
           </p>
           <ul class="entrepreneur-solution-features">
-            <li class="entrepreneur-feature-item">Market opportunity assessment</li>
-            <li class="entrepreneur-feature-item">Financial projections</li>
-            <li class="entrepreneur-feature-item">Resource allocation recommendations</li>
+            <li class="entrepreneur-feature-item">Market opportunity identification</li>
+            <li class="entrepreneur-feature-item">Risk assessment and mitigation</li>
+            <li class="entrepreneur-feature-item">Competitive intelligence</li>
           </ul>
         </div>
       </div>
-
-      <!-- Solution 2: Market Intelligence -->
+      
+      <!-- Solution 2: Operational Efficiency -->
       <div class="entrepreneur-solution-item">
         <div class="entrepreneur-solution-icon">
-          <i class="entrepreneur-icon-market"></i>
+          <i class="entrepreneur-icon-efficiency"></i>
         </div>
         <div class="entrepreneur-solution-content">
-          <h3 class="entrepreneur-solution-title">Market Intelligence</h3>
+          <h3 class="entrepreneur-solution-title">Operational Efficiency</h3>
           <p class="entrepreneur-solution-description">
-            Access real-time market data and competitive analysis to identify gaps and opportunities.
+            Streamline your business operations and automate routine tasks to focus on growth and innovation.
           </p>
           <ul class="entrepreneur-solution-features">
-            <li class="entrepreneur-feature-item">Competitor benchmarking</li>
-            <li class="entrepreneur-feature-item">Trend analysis</li>
-            <li class="entrepreneur-feature-item">Customer segmentation</li>
+            <li class="entrepreneur-feature-item">Process optimization</li>
+            <li class="entrepreneur-feature-item">Workflow automation</li>
+            <li class="entrepreneur-feature-item">Resource management</li>
           </ul>
         </div>
       </div>
-
-      <!-- Solution 3: Operations Management -->
+      
+      <!-- Solution 3: Growth Planning -->
       <div class="entrepreneur-solution-item">
         <div class="entrepreneur-solution-icon">
-          <i class="entrepreneur-icon-operations"></i>
+          <i class="entrepreneur-icon-growth"></i>
         </div>
         <div class="entrepreneur-solution-content">
-          <h3 class="entrepreneur-solution-title">Streamlined Operations</h3>
+          <h3 class="entrepreneur-solution-title">Growth Planning</h3>
           <p class="entrepreneur-solution-description">
-            Automate administrative tasks and business processes to maximize efficiency and focus on growth.
+            Develop comprehensive growth strategies with actionable steps and measurable milestones.
           </p>
           <ul class="entrepreneur-solution-features">
-            <li class="entrepreneur-feature-item">Task automation</li>
-            <li class="entrepreneur-feature-item">Document management</li>
-            <li class="entrepreneur-feature-item">Performance tracking</li>
+            <li class="entrepreneur-feature-item">Business model analysis</li>
+            <li class="entrepreneur-feature-item">Market expansion strategies</li>
+            <li class="entrepreneur-feature-item">Revenue growth projections</li>
           </ul>
         </div>
       </div>
@@ -112,29 +114,26 @@ Uses Bootstrap components for responsive design and consistent styling
 
   <!-- Success story section -->
   <section class="entrepreneur-success-section">
-    <h2 class="entrepreneur-section-title">Success Story</h2>
+    {% include section-header.html title="Entrepreneur Success Story" %}
+    
     <div class="entrepreneur-success-story">
       <blockquote class="entrepreneur-testimonial">
         <p class="entrepreneur-testimonial-text">
-          "As a solo entrepreneur, Business Infinity has been like having an entire business team at my fingertips. The AI-driven market analysis helped me identify a niche opportunity I would have otherwise missed, and the automated operations tools saved me countless hours."
+          "As a solo entrepreneur, Business Infinity has been like having a team of business analysts and strategists at my fingertips. The platform helped me identify my most profitable customer segments and optimize my service offerings, resulting in a 47% revenue increase in just six months."
         </p>
         <footer class="entrepreneur-testimonial-footer">
-          <cite class="entrepreneur-testimonial-author">Sarah Johnson, Founder of EcoTech Solutions</cite>
+          <cite class="entrepreneur-testimonial-author">James Wilson, Founder of ConsultEase</cite>
         </footer>
       </blockquote>
     </div>
   </section>
 
-  <!-- Call to action section -->
-  <section class="entrepreneur-cta-section">
-    <div class="entrepreneur-cta-container">
-      <h2 class="entrepreneur-cta-title">Ready to Accelerate Your Entrepreneurial Journey?</h2>
-      <p class="entrepreneur-cta-description">
-        Join thousands of entrepreneurs who are using Business Infinity to turn their vision into successful businesses.
-      </p>
-      <div class="entrepreneur-cta-buttons">
-        <a href="{{ site.linkedin_username }}" class="entrepreneur-cta-button" target="_blank">Get Started</a>
-      </div>
-    </div>
-  </section>
+  <!-- CTA section -->
+  {% include cta.html 
+    title="Take Your Business to the Next Level" 
+    description="Harness the power of AI to grow your business and achieve your entrepreneurial goals." 
+    button_text="Get Started Today" 
+    button_url=site.linkedin_username 
+    style="secondary"
+  %}
 </div>

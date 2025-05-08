@@ -30,6 +30,11 @@ dummy {
 @import "_components/product-card";
 @import "_components/section";
 @import "_components/linkedin";
+@import "_components/hero";              // New reusable hero component
+@import "_components/feature-grid";      // New reusable feature grid component
+@import "_components/cta";               // New reusable call to action component
+@import "_components/section-header";    // New reusable section header component
+@import "_components/testimonial";       // New reusable testimonial component
 
 // Pages - page-specific styling
 @import "pages/home";

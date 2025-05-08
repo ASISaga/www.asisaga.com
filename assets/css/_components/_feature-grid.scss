@@ -1,0 +1,65 @@
+// Feature Grid component
+// A reusable pattern for displaying features in a responsive grid
+
+.feature-section {
+  @extend .mb-5;
+  padding: $spacer * 3 0;
+  
+  .feature-title {
+    @extend .text-center;
+    @extend .mb-4;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $primary;
+  }
+  
+  .feature-grid {
+    @extend .row;
+    @extend .g-4;
+    justify-content: center;
+    
+    .feature-item {
+      @extend .col-12;
+      @extend .col-md-6;
+      @extend .col-lg-4;
+      height: 100%;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+    
+    .feature-card {
+      height: 100%;
+      padding: $spacer * 2;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow-sm;
+      background-color: $white;
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: $primary;
+      margin-bottom: $spacer;
+    }
+    
+    .feature-card-title {
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacer;
+    }
+    
+    .feature-description {
+      color: $gray-700;
+    }
+  }
+  
+  // Alternative styles
+  &.feature-section-alt {
+    background-color: $light;
+    
+    .feature-card {
+      border-left: 4px solid $primary;
+    }
+  }
+}

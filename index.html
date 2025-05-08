@@ -10,16 +10,14 @@ The page uses Bootstrap grid system for responsive layout and Jekyll's Liquid te
 -->
 <div class="home-container">
   <!-- Hero section with main headline and introduction -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">Welcome to ASI Saga</h1>
-      <p class="hero-description">Exploring the journey towards Artificial Super Intelligence and its impact on our future.</p>
-    </div>
-  </section>
+  {% include hero.html 
+    title="Welcome to ASI Saga" 
+    description="Exploring the journey towards Artificial Super Intelligence and its impact on our future." 
+  %}
 
   <!-- Featured products section displaying products from _data/products.yml -->
   <section class="products-section">
-    <h2 class="section-title">Our Products</h2>
+    {% include section-header.html title="Our Products" %}
     <div class="products-grid">
       <!-- Loop through site.data.products and display each product using product-card component -->
       {% for product in site.data.products %}
@@ -31,11 +29,10 @@ The page uses Bootstrap grid system for responsive layout and Jekyll's Liquid te
   </section>
 
   <!-- Call to action section -->
-  <section class="cta-section">
-    <div class="cta-content">
-      <h2 class="cta-title">Ready to explore more?</h2>
-      <p class="cta-description">Learn about our mission and vision for the future of AI.</p>
-      <a href="{{ site.url }}/about/" class="cta-button">About Us</a>
-    </div>
-  </section>
+  {% include cta.html 
+    title="Ready to explore more?" 
+    description="Learn about our mission and vision for the future of AI." 
+    button_text="About Us" 
+    button_url="/about/" 
+  %}
 </div>

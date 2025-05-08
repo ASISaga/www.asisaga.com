@@ -1,0 +1,53 @@
+// Hero component
+// A reusable hero/header section for page headers with consistent styling
+
+.hero-section {
+  @include flex-center;
+  @include box-shadow-md;
+  background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
+  @extend .rounded;
+  @extend .text-center;
+  @extend .mb-5;
+  padding: 4rem 1rem;
+  
+  .hero-content {
+    @extend .mx-auto;
+    max-width: 768px;
+  }
+  
+  .hero-title {
+    @extend .fw-bold;
+    @extend .text-primary;
+    @extend .mb-3;
+    font-size: $font-size-xl;
+  }
+  
+  .hero-description {
+    @extend .text-secondary;
+    @extend .mb-4;
+    font-size: $font-size-lg;
+  }
+
+  .hero-button {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .rounded-pill;
+  }
+  
+  // Variant modifiers
+  &.hero-section-sm {
+    padding: 2rem 1rem;
+    
+    .hero-title {
+      font-size: $font-size-lg;
+    }
+    
+    .hero-description {
+      font-size: $font-size-base;
+    }
+  }
+  
+  &.hero-section-alt {
+    background: linear-gradient(135deg, lighten($secondary, 40%) 0%, $white 100%);
+  }
+}

@@ -10,19 +10,14 @@ Uses Bootstrap components for responsive design and consistent styling
 -->
 <div class="github-agent-container">
   <!-- Hero section with product introduction -->
-  <section class="github-hero-section">
-    <div class="github-hero-content">
-      <h1 class="github-hero-title">GitHub Agent</h1>
-      <p class="github-hero-subtitle">Intelligent automation for GitHub workflows</p>
-      <p class="github-hero-description">
-        Streamline your development process with AI-powered GitHub automation that handles repository management, code reviews, and collaboration.
-      </p>
-    </div>
-  </section>
+  {% include hero.html 
+    title="GitHub Agent" 
+    description="Streamline your development process with AI-powered GitHub automation that handles repository management, code reviews, and collaboration." 
+  %}
 
   <!-- Key features section with feature cards -->
   <section class="github-features-section">
-    <h2 class="github-section-title">Key Features</h2>
+    {% include section-header.html title="Key Features" %}
     <div class="github-features-grid">
       <!-- Feature 1: Repository Management -->
       <div class="github-feature-card">
@@ -77,12 +72,11 @@ Uses Bootstrap components for responsive design and consistent styling
 
   <!-- Technical implementation section with code sample -->
   <section class="github-technical-section">
-    <h2 class="github-section-title">How It Works</h2>
+    {% include section-header.html 
+      title="How It Works" 
+      description="GitHub Agent leverages the PyGithub library to interact with GitHub's API, allowing for programmatic control of repositories and workflows."
+    %}
     <div class="github-technical-container">
-      <p class="github-technical-description">
-        GitHub Agent leverages the PyGithub library to interact with GitHub's API, allowing for programmatic control of repositories and workflows.
-      </p>
-      
       <!-- Code example in a styled code block -->
       <div class="github-code-example">
         <h3 class="github-code-title">Example Implementation</h3>
@@ -110,7 +104,7 @@ client.pushCommit(
 
   <!-- Use cases section -->
   <section class="github-use-cases-section">
-    <h2 class="github-section-title">Use Cases</h2>
+    {% include section-header.html title="Use Cases" %}
     <div class="github-use-cases-grid">
       <!-- Use case 1: Development Teams -->
       <div class="github-use-case-card">
@@ -139,16 +133,12 @@ client.pushCommit(
   </section>
 
   <!-- Call to action section -->
-  <section class="github-cta-section">
-    <div class="github-cta-container">
-      <h2 class="github-cta-title">Ready to Automate Your GitHub Workflow?</h2>
-      <p class="github-cta-description">
-        Explore the GitHub Agent today and transform how your team works with repositories.
-      </p>
-      <div class="github-cta-buttons">
-        <a href="https://github.com/asisaga/GitHubAgent" class="github-cta-button" target="_blank">View on GitHub</a>
-        <a href="{{ site.linkedin_username }}" class="github-cta-button github-cta-button-outline" target="_blank">Contact Us</a>
-      </div>
-    </div>
-  </section>
+  {% include cta.html 
+    title="Ready to Automate Your GitHub Workflow?" 
+    description="Explore the GitHub Agent today and transform how your team works with repositories." 
+    button_text="View on GitHub" 
+    button_url="https://github.com/asisaga/GitHubAgent" 
+    secondary_button_text="Contact Us" 
+    secondary_button_url=site.linkedin_username 
+  %}
 </div>

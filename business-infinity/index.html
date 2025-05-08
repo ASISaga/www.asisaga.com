@@ -10,63 +10,46 @@ Uses Bootstrap's responsive grid system and components for layout and design
 -->
 <div class="business-infinity-container">
   <!-- Hero section with product introduction -->
-  <section class="business-hero-section">
-    <div class="business-hero-content">
-      <h1 class="business-hero-title">Business Infinity</h1>
-      <p class="business-hero-subtitle">AI-powered business acceleration platform</p>
-      <p class="business-hero-description">
-        Leverage artificial intelligence to streamline operations, identify growth opportunities, and scale your business efficiently.
-      </p>
-      <!-- Primary call-to-action button -->
-      <div class="business-hero-cta">
-        <a href="#features" class="business-cta-button">Explore Features</a>
-      </div>
-    </div>
-  </section>
+  {% include hero.html 
+    title="Business Infinity" 
+    description="Leverage artificial intelligence to streamline operations, identify growth opportunities, and scale your business efficiently." 
+    button_text="Explore Features" 
+    button_url="#features" 
+  %}
 
   <!-- Key features section with feature cards -->
   <section id="features" class="business-features-section">
-    <h2 class="business-section-title">Key Features</h2>
-    <div class="business-features-grid">
-      <!-- Feature 1: Business Analysis -->
-      <div class="business-feature-card">
-        <div class="business-feature-icon">
-          <!-- Icon placeholder or Font Awesome icon can be used here -->
-          <i class="business-icon-analysis"></i>
-        </div>
-        <h3 class="business-feature-title">Comprehensive Business Analysis</h3>
-        <p class="business-feature-description">
-          Gain deep insights into your business operations with AI-powered analytics that identify inefficiencies and growth opportunities.
-        </p>
-      </div>
-
-      <!-- Feature 2: Strategy Development -->
-      <div class="business-feature-card">
-        <div class="business-feature-icon">
-          <i class="business-icon-strategy"></i>
-        </div>
-        <h3 class="business-feature-title">Intelligent Strategy Development</h3>
-        <p class="business-feature-description">
-          Create data-driven business strategies tailored to your industry, market conditions, and business goals.
-        </p>
-      </div>
-
-      <!-- Feature 3: Operations Automation -->
-      <div class="business-feature-card">
-        <div class="business-feature-icon">
-          <i class="business-icon-automation"></i>
-        </div>
-        <h3 class="business-feature-title">Operations Automation</h3>
-        <p class="business-feature-description">
-          Streamline repetitive tasks across all business functions with intelligent automation solutions.
-        </p>
-      </div>
-    </div>
+    {% include section-header.html title="Key Features" %}
+    
+    {% assign features = site.data.business_features | default: "[]" %}
+    {% unless features.size > 0 %}
+      {% assign features = "" | split: "" %}
+      {% assign feature1 = 
+        "title=Comprehensive Business Analysis,
+         icon=business-icon-analysis,
+         description=Gain deep insights into your business operations with AI-powered analytics that identify inefficiencies and growth opportunities." 
+         | split: "," %}
+      {% assign feature2 = 
+        "title=Intelligent Strategy Development,
+         icon=business-icon-strategy,
+         description=Create data-driven business strategies tailored to your industry, market conditions, and business goals." 
+         | split: "," %}
+      {% assign feature3 = 
+        "title=Operations Automation,
+         icon=business-icon-automation,
+         description=Streamline repetitive tasks across all business functions with intelligent automation solutions." 
+         | split: "," %}
+      {% assign features = features | concat: feature1 | concat: feature2 | concat: feature3 %}
+    {% endunless %}
+    
+    {% include feature-grid.html 
+      items=features
+    %}
   </section>
 
   <!-- Use cases section with tabs for different business segments -->
   <section class="business-use-cases-section">
-    <h2 class="business-section-title">Who Can Benefit</h2>
+    {% include section-header.html title="Who Can Benefit" %}
     <div class="business-use-cases-nav">
       <!-- Tab navigation for different user segments -->
       <ul class="business-tabs-list" role="tablist">
@@ -81,34 +64,27 @@ Uses Bootstrap's responsive grid system and components for layout and design
   </section>
 
   <!-- Testimonials section -->
-  <section class="business-testimonials-section">
-    <h2 class="business-section-title">What Our Users Say</h2>
-    <div class="business-testimonials-container">
-      <!-- Testimonial 1 -->
-      <div class="business-testimonial-card">
-        <p class="business-testimonial-text">
-          "Business Infinity helped me identify inefficiencies in my operations and increased productivity by 40% within three months."
-        </p>
-        <div class="business-testimonial-author">
-          <p class="business-testimonial-name">John Doe</p>
-          <p class="business-testimonial-company">CEO, Tech Startup Inc.</p>
-        </div>
-      </div>
-
-      <!-- Additional testimonials can be added here -->
-    </div>
-  </section>
+  {% assign testimonials = site.data.business_testimonials | default: "[]" %}
+  {% unless testimonials.size > 0 %}
+    {% assign testimonials = "" | split: "" %}
+    {% assign testimonial1 = 
+      "text=Business Infinity helped me identify inefficiencies in my operations and increased productivity by 40% within three months.,
+       name=John Doe,
+       company=CEO, Tech Startup Inc." 
+       | split: "," %}
+    {% assign testimonials = testimonials | concat: testimonial1 %}
+  {% endunless %}
+  
+  {% include testimonial.html 
+    title="What Our Users Say" 
+    testimonials=testimonials
+  %}
 
   <!-- Contact section -->
-  <section class="business-contact-section">
-    <div class="business-contact-container">
-      <h2 class="business-section-title">Ready to Transform Your Business?</h2>
-      <p class="business-contact-description">
-        Get started with Business Infinity today and experience the power of AI in business management.
-      </p>
-      <div class="business-contact-actions">
-        <a href="{{ site.linkedin_username }}" class="business-contact-button" target="_blank">Contact Us</a>
-      </div>
-    </div>
-  </section>
+  {% include cta.html 
+    title="Ready to Transform Your Business?" 
+    description="Get started with Business Infinity today and experience the power of AI in business management." 
+    button_text="Contact Us" 
+    button_url=site.linkedin_username 
+  %}
 </div>

@@ -1,0 +1,83 @@
+// Call to Action component
+// A reusable CTA section with consistent styling across pages
+
+.cta-section {
+  @include flex-center;
+  @include box-shadow-sm;
+  background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
+  @extend .rounded;
+  @extend .text-center;
+  @extend .mb-5;
+  padding: 3rem 1rem;
+  
+  .cta-content {
+    @extend .mx-auto;
+    max-width: 768px;
+  }
+  
+  .cta-title {
+    @extend .fw-bold;
+    @extend .text-primary;
+    @extend .mb-3;
+    font-size: $font-size-lg;
+  }
+  
+  .cta-description {
+    @extend .text-secondary;
+    @extend .mb-4;
+  }
+  
+  .cta-buttons {
+    @extend .d-flex;
+    @extend .flex-wrap;
+    @extend .justify-content-center;
+    @extend .gap-3;
+  }
+  
+  .cta-button {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .rounded-pill;
+    
+    &:hover {
+      @include transition(all);
+    }
+    
+    &.cta-button-outline {
+      @extend .btn-outline-primary;
+    }
+  }
+  
+  // Variant modifiers
+  &.cta-section-secondary {
+    background: linear-gradient(135deg, lighten($secondary, 40%) 0%, $white 100%);
+    
+    .cta-title {
+      @extend .text-secondary;
+    }
+    
+    .cta-button {
+      @extend .btn-secondary;
+      
+      &.cta-button-outline {
+        @extend .btn-outline-secondary;
+      }
+    }
+  }
+  
+  &.cta-section-accent {
+    background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%);
+    
+    .cta-title {
+      @extend .text-accent;
+    }
+    
+    .cta-button {
+      @extend .btn-accent;
+      
+      &.cta-button-outline {
+        @extend .btn-outline-accent;
+      }
+    }
+  }
+}
