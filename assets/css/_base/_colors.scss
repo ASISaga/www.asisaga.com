@@ -1,0 +1,93 @@
+// filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\_base\_colors.scss
+// Core color variables for ASI Saga website
+// This file contains all color definitions used throughout the site
+
+// ----------------------------------------
+// Primary Colors
+// ----------------------------------------
+$primary: #0d6efd;
+$primary-light: lighten($primary, 15%);
+$primary-dark: darken($primary, 10%);
+
+// ----------------------------------------
+// Secondary Colors
+// ----------------------------------------
+$secondary: #6c757d;
+$secondary-light: lighten($secondary, 15%);
+$secondary-dark: darken($secondary, 10%);
+
+// ----------------------------------------
+// Accent Colors
+// ----------------------------------------
+$accent: #ff5722; // Example accent color
+$accent-light: lighten($accent, 15%);
+$accent-dark: darken($accent, 10%);
+
+// ----------------------------------------
+// Brand Colors
+// ----------------------------------------
+$brand-blue: #1e88e5;
+$brand-red: #e53935;
+$brand-green: #43a047;
+
+// ----------------------------------------
+// Text Colors
+// ----------------------------------------
+$text-primary: #212529;
+$text-secondary: #6c757d;
+$text-muted: #6c757d;
+$text-light: #f8f9fa;
+$text-dark: #212529;
+$white: #fff;
+
+// ----------------------------------------
+// Background Colors
+// ----------------------------------------
+$bg-light: #f8f9fa;
+$bg-dark: #212529;
+$header-bg: #ffffff;
+
+// ----------------------------------------
+// Section Background Colors
+// ----------------------------------------
+$section-bg-light: #f8f9fa;
+$section-bg-dark: #212529;
+$section-bg-primary: #e9f2ff;
+$section-bg-secondary: #f1f1f1;
+
+// ----------------------------------------
+// Border Colors
+// ----------------------------------------
+$border-color: #dee2e6;
+
+// ----------------------------------------
+// Shadow Colors
+// ----------------------------------------
+$shadow-color: rgba(0, 0, 0, 0.15);
+$box-shadow-color: $shadow-color;
+
+// ----------------------------------------
+// Utility Class Color Map
+// ----------------------------------------
+$theme-colors: (
+  "primary": $primary,
+  "primary-light": $primary-light,
+  "primary-dark": $primary-dark,
+  "secondary": $secondary,
+  "secondary-light": $secondary-light,
+  "secondary-dark": $secondary-dark,
+  "accent": $accent,
+  "accent-light": $accent-light,
+  "accent-dark": $accent-dark,
+  "light": $bg-light,
+  "dark": $bg-dark
+);
+
+// ----------------------------------------
+// Dark Mode Colors
+// ----------------------------------------
+$dark-mode-bg: #121212;
+$dark-mode-text: #f8f9fa;
+$dark-mode-border: #495057;
+$dark-mode-section-bg-light: #343a40;
+$dark-mode-section-bg-dark: #212529;

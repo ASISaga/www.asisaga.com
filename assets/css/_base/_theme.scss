@@ -1,5 +1,5 @@
 // Theme file for consistent styling across all pages
-// Contains CSS variables, theming, and dark mode support
+// Note: All color variables have been moved to _colors.scss
 
 // CSS Variables for consistent theming throughout the site
 :root {
@@ -28,13 +28,13 @@
 // Dark mode theme variables
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #121212;
-    --color-text: #f8f9fa;
-    --color-border: #495057;
+    --color-bg: #{$dark-mode-bg};
+    --color-text: #{$dark-mode-text};
+    --color-border: #{$dark-mode-border};
     
     // Section backgrounds for dark mode
-    --color-section-bg-light: #343a40;
-    --color-section-bg-dark: #212529;
+    --color-section-bg-light: #{$dark-mode-section-bg-light};
+    --color-section-bg-dark: #{$dark-mode-section-bg-dark};
   }
   
   body {
@@ -51,7 +51,7 @@
   
   &.section-dark {
     background-color: var(--color-section-bg-dark);
-    color: #f8f9fa;
+    color: $text-light;
   }
   
   &.section-primary {
@@ -66,12 +66,12 @@
 // Gradient backgrounds
 .gradient-primary {
   background: linear-gradient(135deg, $primary, $primary-dark);
-  color: #f8f9fa;
+  color: $text-light;
 }
 
 .gradient-secondary {
   background: linear-gradient(135deg, $secondary, $secondary-dark);
-  color: #f8f9fa;
+  color: $text-light;
 }
 
 /* 

@@ -1,29 +1,6 @@
 // Core variables for ASI Saga website
+
 // Only override Bootstrap variables that need customization
-
-// Core color palette - only set if different from Bootstrap defaults
-// These will override Bootstrap's variables because they're imported before Bootstrap
-$primary: #0d6efd;
-$secondary: #6c757d;
-$accent: #17a2b8;    // Adding accent color - using a teal blue that complements the palette
-
-// Essential utility colors
-$success: #198754;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #212529;
-$info: #0dcaf0;
-$warning: #ffc107;
-$white: #ffffff;
-
-// Text colors
-$body-color: $dark;
-$body-color-light: $light;
-$text-muted: #6c757d;
-
-// Border colors
-$border-color: #dee2e6;
-$border-color-dark: #495057;
 
 // Border radius
 $border-radius: 0.375rem;
@@ -32,59 +9,11 @@ $border-radius-lg: 0.5rem;
 $border-radius-pill: 50rem;
 $border-radius-xl: 0.5rem;
 
-// Generate derived colors using SCSS functions
-$primary-light: lighten($primary, 15%);
-$primary-dark: darken($primary, 10%);
-$secondary-light: lighten($secondary, 25%);
-$secondary-dark: darken($secondary, 10%);
-
-// Link colors based on primary
-$link-color: $primary;
-$link-hover-color: $primary-dark;
-
-// Header colors based on secondary
-$header-bg: #343a40;
-$header-color: $white;
-
-// Footer variables
-$footer-bg: #343a40;
-$footer-color: $white;
-
-// Font sizes
-$font-size-base: 1rem;     // 16px
-$font-size-sm: 0.875rem;   // 14px
-$font-size-lg: 1.25rem;    // 20px
-$font-size-xl: 1.5rem;     // 24px
-
-// Font weights
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-
-// Line heights
-$line-height-base: 1.5;
-$line-height-sm: 1.25;
-$line-height-lg: 2;
-
-// Custom brand colors (not in Bootstrap)
-$brand-blue: #0275d8;
-$brand-red: #d9534f;
-$brand-green: #5cb85c;
-
-// Custom font settings
-$font-family-headings: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-
 // Custom section variables
 $section-padding-y: 3rem;
 $section-padding-x: 1.5rem;
-$section-bg-light: #f8f9fa;
-$section-bg-dark: #343a40;
-$section-bg-primary: rgba(0, 123, 255, 0.1);
-$section-bg-secondary: rgba(108, 117, 125, 0.1);
 
-// Box shadows (used in responsive.scss)
-$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+// Box shadows (using $shadow-color from _colors.scss)
+$box-shadow: 0 0.5rem 1rem $shadow-color;
 
 // Any other truly custom variables that aren't covered by Bootstrap

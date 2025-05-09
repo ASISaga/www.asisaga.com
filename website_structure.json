@@ -141,6 +141,11 @@
               "description": "Core styling elements",
               "children": [
                 {
+                  "name": "_colors.scss",
+                  "type": "file",
+                  "description": "Centralized color variables and definitions"
+                },
+                {
                   "name": "_common.scss",
                   "type": "file",
                   "description": "Common base styles"
@@ -173,7 +178,7 @@
                 {
                   "name": "_variables.scss",
                   "type": "file",
-                  "description": "SCSS variables for colors, spacing, etc."
+                  "description": "SCSS variables for spacing, breakpoints, etc."
                 }
               ]
             },
@@ -446,7 +451,7 @@
       ]
     },
     {
-      "name": "project_structure.json",
+      "name": "website_structure.json",
       "type": "file",
       "description": "Website structure representation for documentation"
     }

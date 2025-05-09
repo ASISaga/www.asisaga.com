@@ -11,6 +11,7 @@ dummy {
 @import "bootstrap/mixins";
 
 // Base styles - minimal custom overrides
+@import '_base/colors';        // Import color variables
 @import "_base/variables";     // Only custom variables that differ from Bootstrap
 @import "_base/mixins";        // Only custom mixins not provided by Bootstrap
 @import "_base/common";        // Minimal common styles
