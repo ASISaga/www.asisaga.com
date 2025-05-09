@@ -23,6 +23,9 @@
 .text-primary-dark { color: $primary-dark !important; }
 .text-secondary-light { color: $secondary-light !important; }
 .text-secondary-dark { color: $secondary-dark !important; }
+.text-accent { color: $accent !important; }
+.text-accent-light { color: lighten($accent, 15%) !important; }
+.text-accent-dark { color: darken($accent, 10%) !important; }
 
 // -----------------------------------------
 // Custom background colors (not in Bootstrap)
@@ -31,6 +34,41 @@
 .bg-primary-dark { background-color: $primary-dark !important; }
 .bg-secondary-light { background-color: $secondary-light !important; }
 .bg-secondary-dark { background-color: $secondary-dark !important; }
+.bg-accent { background-color: $accent !important; }
+.bg-accent-light { background-color: lighten($accent, 15%) !important; }
+.bg-accent-dark { background-color: darken($accent, 10%) !important; }
+
+// -----------------------------------------
+// Custom button variants (not in Bootstrap)
+// -----------------------------------------
+.btn-accent {
+  @extend .btn;
+  color: $white;
+  background-color: $accent;
+  border-color: $accent;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: darken($accent, 10%);
+    border-color: darken($accent, 12.5%);
+  }
+}
+
+.btn-outline-accent {
+  @extend .btn;
+  color: $accent;
+  border-color: $accent;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: $accent;
+    border-color: $accent;
+  }
+}
 
 // -----------------------------------------
 // Skip to main content (Accessibility)
