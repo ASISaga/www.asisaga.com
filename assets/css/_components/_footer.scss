@@ -1,79 +1,69 @@
 // Footer styling
 .site-footer {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  margin-top: 3rem;
-  background: $header-bg; // Use the same background as header for consistency
-  color: $white;
-  background-color: $secondary;
-  color: $light;
-  
+  @extend .py-4; // padding-top: 2rem; padding-bottom: 2rem;
+  @extend .mt-5; // margin-top: 3rem;
+  @extend .bg-footer-custom; // Custom utility for background-color: $secondary;
+  @extend .text-footer-main; // Custom utility for color: $light;
+
   .site-footer__container {
-    width: 100%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1320px;
+    @extend .container-xl; // Replaces direct width, padding, margin, max-width for container behavior
   }
-  
+
   .site-footer__copyright {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    
-    p {
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0;
+    @extend .text-center;
+    @extend .mb-4; // margin-bottom: 1.5rem;
+
+    .site-footer__copyright-text { // Added class to the <p> tag
+      @extend .text-footer-muted; // Custom utility for color: rgba(255, 255, 255, 0.8);
+      @extend .mb-0;
     }
   }
-  
+
   .site-footer__social {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .mb-4; // margin-bottom: 1.5rem;
+
     .site-footer__social-item {
-      margin: 0 0.5rem;
+      @extend .mx-2; // margin: 0 0.5rem;
     }
   }
-  
+
   .site-footer__links {
-    text-align: center;
+    @extend .text-center;
   }
-  
+
   .site-footer__nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
+    @extend .d-flex;
+    @extend .flex-wrap;
+    @extend .justify-content-center;
+    @extend .list-unstyled;
+    @extend .ps-0; // padding-left: 0;
+    @extend .mb-0;
+
+    @include media-breakpoint-down(sm) {
+      @extend .flex-column;
+    }
   }
-  
+
   .site-footer__nav-item {
-    padding: 0 0.75rem;
-    margin-bottom: 0.5rem;
+    @extend .px-3; // padding: 0 0.75rem;
+    @extend .mb-2; // margin-bottom: 0.5rem;
+
+    @include media-breakpoint-down(sm) {
+      @extend .px-0; // Remove horizontal padding for stacked items
+      @extend .py-1; // padding: 0.25rem 0;
+    }
   }
-  
+
   .site-footer__nav-link {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: color 0.15s ease-in-out;
-    
+    @extend .text-decoration-none;
+    @extend .text-footer-link; // Custom utility for link color
+    // transition: color 0.15s ease-in-out; // Transitions can be part of base link/utility styles if desired
+
     &:hover {
-      color: $primary;
-      text-decoration: underline;
-    }
-  }
-  
-  // Responsive adjustments
-  @media (max-width: 767.98px) {
-    .site-footer__nav-list {
-      flex-direction: column;
-    }
-    
-    .site-footer__nav-item {
-      padding: 0.25rem 0;
+      @extend .text-footer-link-hover; // Custom utility for link hover color
+      @extend .text-decoration-underline;
     }
   }
 }

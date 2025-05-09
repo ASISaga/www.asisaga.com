@@ -1,51 +1,82 @@
-// Navigation component styling
-// Matches navbar.html component in _includes
+// Styles for _includes/navbar.html
 
-.site-navbar {
-  @include flex-between;
-  padding: $spacer * 0.5 0;
-  
-  // Use Bootstrap classes inside our custom class
-  .navbar-brand {
-    font-weight: $font-weight-bold;
-  }
-  
-  .navbar-nav {
-    @include flex-center;
-    
-    .nav-item {
-      margin-left: $spacer;
-      
-      .nav-link {
-        color: $header-color;
-        @include transition(color);
-        
-        &:hover {
-          color: $primary-light;
-        }
-        
-        &.active {
-          color: $primary;
-          font-weight: $font-weight-semibold;
-        }
-      }
+// The main <ul> container for the navigation items
+.navbar { // This class name is used in navbar.html for the root <ul>
+  @extend .navbar-nav; // Bootstrap class for a list of navigation links
+
+  // Styling for individual list items within the navbar
+  .navbar-item {
+    @extend .nav-item; // Bootstrap class for a single navigation item
+
+    // Specific styling for dropdown items
+    &.dropdown { // Assuming a .dropdown class would be added to li.navbar-item for dropdowns
+      @extend .dropdown; // Bootstrap class to make it a dropdown container
     }
   }
-  
-  // Mobile menu toggle
-  .navbar-toggler {
-    border: none;
-    color: $header-color;
-    
+
+  // Styling for active navigation items
+  .navbar-item-active {
+    @extend .nav-item; // Bootstrap class for a single navigation item
+
+    .navbar-link {
+      @extend .active; // Bootstrap class to mark the link as active
+      // Active color is handled by Bootstrap's .active class on .nav-link
+      // For a dark navbar, this might be white or a light color.
+      // If $navbar-dark-active-color is set, it will use that.
+      // Otherwise, it might need a custom utility if the default active color isn't suitable.
+    }
+  }
+
+  // Styling for navigation links
+  .navbar-link {
+    @extend .nav-link; // Bootstrap class for navigation links
+    @extend .text-white; // Assuming navbar is on a dark background like the header
+                        // This might need to be $navbar-dark-color if defined
+
+    &:hover {
+      @extend .text-primary-light-emphasis; // Using existing utility from _utilities.scss
+                                          // This corresponds to $navbar-dark-hover-color or similar
+    }
+
+    // Styling for dropdown toggle links
+    &[data-bs-toggle="dropdown"] {
+      @extend .dropdown-toggle; // Bootstrap class for dropdown toggle arrows
+    }
+  }
+
+  // Styling for the dropdown menu itself
+  .navbar-dropdown {
+    @extend .dropdown-menu; // Bootstrap class for the dropdown menu
+    @extend .bg-header; // Use utility for background, assumes same as header
+                        // Corresponds to $navbar-dark-dropdown-bg
+    @extend .border-white-15; // Use utility for border
+                               // Corresponds to $navbar-dark-dropdown-border-color
+  }
+
+  // Container for each dropdown item - this is a custom wrapper in navbar.html
+  // Ideally, this li.navbar-dropdown-item-container would not be needed, and
+  // a.navbar-dropdown-item would be a direct child of ul.navbar-dropdown.
+  // For now, just ensuring it doesn't break layout.
+  .navbar-dropdown-item-container {
+    // No specific Bootstrap class to extend here directly for the <li> wrapper of a <a>.dropdown-item
+    // Styles will be applied to the child <a> tag.
+  }
+
+  // Styling for individual items within a dropdown menu
+  .navbar-dropdown-item {
+    @extend .dropdown-item; // Bootstrap class for a dropdown item
+    @extend .text-white; // For $navbar-dark-dropdown-link-color
+
+    &:hover,
     &:focus {
-      box-shadow: none;
+      @extend .text-primary-light-emphasis; // For $navbar-dark-dropdown-link-hover-color
+      @extend .bg-header-darken-5; // For $navbar-dark-dropdown-link-hover-bg
     }
   }
-  
-  // Responsive behavior
-  @include media-breakpoint-up(lg) {
-    .collapse {
-      display: block;
-    }
+
+  // Styling for dividers within a dropdown menu
+  .navbar-divider {
+    @extend .dropdown-divider; // Bootstrap class for a dropdown divider
+    // Border color will be $navbar-dark-dropdown-divider-bg
   }
 }

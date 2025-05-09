@@ -11,8 +11,8 @@ Parameters:
       <img src="{{ product.image | relative_url }}" alt="{{ product.title }}" class="product-card__image">
     {% else %}
       <!-- Default placeholder when no image is provided -->
-      <div class="product-card__image-placeholder">
-        <span>{{ product.title | slice: 0, 1 }}</span>
+      <div class="product-card__image-placeholder ratio ratio-4x3">
+        <span class="product-card__placeholder-text">{{ product.title | slice: 0, 1 }}</span>
       </div>
     {% endif %}
   </div>

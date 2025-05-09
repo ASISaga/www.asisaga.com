@@ -1,278 +1,197 @@
 // Agent Operating System page specific styles
 .agent-os-container {
-  // Container styles
-}
+  // Hero section styles are handled by _hero.scss
 
-// Hero section
-.agent-os-hero-section {
-  @extend .hero-section;
-  padding: $spacer * 4 0;
-  
-  .agent-os-hero-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .agent-os-hero-title {
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacer;
-  }
-  
-  .agent-os-hero-subtitle {
-    font-size: $font-size-lg;
-    margin-bottom: $spacer * 1.5;
-  }
-  
-  .agent-os-hero-description {
-    margin-bottom: $spacer * 2;
-  }
-}
+  // Concepts section
+  .agent-os-concepts-section {
+    @extend .py-5; // Bootstrap padding
 
-// Concepts section
-.agent-os-concepts-section {
-  padding: $spacer * 4 0;
-  
-  .agent-os-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .agent-os-concepts-container {
-    @extend .container;
-  }
-  
-  .agent-os-concepts-description {
-    text-align: center;
-    margin-bottom: $spacer * 2;
-  }
-  
-  .agent-os-concept-diagram {
-    text-align: center;
-    margin: $spacer * 3 0;
-    
-    .agent-os-diagram-image {
-      max-width: 100%;
-      box-shadow: $box-shadow;
-      border-radius: $border-radius;
-    }
-  }
-  
-  .agent-os-key-concepts {
-    margin-top: $spacer * 2;
-  }
-  
-  .agent-os-concepts-subtitle {
-    margin-bottom: $spacer * 1.5;
-    text-align: center;
-  }
-  
-  .agent-os-concept-list {
-    @extend .list-unstyled;
-    
-    .agent-os-concept-item {
-      padding: $spacer;
-      margin-bottom: $spacer;
-      background-color: $light;
-      border-radius: $border-radius;
-      
-      strong {
-        color: $primary;
+    // section-header.html styles are handled by _section-header.scss
+
+    .agent-os-concepts-container {
+      @extend .container;
+
+      .agent-os-concept-diagram {
+        @extend .text-center;
+        @extend .my-4; // Bootstrap margin
+
+        .agent-os-diagram-image {
+          @extend .img-fluid;
+          @extend .shadow;
+          @extend .rounded;
+        }
       }
-    }
-  }
-}
 
-// Features section
-.agent-os-features-section {
-  background-color: $light;
-  padding: $spacer * 3 0;
-  
-  .agent-os-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .agent-os-features-grid {
-    @extend .container;
-    @extend .row;
-    justify-content: center;
-  }
-  
-  .agent-os-feature-card {
-    @extend .col-md-4;
-    padding: $spacer * 2;
-    margin-bottom: $spacer * 2;
-    height: 100%;
-    
-    &:hover {
-      background-color: $white;
-      border-radius: $border-radius;
-      box-shadow: $box-shadow-sm;
-    }
-    
-    .agent-os-feature-icon {
-      font-size: 2rem;
-      color: $primary;
-      margin-bottom: $spacer;
-    }
-    
-    .agent-os-feature-title {
-      margin-bottom: $spacer;
-    }
-    
-    .agent-os-feature-description {
-      margin-bottom: $spacer;
-    }
-    
-    .agent-os-feature-benefits {
-      @extend .list-unstyled;
-      
-      .agent-os-benefit-item {
-        position: relative;
-        padding-left: $spacer * 1.5;
-        margin-bottom: $spacer * 0.5;
-        
-        &:before {
-          content: "\2713";
-          color: $success;
-          position: absolute;
-          left: 0;
+      .agent-os-key-concepts {
+        @extend .mt-4; // Bootstrap margin
+
+        .agent-os-concepts-subtitle {
+          @extend .mb-3;
+          @extend .text-center;
+          // Consider making this a utility class if used elsewhere, or ensure $font-size-lg is used via a Bootstrap text class like .fs-4 or .fs-5
+        }
+
+        .agent-os-concept-list {
+          @extend .list-unstyled;
+
+          .agent-os-concept-item {
+            @extend .p-3; // Bootstrap padding
+            @extend .mb-3; // Bootstrap margin
+            @extend .bg-light;
+            @extend .rounded;
+
+            strong {
+              @extend .text-primary;
+            }
+          }
         }
       }
     }
   }
-}
 
-// Implementation section
-.agent-os-implementation-section {
-  padding: $spacer * 3 0;
-  
-  .agent-os-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .agent-os-implementation-container {
-    @extend .container;
-    max-width: 900px;
-  }
-  
-  .agent-os-implementation-description {
-    margin-bottom: $spacer * 2;
-  }
-  
-  .agent-os-code-example {
-    background-color: $dark;
-    border-radius: $border-radius;
-    margin: $spacer * 2 0;
-    
-    .agent-os-code-block {
-      padding: $spacer * 1.5;
-      overflow-x: auto;
-      margin-bottom: 0;
-      
-      code {
-        color: $light;
-        font-family: $font-family-monospace;
+  // Features section
+  .agent-os-features-section {
+    @extend .bg-light;
+    @extend .py-5; // Bootstrap padding
+
+    // section-header.html styles are handled by _section-header.scss
+
+    .agent-os-features-grid {
+      @extend .container;
+      @extend .row;
+      @extend .justify-content-center;
+
+      .agent-os-feature-card {
+        @extend .col-md-4;
+        @extend .p-4; // Bootstrap padding
+        @extend .mb-4; // Bootstrap margin
+        @extend .h-100; // Bootstrap height
+
+        &:hover {
+          @extend .bg-white;
+          @extend .rounded;
+          @extend .shadow-sm;
+        }
+
+        .agent-os-feature-icon {
+          // Requires custom utility or direct style if Bootstrap icons are not used and size/color is specific
+          // For now, assuming Bootstrap icons might be used or a utility class like .icon-lg .text-primary could be created
+          @extend .mb-3;
+        }
+
+        .agent-os-feature-title {
+          @extend .mb-3;
+          // Ensure heading level matches Bootstrap's default styling or use .fs-* classes
+        }
+
+        .agent-os-feature-description {
+          @extend .mb-3;
+        }
+
+        .agent-os-feature-benefits {
+          @extend .list-unstyled;
+
+          .agent-os-benefit-item {
+            @extend .position-relative;
+            @extend .ps-4; // Bootstrap padding for the checkmark space
+            @extend .mb-2; // Bootstrap margin
+
+            &::before {
+              content: "\2713"; // Checkmark character
+              @extend .text-success;
+              @extend .position-absolute;
+              left: 0;
+            }
+          }
+        }
       }
     }
   }
-}
 
-// Use cases section
-.agent-os-use-cases-section {
-  background-color: $primary-light;
-  padding: $spacer * 3 0;
-  
-  .agent-os-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .agent-os-use-cases-grid {
-    @extend .container;
-    @extend .row;
-    justify-content: center;
-  }
-  
-  .agent-os-use-case-card {
-    @extend .col-md-4;
-    background-color: $white;
-    border-radius: $border-radius;
-    padding: $spacer * 1.5;
-    margin-bottom: $spacer * 2;
-    height: 100%;
-    box-shadow: $box-shadow-sm;
-    
-    .agent-os-use-case-title {
-      color: $primary;
-      margin-bottom: $spacer;
-    }
-  }
-}
+  // Implementation section
+  .agent-os-implementation-section {
+    @extend .py-5; // Bootstrap padding
 
-// Benefits section
-.agent-os-benefits-section {
-  padding: $spacer * 3 0;
-  
-  .agent-os-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .agent-os-benefits-container {
-    @extend .container;
-    max-width: 800px;
-  }
-  
-  .agent-os-benefits-list {
-    @extend .list-unstyled;
-    
-    .agent-os-benefits-item {
-      margin-bottom: $spacer * 1.5;
-      padding: $spacer;
-      border-left: 3px solid $primary;
-      
-      .agent-os-benefit-highlight {
-        font-weight: $font-weight-bold;
-        color: $primary;
+    // section-header.html styles are handled by _section-header.scss
+
+    .agent-os-implementation-container {
+      @extend .container;
+      @extend .mw-900; // Custom utility class for max-width: 900px (if not already defined, create in _utilities.scss)
+
+      .agent-os-code-example {
+        @extend .bg-dark;
+        @extend .rounded;
+        @extend .my-4; // Bootstrap margin
+
+        .agent-os-code-block {
+          @extend .p-3; // Bootstrap padding
+          @extend .overflow-auto;
+          @extend .mb-0;
+
+          code {
+            @extend .text-light;
+            font-family: var(--bs-font-monospace); // Use Bootstrap CSS variable for monospace font
+          }
+        }
       }
     }
   }
-}
 
-// CTA section
-.agent-os-cta-section {
-  @extend .cta-section;
-  padding: $spacer * 4 0;
-  text-align: center;
-  
-  .agent-os-cta-container {
-    @extend .container;
-    max-width: 700px;
-  }
-  
-  .agent-os-cta-title {
-    margin-bottom: $spacer * 1.5;
-  }
-  
-  .agent-os-cta-description {
-    margin-bottom: $spacer * 2;
-  }
-  
-  .agent-os-cta-buttons {
-    margin-top: $spacer * 2;
-  }
-  
-  .agent-os-cta-button {
-    @extend .btn;
-    @extend .btn-primary;
-    @extend .btn-lg;
-    margin: 0 $spacer;
-    
-    &.agent-os-cta-button-outline {
-      @extend .btn-outline-primary;
+  // Use cases section
+  .agent-os-use-cases-section {
+    @extend .bg-primary-light; // Custom utility class from _utilities.scss
+    @extend .py-5; // Bootstrap padding
+
+    // section-header.html styles are handled by _section-header.scss
+
+    .agent-os-use-cases-grid {
+      @extend .container;
+      @extend .row;
+      @extend .justify-content-center;
+
+      .agent-os-use-case-card {
+        @extend .col-md-4;
+        @extend .bg-white;
+        @extend .rounded;
+        @extend .p-3; // Bootstrap padding
+        @extend .mb-4; // Bootstrap margin
+        @extend .h-100;
+        @extend .shadow-sm;
+
+        .agent-os-use-case-title {
+          @extend .text-primary;
+          @extend .mb-3;
+        }
+      }
     }
   }
+
+  // Benefits section
+  .agent-os-benefits-section {
+    @extend .py-5; // Bootstrap padding
+
+    // section-header.html styles are handled by _section-header.scss
+
+    .agent-os-benefits-container {
+      @extend .container;
+      @extend .mw-800; // Custom utility class for max-width: 800px (if not already defined, create in _utilities.scss)
+
+      .agent-os-benefits-list {
+        @extend .list-unstyled;
+
+        .agent-os-benefits-item {
+          @extend .mb-3; // Bootstrap margin
+          @extend .p-3; // Bootstrap padding
+          border-left: 3px solid var(--bs-primary); // Use Bootstrap CSS variable for primary color
+
+          .agent-os-benefit-highlight {
+            @extend .fw-bold;
+            @extend .text-primary;
+          }
+        }
+      }
+    }
+  }
+
+  // CTA section styles are handled by _cta.scss
 }

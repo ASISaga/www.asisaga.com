@@ -87,5 +87,112 @@
   }
 }
 
+// -----------------------------------------
+// Custom max-width utilities
+// -----------------------------------------
+.mw-768 {
+  max-width: 768px !important;
+}
+
+.mw-800 {
+  max-width: 800px !important;
+}
+
+.mw-900 {
+  max-width: 900px !important;
+}
+
+// -----------------------------------------
+// Custom background gradients
+// -----------------------------------------
+.bg-gradient-hero {
+  background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
+}
+
+.bg-gradient-cta {
+  background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
+}
+
+// -----------------------------------------
+// Custom background gradient for alternative hero
+// -----------------------------------------
+.bg-gradient-secondary-alt {
+  background: linear-gradient(135deg, lighten($secondary, 40%) 0%, $white 100%);
+}
+
+// -----------------------------------------
+// Custom background gradient for accent cta
+// -----------------------------------------
+.bg-gradient-accent-alt {
+  background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%);
+}
+
+// -----------------------------------------
+// Custom background gradient for primary light section
+// -----------------------------------------
+.bg-gradient-primary-light {
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+}
+
+// -----------------------------------------
+// Custom min-height utilities
+// -----------------------------------------
+.min-vh-50 {
+  min-height: 50vh !important;
+}
+
+// -----------------------------------------
+// Header-specific utilities
+// -----------------------------------------
+.bg-header {
+  background-color: $header-bg !important;
+}
+
+.text-header {
+  color: $header-color !important;
+}
+
+.text-white-70 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+// -----------------------------------------
+// Navbar/Dropdown specific utilities (used in _navbar.scss)
+// -----------------------------------------
+.text-primary-light-emphasis {
+  color: lighten($primary, 48%) !important; // As per original hover/active color
+}
+
+.border-white-15 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.bg-header-darken-5 {
+  background-color: darken($header-bg, 5%) !important;
+}
+
+// -----------------------------------------
+// Footer-specific utilities
+// -----------------------------------------
+.bg-footer-custom {
+  background-color: $secondary !important; // As per resolved conflict in _footer.scss
+}
+
+.text-footer-main {
+  color: $light !important; // As per resolved conflict in _footer.scss
+}
+
+.text-footer-muted {
+  color: rgba(255, 255, 255, 0.8) !important; // From original .site-footer__copyright p
+}
+
+.text-footer-link {
+  color: rgba(255, 255, 255, 0.8) !important; // From original .site-footer__nav-link
+}
+
+.text-footer-link-hover {
+  color: $primary !important; // From original .site-footer__nav-link:hover
+}
+
 // Note: For embed-responsive, use Bootstrap's ratio utilities instead:
 // https://getbootstrap.com/docs/5.3/helpers/ratio/

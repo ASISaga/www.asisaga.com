@@ -2,24 +2,25 @@
 // A reusable CTA section with consistent styling across pages
 
 .cta-section {
-  @include flex-center;
-  @include box-shadow-sm;
-  background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
+  @include flex-center; // Assumed custom mixin
+  @include box-shadow-sm; // Assumed custom mixin
+  @extend .bg-gradient-cta; // Use utility class for default background
   @extend .rounded;
   @extend .text-center;
   @extend .mb-5;
-  padding: 3rem 1rem;
+  @extend .py-5; // Bootstrap padding (approx. for 3rem vertical)
+  @extend .px-3; // Bootstrap padding (approx. for 1rem horizontal)
   
   .cta-content {
     @extend .mx-auto;
-    max-width: 768px;
+    @extend .mw-768; // Use utility class for max-width
   }
   
   .cta-title {
     @extend .fw-bold;
     @extend .text-primary;
     @extend .mb-3;
-    font-size: $font-size-lg;
+    @extend .fs-5; // Bootstrap font size (approx. for $font-size-lg)
   }
   
   .cta-description {
@@ -40,7 +41,7 @@
     @extend .rounded-pill;
     
     &:hover {
-      @include transition(all);
+      @include transition(all); // Assumed custom mixin
     }
     
     &.cta-button-outline {
@@ -50,7 +51,7 @@
   
   // Variant modifiers
   &.cta-section-secondary {
-    background: linear-gradient(135deg, lighten($secondary, 40%) 0%, $white 100%);
+    @extend .bg-gradient-secondary-alt; // Use existing utility class for secondary background
     
     .cta-title {
       @extend .text-secondary;
@@ -66,17 +67,17 @@
   }
   
   &.cta-section-accent {
-    background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%);
+    @extend .bg-gradient-accent-alt; // New utility class for accent background
     
     .cta-title {
       @extend .text-accent;
     }
     
     .cta-button {
-      @extend .btn-accent;
+      @extend .btn-accent; // Assumed custom utility class from _utilities.scss
       
       &.cta-button-outline {
-        @extend .btn-outline-accent;
+        @extend .btn-outline-accent; // Assumed custom utility class from _utilities.scss
       }
     }
   }

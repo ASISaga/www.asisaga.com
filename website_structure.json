@@ -141,6 +141,11 @@
               "description": "Core styling elements",
               "children": [
                 {
+                  "name": "_base-section.scss",
+                  "type": "file",
+                  "description": "Base styles for generic section elements"
+                },
+                {
                   "name": "_colors.scss",
                   "type": "file",
                   "description": "Centralized color variables and definitions"
@@ -149,6 +154,11 @@
                   "name": "_common.scss",
                   "type": "file",
                   "description": "Common base styles"
+                },
+                {
+                  "name": "_layout.scss",
+                  "type": "file",
+                  "description": "Base layout styles for overall site structure"
                 },
                 {
                   "name": "_mixins.scss",
@@ -213,11 +223,6 @@
                   "description": "Hero component styles"
                 },
                 {
-                  "name": "_layout.scss",
-                  "type": "file",
-                  "description": "Layout styles"
-                },
-                {
                   "name": "_linkedin.scss",
                   "type": "file",
                   "description": "LinkedIn component styles"
@@ -236,11 +241,6 @@
                   "name": "_section-header.scss",
                   "type": "file",
                   "description": "Section header component styles"
-                },
-                {
-                  "name": "_section.scss",
-                  "type": "file",
-                  "description": "Section styles"
                 },
                 {
                   "name": "_testimonial.scss",
@@ -290,6 +290,11 @@
                   "description": "Home page styles"
                 },
                 {
+                  "name": "_privacy-policy.scss",
+                  "type": "file",
+                  "description": "Privacy policy page styles"
+                },
+                {
                   "name": "_purpose-driven-agent.scss",
                   "type": "file",
                   "description": "Purpose Driven Agent page styles"
@@ -298,6 +303,11 @@
                   "name": "_realm-of-agents.scss",
                   "type": "file",
                   "description": "Realm of Agents page styles"
+                },
+                {
+                  "name": "_sitemap.scss",
+                  "type": "file",
+                  "description": "Sitemap page styles"
                 },
                 {
                   "name": "_startup.scss",

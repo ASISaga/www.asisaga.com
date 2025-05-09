@@ -2,48 +2,56 @@
 ---
 
 dummy {
-    display: none
+  display: none
 }
 
 // Bootstrap dependencies - core functions, variables, and mixins
 @import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+@import "bootstrap/variables";      // Standard Bootstrap variables
+@import "bootstrap/variables-dark"; // Standard Bootstrap dark variables
+@import "bootstrap/mixins";         // Standard Bootstrap mixins
 
-// Base styles - minimal custom overrides
-@import '_base/colors';        // Import color variables
-@import "_base/variables";     // Only custom variables that differ from Bootstrap
-@import "_base/mixins";        // Only custom mixins not provided by Bootstrap
-@import "_base/common";        // Minimal common styles
-@import "_base/typography";    // Typography overrides
-@import "_base/theme";         // Custom theming and dark mode
-@import "_base/utilities";     // Only custom utilities not in Bootstrap
-@import "_base/responsive";    // Only custom responsive utilities
+// Custom Base Styles 
+// These are imported before the main Bootstrap SASS file to allow 
+// Bootstrap's !default variables to be overridden if needed.
+@import "_base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
+@import "_base/colors";         // Centralized color definitions (ensure no conflict with _variables.scss)
+@import "_base/typography";     // Font families, sizes, weights, styles
+@import "_base/mixins";         // Custom reusable style patterns and functions
+@import "_base/utilities";      // Custom helper classes
+@import "_base/layout";         // Base layout styles for overall site structure
+@import "_base/common";         // Common base styles, resets, or global settings
+@import "_base/responsive";     // Responsive design helpers and media query management
+@import "_base/theme";          // Theme-specific styles or variables
+@import "_base/base-section";   // Base styles for generic section elements
 
-// Bootstrap components - leverage these fully
+// Bootstrap main SASS file (imports all of Bootstrap)
+// This will now use any overridden variables from _base/variables.scss
 @import "bootstrap/bootstrap";
 
-// Components - UI building blocks
-@import "_components/header";
-@import "_components/navbar";
+// Components - Reusable UI component styles
+// Each corresponds to an HTML partial in _includes/
+@import "_components/cta";
+@import "_components/feature-grid";
 @import "_components/footer";
-@import "_components/layout";
-@import "_components/product-card";
-@import "_components/section";
+@import "_components/header";
+@import "_components/hero";
 @import "_components/linkedin";
-@import "_components/hero";              // New reusable hero component
-@import "_components/feature-grid";      // New reusable feature grid component
-@import "_components/cta";               // New reusable call to action component
-@import "_components/section-header";    // New reusable section header component
-@import "_components/testimonial";       // New reusable testimonial component
+@import "_components/navbar";
+@import "_components/product-card";
+@import "_components/section-header";
+@import "_components/testimonial";
 
-// Pages - page-specific styling
-@import "pages/home";
+// Pages - Page-specific layouts and styles
+// Each corresponds to a main HTML page or a page in a subdirectory
 @import "pages/about";
+@import "pages/agent-operating-system";
 @import "pages/business-infinity";
 @import "pages/entrepreneur";
-@import "pages/startup";
-@import "pages/realm-of-agents";
-@import "pages/agent-operating-system";
 @import "pages/github-agent";
+@import "pages/home";
+@import "pages/privacy-policy";
 @import "pages/purpose-driven-agent";
+@import "pages/realm-of-agents";
+@import "pages/sitemap";
+@import "pages/startup";

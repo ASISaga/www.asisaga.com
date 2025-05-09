@@ -1,57 +1,63 @@
 // Product Card
 .product-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: $border-radius;
-  border: none;
-  background: $body-bg;
-  box-shadow: $box-shadow;
-  transition: box-shadow 0.2s, transform 0.2s;
-  min-width: 0;
-  word-wrap: break-word;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  
-  &:hover {
-    box-shadow: 0 8px 32px rgba(55, 53, 54, 0.18), 0 3px 12px rgba(0,0,0,0.12);
-    transform: translateY(-4px) scale(1.01);
+  @extend .card; // Use Bootstrap .card as a base
+  @extend .h-100; // Ensure cards in a row take equal height
+  @extend .mb-4; // margin-bottom: 1.5rem;
+
+  .product-card__image-container {
+    @extend .card-img-top-container; // Custom class for potential image container specific styles
   }
-  
-  .product-card-title {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-weight: $font-weight-bold;
-    color: $primary;
-    font-size: $font-size-lg;
+
+  .product-card__image {
+    @extend .card-img-top; // Bootstrap class for top images in cards
   }
-  
-  .product-card-description {
-    margin-bottom: 1.5rem;
-    color: $body-color;
-    flex-grow: 1;
+
+  .product-card__image-placeholder {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    @extend .bg-light; // Example placeholder background
+    @extend .text-muted;
+    @extend .ratio; // Using Bootstrap ratio for placeholder
+
+    span {
+      @extend .fs-1; // Large letter for placeholder
+    }
   }
-  
-  .product-card-btn {
-    display: inline-block;
-    font-weight: $font-weight-medium;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    user-select: none;
-    padding: 0.5rem 1.5rem;
-    font-size: $font-size-base;
-    line-height: 1.5;
-    border-radius: 50rem;
-    color: $white;
-    background-color: $primary;
-    border: 1px solid $primary;
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
-    
-    &:hover {
-      background-color: darken($primary, 7.5%);
-      border-color: darken($primary, 10%);
-      color: $white;
+
+  .product-card__content {
+    @extend .card-body;
+    @extend .d-flex;
+    @extend .flex-column; // Ensure content flex items stack vertically
+  }
+
+  .product-card__title {
+    @extend .card-title;
+    @extend .text-primary; // color: $primary;
+  }
+
+  .product-card__description {
+    @extend .card-text;
+    @extend .flex-grow-1; // Allows description to take available space, pushing actions down
+  }
+
+  .product-card__actions {
+    @extend .mt-auto; // Pushes actions to the bottom of the card if card-body is d-flex flex-column
+    @extend .pt-3; // Add some padding above the buttons, similar to card-footer but inside card-body
+  }
+
+  .product-card__btn {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .rounded-pill; // border-radius: 50rem;
+    @extend .mb-2; // Add some margin between buttons if they stack
+
+    &.product-card__btn--outline {
+      @extend .btn-outline-primary;
+
+      &:hover {
+        @extend .text-white; // Keep text white on hover for primary outline if that's the design
+      }
     }
   }
 }

@@ -1,183 +1,123 @@
 // Entrepreneur page specific styles
 .entrepreneur-container {
-  // Container styles
-}
+  // Hero section styles are handled by _hero.scss
 
-// Hero section
-.entrepreneur-hero-section {
-  @extend .hero-section;
-  padding: $spacer * 4 0;
-  
-  .entrepreneur-hero-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .entrepreneur-hero-title {
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacer * 1.5;
-  }
-  
-  .entrepreneur-hero-description {
-    font-size: $font-size-lg;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-}
+  // Challenges section
+  .entrepreneur-challenges-section {
+    @extend .py-5; // Bootstrap padding
 
-// Challenges section
-.entrepreneur-challenges-section {
-  padding: $spacer * 3 0;
-  
-  .entrepreneur-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .entrepreneur-challenges-grid {
-    @extend .container;
-    @extend .row;
-    justify-content: center;
-  }
-  
-  .entrepreneur-challenge-card {
-    @extend .col-md-4;
-    padding: $spacer * 2;
-    margin-bottom: $spacer * 2;
-    text-align: center;
-    
-    .entrepreneur-challenge-title {
-      margin-bottom: $spacer;
-    }
-    
-    .entrepreneur-challenge-description {
-      color: $gray-700;
-    }
-  }
-}
+    // section-header.html styles are handled by _section-header.scss
 
-// Solutions section
-.entrepreneur-solutions-section {
-  background-color: $light;
-  padding: $spacer * 3 0;
-  
-  .entrepreneur-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .entrepreneur-solutions-container {
-    @extend .container;
-  }
-  
-  .entrepreneur-solution-item {
-    @extend .row;
-    margin-bottom: $spacer * 3;
-    align-items: flex-start;
-    
-    .entrepreneur-solution-icon {
-      @extend .col-md-2;
-      text-align: center;
-      font-size: 2.5rem;
-      color: $primary;
-    }
-    
-    .entrepreneur-solution-content {
-      @extend .col-md-10;
-    }
-    
-    .entrepreneur-solution-title {
-      margin-bottom: $spacer;
-    }
-    
-    .entrepreneur-solution-description {
-      margin-bottom: $spacer;
-    }
-    
-    .entrepreneur-solution-features {
-      @extend .list-unstyled;
-      
-      .entrepreneur-feature-item {
-        padding-left: $spacer * 1.5;
-        position: relative;
-        margin-bottom: $spacer * 0.5;
-        
-        &:before {
-          content: "\2022";
-          color: $primary;
-          font-weight: bold;
-          position: absolute;
-          left: 0;
+    .entrepreneur-challenges-grid {
+      @extend .container;
+      @extend .row;
+      @extend .justify-content-center;
+
+      .entrepreneur-challenge-card {
+        @extend .col-md-4;
+        @extend .p-4; // Bootstrap padding
+        @extend .mb-4; // Bootstrap margin
+        @extend .text-center;
+
+        .entrepreneur-challenge-title {
+          @extend .mb-3;
+          // Ensure heading level matches Bootstrap or use .fs-* classes
+        }
+
+        .entrepreneur-challenge-description {
+          color: var(--bs-gray-700); // Use Bootstrap CSS variable
         }
       }
     }
   }
-}
 
-// Success story section
-.entrepreneur-success-section {
-  padding: $spacer * 3 0;
-  
-  .entrepreneur-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .entrepreneur-success-story {
-    @extend .container;
-    max-width: 800px;
-  }
-  
-  .entrepreneur-testimonial {
-    background-color: $primary-light;
-    border-radius: $border-radius;
-    padding: $spacer * 2;
-    border-left: 4px solid $primary;
-    margin: 0;
-    
-    .entrepreneur-testimonial-text {
-      font-style: italic;
-      margin-bottom: $spacer;
-    }
-    
-    .entrepreneur-testimonial-footer {
-      text-align: right;
-      
-      .entrepreneur-testimonial-author {
-        font-weight: $font-weight-medium;
+  // Solutions section
+  .entrepreneur-solutions-section {
+    @extend .bg-light;
+    @extend .py-5; // Bootstrap padding
+
+    // section-header.html styles are handled by _section-header.scss
+
+    .entrepreneur-solutions-container {
+      @extend .container;
+
+      .entrepreneur-solution-item {
+        @extend .row;
+        @extend .mb-5; // Bootstrap margin
+        @extend .align-items-start;
+
+        .entrepreneur-solution-icon {
+          @extend .col-md-2;
+          @extend .text-center;
+          // font-size: 2.5rem; // If specific size needed, create utility or use inline if truly unique
+          @extend .text-primary;
+        }
+
+        .entrepreneur-solution-content {
+          @extend .col-md-10;
+        }
+
+        .entrepreneur-solution-title {
+          @extend .mb-3;
+        }
+
+        .entrepreneur-solution-description {
+          @extend .mb-3;
+        }
+
+        .entrepreneur-solution-features {
+          @extend .list-unstyled;
+
+          .entrepreneur-feature-item {
+            @extend .ps-4; // Bootstrap padding for bullet
+            @extend .position-relative;
+            @extend .mb-2;
+
+            &::before {
+              content: "\2022"; // Bullet character
+              @extend .text-primary;
+              font-weight: bold; // Keep if specific, or create utility
+              @extend .position-absolute;
+              left: 0;
+            }
+          }
+        }
       }
     }
   }
-}
 
-// CTA section
-.entrepreneur-cta-section {
-  @extend .cta-section;
-  text-align: center;
-  padding: $spacer * 4 0;
-  
-  .entrepreneur-cta-container {
-    @extend .container;
-    max-width: 700px;
+  // Success story section
+  .entrepreneur-success-section {
+    @extend .py-5; // Bootstrap padding
+
+    // section-header.html styles are handled by _section-header.scss
+
+    .entrepreneur-success-story {
+      @extend .container;
+      @extend .mw-800; // Assumes .mw-800 utility class exists
+
+      .entrepreneur-testimonial {
+        @extend .bg-primary-light; // Assumes .bg-primary-light utility class exists
+        @extend .rounded;
+        @extend .p-4; // Bootstrap padding
+        border-left: 4px solid var(--bs-primary);
+        @extend .m-0;
+
+        .entrepreneur-testimonial-text {
+          @extend .fst-italic;
+          @extend .mb-3;
+        }
+
+        .entrepreneur-testimonial-footer {
+          @extend .text-end;
+
+          .entrepreneur-testimonial-author {
+            @extend .fw-medium;
+          }
+        }
+      }
+    }
   }
-  
-  .entrepreneur-cta-title {
-    margin-bottom: $spacer * 1.5;
-  }
-  
-  .entrepreneur-cta-description {
-    margin-bottom: $spacer * 2;
-  }
-  
-  .entrepreneur-cta-buttons {
-    margin-top: $spacer * 2;
-  }
-  
-  .entrepreneur-cta-button {
-    @extend .btn;
-    @extend .btn-primary;
-    @extend .btn-lg;
-    padding: $spacer ($spacer * 2);
-  }
+
+  // CTA section styles are handled by _cta.scss
 }

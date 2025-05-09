@@ -1,196 +1,52 @@
 // Business Infinity page specific styles
 .business-infinity-container {
-  // Container styles
-}
+  // Hero section styles are handled by _hero.scss
 
-// Hero section
-.business-hero-section {
-  @extend .hero-section;
-  padding: $spacer * 4 0;
-  
-  .business-hero-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+  // Features section
+  .business-features-section {
+    // Styles for the feature-grid.html component are handled by _feature-grid.scss
+    // section-header.html styles are handled by _section-header.scss
+    @extend .py-5; // Bootstrap padding
   }
-  
-  .business-hero-title {
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacer;
-  }
-  
-  .business-hero-subtitle {
-    font-size: $font-size-lg;
-    margin-bottom: $spacer * 1.5;
-  }
-  
-  .business-hero-description {
-    margin-bottom: $spacer * 2;
-  }
-  
-  .business-hero-cta {
-    margin-top: $spacer * 2;
-  }
-  
-  .business-cta-button {
-    @extend .btn;
-    @extend .btn-primary;
-    @extend .btn-lg;
-    padding: $spacer ($spacer * 2);
-  }
-}
 
-// Features section
-.business-features-section {
-  @extend .feature-section;
-  padding: $spacer * 3 0;
-  
-  .business-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .business-features-grid {
-    @extend .container;
-    @extend .row;
-    justify-content: center;
-  }
-  
-  .business-feature-card {
-    @extend .col-md-4;
-    height: 100%;
-    padding: $spacer * 2;
-    margin-bottom: $spacer * 2;
-    transition: transform 0.3s ease;
-    
-    &:hover {
-      transform: translateY(-5px);
-    }
-    
-    .business-feature-icon {
-      font-size: 2.5rem;
-      color: $primary;
-      margin-bottom: $spacer;
-    }
-    
-    .business-feature-title {
-      margin-bottom: $spacer;
-    }
-    
-    .business-feature-description {
-      color: $gray-700;
-    }
-  }
-}
+  // Use cases section
+  .business-use-cases-section {
+    @extend .py-5; // Bootstrap padding
+    @extend .bg-light;
 
-// Use cases section
-.business-use-cases-section {
-  padding: $spacer * 4 0;
-  background-color: $light;
-  
-  .business-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .business-use-cases-nav {
-    @extend .container;
-    text-align: center;
-  }
-  
-  .business-tabs-list {
-    @extend .nav;
-    @extend .nav-pills;
-    justify-content: center;
-    margin-bottom: $spacer * 2;
-  }
-  
-  .business-tab-item {
-    @extend .nav-item;
-    margin: 0 $spacer;
-  }
-  
-  .business-tab-link {
-    @extend .btn;
-    @extend .btn-outline-primary;
-    padding: $spacer ($spacer * 2);
-    
-    &:hover, &:focus {
-      text-decoration: none;
-    }
-  }
-}
+    // section-header.html styles are handled by _section-header.scss
 
-// Testimonials section
-.business-testimonials-section {
-  background-color: $primary-light;
-  padding: $spacer * 3 0;
-  
-  .business-section-title {
-    text-align: center;
-    margin-bottom: $spacer * 3;
-  }
-  
-  .business-testimonials-container {
-    @extend .container;
-  }
-  
-  .business-testimonial-card {
-    background-color: $white;
-    border-radius: $border-radius;
-    padding: $spacer * 2;
-    margin-bottom: $spacer * 2;
-    border-left: 4px solid $primary;
-    box-shadow: $box-shadow-sm;
-    
-    .business-testimonial-text {
-      font-style: italic;
-      margin-bottom: $spacer;
-    }
-    
-    .business-testimonial-author {
-      text-align: right;
-    }
-    
-    .business-testimonial-name {
-      font-weight: $font-weight-bold;
-      margin-bottom: 0;
-    }
-    
-    .business-testimonial-company {
-      color: $gray-600;
-      font-size: $font-size-sm;
-    }
-  }
-}
+    .business-use-cases-nav {
+      @extend .container;
+      @extend .text-center;
 
-// Contact section
-.business-contact-section {
-  @extend .cta-section;
-  padding: $spacer * 4 0;
-  text-align: center;
-  
-  .business-contact-container {
-    @extend .container;
-    max-width: 700px;
+      .business-tabs-list {
+        @extend .nav;
+        @extend .nav-pills;
+        @extend .justify-content-center;
+        @extend .mb-4; // Bootstrap margin
+
+        .business-tab-item {
+          @extend .nav-item;
+          @extend .mx-2; // Bootstrap margin
+
+          .business-tab-link {
+            @extend .btn;
+            @extend .btn-outline-primary;
+            @extend .px-4; // Bootstrap padding
+            @extend .py-2; // Bootstrap padding
+
+            &:hover,
+            &:focus {
+              text-decoration: none; // Keep if specific, Bootstrap handles focus generally
+            }
+          }
+        }
+      }
+    }
   }
-  
-  .business-section-title {
-    margin-bottom: $spacer * 2;
-  }
-  
-  .business-contact-description {
-    margin-bottom: $spacer * 3;
-  }
-  
-  .business-contact-actions {
-    margin-top: $spacer * 2;
-  }
-  
-  .business-contact-button {
-    @extend .btn;
-    @extend .btn-primary;
-    @extend .btn-lg;
-    padding: $spacer ($spacer * 2);
-  }
+
+  // Testimonials section styles are handled by _testimonial.scss
+
+  // Contact section styles are handled by _cta.scss
 }
