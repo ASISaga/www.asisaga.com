@@ -42,7 +42,7 @@
     @extend .mb-0;
 
     @include media-breakpoint-down(sm) {
-      @extend .flex-column;
+      @include flex-column; // Changed from @extend to @include
     }
   }
 
