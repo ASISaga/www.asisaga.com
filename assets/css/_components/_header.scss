@@ -46,7 +46,7 @@
   .site-header__tagline {
     @extend .text-white-70; // Custom utility for rgba(255, 255, 255, 0.7)
     @extend .m-0;
-    @extend .fs-sm; // Bootstrap class for small font size
+    @extend .small; // Bootstrap class for small font size
     @extend .text-truncate; // Handles nowrap, overflow, ellipsis
   }
 
