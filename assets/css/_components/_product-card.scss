@@ -5,7 +5,7 @@
   @extend .mb-4; // margin-bottom: 1.5rem;
 
   .product-card__image-container {
-    @extend .card-img-top-container; // Custom class for potential image container specific styles
+    // Custom class for potential image container specific styles
   }
 
   .product-card__image {
