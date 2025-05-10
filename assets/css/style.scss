@@ -14,8 +14,8 @@ dummy {
 // Custom Base Styles 
 // These are imported before the main Bootstrap SASS file to allow 
 // Bootstrap's !default variables to be overridden if needed.
-@import "_base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
 @import "_base/colors";         // Centralized color definitions (ensure no conflict with _variables.scss)
+@import "_base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
 @import "_base/typography";     // Font families, sizes, weights, styles
 @import "_base/mixins";         // Custom reusable style patterns and functions
 @import "_base/utilities";      // Custom helper classes
