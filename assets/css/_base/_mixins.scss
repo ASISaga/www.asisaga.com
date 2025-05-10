@@ -73,12 +73,24 @@
 @mixin media-breakpoint-down($breakpoint) {
   @if map-has-key($grid-breakpoints, $breakpoint) {
     $max-width: map-get($grid-breakpoints, $breakpoint);
-    @media (max-width: $max-width - .02) {
+    @media (max-width: ($max-width - 0.02px)) {
       @content;
     }
   } @else {
     @warn "No breakpoint found for '#{$breakpoint}'. Available breakpoints: #{map-keys($grid-breakpoints)}.";
   }
+}
+
+// Mixins to apply specific Bootstrap utility styles
+// Useful when @extend is not possible (e.g., inside @media queries)
+@mixin apply-px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@mixin apply-py-1 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 
 // Text truncate

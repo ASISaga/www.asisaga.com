@@ -51,8 +51,8 @@
     @extend .mb-2; // margin-bottom: 0.5rem;
 
     @include media-breakpoint-down(sm) {
-      @extend .px-0; // Remove horizontal padding for stacked items
-      @extend .py-1; // padding: 0.25rem 0;
+      @include apply-px-0; // Replaced @extend .px-0 with @include apply-px-0
+      @include apply-py-1; // Replaced @extend .py-1 with @include apply-py-1
     }
   }
 
