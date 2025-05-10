@@ -1,5 +1,5 @@
 // filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\_base\_utilities.scss
-// Custom utilities that aren't available in Bootstrap
+// Custom utilities that aren't available in Bootstrap or are not color/typography specific.
 
 // Most utilities have been removed since Bootstrap provides them:
 // - Spacing (margins, padding)
@@ -10,63 +10,41 @@
 // - Width and height
 // - Position
 // - Borders
-// - Colors
+// - Colors (moved to _colors.scss)
 // - Shadows
 // - Visibility
 
 // Only keeping truly custom utility classes:
 
 // -----------------------------------------
-// Custom text colors (not in Bootstrap)
-// -----------------------------------------
-.text-primary-light { color: $primary-light !important; }
-.text-primary-dark { color: $primary-dark !important; }
-.text-secondary-light { color: $secondary-light !important; }
-.text-secondary-dark { color: $secondary-dark !important; }
-.text-accent { color: $accent !important; }
-.text-accent-light { color: lighten($accent, 15%) !important; }
-.text-accent-dark { color: darken($accent, 10%) !important; }
-
-// -----------------------------------------
-// Custom background colors (not in Bootstrap)
-// -----------------------------------------
-.bg-primary-light { background-color: $primary-light !important; }
-.bg-primary-dark { background-color: $primary-dark !important; }
-.bg-secondary-light { background-color: $secondary-light !important; }
-.bg-secondary-dark { background-color: $secondary-dark !important; }
-.bg-accent { background-color: $accent !important; }
-.bg-accent-light { background-color: lighten($accent, 15%) !important; }
-.bg-accent-dark { background-color: darken($accent, 10%) !important; }
-
-// -----------------------------------------
 // Custom button variants (not in Bootstrap)
 // -----------------------------------------
 .btn-accent {
   @extend .btn;
-  color: $white;
-  background-color: $accent;
-  border-color: $accent;
+  color: $white; // Color var
+  background-color: $accent; // Color var
+  border-color: $accent; // Color var
   
   &:hover,
   &:focus,
   &:active {
-    color: $white;
-    background-color: darken($accent, 10%);
-    border-color: darken($accent, 12.5%);
+    color: $white; // Color var
+    background-color: darken($accent, 10%); // Color var
+    border-color: darken($accent, 12.5%); // Color var
   }
 }
 
 .btn-outline-accent {
   @extend .btn;
-  color: $accent;
-  border-color: $accent;
+  color: $accent; // Color var
+  border-color: $accent; // Color var
   
   &:hover,
   &:focus,
   &:active {
-    color: $white;
-    background-color: $accent;
-    border-color: $accent;
+    color: $white; // Color var
+    background-color: $accent; // Color var
+    border-color: $accent; // Color var
   }
 }
 
@@ -77,8 +55,8 @@
   position: absolute;
   top: -40px;
   left: 0;
-  background: $primary;
-  color: white;
+  background: $primary; // Color var
+  color: white; // Color var
   padding: 8px;
   z-index: 100;
 
@@ -103,95 +81,10 @@
 }
 
 // -----------------------------------------
-// Custom background gradients
-// -----------------------------------------
-.bg-gradient-hero {
-  background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
-}
-
-.bg-gradient-cta {
-  background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
-}
-
-// -----------------------------------------
-// Custom background gradient for alternative hero
-// -----------------------------------------
-.bg-gradient-secondary-alt {
-  background: linear-gradient(135deg, lighten($secondary, 40%) 0%, $white 100%);
-}
-
-// -----------------------------------------
-// Custom background gradient for accent cta
-// -----------------------------------------
-.bg-gradient-accent-alt {
-  background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%);
-}
-
-// -----------------------------------------
-// Custom background gradient for primary light section
-// -----------------------------------------
-.bg-gradient-primary-light {
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
-}
-
-// -----------------------------------------
 // Custom min-height utilities
 // -----------------------------------------
 .min-vh-50 {
   min-height: 50vh !important;
-}
-
-// -----------------------------------------
-// Header-specific utilities
-// -----------------------------------------
-.bg-header {
-  background-color: $header-bg !important;
-}
-
-.text-header {
-  color: $header-color !important;
-}
-
-.text-white-70 {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-// -----------------------------------------
-// Navbar/Dropdown specific utilities (used in _navbar.scss)
-// -----------------------------------------
-.text-primary-light-emphasis {
-  color: lighten($primary, 48%) !important; // As per original hover/active color
-}
-
-.border-white-15 {
-  border-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-.bg-header-darken-5 {
-  background-color: darken($header-bg, 5%) !important;
-}
-
-// -----------------------------------------
-// Footer-specific utilities
-// -----------------------------------------
-.bg-footer-custom {
-  background-color: $secondary !important; // As per resolved conflict in _footer.scss
-}
-
-.text-footer-main {
-  color: $light !important; // As per resolved conflict in _footer.scss
-}
-
-.text-footer-muted {
-  color: rgba(255, 255, 255, 0.8) !important; // From original .site-footer__copyright p
-}
-
-.text-footer-link {
-  color: rgba(255, 255, 255, 0.8) !important; // From original .site-footer__nav-link
-}
-
-.text-footer-link-hover {
-  color: $primary !important; // From original .site-footer__nav-link:hover
 }
 
 // Note: For embed-responsive, use Bootstrap's ratio utilities instead:

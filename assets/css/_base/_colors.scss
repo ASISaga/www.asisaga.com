@@ -92,3 +92,65 @@ $dark-mode-text: #f8f9fa;
 $dark-mode-border: #495057;
 $dark-mode-section-bg-light: #343a40;
 $dark-mode-section-bg-dark: #212529;
+
+// -----------------------------------------
+// Custom text colors (not in Bootstrap)
+// -----------------------------------------
+.text-primary-light { color: $primary-light !important; }
+.text-primary-dark { color: $primary-dark !important; }
+.text-secondary-light { color: $secondary-light !important; }
+.text-secondary-dark { color: $secondary-dark !important; }
+.text-accent { color: $accent !important; }
+.text-accent-light { color: lighten($accent, 15%) !important; }
+.text-accent-dark { color: darken($accent, 10%) !important; }
+.text-header { color: $header-color !important; }
+.text-white-70 { color: rgba(255, 255, 255, 0.7) !important; }
+.text-primary-light-emphasis { color: lighten($primary, 48%) !important; } // As per original hover/active color in navbar
+.text-footer-main { color: $light !important; }
+.text-footer-muted { color: rgba(255, 255, 255, 0.8) !important; }
+.text-footer-link { color: rgba(255, 255, 255, 0.8) !important; }
+.text-footer-link-hover { color: $primary !important; }
+
+// -----------------------------------------
+// Custom background colors (not in Bootstrap)
+// -----------------------------------------
+.bg-primary-light { background-color: $primary-light !important; }
+.bg-primary-dark { background-color: $primary-dark !important; }
+.bg-secondary-light { background-color: $secondary-light !important; }
+.bg-secondary-dark { background-color: $secondary-dark !important; }
+.bg-accent { background-color: $accent !important; }
+.bg-accent-light { background-color: lighten($accent, 15%) !important; }
+.bg-accent-dark { background-color: darken($accent, 10%) !important; }
+.bg-header { background-color: $header-bg !important; }
+.bg-header-darken-5 { background-color: darken($header-bg, 5%) !important; }
+.bg-footer-custom { background-color: $secondary !important; }
+
+// -----------------------------------------
+// Custom background gradients
+// -----------------------------------------
+.bg-gradient-hero {
+  background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
+}
+
+.bg-gradient-cta {
+  background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
+}
+
+.bg-gradient-secondary-alt {
+  background: linear-gradient(135deg, lighten($secondary, 40%) 0%, $white 100%);
+}
+
+.bg-gradient-accent-alt {
+  background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%);
+}
+
+.bg-gradient-primary-light {
+  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
+}
+
+// -----------------------------------------
+// Custom border colors
+// -----------------------------------------
+.border-white-15 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
