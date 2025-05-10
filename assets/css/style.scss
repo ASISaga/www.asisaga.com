@@ -18,16 +18,18 @@ dummy {
 @import "_base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
 @import "_base/typography";     // Font families, sizes, weights, styles
 @import "_base/mixins";         // Custom reusable style patterns and functions
+
+// Bootstrap main SASS file (imports all of Bootstrap)
+// This will now use any overridden variables from _base/variables.scss
+@import "bootstrap/bootstrap";
+
+// Remaining base styles that don't impact Bootstrap variables
 @import "_base/utilities";      // Custom helper classes
 @import "_base/layout";         // Base layout styles for overall site structure
 @import "_base/common";         // Common base styles, resets, or global settings
 @import "_base/responsive";     // Responsive design helpers and media query management
 @import "_base/theme";          // Theme-specific styles or variables
 @import "_base/base-section";   // Base styles for generic section elements
-
-// Bootstrap main SASS file (imports all of Bootstrap)
-// This will now use any overridden variables from _base/variables.scss
-@import "bootstrap/bootstrap";
 
 // Components - Reusable UI component styles
 // Each corresponds to an HTML partial in _includes/
