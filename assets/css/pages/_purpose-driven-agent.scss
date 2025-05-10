@@ -73,7 +73,7 @@
 
             &::before {
               content: "\2713"; // Checkmark
-              @extend .text-success;
+              color: var(--bs-success); // Use Bootstrap CSS variable instead of @extend
               @extend .position-absolute;
               left: 0;
             }
