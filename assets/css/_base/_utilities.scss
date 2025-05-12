@@ -86,11 +86,24 @@
   max-width: 768px !important;
 }
 
+.mw-800 {
+  max-width: 800px !important;
+}
+
 // -----------------------------------------
 // Transition utilities
 // -----------------------------------------
 .transition {
   transition: all 0.3s ease !important;
+}
+
+// -----------------------------------------
+// Custom background utilities
+// -----------------------------------------
+// These extend Bootstrap's background utilities with custom colors
+
+.bg-primary-light {
+  background-color: $primary-light !important;
 }
 
 // -----------------------------------------
