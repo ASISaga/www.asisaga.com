@@ -151,7 +151,7 @@
       .startup-quote-footer {
         @extend .text-end;
         @extend .mt-3; // Bootstrap margin
-        @extend .fs-sm; // Assumes .fs-sm utility class for font-size
+        @extend .small; // Using Bootstrap's native .small class instead of custom fs-sm
 
         cite {
           @extend .fw-medium;
