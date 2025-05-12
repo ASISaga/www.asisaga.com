@@ -37,7 +37,6 @@
   .site-footer__links {
     @extend .text-center; // Bootstrap text alignment utility
   }
-
   // Navigation list
   .site-footer__nav-list {
     @extend .d-flex; // Bootstrap display utility
@@ -49,10 +48,9 @@
 
     // Responsive behavior
     @include media-breakpoint-down(sm) {
-      @extend .flex-column; // Bootstrap flex utility for small screens
+      flex-direction: column !important; // Same effect as Bootstrap's .flex-column
     }
   }
-
   // Navigation items
   .site-footer__nav-item {
     @extend .px-3; // Bootstrap padding utility
@@ -60,8 +58,10 @@
 
     // Responsive behavior
     @include media-breakpoint-down(sm) {
-      @extend .px-0; // Bootstrap padding utility for small screens
-      @extend .py-1; // Bootstrap padding utility for small screens
+      padding-left: 0 !important; // Same effect as Bootstrap's .px-0
+      padding-right: 0 !important; // Same effect as Bootstrap's .px-0
+      padding-top: 0.25rem !important; // Same effect as Bootstrap's .py-1
+      padding-bottom: 0.25rem !important; // Same effect as Bootstrap's .py-1
     }
   }
 
