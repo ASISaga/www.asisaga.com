@@ -47,11 +47,21 @@ $box-shadow: 0 0.5rem 1rem $shadow-color;
 // ----------------------------------------
 // Utility Class Color Map
 // ----------------------------------------
-// Simplified theme colors map for Bootstrap
+// Simplified theme colors map for Bootstrap with necessary contextual colors
+// Adding info color based on primary for Bootstrap components that depend on it
+$info: #0dcaf0; // Standard Bootstrap info color
+$warning: #ffc107; // Standard Bootstrap warning color 
+$danger: #dc3545; // Standard Bootstrap danger color
+$success: #198754; // Standard Bootstrap success color
+
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "accent": $accent,
+  "info": $info,
+  "warning": $warning, 
+  "danger": $danger,
+  "success": $success,
   "light": $light,
   "dark": $dark
 );

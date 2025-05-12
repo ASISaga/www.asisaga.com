@@ -72,17 +72,16 @@
       }
     }
   }
-  
   &.cta-section-accent {
-    @extend .bg-info; // Bootstrap background utility (replacing custom accent)
+    @extend .bg-info; // Using restored info color
     @extend .bg-opacity-10; // Bootstrap opacity utility
     
     .cta-title {
-      @extend .text-info; // Bootstrap text color utility
+      @extend .text-info; // Using restored info text color
     }
     
     .cta-button {
-      @extend .btn-info; // Bootstrap button style
+      @extend .btn-info; // Using restored info button style
       
       &.cta-button-outline {
         @extend .btn-outline-info; // Bootstrap outline button style
