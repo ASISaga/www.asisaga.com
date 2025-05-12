@@ -1,41 +1,43 @@
-// Section Header component
+// Section Header component - Using Bootstrap native classes
 // Reusable section title and description styling
 
 .section-header {
-  @extend .text-center;
-  @extend .mb-5;
+  @extend .text-center; // Bootstrap text alignment utility
+  @extend .mb-5; // Bootstrap margin utility
   
   .section-title {
-    @extend .fw-bold;
-    @extend .text-primary;
-    @extend .mb-3;
-    font-size: $font-size-lg;
+    @extend .fw-bold; // Bootstrap font-weight utility
+    @extend .text-primary; // Bootstrap text color utility
+    @extend .mb-3; // Bootstrap margin utility
+    @extend .fs-2; // Bootstrap font-size utility
   }
   
   .section-subtitle {
-    @extend .text-secondary;
-    @extend .mb-3;
-    font-size: calc($font-size-base * 1.15);
+    @extend .text-secondary; // Bootstrap text color utility
+    @extend .mb-3; // Bootstrap margin utility
+    @extend .fs-4; // Bootstrap font-size utility
   }
   
   .section-description {
-    @extend .text-muted;
-    @extend .mb-4;
-    max-width: 768px;
-    @extend .mx-auto;
+    @extend .text-body-secondary; // Bootstrap text color utility
+    @extend .mb-4; // Bootstrap margin utility
+    @extend .mx-auto; // Bootstrap margin utility
+    @extend .col-md-8; // Bootstrap column utility for max-width
+    @extend .col-lg-6; // Bootstrap column utility for max-width on larger screens
   }
   
   &.section-header-left {
-    text-align: left;
+    @extend .text-start; // Bootstrap text alignment utility
     
     .section-description {
-      margin-left: 0;
+      @extend .ms-0; // Bootstrap margin utility to remove auto margin-left
+      @extend .me-auto; // Bootstrap margin utility to keep right margin auto
     }
   }
   
   &.section-header-alt {
     .section-title {
-      @extend .text-secondary;
+      @extend .text-secondary; // Bootstrap text color utility
     }
   }
 }

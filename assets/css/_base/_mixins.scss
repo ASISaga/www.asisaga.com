@@ -1,7 +1,8 @@
 // filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\_base\_mixins.scss
-// Reusable style patterns and functions
+// Reusable style patterns and functions - Prioritizing Bootstrap where available
 
 // Create responsive font sizes
+// Note: Bootstrap has a .fs-* system, but this mixin provides more granular control
 @mixin responsive-font-size($min-size, $max-size, $min-width: 320px, $max-width: 1200px) {
   font-size: $min-size;
   
@@ -22,7 +23,9 @@
   @return $number;
 }
 
-// Box shadow mixins - needed by components
+// Box shadow mixins
+// Note: Bootstrap offers .shadow-sm, .shadow, and .shadow-lg utilities
+// Only use these mixins when custom shadows are absolutely required
 @mixin box-shadow-sm {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -35,12 +38,19 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-// Transitions mixin - needed by components
+// Transitions mixin
+// Note: Bootstrap offers .transition utility for standard transitions
+// Only use this mixin for custom timing or properties
 @mixin transition($property: all, $duration: 0.3s, $timing: ease) {
   transition: $property $duration $timing;
 }
 
-// Flexbox layout mixins - needed by components
+// Flexbox layout mixins
+// Note: These have Bootstrap equivalents:
+// - flex-center: .d-flex .align-items-center .justify-content-center
+// - flex-between: .d-flex .align-items-center .justify-content-between
+// - flex-column: .d-flex .flex-column
+// Only use these mixins within other mixins or when @extend cannot be used (e.g., in media queries)
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -58,7 +68,8 @@
   flex-direction: column;
 }
 
-// Media query mixins needed by components
+// Media query mixins
+// These are useful wrappers around Bootstrap's breakpoints for SCSS context
 @mixin media-breakpoint-up($breakpoint) {
   @if map-has-key($grid-breakpoints, $breakpoint) {
     $min-width: map-get($grid-breakpoints, $breakpoint);
@@ -82,7 +93,7 @@
 }
 
 // Mixins to apply specific Bootstrap utility styles
-// Useful when @extend is not possible (e.g., inside @media queries)
+// Only use these when @extend is not possible (e.g., inside @media queries)
 @mixin apply-px-0 {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -94,6 +105,7 @@
 }
 
 // Text truncate
+// Note: Bootstrap provides .text-truncate utility
 @mixin text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -101,6 +113,7 @@
 }
 
 // Create accessible hiding for screen readers only
+// Note: Bootstrap provides .visually-hidden utility
 @mixin sr-only {
   position: absolute;
   width: 1px;
@@ -114,6 +127,7 @@
 }
 
 // Button variant mixin (simplified version of Bootstrap's)
+// Note: Bootstrap provides .btn, .btn-primary, .btn-outline-* etc. utilities
 @mixin button-variant($background, $border, $color) {
   color: $color;
   background-color: $background;
@@ -127,12 +141,18 @@
 }
 
 /*
-  Note: While these mixins could be replaced by Bootstrap utilities,
-  they're kept to avoid breaking existing component styles.
+  BOOTSTRAP FIRST APPROACH:
   
-  For new components, consider using Bootstrap utilities instead:
-  - For box shadows: .shadow-sm, .shadow, .shadow-lg
-  - For flexbox: .d-flex, .justify-content-*, .align-items-*
-  - For text truncation: .text-truncate
-  - For screen reader utilities: .visually-hidden
+  For most styling needs, use Bootstrap's native utilities:
+  
+  - Spacing: .m*, .p* (.mt-3, .px-4, etc.)
+  - Typography: .fs-*, .fw-*, .fst-* (.fs-5, .fw-bold, etc.)
+  - Colors: .text-*, .bg-* (.text-primary, .bg-light, etc.)
+  - Flex: .d-flex, .flex-*, .justify-content-*, .align-items-* 
+  - Borders: .border, .border-* (.border-primary, .border-1, etc.)
+  - Sizing: .w-*, .h-* (.w-100, .h-auto, etc.)
+  - Display: .d-* (.d-block, .d-none, etc.)
+  
+  Only use these mixins for complex styles that Bootstrap doesn't provide or for 
+  responsive styles where @extend can't be used within media queries.
 */

@@ -1,61 +1,64 @@
-// LinkedIn component styling
+// LinkedIn component styling - Using Bootstrap native classes
 // Matches linkedin.html component in _includes
 
 .linkedin-badge {
-  @include box-shadow-sm;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  margin-bottom: $spacer;
+  @extend .shadow-sm; // Bootstrap shadow utility
+  @extend .rounded; // Bootstrap border-radius utility
+  @extend .overflow-hidden; // Bootstrap overflow utility
+  @extend .mb-3; // Bootstrap margin utility
   
   .linkedin-profile {
-    background-color: $light;
-    padding: $spacer;
+    @extend .bg-light; // Bootstrap background utility
+    @extend .p-3; // Bootstrap padding utility
     
     &-header {
-      @include flex-between;
-      margin-bottom: $spacer * 0.75;
+      @extend .d-flex; // Bootstrap display utility
+      @extend .justify-content-between; // Bootstrap flex utility
+      @extend .mb-3; // Bootstrap margin utility
     }
     
     &-image {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      @include box-shadow-sm;
+      @extend .rounded-circle; // Bootstrap border-radius utility
+      @extend .shadow-sm; // Bootstrap shadow utility
+      @extend .object-fit-cover; // Bootstrap object-fit utility
+      width: 60px; // Keep specific dimensions
+      height: 60px; // Keep specific dimensions
     }
     
     &-info {
-      margin-left: $spacer;
+      @extend .ms-3; // Bootstrap margin utility
+      @extend .flex-grow-1; // Bootstrap flex utility
     }
     
     &-name {
-      font-weight: $font-weight-semibold;
-      margin-bottom: $spacer * 0.25;
+      @extend .fw-semibold; // Bootstrap font-weight utility
+      @extend .mb-1; // Bootstrap margin utility
     }
     
     &-title {
-      color: $text-muted;
-      font-size: $font-size-sm;
-      margin-bottom: $spacer * 0.25;
+      @extend .text-muted; // Bootstrap text color utility
+      @extend .small; // Bootstrap font-size utility
+      @extend .mb-1; // Bootstrap margin utility
     }
     
     &-company {
-      font-size: $font-size-sm;
+      @extend .small; // Bootstrap font-size utility
     }
   }
   
   .linkedin-button {
-    background-color: #0077b5;
-    color: white;
-    padding: $spacer * 0.5;
-    text-align: center;
-    font-weight: $font-weight-medium;
-    @include transition;
+    @extend .d-block; // Bootstrap display utility
+    @extend .text-center; // Bootstrap text alignment utility
+    @extend .text-white; // Bootstrap text color utility
+    @extend .py-2; // Bootstrap padding utility
+    @extend .fw-medium; // Bootstrap font-weight utility
+    @extend .text-decoration-none; // Bootstrap text decoration utility
+    background-color: #0077b5; // LinkedIn brand color - keep as is
     
     &:hover {
-      background-color: darken(#0077b5, 10%);
-      text-decoration: none;
-      color: white;
+      @extend .text-white; // Bootstrap text color utility
+      @extend .text-decoration-none; // Bootstrap text decoration utility
+      background-color: darken(#0077b5, 10%); // Keep this hover effect
     }
   }
 }

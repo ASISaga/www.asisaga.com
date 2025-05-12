@@ -1,31 +1,36 @@
-// Site Header
+// Site Header - Uses Bootstrap utility classes with minimal custom CSS
 .site-header {
-  @extend .navbar; // Use Bootstrap's navbar class as a base
+  // Core navbar structure
+  @extend .navbar;
   @extend .navbar-expand-lg;
-  @extend .bg-header; // Custom utility class for header background
-  @extend .text-header; // Custom utility class for header text color
+  @extend .bg-header; // Bootstrap customized via variables in _variables.scss
+  @extend .navbar-dark; // Use Bootstrap's dark navbar styling
   @extend .rounded-bottom;
-  @extend .py-3; // Approx 1rem padding
-  @extend .mb-4; // Approx 2rem margin
+  @extend .py-3;
+  @extend .mb-4;
 
+  // Brand container
   .site-header__brand {
-    @extend .navbar-brand; // Use Bootstrap's navbar-brand class
+    @extend .navbar-brand;
     @extend .d-flex;
     @extend .align-items-center;
-    @extend .text-white; // Assuming $white is standard white
+    @extend .text-white;
     @extend .text-decoration-none;
     @extend .overflow-hidden;
-    @extend .flex-grow-1; // Allow brand to take space, flex-shrink-1 is default for flex items
+    @extend .flex-grow-1;
 
+    // Brand row container
     .header-brand-row {
       @extend .d-flex;
       @extend .align-items-center;
 
+      // Logo container
       .header-logo {
-        @extend .me-3; // Approx 1rem margin-right
+        @extend .me-3;
         @extend .flex-shrink-0;
       }
 
+      // Title container
       .header-title {
         @extend .d-flex;
         @extend .flex-column;
@@ -34,43 +39,54 @@
     }
   }
 
+  // Header title
   .site-header__title {
-    @extend .text-white; // Assuming $white is standard white
+    @extend .text-white;
     @extend .fw-bold;
     @extend .m-0;
-    @extend .fs-4; // Approx 1.5rem
-    @extend .lh-sm; // Approx 1.2 line-height
-    @extend .text-truncate; // Handles nowrap, overflow, ellipsis
+    @extend .fs-4;
+    @extend .lh-sm;
+    @extend .text-truncate;
   }
 
+  // Header tagline
   .site-header__tagline {
-    @extend .text-white-70; // Custom utility for rgba(255, 255, 255, 0.7)
+    @extend .text-white-50; // Using Bootstrap's native opacity utility
     @extend .m-0;
-    @extend .small; // Bootstrap class for small font size
-    @extend .text-truncate; // Handles nowrap, overflow, ellipsis
+    @extend .small;
+    @extend .text-truncate;
   }
 
+  // Logo image - minimal custom styling needed
   .site-header__logo-img {
-    height: 40px; // Keep specific height if necessary, or make it responsive
+    height: 40px;
     width: auto;
   }
 
+  // Mobile menu toggle button
   .site-header-toggler {
-    @extend .navbar-toggler; // Use Bootstrap's navbar-toggler for base styling
-    @extend .ms-auto; // margin-left: auto to push to the right if other items are present before it
+    @extend .navbar-toggler;
+    @extend .ms-auto;
+    @extend .border-0; // Remove border for cleaner look
   }
 
+  // Toggle icon
   .site-header-toggler-icon {
-    @extend .navbar-toggler-icon; // Use Bootstrap's icon class
+    @extend .navbar-toggler-icon;
   }
 
+  // Navigation container
   .site-header-nav {
-    @extend .navbar-collapse; // Use Bootstrap's navbar-collapse for behavior
-    @extend .justify-content-end; // This aligns the nav items to the end
+    @extend .navbar-collapse;
+    @extend .justify-content-end;
 
+    // Ensure consistent styling when collapsed/expanded
     &.collapsing,
     &.show {
-      @extend .bg-header; // Ensure background is consistent during/after collapse on mobile
+      @extend .bg-header;
+      @extend .mt-2; // Add spacing when expanded on mobile
+      @extend .p-2; // Add padding when expanded on mobile
+      @extend .rounded; // Rounded corners when expanded
     }
   }
 }

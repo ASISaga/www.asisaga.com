@@ -1,50 +1,52 @@
 // filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\_base\_utilities.scss
-// Custom utilities that aren't available in Bootstrap or are not color/typography specific.
+// Custom utilities - Only include what Bootstrap doesn't provide
 
-// Most utilities have been removed since Bootstrap provides them:
-// - Spacing (margins, padding)
-// - Display
-// - Text alignment and decoration
-// - Font weights
-// - Flex utilities
-// - Width and height
-// - Position
-// - Borders
-// - Colors (moved to _colors.scss)
-// - Shadows
-// - Visibility
-
-// Only keeping truly custom utility classes:
+/*
+  BOOTSTRAP FIRST APPROACH:
+  
+  For most styling needs, use Bootstrap's built-in utilities instead of creating custom ones:
+  
+  - Spacing: .m*, .p* (.mt-3, .px-4, etc.)
+  - Typography: .fs-*, .fw-*, .fst-*, .text-* (.fs-5, .fw-bold, etc.)
+  - Colors: .text-*, .bg-* (.text-primary, .bg-light, etc.)
+  - Flex: .d-flex, .flex-*, .justify-content-*, .align-items-* 
+  - Borders: .border, .border-* (.border-primary, .border-1, etc.)
+  - Sizing: .w-*, .h-* (.w-100, .h-auto, etc.)
+  - Display: .d-* (.d-block, .d-none, etc.)
+  - Max-width: .mw-100, .container, .container-*
+  - Min-height: .min-vh-100
+  - Ratio: .ratio, .ratio-16x9
+*/
 
 // -----------------------------------------
-// Custom button variants (not in Bootstrap)
+// Custom button variants (for accent color not in Bootstrap)
 // -----------------------------------------
 .btn-accent {
   @extend .btn;
-  color: $white; // Color var
-  background-color: $accent; // Color var
-  border-color: $accent; // Color var
+  color: $white;
+  background-color: $accent;
+  border-color: $accent;
   
   &:hover,
   &:focus,
   &:active {
-    color: $white; // Color var
-    background-color: darken($accent, 10%); // Color var
-    border-color: darken($accent, 12.5%); // Color var
+    color: $white;
+    background-color: darken($accent, 10%);
+    border-color: darken($accent, 12.5%);
   }
 }
 
 .btn-outline-accent {
   @extend .btn;
-  color: $accent; // Color var
-  border-color: $accent; // Color var
+  color: $accent;
+  border-color: $accent;
   
   &:hover,
   &:focus,
   &:active {
-    color: $white; // Color var
-    background-color: $accent; // Color var
-    border-color: $accent; // Color var
+    color: $white;
+    background-color: $accent;
+    border-color: $accent;
   }
 }
 
@@ -52,40 +54,36 @@
 // Skip to main content (Accessibility)
 // -----------------------------------------
 .skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: $primary; // Color var
-  color: white; // Color var
-  padding: 8px;
-  z-index: 100;
-
-  &:focus {
-    top: 0;
-  }
+  @extend .visually-hidden; // Bootstrap's class for screen reader accessibility
+  @extend .visually-hidden-focusable; // Shows content when focused
+  
+  // Additional custom styling for the skip link
+  background: $primary;
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 1100; // Above navbar
 }
 
 // -----------------------------------------
-// Custom max-width utilities
+// Custom spacing utilities
 // -----------------------------------------
+// Consider using Bootstrap's built-in spacing utilities instead:
+// .mt-{1-5}, .mb-{1-5}, .mx-auto, etc.
+
+// -----------------------------------------
+// Custom sizing utilities
+// -----------------------------------------
+// For most cases, use Bootstrap's container utilities:
+// .container, .container-sm, .container-md, .container-lg, .container-xl, .container-fluid
+//
+// Only include truly custom sizes that Bootstrap doesn't provide
 .mw-768 {
   max-width: 768px !important;
 }
 
-.mw-800 {
-  max-width: 800px !important;
-}
-
-.mw-900 {
-  max-width: 900px !important;
-}
-
 // -----------------------------------------
-// Custom min-height utilities
+// Transition utilities
 // -----------------------------------------
-.min-vh-50 {
-  min-height: 50vh !important;
+.transition {
+  transition: all 0.3s ease !important;
 }
-
-// Note: For embed-responsive, use Bootstrap's ratio utilities instead:
-// https://getbootstrap.com/docs/5.3/helpers/ratio/

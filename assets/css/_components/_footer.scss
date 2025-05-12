@@ -1,69 +1,79 @@
-// Footer styling
+// Footer styling - Using Bootstrap native classes where possible
 .site-footer {
-  @extend .py-4; // padding-top: 2rem; padding-bottom: 2rem;
-  @extend .mt-5; // margin-top: 3rem;
-  @extend .bg-footer-custom; // Custom utility for background-color: $secondary;
-  @extend .text-footer-main; // Custom utility for color: $light;
+  @extend .py-4; // Bootstrap padding utility
+  @extend .mt-5; // Bootstrap margin utility
+  @extend .bg-dark; // Bootstrap background utility
+  @extend .text-white; // Bootstrap text color utility
 
+  // Footer container
   .site-footer__container {
-    @extend .container-xl; // Replaces direct width, padding, margin, max-width for container behavior
+    @extend .container-xl; // Bootstrap container utility
   }
 
+  // Copyright section
   .site-footer__copyright {
-    @extend .text-center;
-    @extend .mb-4; // margin-bottom: 1.5rem;
+    @extend .text-center; // Bootstrap text alignment utility
+    @extend .mb-4; // Bootstrap margin utility
 
-    .site-footer__copyright-text { // Added class to the <p> tag
-      @extend .text-footer-muted; // Custom utility for color: rgba(255, 255, 255, 0.8);
-      @extend .mb-0;
+    .site-footer__copyright-text {
+      @extend .text-white-75; // Bootstrap's semi-transparent white
+      @extend .mb-0; // Bootstrap margin utility
+      @extend .small; // Bootstrap text size utility
     }
   }
 
+  // Social media section
   .site-footer__social {
-    @extend .d-flex;
-    @extend .justify-content-center;
-    @extend .mb-4; // margin-bottom: 1.5rem;
+    @extend .d-flex; // Bootstrap display utility
+    @extend .justify-content-center; // Bootstrap flex utility
+    @extend .mb-4; // Bootstrap margin utility
 
     .site-footer__social-item {
-      @extend .mx-2; // margin: 0 0.5rem;
+      @extend .mx-2; // Bootstrap margin utility
     }
   }
 
+  // Footer links section
   .site-footer__links {
-    @extend .text-center;
+    @extend .text-center; // Bootstrap text alignment utility
   }
 
+  // Navigation list
   .site-footer__nav-list {
-    @extend .d-flex;
-    @extend .flex-wrap;
-    @extend .justify-content-center;
-    @extend .list-unstyled;
-    @extend .ps-0; // padding-left: 0;
-    @extend .mb-0;
+    @extend .d-flex; // Bootstrap display utility
+    @extend .flex-wrap; // Bootstrap flex utility
+    @extend .justify-content-center; // Bootstrap flex utility
+    @extend .list-unstyled; // Bootstrap list utility
+    @extend .ps-0; // Bootstrap padding utility
+    @extend .mb-0; // Bootstrap margin utility
 
+    // Responsive behavior
     @include media-breakpoint-down(sm) {
-      @include flex-column; // Changed from @extend to @include
+      @extend .flex-column; // Bootstrap flex utility for small screens
     }
   }
 
+  // Navigation items
   .site-footer__nav-item {
-    @extend .px-3; // padding: 0 0.75rem;
-    @extend .mb-2; // margin-bottom: 0.5rem;
+    @extend .px-3; // Bootstrap padding utility
+    @extend .mb-2; // Bootstrap margin utility
 
+    // Responsive behavior
     @include media-breakpoint-down(sm) {
-      @include apply-px-0; // Replaced @extend .px-0 with @include apply-px-0
-      @include apply-py-1; // Replaced @extend .py-1 with @include apply-py-1
+      @extend .px-0; // Bootstrap padding utility for small screens
+      @extend .py-1; // Bootstrap padding utility for small screens
     }
   }
 
+  // Navigation links
   .site-footer__nav-link {
-    @extend .text-decoration-none;
-    @extend .text-footer-link; // Custom utility for link color
-    // transition: color 0.15s ease-in-out; // Transitions can be part of base link/utility styles if desired
+    @extend .text-decoration-none; // Bootstrap text decoration utility
+    @extend .text-white-75; // Bootstrap's semi-transparent white
+    @extend .transition; // Bootstrap transition utility if available
 
     &:hover {
-      @extend .text-footer-link-hover; // Custom utility for link hover color
-      @extend .text-decoration-underline;
+      @extend .text-white; // Bootstrap text color utility
+      @extend .text-decoration-underline; // Bootstrap text decoration utility
     }
   }
 }

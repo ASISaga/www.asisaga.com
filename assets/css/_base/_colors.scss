@@ -73,16 +73,12 @@ $box-shadow: 0 0.5rem 1rem $shadow-color;
 // ----------------------------------------
 // Utility Class Color Map
 // ----------------------------------------
+// Add any custom colors to the Bootstrap theme-colors map
+// This will generate all the necessary Bootstrap utilities
 $theme-colors: (
   "primary": $primary,
-  "primary-light": $primary-light,
-  "primary-dark": $primary-dark,
   "secondary": $secondary,
-  "secondary-light": $secondary-light,
-  "secondary-dark": $secondary-dark,
   "accent": $accent,
-  "accent-light": $accent-light,
-  "accent-dark": $accent-dark,
   "light": $bg-light,
   "dark": $bg-dark
 );
@@ -97,36 +93,32 @@ $dark-mode-section-bg-light: #343a40;
 $dark-mode-section-bg-dark: #212529;
 
 // -----------------------------------------
-// Custom text colors (not in Bootstrap)
+// Custom text colors - Only include what's not in Bootstrap
+// Use Bootstrap's .text-primary, .text-white, .text-muted, etc. when possible
 // -----------------------------------------
-.text-primary-light { color: $primary-light !important; }
-.text-primary-dark { color: $primary-dark !important; }
-.text-secondary-light { color: $secondary-light !important; }
-.text-secondary-dark { color: $secondary-dark !important; }
+// For 'accent' color (which isn't in default Bootstrap)
 .text-accent { color: $accent !important; }
-.text-accent-light { color: lighten($accent, 15%) !important; }
-.text-accent-dark { color: darken($accent, 10%) !important; }
-.text-header { color: $header-color !important; }
+
+// Specific transparent white variations not in Bootstrap
 .text-white-70 { color: rgba(255, 255, 255, 0.7) !important; }
-.text-primary-light-emphasis { color: lighten($primary, 48%) !important; } // As per original hover/active color in navbar
-.text-footer-main { color: $light !important; }
-.text-footer-muted { color: rgba(255, 255, 255, 0.8) !important; }
+.text-white-80 { color: rgba(255, 255, 255, 0.8) !important; }
+
+// Use these custom classes only when Bootstrap doesn't have an equivalent
+.text-primary-light-emphasis { color: lighten($primary, 48%) !important; }
+
+// Consider standardizing on Bootstrap's .text-white-50 instead of these custom ones:
 .text-footer-link { color: rgba(255, 255, 255, 0.8) !important; }
-.text-footer-link-hover { color: $primary !important; }
 
 // -----------------------------------------
-// Custom background colors (not in Bootstrap)
+// Custom background colors - Only include what's not in Bootstrap
+// Use Bootstrap's .bg-primary, .bg-white, .bg-light, etc. when possible
 // -----------------------------------------
-.bg-primary-light { background-color: $primary-light !important; }
-.bg-primary-dark { background-color: $primary-dark !important; }
-.bg-secondary-light { background-color: $secondary-light !important; }
-.bg-secondary-dark { background-color: $secondary-dark !important; }
+// For 'accent' color (which isn't in default Bootstrap)
 .bg-accent { background-color: $accent !important; }
-.bg-accent-light { background-color: lighten($accent, 15%) !important; }
-.bg-accent-dark { background-color: darken($accent, 10%) !important; }
+
+// For the header background when it needs to be specific
 .bg-header { background-color: $header-bg !important; }
 .bg-header-darken-5 { background-color: darken($header-bg, 5%) !important; }
-.bg-footer-custom { background-color: $secondary !important; }
 
 // -----------------------------------------
 // Custom background gradients
@@ -145,15 +137,4 @@ $dark-mode-section-bg-dark: #212529;
 
 .bg-gradient-accent-alt {
   background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%);
-}
-
-.bg-gradient-primary-light {
-  background: linear-gradient(135deg, lighten($primary, 48%) 0%, $white 100%);
-}
-
-// -----------------------------------------
-// Custom border colors
-// -----------------------------------------
-.border-white-15 {
-  border-color: rgba(255, 255, 255, 0.15) !important;
 }

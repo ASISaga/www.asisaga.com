@@ -1,61 +1,65 @@
-// Testimonial component
+// Testimonial component - Using Bootstrap native classes
 // Reusable testimonial styling for customer quotes and feedback
 
 .testimonial-section {
-  padding: $spacer * 3 0;
-  background-color: $light;
-  @extend .mb-5;
+  @extend .py-5; // Bootstrap padding utility
+  @extend .bg-light; // Bootstrap background utility
+  @extend .mb-5; // Bootstrap margin utility
   
   .testimonial-container {
-    @extend .container;
+    @extend .container; // Bootstrap container
   }
   
   .testimonial-grid {
-    @extend .row;
-    @extend .g-4;
+    @extend .row; // Bootstrap row
+    @extend .g-4; // Bootstrap gap utility
   }
   
   .testimonial-item {
-    @extend .col-12;
-    @extend .col-md-6;
-    @extend .col-lg-4;
+    @extend .col-12; // Bootstrap column utility
+    @extend .col-md-6; // Bootstrap column utility
+    @extend .col-lg-4; // Bootstrap column utility
+    @extend .mb-4; // Bootstrap margin utility
   }
   
   .testimonial-card {
-    background-color: $white;
-    border-radius: $border-radius;
-    padding: $spacer * 2;
-    margin-bottom: $spacer * 2;
-    border-left: 4px solid $primary;
-    box-shadow: $box-shadow-sm;
-    height: 100%;
+    @extend .bg-white; // Bootstrap background utility
+    @extend .rounded; // Bootstrap border-radius utility
+    @extend .p-4; // Bootstrap padding utility
+    @extend .shadow-sm; // Bootstrap shadow utility
+    @extend .h-100; // Bootstrap height utility
+    @extend .border-start; // Bootstrap border utility
+    @extend .border-4; // Bootstrap border-width utility
+    @extend .border-primary; // Bootstrap border-color utility
     
     .testimonial-text {
-      font-style: italic;
-      margin-bottom: $spacer;
+      @extend .fst-italic; // Bootstrap font-style utility
+      @extend .mb-3; // Bootstrap margin utility
+      @extend .pb-3; // Bootstrap padding utility
+      @extend .border-bottom; // Bootstrap border utility
     }
     
     .testimonial-author {
-      text-align: right;
+      @extend .text-end; // Bootstrap text alignment utility
     }
     
     .testimonial-name {
-      font-weight: $font-weight-bold;
-      margin-bottom: 0;
+      @extend .fw-bold; // Bootstrap font-weight utility
+      @extend .mb-0; // Bootstrap margin utility
     }
     
     .testimonial-company {
-      color: $gray-600;
-      font-size: $font-size-sm;
+      @extend .text-muted; // Bootstrap text color utility
+      @extend .small; // Bootstrap text size utility
     }
   }
   
   // Variants
   &.testimonial-section-alt {
-    background-color: $white;
+    @extend .bg-white; // Bootstrap background utility
     
     .testimonial-card {
-      background-color: $light;
+      @extend .bg-light; // Bootstrap background utility
     }
   }
 }

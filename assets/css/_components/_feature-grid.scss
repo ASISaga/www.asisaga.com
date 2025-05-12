@@ -1,65 +1,67 @@
-// Feature Grid component
+// Feature Grid component - Using Bootstrap native classes
 // A reusable pattern for displaying features in a responsive grid
 
 .feature-section {
-  @extend .mb-5;
-  padding: $spacer * 3 0;
+  @extend .mb-5; // Bootstrap margin utility
+  @extend .py-5; // Bootstrap padding utility for top/bottom spacing
   
   .feature-title {
-    @extend .text-center;
-    @extend .mb-4;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-bold;
-    color: $primary;
+    @extend .text-center; // Bootstrap text alignment utility
+    @extend .mb-4; // Bootstrap margin utility
+    @extend .fs-2; // Bootstrap font-size utility
+    @extend .fw-bold; // Bootstrap font-weight utility
+    @extend .text-primary; // Bootstrap text color utility
   }
   
   .feature-grid {
-    @extend .row;
-    @extend .g-4;
-    justify-content: center;
+    @extend .row; // Bootstrap grid row
+    @extend .g-4; // Bootstrap grid gap utility
+    @extend .justify-content-center; // Bootstrap flex utility
     
     .feature-item {
-      @extend .col-12;
-      @extend .col-md-6;
-      @extend .col-lg-4;
-      height: 100%;
-      transition: transform 0.3s ease;
+      @extend .col-12; // Bootstrap column utility - full width on mobile
+      @extend .col-md-6; // Bootstrap column utility - half width on medium screens
+      @extend .col-lg-4; // Bootstrap column utility - third width on large screens
+      @extend .h-100; // Bootstrap height utility
+      @extend .transition; // Bootstrap transition utility if available
       
       &:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px); // Keep this custom transform effect
       }
     }
     
     .feature-card {
-      height: 100%;
-      padding: $spacer * 2;
-      border-radius: $border-radius;
-      box-shadow: $box-shadow-sm;
-      background-color: $white;
+      @extend .h-100; // Bootstrap height utility
+      @extend .p-4; // Bootstrap padding utility
+      @extend .rounded; // Bootstrap border-radius utility
+      @extend .shadow-sm; // Bootstrap box-shadow utility
+      @extend .bg-white; // Bootstrap background color utility
     }
     
     .feature-icon {
-      font-size: 2.5rem;
-      color: $primary;
-      margin-bottom: $spacer;
+      @extend .fs-1; // Bootstrap font-size utility
+      @extend .text-primary; // Bootstrap text color utility
+      @extend .mb-3; // Bootstrap margin utility
     }
     
     .feature-card-title {
-      font-weight: $font-weight-bold;
-      margin-bottom: $spacer;
+      @extend .fw-bold; // Bootstrap font-weight utility
+      @extend .mb-3; // Bootstrap margin utility
     }
     
     .feature-description {
-      color: $gray-700;
+      @extend .text-body-secondary; // Bootstrap text color utility for secondary text
     }
   }
   
   // Alternative styles
   &.feature-section-alt {
-    background-color: $light;
+    @extend .bg-light; // Bootstrap background utility
     
     .feature-card {
-      border-left: 4px solid $primary;
+      @extend .border-start; // Bootstrap border utility
+      @extend .border-4; // Bootstrap border-width utility
+      @extend .border-primary; // Bootstrap border-color utility
     }
   }
 }
