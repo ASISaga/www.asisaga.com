@@ -67,6 +67,9 @@ $border-color: #dee2e6;
 $shadow-color: rgba(0, 0, 0, 0.15);
 $box-shadow-color: $shadow-color;
 
+// Box shadows - defining here to ensure $shadow-color is available
+$box-shadow: 0 0.5rem 1rem $shadow-color;
+
 // ----------------------------------------
 // Utility Class Color Map
 // ----------------------------------------
