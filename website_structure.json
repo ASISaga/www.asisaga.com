@@ -24,6 +24,26 @@
       "description": "Data files for Jekyll site",
       "children": [
         {
+          "name": "agent_operating_system.yml",
+          "type": "file",
+          "description": "Agent Operating System product data"
+        },
+        {
+          "name": "business_infinity.yml",
+          "type": "file",
+          "description": "Business Infinity product data"
+        },
+        {
+          "name": "business_infinity_entrepreneur.yml",
+          "type": "file",
+          "description": "Business Infinity Entrepreneur page data"
+        },
+        {
+          "name": "github_agent.yml",
+          "type": "file",
+          "description": "GitHub Agent product data"
+        },
+        {
           "name": "nav.yml",
           "type": "file",
           "description": "Navigation structure data"
@@ -32,6 +52,11 @@
           "name": "products.yml",
           "type": "file",
           "description": "Product information data"
+        },
+        {
+          "name": "purpose_driven_agent.yml",
+          "type": "file",
+          "description": "Purpose Driven Agent product data"
         }
       ]
     },
@@ -372,7 +397,7 @@
         {
           "name": "index.html",
           "type": "file",
-          "description": "Business Infinity main page"
+          "description": "Business Infinity main page using data from _data/business_infinity.yml"
         },
         {
           "name": "privacy-policy.html",
@@ -387,7 +412,7 @@
             {
               "name": "index.html",
               "type": "file",
-              "description": "Entrepreneur landing page"
+              "description": "Entrepreneur landing page using data from _data/business_infinity_entrepreneur.yml"
             }
           ]
         },
@@ -418,7 +443,7 @@
             {
               "name": "index.html",
               "type": "file",
-              "description": "Agent Operating System landing page"
+              "description": "Agent Operating System landing page using data from _data/agent_operating_system.yml"
             }
           ]
         },
@@ -430,7 +455,7 @@
             {
               "name": "index.html",
               "type": "file",
-              "description": "GitHub Agent landing page"
+              "description": "GitHub Agent landing page using data from _data/github_agent.yml"
             }
           ]
         },
@@ -442,7 +467,7 @@
             {
               "name": "index.html",
               "type": "file",
-              "description": "Purpose Driven Agent landing page"
+              "description": "Purpose Driven Agent landing page using data from _data/purpose_driven_agent.yml"
             }
           ]
         }

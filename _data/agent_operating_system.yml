@@ -1,0 +1,115 @@
+title: "Agent Operating System"
+description: "A framework for managing and coordinating multiple AI agents to work together as a cohesive system."
+page_title: "Agent Operating System"
+
+# Concepts section
+concepts:
+  section_title: "Key Concepts"
+  section_description: "The Agent Operating System provides a structured environment where multiple specialized agents can collaborate to solve complex problems."
+  diagram_image: "/assets/images/agent-os-diagram.png"
+  diagram_alt: "Agent Operating System Architecture"
+  subtitle: "Core Principles"
+  principles:
+    - title: "Agent Teams"
+      description: "Coordinated groups of specialized agents working together"
+    - title: "Perpetual Agents"
+      description: "Long-running agents that maintain context and continuity"
+    - title: "Agent Communication" 
+      description: "Standardized protocols for inter-agent messaging"
+    - title: "Resource Management"
+      description: "Efficient allocation of computational resources across agents"
+
+# Features section
+features:
+  section_title: "Key Features"
+  items:
+    - title: "Agent Orchestration"
+      icon: "agent-os-icon-orchestration"
+      description: "Coordinated execution of agent tasks with intelligent scheduling and priority management."
+      benefits:
+        - "Task delegation based on agent specialization"
+        - "Dynamic workload balancing"
+        - "Deadlock prevention and resolution"
+    
+    - title: "Shared Memory System"
+      icon: "agent-os-icon-memory"
+      description: "Centralized knowledge store allowing agents to share information and build on each other's outputs."
+      benefits:
+        - "Persistent context across agent operations"
+        - "Structured data access and retrieval"
+        - "Memory optimization for large datasets"
+    
+    - title: "Inter-Agent Communication"
+      icon: "agent-os-icon-communication"
+      description: "Standardized messaging protocols allowing seamless agent collaboration and information exchange."
+      benefits:
+        - "Message routing and delivery"
+        - "Format standardization"
+        - "Asynchronous communication support"
+
+# Implementation example
+implementation:
+  section_title: "Implementation Example"
+  section_description: "Creating an agent team using the Agent Operating System framework is straightforward with the provided APIs."
+  code_example:
+    language: "python"
+    code: |
+      from AgentOperatingSystem.AgentTeam import AgentTeam
+      from PurposeDrivenAgent import KnowledgeAgent, IntelligenceAgent
+
+      # Create a specialized team of agents
+      team = AgentTeam(name="Research Team")
+
+      # Add different agent types to the team
+      knowledge_agent = KnowledgeAgent()
+      intelligence_agent = IntelligenceAgent()
+
+      team.add_agent(knowledge_agent, role="research")
+      team.add_agent(intelligence_agent, role="analysis")
+
+      # Configure communication channels between agents
+      team.connect_agents("research", "analysis")
+
+      # Execute a collaborative task
+      research_results = team.execute_task(
+          task="Analyze market trends in AI adoption across industries",
+          priority="high"
+      )
+
+# Applications section
+applications:
+  section_title: "Applications"
+  items:
+    - title: "Complex Problem Solving"
+      description: "Create agent teams that break down complex problems into specialized tasks, with each agent focusing on its area of expertise."
+    
+    - title: "Continuous Learning Systems"
+      description: "Build systems that accumulate knowledge over time through perpetual agents that maintain context across multiple interactions."
+    
+    - title: "Autonomous Workflows"
+      description: "Implement self-managing workflows where agent teams coordinate to complete multi-step processes with minimal human supervision."
+
+# Benefits section
+benefits:
+  section_title: "Key Benefits"
+  items:
+    - highlight: "Enhanced Problem-Solving Capabilities"
+      description: "Tackle complex tasks that would be difficult for a single agent by combining specialized expertise."
+    
+    - highlight: "Improved Efficiency"
+      description: "Optimize resource allocation and parallel processing for faster, more efficient task completion."
+    
+    - highlight: "Scalable Architecture"
+      description: "Easily add new agent types or increase team sizes as requirements evolve."
+    
+    - highlight: "Robust Performance"
+      description: "Maintain system stability through fault tolerance and automatic error recovery mechanisms."
+
+# Call to action
+cta:
+  title: "Start Building with Agent Operating System"
+  description: "Create powerful, collaborative AI systems using our comprehensive framework."
+  button_text: "Explore on GitHub"
+  button_url: "https://github.com/asisaga/AgentOperatingSystem"
+  secondary_button_text: "Contact Us"
+  secondary_button_url: "linkedin"

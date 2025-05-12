@@ -11,69 +11,36 @@ Uses Bootstrap components for responsive design and consistent styling
 <div class="purpose-agent-container">
   <!-- Hero section with product introduction -->
   {% include hero.html 
-    title="Purpose Driven Agent" 
-    description="Build intelligent agents that combine learning capabilities, knowledge management, and reasoning to achieve specific goals and purposes." 
+    title=site.data.purpose_driven_agent.title 
+    description=site.data.purpose_driven_agent.description 
   %}
 
   <!-- Architecture section with diagram -->
   <section class="purpose-architecture-section">
     {% include section-header.html 
-      title="Agent Architecture" 
-      description="The Purpose Driven Agent framework implements a modular architecture that combines specialized agent types to create comprehensive AI capabilities."
+      title=site.data.purpose_driven_agent.architecture.section_title 
+      description=site.data.purpose_driven_agent.architecture.section_description
     %}
     
     <div class="purpose-architecture-container">
       <!-- Architecture diagram or visual representation -->
       <div class="purpose-architecture-diagram">
-        <!-- Placeholder for actual diagram image -->
-        <img src="{{ '/assets/images/purpose-driven-architecture.png' | relative_url }}" alt="Purpose Driven Agent Architecture" class="purpose-diagram-image">
+        <img src="{{ site.data.purpose_driven_agent.architecture.diagram_image | relative_url }}" alt="{{ site.data.purpose_driven_agent.architecture.diagram_alt }}" class="purpose-diagram-image">
       </div>
     </div>
   </section>
 
   <!-- Components section showing the different agent types -->
   <section class="purpose-components-section">
-    {% include section-header.html title="Core Components" %}
-    
-    {% assign components = site.data.purpose_components | default: "[]" %}
-    {% unless components.size > 0 %}
-      {% assign components = "" | split: "" %}
-      
-      {% assign component1 = 
-        "title=Learning Agent,
-         description=Implements continuous learning capabilities, allowing the agent to improve from experience and adapt to new situations.,
-         features=Pattern recognition|Adaptive behavior|Experience-based optimization" 
-         | split: "," %}
-      
-      {% assign component2 = 
-        "title=Knowledge Agent,
-         description=Manages information gathering, storage, and retrieval to build and maintain a comprehensive knowledge base.,
-         features=Information organization|Context-aware retrieval|Knowledge integration" 
-         | split: "," %}
-      
-      {% assign component3 = 
-        "title=Intelligence Agent,
-         description=Provides reasoning, planning, and decision-making capabilities based on available knowledge and objectives.,
-         features=Logical reasoning|Strategic planning|Goal-oriented decisions" 
-         | split: "," %}
-      
-      {% assign component4 = 
-        "title=Coder Agent,
-         description=Specialized implementation that focuses on software development tasks and code generation.,
-         features=Code generation|Best practice implementation|Testing and validation" 
-         | split: "," %}
-      
-      {% assign components = components | concat: component1 | concat: component2 | concat: component3 | concat: component4 %}
-    {% endunless %}
+    {% include section-header.html title=site.data.purpose_driven_agent.components.section_title %}
     
     <div class="purpose-components-grid">
-      {% for component in components %}
+      {% for component in site.data.purpose_driven_agent.components.items %}
         <div class="purpose-component-card">
           <h3 class="purpose-component-title">{{ component.title }}</h3>
           <p class="purpose-component-description">{{ component.description }}</p>
           <ul class="purpose-component-features">
-            {% assign features = component.features | split: "|" %}
-            {% for feature in features %}
+            {% for feature in component.features %}
               <li class="purpose-feature-item">{{ feature }}</li>
             {% endfor %}
           </ul>
@@ -85,71 +52,24 @@ Uses Bootstrap components for responsive design and consistent styling
   <!-- Implementation example section with code sample -->
   <section class="purpose-implementation-section">
     {% include section-header.html 
-      title="Implementation Example" 
-      description="Creating a specialized agent using the Purpose Driven Agent framework is straightforward through inheritance and customization."
+      title=site.data.purpose_driven_agent.implementation.section_title
+      description=site.data.purpose_driven_agent.implementation.section_description
     %}
     
     <div class="purpose-implementation-container">
       <!-- Code example in a styled code block -->
       <div class="purpose-code-example">
-        <pre class="purpose-code-block"><code class="language-python">
-from PurposeDrivenAgent.CoderAgent import CoderAgent
-
-class CustomCodingAssistant(CoderAgent):
-    def __init__(self, specialization="web_development"):
-        """
-        Initialize a custom coding assistant with a specific specialization.
-        
-        :param specialization: Area of coding expertise, e.g., web_development, data_science
-        """
-        super().__init__()  # Initialize the base CoderAgent
-        self.specialization = specialization
-        
-    def generate_solution(self, problem_description):
-        """
-        Generate code solution based on problem description.
-        
-        :param problem_description: Description of the coding problem
-        :return: Generated code solution
-        """
-        # Custom implementation for solution generation
-        solution = self._analyze_problem(problem_description)
-        code = self._generate_code(solution)
-        
-        return self._validate_and_optimize(code)
-        </code></pre>
+        <pre class="purpose-code-block"><code class="language-{{ site.data.purpose_driven_agent.implementation.code_example.language }}">{{ site.data.purpose_driven_agent.implementation.code_example.code }}</code></pre>
       </div>
     </div>
   </section>
 
   <!-- Applications section -->
   <section class="purpose-applications-section">
-    {% include section-header.html title="Applications" %}
-    
-    {% assign applications = site.data.purpose_applications | default: "[]" %}
-    {% unless applications.size > 0 %}
-      {% assign applications = "" | split: "" %}
-      
-      {% assign app1 = 
-        "title=Software Development,
-         description=Create coding assistants that help developers write, test, and maintain high-quality code across different languages and frameworks." 
-         | split: "," %}
-      
-      {% assign app2 = 
-        "title=Business Process Automation,
-         description=Build agents that automate complex business workflows by combining knowledge of processes with adaptive learning capabilities." 
-         | split: "," %}
-      
-      {% assign app3 = 
-        "title=Research and Analysis,
-         description=Develop research assistants that gather information, analyze patterns, and generate insights across various domains and disciplines." 
-         | split: "," %}
-      
-      {% assign applications = applications | concat: app1 | concat: app2 | concat: app3 %}
-    {% endunless %}
+    {% include section-header.html title=site.data.purpose_driven_agent.applications.section_title %}
     
     <div class="purpose-applications-grid">
-      {% for app in applications %}
+      {% for app in site.data.purpose_driven_agent.applications.items %}
         <div class="purpose-application-card">
           <h3 class="purpose-application-title">{{ app.title }}</h3>
           <p class="purpose-application-description">{{ app.description }}</p>
@@ -160,9 +80,9 @@ class CustomCodingAssistant(CoderAgent):
 
   <!-- Call to action section -->
   {% include cta.html 
-    title="Start Building Purpose-Driven Agents" 
-    description="Explore the framework and create intelligent agents tailored to your specific needs and objectives." 
-    button_text="View on GitHub" 
-    button_url="https://github.com/asisaga/PurposeDrivenAgent"
+    title=site.data.purpose_driven_agent.cta.title
+    description=site.data.purpose_driven_agent.cta.description
+    button_text=site.data.purpose_driven_agent.cta.button_text
+    button_url=site.data.purpose_driven_agent.cta.button_url
   %}
 </div>

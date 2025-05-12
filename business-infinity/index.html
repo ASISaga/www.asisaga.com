@@ -11,80 +11,47 @@ Uses Bootstrap's responsive grid system and components for layout and design
 <div class="business-infinity-container">
   <!-- Hero section with product introduction -->
   {% include hero.html 
-    title="Business Infinity" 
-    description="Leverage artificial intelligence to streamline operations, identify growth opportunities, and scale your business efficiently." 
+    title=site.data.business_infinity.title 
+    description=site.data.business_infinity.description 
     button_text="Explore Features" 
     button_url="#features" 
   %}
 
   <!-- Key features section with feature cards -->
   <section id="features" class="business-features-section">
-    {% include section-header.html title="Key Features" %}
-    
-    {% assign features = site.data.business_features | default: "[]" %}
-    {% unless features.size > 0 %}
-      {% assign features = "" | split: "" %}
-      {% assign feature1 = 
-        "title=Comprehensive Business Analysis,
-         icon=business-icon-analysis,
-         description=Gain deep insights into your business operations with AI-powered analytics that identify inefficiencies and growth opportunities." 
-         | split: "," %}
-      {% assign feature2 = 
-        "title=Intelligent Strategy Development,
-         icon=business-icon-strategy,
-         description=Create data-driven business strategies tailored to your industry, market conditions, and business goals." 
-         | split: "," %}
-      {% assign feature3 = 
-        "title=Operations Automation,
-         icon=business-icon-automation,
-         description=Streamline repetitive tasks across all business functions with intelligent automation solutions." 
-         | split: "," %}
-      {% assign features = features | concat: feature1 | concat: feature2 | concat: feature3 %}
-    {% endunless %}
+    {% include section-header.html title=site.data.business_infinity.features.section_title %}
     
     {% include feature-grid.html 
-      items=features
+      items=site.data.business_infinity.features.items
     %}
   </section>
 
   <!-- Use cases section with tabs for different business segments -->
   <section class="business-use-cases-section">
-    {% include section-header.html title="Who Can Benefit" %}
+    {% include section-header.html title=site.data.business_infinity.use_cases.section_title %}
     <div class="business-use-cases-nav">
       <!-- Tab navigation for different user segments -->
       <ul class="business-tabs-list" role="tablist">
+        {% for segment in site.data.business_infinity.use_cases.segments %}
         <li class="business-tab-item">
-          <a href="{{ site.url }}/business-infinity/entrepreneur/" class="business-tab-link">Entrepreneurs</a>
+          <a href="{{ segment.url }}" class="business-tab-link">{{ segment.title }}</a>
         </li>
-        <li class="business-tab-item">
-          <a href="{{ site.url }}/business-infinity/startup/" class="business-tab-link">Startups</a>
-        </li>
+        {% endfor %}
       </ul>
     </div>
   </section>
 
   <!-- Testimonials section -->
-  {% assign testimonials = site.data.business_testimonials | default: "[]" %}
-  {% unless testimonials.size > 0 %}
-    {% assign testimonials = "" | split: "" %}
-    {% assign testimonial1 = 
-      "text=Business Infinity helped me identify inefficiencies in my operations and increased productivity by 40% within three months.,
-       name=John Doe,
-       company=CEO, Tech Startup Inc." 
-       | split: "," %}
-    {% assign testimonials = testimonials | concat: testimonial1 %}
-  {% endunless %}
-  
   {% include testimonial.html 
-    title="What Our Users Say" 
-    testimonials=testimonials
+    title=site.data.business_infinity.testimonials.section_title
+    testimonials=site.data.business_infinity.testimonials.items
   %}
 
   <!-- Contact section -->
   {% include cta.html 
-    title="Ready to Transform Your Business?" 
-    description="Get started with Business Infinity today and experience the power of AI in business management." 
-    button_text="Contact Us" 
-    button_url=site.linkedin_username 
+    title=site.data.business_infinity.cta.title
+    description=site.data.business_infinity.cta.description
+    button_text=site.data.business_infinity.cta.button_text
+    button_url=site.data.business_infinity.cta.button_url
   %}
 </div>

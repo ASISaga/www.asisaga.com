@@ -1,5 +1,68 @@
 // Styles for the Sitemap page
 .sitemap-container {
-  // To be populated with page-specific styles or extends
-  @extend .placeholder-style; // Satisfy linter, replace when styles are added
+  @extend .container;
+  @extend .py-5;
+  
+  // Nested elements following DOM hierarchy
+  .sitemap-header-section {
+    @extend .mb-5;
+    @extend .text-center;
+    
+    .sitemap-title {
+      @extend .display-4;
+      @extend .mb-3;
+    }
+    
+    .sitemap-subtitle {
+      @extend .lead;
+      @extend .text-muted;
+    }
+  }
+  
+  .sitemap-content-section {
+    @extend .row;
+    @extend .justify-content-center;
+    
+    .sitemap-list-container {
+      @extend .col-lg-8;
+      @extend .col-md-10;
+      
+      .sitemap-list {
+        @extend .list-unstyled;
+        @extend .ps-0;
+        
+        .sitemap-item {
+          @extend .mb-3;
+          
+          &.sitemap-parent {
+            @extend .mb-4;
+          }
+          
+          .sitemap-parent-title {
+            @extend .fw-bold;
+            @extend .d-block;
+            @extend .mb-2;
+          }
+          
+          .sitemap-link {
+            @extend .text-decoration-none;
+            
+            &:hover {
+              @extend .text-primary;
+            }
+          }
+          
+          .sitemap-sublist {
+            @extend .list-unstyled;
+            @extend .ps-4;
+            @extend .mt-2;
+            
+            .sitemap-subitem {
+              @extend .mb-2;
+            }
+          }
+        }
+      }
+    }
+  }
 }

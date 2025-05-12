@@ -11,29 +11,28 @@ Uses Bootstrap components for responsive design and consistent styling
 <div class="agent-os-container">
   <!-- Hero section with product introduction -->
   {% include hero.html 
-    title="Agent Operating System" 
-    description="A framework for managing and coordinating multiple AI agents to work together as a cohesive system."
+    title=site.data.agent_operating_system.title 
+    description=site.data.agent_operating_system.description 
   %}
 
   <!-- Concepts section with explanation -->
   <section class="agent-os-concepts-section">
     {% include section-header.html 
-      title="Key Concepts" 
-      description="The Agent Operating System provides a structured environment where multiple specialized agents can collaborate to solve complex problems."
+      title=site.data.agent_operating_system.concepts.section_title 
+      description=site.data.agent_operating_system.concepts.section_description
     %}
     
     <div class="agent-os-concepts-container">
       <div class="agent-os-concept-diagram">
-        <img src="{{ '/assets/images/agent-os-diagram.png' | relative_url }}" alt="Agent Operating System Architecture" class="agent-os-diagram-image">
+        <img src="{{ site.data.agent_operating_system.concepts.diagram_image | relative_url }}" alt="{{ site.data.agent_operating_system.concepts.diagram_alt }}" class="agent-os-diagram-image">
       </div>
       
       <div class="agent-os-key-concepts">
-        <h3 class="agent-os-concepts-subtitle">Core Principles</h3>
+        <h3 class="agent-os-concepts-subtitle">{{ site.data.agent_operating_system.concepts.subtitle }}</h3>
         <ul class="agent-os-concept-list">
-          <li class="agent-os-concept-item"><strong>Agent Teams:</strong> Coordinated groups of specialized agents working together</li>
-          <li class="agent-os-concept-item"><strong>Perpetual Agents:</strong> Long-running agents that maintain context and continuity</li>
-          <li class="agent-os-concept-item"><strong>Agent Communication:</strong> Standardized protocols for inter-agent messaging</li>
-          <li class="agent-os-concept-item"><strong>Resource Management:</strong> Efficient allocation of computational resources across agents</li>
+          {% for principle in site.data.agent_operating_system.concepts.principles %}
+          <li class="agent-os-concept-item"><strong>{{ principle.title }}:</strong> {{ principle.description }}</li>
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -41,146 +40,73 @@ Uses Bootstrap components for responsive design and consistent styling
 
   <!-- Features section with cards -->
   <section class="agent-os-features-section">
-    {% include section-header.html title="Key Features" %}
+    {% include section-header.html title=site.data.agent_operating_system.features.section_title %}
     <div class="agent-os-features-grid">
-      <!-- Feature 1: Agent Orchestration -->
+      {% for feature in site.data.agent_operating_system.features.items %}
       <div class="agent-os-feature-card">
         <div class="agent-os-feature-icon">
-          <i class="agent-os-icon-orchestration"></i>
+          <i class="{{ feature.icon }}"></i>
         </div>
-        <h3 class="agent-os-feature-title">Agent Orchestration</h3>
-        <p class="agent-os-feature-description">
-          Coordinated execution of agent tasks with intelligent scheduling and priority management.
-        </p>
+        <h3 class="agent-os-feature-title">{{ feature.title }}</h3>
+        <p class="agent-os-feature-description">{{ feature.description }}</p>
         <ul class="agent-os-feature-benefits">
-          <li class="agent-os-benefit-item">Task delegation based on agent specialization</li>
-          <li class="agent-os-benefit-item">Dynamic workload balancing</li>
-          <li class="agent-os-benefit-item">Deadlock prevention and resolution</li>
+          {% for benefit in feature.benefits %}
+          <li class="agent-os-benefit-item">{{ benefit }}</li>
+          {% endfor %}
         </ul>
       </div>
-      
-      <!-- Feature 2: Memory Management -->
-      <div class="agent-os-feature-card">
-        <div class="agent-os-feature-icon">
-          <i class="agent-os-icon-memory"></i>
-        </div>
-        <h3 class="agent-os-feature-title">Shared Memory System</h3>
-        <p class="agent-os-feature-description">
-          Centralized knowledge store allowing agents to share information and build on each other's outputs.
-        </p>
-        <ul class="agent-os-feature-benefits">
-          <li class="agent-os-benefit-item">Persistent context across agent operations</li>
-          <li class="agent-os-benefit-item">Structured data access and retrieval</li>
-          <li class="agent-os-benefit-item">Memory optimization for large datasets</li>
-        </ul>
-      </div>
-      
-      <!-- Feature 3: Communication Protocol -->
-      <div class="agent-os-feature-card">
-        <div class="agent-os-feature-icon">
-          <i class="agent-os-icon-communication"></i>
-        </div>
-        <h3 class="agent-os-feature-title">Inter-Agent Communication</h3>
-        <p class="agent-os-feature-description">
-          Standardized messaging protocols allowing seamless agent collaboration and information exchange.
-        </p>
-        <ul class="agent-os-feature-benefits">
-          <li class="agent-os-benefit-item">Message routing and delivery</li>
-          <li class="agent-os-benefit-item">Format standardization</li>
-          <li class="agent-os-benefit-item">Asynchronous communication support</li>
-        </ul>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
   <!-- Implementation section with code example -->
   <section class="agent-os-implementation-section">
     {% include section-header.html 
-      title="Implementation Example" 
-      description="Creating an agent team using the Agent Operating System framework is straightforward with the provided APIs."
+      title=site.data.agent_operating_system.implementation.section_title
+      description=site.data.agent_operating_system.implementation.section_description
     %}
     
     <div class="agent-os-implementation-container">
       <div class="agent-os-code-example">
-        <pre class="agent-os-code-block"><code>
-from AgentOperatingSystem.AgentTeam import AgentTeam
-from PurposeDrivenAgent import KnowledgeAgent, IntelligenceAgent
-
-# Create a specialized team of agents
-team = AgentTeam(name="Research Team")
-
-# Add different agent types to the team
-knowledge_agent = KnowledgeAgent()
-intelligence_agent = IntelligenceAgent()
-
-team.add_agent(knowledge_agent, role="research")
-team.add_agent(intelligence_agent, role="analysis")
-
-# Configure communication channels between agents
-team.connect_agents("research", "analysis")
-
-# Execute a collaborative task
-research_results = team.execute_task(
-    task="Analyze market trends in AI adoption across industries",
-    priority="high"
-)
-        </code></pre>
+        <pre class="agent-os-code-block"><code class="language-{{ site.data.agent_operating_system.implementation.code_example.language }}">{{ site.data.agent_operating_system.implementation.code_example.code }}</code></pre>
       </div>
     </div>
   </section>
 
   <!-- Use cases section -->
   <section class="agent-os-use-cases-section">
-    {% include section-header.html title="Applications" %}
+    {% include section-header.html title=site.data.agent_operating_system.applications.section_title %}
     <div class="agent-os-use-cases-grid">
-      <!-- Use case 1 -->
+      {% for application in site.data.agent_operating_system.applications.items %}
       <div class="agent-os-use-case-card">
-        <h3 class="agent-os-use-case-title">Complex Problem Solving</h3>
-        <p>Create agent teams that break down complex problems into specialized tasks, with each agent focusing on its area of expertise.</p>
+        <h3 class="agent-os-use-case-title">{{ application.title }}</h3>
+        <p>{{ application.description }}</p>
       </div>
-      
-      <!-- Use case 2 -->
-      <div class="agent-os-use-case-card">
-        <h3 class="agent-os-use-case-title">Continuous Learning Systems</h3>
-        <p>Build systems that accumulate knowledge over time through perpetual agents that maintain context across multiple interactions.</p>
-      </div>
-      
-      <!-- Use case 3 -->
-      <div class="agent-os-use-case-card">
-        <h3 class="agent-os-use-case-title">Autonomous Workflows</h3>
-        <p>Implement self-managing workflows where agent teams coordinate to complete multi-step processes with minimal human supervision.</p>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
   <!-- Benefits section -->
   <section class="agent-os-benefits-section">
-    {% include section-header.html title="Key Benefits" %}
+    {% include section-header.html title=site.data.agent_operating_system.benefits.section_title %}
     <div class="agent-os-benefits-container">
       <ul class="agent-os-benefits-list">
+        {% for benefit in site.data.agent_operating_system.benefits.items %}
         <li class="agent-os-benefits-item">
-          <span class="agent-os-benefit-highlight">Enhanced Problem-Solving Capabilities:</span> Tackle complex tasks that would be difficult for a single agent by combining specialized expertise.
+          <span class="agent-os-benefit-highlight">{{ benefit.highlight }}:</span> {{ benefit.description }}
         </li>
-        <li class="agent-os-benefits-item">
-          <span class="agent-os-benefit-highlight">Improved Efficiency:</span> Optimize resource allocation and parallel processing for faster, more efficient task completion.
-        </li>
-        <li class="agent-os-benefits-item">
-          <span class="agent-os-benefit-highlight">Scalable Architecture:</span> Easily add new agent types or increase team sizes as requirements evolve.
-        </li>
-        <li class="agent-os-benefits-item">
-          <span class="agent-os-benefit-highlight">Robust Performance:</span> Maintain system stability through fault tolerance and automatic error recovery mechanisms.
-        </li>
+        {% endfor %}
       </ul>
     </div>
   </section>
 
   <!-- Call to action section -->
   {% include cta.html 
-    title="Start Building with Agent Operating System" 
-    description="Create powerful, collaborative AI systems using our comprehensive framework." 
-    button_text="Explore on GitHub" 
-    button_url="https://github.com/asisaga/AgentOperatingSystem" 
-    secondary_button_text="Contact Us" 
-    secondary_button_url=site.linkedin_username 
+    title=site.data.agent_operating_system.cta.title
+    description=site.data.agent_operating_system.cta.description
+    button_text=site.data.agent_operating_system.cta.button_text
+    button_url=site.data.agent_operating_system.cta.button_url
+    secondary_button_text=site.data.agent_operating_system.cta.secondary_button_text
+    secondary_button_url=site.data.agent_operating_system.cta.secondary_button_url
   %}
 </div>

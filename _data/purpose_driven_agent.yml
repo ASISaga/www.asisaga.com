@@ -1,0 +1,94 @@
+title: "Purpose Driven Agent"
+description: "Build intelligent agents that combine learning capabilities, knowledge management, and reasoning to achieve specific goals and purposes."
+page_title: "Purpose Driven Agent"
+
+# Architecture section
+architecture:
+  section_title: "Agent Architecture"
+  section_description: "The Purpose Driven Agent framework implements a modular architecture that combines specialized agent types to create comprehensive AI capabilities."
+  diagram_image: "/assets/images/purpose-driven-architecture.png"
+  diagram_alt: "Purpose Driven Agent Architecture"
+
+# Components section
+components:
+  section_title: "Core Components"
+  items:
+    - title: "Learning Agent"
+      description: "Implements continuous learning capabilities, allowing the agent to improve from experience and adapt to new situations."
+      features:
+        - "Pattern recognition"
+        - "Adaptive behavior"
+        - "Experience-based optimization"
+    
+    - title: "Knowledge Agent"
+      description: "Manages information gathering, storage, and retrieval to build and maintain a comprehensive knowledge base."
+      features:
+        - "Information organization"
+        - "Context-aware retrieval"
+        - "Knowledge integration"
+    
+    - title: "Intelligence Agent"
+      description: "Provides reasoning, planning, and decision-making capabilities based on available knowledge and objectives."
+      features:
+        - "Logical reasoning"
+        - "Strategic planning"
+        - "Goal-oriented decisions"
+    
+    - title: "Coder Agent"
+      description: "Specialized implementation that focuses on software development tasks and code generation."
+      features:
+        - "Code generation"
+        - "Best practice implementation"
+        - "Testing and validation"
+
+# Implementation example
+implementation:
+  section_title: "Implementation Example"
+  section_description: "Creating a specialized agent using the Purpose Driven Agent framework is straightforward through inheritance and customization."
+  code_example:
+    language: "python"
+    code: |
+      from PurposeDrivenAgent.CoderAgent import CoderAgent
+
+      class CustomCodingAssistant(CoderAgent):
+          def __init__(self, specialization="web_development"):
+              """
+              Initialize a custom coding assistant with a specific specialization.
+              
+              :param specialization: Area of coding expertise, e.g., web_development, data_science
+              """
+              super().__init__()  # Initialize the base CoderAgent
+              self.specialization = specialization
+              
+          def generate_solution(self, problem_description):
+              """
+              Generate code solution based on problem description.
+              
+              :param problem_description: Description of the coding problem
+              :return: Generated code solution
+              """
+              # Custom implementation for solution generation
+              solution = self._analyze_problem(problem_description)
+              code = self._generate_code(solution)
+              
+              return self._validate_and_optimize(code)
+
+# Applications section
+applications:
+  section_title: "Applications"
+  items:
+    - title: "Software Development"
+      description: "Create coding assistants that help developers write, test, and maintain high-quality code across different languages and frameworks."
+    
+    - title: "Business Process Automation"
+      description: "Build agents that automate complex business workflows by combining knowledge of processes with adaptive learning capabilities."
+    
+    - title: "Research and Analysis"
+      description: "Develop research assistants that gather information, analyze patterns, and generate insights across various domains and disciplines."
+
+# Call to action
+cta:
+  title: "Start Building Purpose-Driven Agents"
+  description: "Explore the framework and create intelligent agents tailored to your specific needs and objectives."
+  button_text: "View on GitHub"
+  button_url: "https://github.com/asisaga/PurposeDrivenAgent"

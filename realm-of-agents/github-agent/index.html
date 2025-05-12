@@ -11,134 +11,66 @@ Uses Bootstrap components for responsive design and consistent styling
 <div class="github-agent-container">
   <!-- Hero section with product introduction -->
   {% include hero.html 
-    title="GitHub Agent" 
-    description="Streamline your development process with AI-powered GitHub automation that handles repository management, code reviews, and collaboration." 
+    title=site.data.github_agent.title 
+    description=site.data.github_agent.description 
   %}
 
   <!-- Key features section with feature cards -->
   <section class="github-features-section">
-    {% include section-header.html title="Key Features" %}
+    {% include section-header.html title=site.data.github_agent.features.section_title %}
     <div class="github-features-grid">
-      <!-- Feature 1: Repository Management -->
+      {% for feature in site.data.github_agent.features.items %}
       <div class="github-feature-card">
         <div class="github-feature-icon">
-          <!-- Icon placeholder or Font Awesome icon can be used here -->
-          <i class="github-icon-repo"></i>
+          <i class="{{ feature.icon }}"></i>
         </div>
-        <h3 class="github-feature-title">Repository Management</h3>
-        <p class="github-feature-description">
-          Automate repository creation, configuration, and maintenance tasks with intelligent workflows.
-        </p>
+        <h3 class="github-feature-title">{{ feature.title }}</h3>
+        <p class="github-feature-description">{{ feature.description }}</p>
         <ul class="github-feature-list">
-          <li class="github-feature-item">Automated repository setup</li>
-          <li class="github-feature-item">Branch protection rule configuration</li>
-          <li class="github-feature-item">Repository health monitoring</li>
+          {% for item in feature.list_items %}
+          <li class="github-feature-item">{{ item }}</li>
+          {% endfor %}
         </ul>
       </div>
-
-      <!-- Feature 2: Code Review -->
-      <div class="github-feature-card">
-        <div class="github-feature-icon">
-          <i class="github-icon-code"></i>
-        </div>
-        <h3 class="github-feature-title">Intelligent Code Review</h3>
-        <p class="github-feature-description">
-          Enhance code quality with automated reviews that identify issues, suggest improvements, and enforce standards.
-        </p>
-        <ul class="github-feature-list">
-          <li class="github-feature-item">Code quality analysis</li>
-          <li class="github-feature-item">Best practice recommendations</li>
-          <li class="github-feature-item">Style guide enforcement</li>
-        </ul>
-      </div>
-
-      <!-- Feature 3: Collaboration -->
-      <div class="github-feature-card">
-        <div class="github-feature-icon">
-          <i class="github-icon-collab"></i>
-        </div>
-        <h3 class="github-feature-title">Enhanced Collaboration</h3>
-        <p class="github-feature-description">
-          Improve team communication and coordination with automated workflow management and notifications.
-        </p>
-        <ul class="github-feature-list">
-          <li class="github-feature-item">PR assignment and routing</li>
-          <li class="github-feature-item">Issue tracking optimization</li>
-          <li class="github-feature-item">Team performance analytics</li>
-        </ul>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
   <!-- Technical implementation section with code sample -->
   <section class="github-technical-section">
     {% include section-header.html 
-      title="How It Works" 
-      description="GitHub Agent leverages the PyGithub library to interact with GitHub's API, allowing for programmatic control of repositories and workflows."
+      title=site.data.github_agent.technical.section_title 
+      description=site.data.github_agent.technical.section_description
     %}
     <div class="github-technical-container">
       <!-- Code example in a styled code block -->
       <div class="github-code-example">
-        <h3 class="github-code-title">Example Implementation</h3>
-        <pre class="github-code-block"><code class="language-python">
-from GitHubClient import GitHubClient
-
-# Initialize GitHub client with credentials
-client = GitHubClient(access_token="your_token", base_url="https://api.github.com", repo_name="your-repo-name")
-
-# List repositories
-repositories = client.listRepositories()
-for repo in repositories:
-    print(f"Repository: {repo.name}")
-    
-# Update a file in the repository
-client.pushCommit(
-    commit_message="Update README",
-    file_path="README.md",
-    content="# Updated Project Documentation"
-)
-        </code></pre>
+        <h3 class="github-code-title">{{ site.data.github_agent.technical.code_example.title }}</h3>
+        <pre class="github-code-block"><code class="language-{{ site.data.github_agent.technical.code_example.language }}">{{ site.data.github_agent.technical.code_example.code }}</code></pre>
       </div>
     </div>
   </section>
 
   <!-- Use cases section -->
   <section class="github-use-cases-section">
-    {% include section-header.html title="Use Cases" %}
+    {% include section-header.html title=site.data.github_agent.use_cases.section_title %}
     <div class="github-use-cases-grid">
-      <!-- Use case 1: Development Teams -->
+      {% for use_case in site.data.github_agent.use_cases.items %}
       <div class="github-use-case-card">
-        <h3 class="github-use-case-title">Development Teams</h3>
-        <p class="github-use-case-description">
-          Streamline team collaboration, automate code quality checks, and maintain consistent standards across repositories.
-        </p>
+        <h3 class="github-use-case-title">{{ use_case.title }}</h3>
+        <p class="github-use-case-description">{{ use_case.description }}</p>
       </div>
-
-      <!-- Use case 2: Open Source Projects -->
-      <div class="github-use-case-card">
-        <h3 class="github-use-case-title">Open Source Projects</h3>
-        <p class="github-use-case-description">
-          Automate contribution management, ensure quality control, and improve project documentation maintenance.
-        </p>
-      </div>
-
-      <!-- Use case 3: Enterprise Organizations -->
-      <div class="github-use-case-card">
-        <h3 class="github-use-case-title">Enterprise Organizations</h3>
-        <p class="github-use-case-description">
-          Maintain security standards, enforce compliance requirements, and generate performance metrics across multiple repositories.
-        </p>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
   <!-- Call to action section -->
   {% include cta.html 
-    title="Ready to Automate Your GitHub Workflow?" 
-    description="Explore the GitHub Agent today and transform how your team works with repositories." 
-    button_text="View on GitHub" 
-    button_url="https://github.com/asisaga/GitHubAgent" 
-    secondary_button_text="Contact Us" 
-    secondary_button_url=site.linkedin_username 
+    title=site.data.github_agent.cta.title
+    description=site.data.github_agent.cta.description
+    button_text=site.data.github_agent.cta.button_text
+    button_url=site.data.github_agent.cta.button_url
+    secondary_button_text=site.data.github_agent.cta.secondary_button_text
+    secondary_button_url=site.data.github_agent.cta.secondary_button_url
   %}
 </div>
