@@ -1,0 +1,139 @@
+// Shared product page component styles
+// This file contains reusable styles for product pages to reduce duplication
+
+.product-container {
+  // Common styling for all product containers
+  @extend .w-100;
+  
+  // Hero section is handled by _hero.scss
+
+  // Generic section styling
+  .product-section {
+    @extend .py-5; // Bootstrap padding
+    
+    // Add margin to sections that aren't the first one
+    &:not(:first-of-type) {
+      @extend .mt-4;
+    }
+
+    // Alternate section background colors for visual distinction
+    &.product-section-light {
+      @extend .bg-light;
+    }
+    
+    &.product-section-primary {
+      @extend .bg-gradient-primary;
+    }
+
+    &.product-section-accent {
+      @extend .bg-gradient-accent;
+    }
+  }
+
+  // Features/Concepts grid
+  .product-grid {
+    @extend .container;
+    @extend .row;
+    @extend .justify-content-center;
+    
+    // Feature card for features, concepts, components
+    .product-card {
+      @extend .col-md-4;
+      @extend .p-4;
+      @extend .mb-4;
+      @extend .h-100;
+      @extend .bg-white;
+      @extend .rounded;
+      @extend .border;
+      @include transition(all, 0.3s, ease);
+      
+      &:hover {
+        transform: translateY(-5px);
+        @extend .shadow;
+      }
+      
+      &.product-card-accent {
+        border-left: 4px solid var(--color-accent);
+      }
+      
+      &.product-card-primary {
+        border-left: 4px solid var(--color-primary);
+      }
+      
+      // Card components
+      .product-card-icon {
+        @extend .mb-3;
+      }
+      
+      .product-card-title {
+        @extend .mb-3;
+        @extend .fw-bold;
+      }
+      
+      .product-card-description {
+        @extend .mb-3;
+      }
+      
+      .product-card-list {
+        @extend .list-unstyled;
+        
+        .product-card-list-item {
+          @extend .mb-2;
+        }
+      }
+    }
+  }
+
+  // Visual content container (diagrams, images)
+  .product-visual-container {
+    @extend .container;
+    @extend .text-center;
+    @extend .my-4;
+    
+    .product-image {
+      @extend .img-fluid;
+      @extend .rounded;
+      @extend .shadow-sm;
+    }
+  }
+  
+  // Implementation/code example container
+  .product-code-container {
+    @extend .container;
+    @extend .py-3;
+    
+    .product-code-example {
+      @extend .bg-dark;
+      @extend .p-3;
+      @extend .rounded;
+      @extend .shadow;
+      
+      .product-code-block {
+        @extend .m-0;
+        max-height: 500px;
+        overflow-y: auto;
+      }
+    }
+  }
+  
+  // Benefits/List container
+  .product-list-container {
+    @extend .container;
+    
+    .product-list {
+      @extend .list-unstyled;
+      
+      .product-list-item {
+        @extend .p-3;
+        @extend .mb-3;
+        @extend .bg-light;
+        @extend .rounded;
+        
+        .product-list-highlight {
+          @extend .fw-bold;
+          @extend .text-primary;
+        }
+      }
+    }
+  }
+}

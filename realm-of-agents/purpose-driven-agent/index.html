@@ -6,9 +6,9 @@ title: Purpose Driven Agent
 <!-- 
 Purpose Driven Agent product page
 This page showcases the Purpose Driven Agent framework, its architecture, components, and applications
-Uses Bootstrap components for responsive design and consistent styling
+Uses shared product page components for responsive design and consistent styling
 -->
-<div class="purpose-agent-container">
+<div class="product-container purpose-agent-container">
   <!-- Hero section with product introduction -->
   {% include hero.html 
     title=site.data.purpose_driven_agent.title 
@@ -16,32 +16,30 @@ Uses Bootstrap components for responsive design and consistent styling
   %}
 
   <!-- Architecture section with diagram -->
-  <section class="purpose-architecture-section">
+  <section class="product-section product-section-light">
     {% include section-header.html 
       title=site.data.purpose_driven_agent.architecture.section_title 
       description=site.data.purpose_driven_agent.architecture.section_description
     %}
     
-    <div class="purpose-architecture-container">
+    <div class="product-visual-container">
       <!-- Architecture diagram or visual representation -->
-      <div class="purpose-architecture-diagram">
-        <img src="{{ site.data.purpose_driven_agent.architecture.diagram_image | relative_url }}" alt="{{ site.data.purpose_driven_agent.architecture.diagram_alt }}" class="purpose-diagram-image">
-      </div>
+      <img src="{{ site.data.purpose_driven_agent.architecture.diagram_image | relative_url }}" alt="{{ site.data.purpose_driven_agent.architecture.diagram_alt }}" class="product-image">
     </div>
   </section>
 
   <!-- Components section showing the different agent types -->
-  <section class="purpose-components-section">
+  <section class="product-section">
     {% include section-header.html title=site.data.purpose_driven_agent.components.section_title %}
     
-    <div class="purpose-components-grid">
+    <div class="product-grid">
       {% for component in site.data.purpose_driven_agent.components.items %}
-        <div class="purpose-component-card">
-          <h3 class="purpose-component-title">{{ component.title }}</h3>
-          <p class="purpose-component-description">{{ component.description }}</p>
-          <ul class="purpose-component-features">
+        <div class="product-card product-card-primary">
+          <h3 class="product-card-title">{{ component.title }}</h3>
+          <p class="product-card-description">{{ component.description }}</p>
+          <ul class="product-card-list">
             {% for feature in component.features %}
-              <li class="purpose-feature-item">{{ feature }}</li>
+              <li class="product-card-list-item">{{ feature }}</li>
             {% endfor %}
           </ul>
         </div>
@@ -50,29 +48,29 @@ Uses Bootstrap components for responsive design and consistent styling
   </section>
 
   <!-- Implementation example section with code sample -->
-  <section class="purpose-implementation-section">
+  <section class="product-section product-section-light">
     {% include section-header.html 
       title=site.data.purpose_driven_agent.implementation.section_title
       description=site.data.purpose_driven_agent.implementation.section_description
     %}
     
-    <div class="purpose-implementation-container">
+    <div class="product-code-container">
       <!-- Code example in a styled code block -->
-      <div class="purpose-code-example">
-        <pre class="purpose-code-block"><code class="language-{{ site.data.purpose_driven_agent.implementation.code_example.language }}">{{ site.data.purpose_driven_agent.implementation.code_example.code }}</code></pre>
+      <div class="product-code-example">
+        <pre class="product-code-block"><code class="language-{{ site.data.purpose_driven_agent.implementation.code_example.language }}">{{ site.data.purpose_driven_agent.implementation.code_example.code }}</code></pre>
       </div>
     </div>
   </section>
 
   <!-- Applications section -->
-  <section class="purpose-applications-section">
+  <section class="product-section">
     {% include section-header.html title=site.data.purpose_driven_agent.applications.section_title %}
     
-    <div class="purpose-applications-grid">
+    <div class="product-grid">
       {% for app in site.data.purpose_driven_agent.applications.items %}
-        <div class="purpose-application-card">
-          <h3 class="purpose-application-title">{{ app.title }}</h3>
-          <p class="purpose-application-description">{{ app.description }}</p>
+        <div class="product-card">
+          <h3 class="product-card-title">{{ app.title }}</h3>
+          <p class="product-card-description">{{ app.description }}</p>
         </div>
       {% endfor %}
     </div>

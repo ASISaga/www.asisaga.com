@@ -6,9 +6,9 @@ title: Agent Operating System
 <!-- 
 Agent Operating System product page
 This page describes the Agent Operating System framework, concepts, and applications
-Uses Bootstrap components for responsive design and consistent styling
+Uses shared product page components for responsive design and consistent styling
 -->
-<div class="agent-os-container">
+<div class="product-container agent-os-container">
   <!-- Hero section with product introduction -->
   {% include hero.html 
     title=site.data.agent_operating_system.title 
@@ -16,22 +16,20 @@ Uses Bootstrap components for responsive design and consistent styling
   %}
 
   <!-- Concepts section with explanation -->
-  <section class="agent-os-concepts-section">
+  <section class="product-section product-section-light">
     {% include section-header.html 
       title=site.data.agent_operating_system.concepts.section_title 
       description=site.data.agent_operating_system.concepts.section_description
     %}
     
-    <div class="agent-os-concepts-container">
-      <div class="agent-os-concept-diagram">
-        <img src="{{ site.data.agent_operating_system.concepts.diagram_image | relative_url }}" alt="{{ site.data.agent_operating_system.concepts.diagram_alt }}" class="agent-os-diagram-image">
-      </div>
+    <div class="product-visual-container">
+      <img src="{{ site.data.agent_operating_system.concepts.diagram_image | relative_url }}" alt="{{ site.data.agent_operating_system.concepts.diagram_alt }}" class="product-image">
       
-      <div class="agent-os-key-concepts">
-        <h3 class="agent-os-concepts-subtitle">{{ site.data.agent_operating_system.concepts.subtitle }}</h3>
-        <ul class="agent-os-concept-list">
+      <div class="mt-4">
+        <h3 class="fw-bold mb-3">{{ site.data.agent_operating_system.concepts.subtitle }}</h3>
+        <ul class="product-list">
           {% for principle in site.data.agent_operating_system.concepts.principles %}
-          <li class="agent-os-concept-item"><strong>{{ principle.title }}:</strong> {{ principle.description }}</li>
+          <li class="product-list-item"><span class="product-list-highlight">{{ principle.title }}:</span> {{ principle.description }}</li>
           {% endfor %}
         </ul>
       </div>
@@ -39,61 +37,60 @@ Uses Bootstrap components for responsive design and consistent styling
   </section>
 
   <!-- Features section with cards -->
-  <section class="agent-os-features-section">
+  <section class="product-section">
     {% include section-header.html title=site.data.agent_operating_system.features.section_title %}
-    <div class="agent-os-features-grid">
+    <div class="product-grid">
       {% for feature in site.data.agent_operating_system.features.items %}
-      <div class="agent-os-feature-card">
-        <div class="agent-os-feature-icon">
+      <div class="product-card product-card-primary">
+        <div class="product-card-icon">
           <i class="{{ feature.icon }}"></i>
         </div>
-        <h3 class="agent-os-feature-title">{{ feature.title }}</h3>
-        <p class="agent-os-feature-description">{{ feature.description }}</p>
-        <ul class="agent-os-feature-benefits">
+        <h3 class="product-card-title">{{ feature.title }}</h3>
+        <p class="product-card-description">{{ feature.description }}</p>
+        <ul class="product-card-list">
           {% for benefit in feature.benefits %}
-          <li class="agent-os-benefit-item">{{ benefit }}</li>
+          <li class="product-card-list-item">{{ benefit }}</li>
           {% endfor %}
         </ul>
       </div>
       {% endfor %}
     </div>
   </section>
-
   <!-- Implementation section with code example -->
-  <section class="agent-os-implementation-section">
+  <section class="product-section product-section-light">
     {% include section-header.html 
       title=site.data.agent_operating_system.implementation.section_title
       description=site.data.agent_operating_system.implementation.section_description
     %}
     
-    <div class="agent-os-implementation-container">
-      <div class="agent-os-code-example">
-        <pre class="agent-os-code-block"><code class="language-{{ site.data.agent_operating_system.implementation.code_example.language }}">{{ site.data.agent_operating_system.implementation.code_example.code }}</code></pre>
+    <div class="product-code-container">
+      <div class="product-code-example">
+        <pre class="product-code-block"><code class="language-{{ site.data.agent_operating_system.implementation.code_example.language }}">{{ site.data.agent_operating_system.implementation.code_example.code }}</code></pre>
       </div>
     </div>
   </section>
 
   <!-- Use cases section -->
-  <section class="agent-os-use-cases-section">
+  <section class="product-section">
     {% include section-header.html title=site.data.agent_operating_system.applications.section_title %}
-    <div class="agent-os-use-cases-grid">
+    <div class="product-grid">
       {% for application in site.data.agent_operating_system.applications.items %}
-      <div class="agent-os-use-case-card">
-        <h3 class="agent-os-use-case-title">{{ application.title }}</h3>
-        <p>{{ application.description }}</p>
+      <div class="product-card">
+        <h3 class="product-card-title">{{ application.title }}</h3>
+        <p class="product-card-description">{{ application.description }}</p>
       </div>
       {% endfor %}
     </div>
   </section>
 
   <!-- Benefits section -->
-  <section class="agent-os-benefits-section">
+  <section class="product-section product-section-light">
     {% include section-header.html title=site.data.agent_operating_system.benefits.section_title %}
-    <div class="agent-os-benefits-container">
-      <ul class="agent-os-benefits-list">
+    <div class="product-list-container">
+      <ul class="product-list">
         {% for benefit in site.data.agent_operating_system.benefits.items %}
-        <li class="agent-os-benefits-item">
-          <span class="agent-os-benefit-highlight">{{ benefit.highlight }}:</span> {{ benefit.description }}
+        <li class="product-list-item">
+          <span class="product-list-highlight">{{ benefit.highlight }}:</span> {{ benefit.description }}
         </li>
         {% endfor %}
       </ul>

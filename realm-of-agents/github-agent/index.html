@@ -6,9 +6,9 @@ title: GitHub Agent
 <!-- 
 GitHub Agent product page
 This page showcases the GitHub Agent product features, benefits, and use cases
-Uses Bootstrap components for responsive design and consistent styling
+Uses shared product page components for responsive design and consistent styling
 -->
-<div class="github-agent-container">
+<div class="product-container github-agent-container">
   <!-- Hero section with product introduction -->
   {% include hero.html 
     title=site.data.github_agent.title 
@@ -16,19 +16,19 @@ Uses Bootstrap components for responsive design and consistent styling
   %}
 
   <!-- Key features section with feature cards -->
-  <section class="github-features-section">
+  <section class="product-section">
     {% include section-header.html title=site.data.github_agent.features.section_title %}
-    <div class="github-features-grid">
+    <div class="product-grid">
       {% for feature in site.data.github_agent.features.items %}
-      <div class="github-feature-card">
-        <div class="github-feature-icon">
+      <div class="product-card product-card-accent">
+        <div class="product-card-icon">
           <i class="{{ feature.icon }}"></i>
         </div>
-        <h3 class="github-feature-title">{{ feature.title }}</h3>
-        <p class="github-feature-description">{{ feature.description }}</p>
-        <ul class="github-feature-list">
+        <h3 class="product-card-title">{{ feature.title }}</h3>
+        <p class="product-card-description">{{ feature.description }}</p>
+        <ul class="product-card-list">
           {% for item in feature.list_items %}
-          <li class="github-feature-item">{{ item }}</li>
+          <li class="product-card-list-item">{{ item }}</li>
           {% endfor %}
         </ul>
       </div>
@@ -37,28 +37,28 @@ Uses Bootstrap components for responsive design and consistent styling
   </section>
 
   <!-- Technical implementation section with code sample -->
-  <section class="github-technical-section">
+  <section class="product-section product-section-light">
     {% include section-header.html 
       title=site.data.github_agent.technical.section_title 
       description=site.data.github_agent.technical.section_description
     %}
-    <div class="github-technical-container">
+    <div class="product-code-container">
       <!-- Code example in a styled code block -->
-      <div class="github-code-example">
-        <h3 class="github-code-title">{{ site.data.github_agent.technical.code_example.title }}</h3>
-        <pre class="github-code-block"><code class="language-{{ site.data.github_agent.technical.code_example.language }}">{{ site.data.github_agent.technical.code_example.code }}</code></pre>
+      <div class="product-code-example">
+        <h3 class="fw-bold mb-3">{{ site.data.github_agent.technical.code_example.title }}</h3>
+        <pre class="product-code-block"><code class="language-{{ site.data.github_agent.technical.code_example.language }}">{{ site.data.github_agent.technical.code_example.code }}</code></pre>
       </div>
     </div>
   </section>
 
   <!-- Use cases section -->
-  <section class="github-use-cases-section">
+  <section class="product-section">
     {% include section-header.html title=site.data.github_agent.use_cases.section_title %}
-    <div class="github-use-cases-grid">
+    <div class="product-grid">
       {% for use_case in site.data.github_agent.use_cases.items %}
-      <div class="github-use-case-card">
-        <h3 class="github-use-case-title">{{ use_case.title }}</h3>
-        <p class="github-use-case-description">{{ use_case.description }}</p>
+      <div class="product-card">
+        <h3 class="product-card-title">{{ use_case.title }}</h3>
+        <p class="product-card-description">{{ use_case.description }}</p>
       </div>
       {% endfor %}
     </div>
