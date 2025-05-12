@@ -92,3 +92,11 @@
 .transition {
   transition: all 0.3s ease !important;
 }
+
+// -----------------------------------------
+// Custom background gradient utilities
+// -----------------------------------------
+// These extend Bootstrap's background utilities with custom gradients
+.bg-gradient-primary-light {
+  background: linear-gradient(135deg, $primary-light, $primary) !important;
+}

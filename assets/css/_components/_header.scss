@@ -1,9 +1,8 @@
 // Site Header - Uses Bootstrap utility classes with minimal custom CSS
-.site-header {
-  // Core navbar structure
+.site-header {  // Core navbar structure
   @extend .navbar;
   @extend .navbar-expand-lg;
-  @extend .bg-header; // Bootstrap customized via variables in _variables.scss
+  @extend .bg-light; // Using our consolidated light background color
   @extend .navbar-dark; // Use Bootstrap's dark navbar styling
   @extend .rounded-bottom;
   @extend .py-3;
@@ -80,10 +79,9 @@
     @extend .navbar-collapse;
     @extend .justify-content-end;
 
-    // Ensure consistent styling when collapsed/expanded
-    &.collapsing,
+    // Ensure consistent styling when collapsed/expanded    &.collapsing,
     &.show {
-      @extend .bg-header;
+      @extend .bg-light; // Using our consolidated light background color
       @extend .mt-2; // Add spacing when expanded on mobile
       @extend .p-2; // Add padding when expanded on mobile
       @extend .rounded; // Rounded corners when expanded

@@ -1,71 +1,45 @@
 // filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\_base\_colors.scss
 // Core color variables for ASI Saga website
-// This file contains all color definitions used throughout the site
+// Streamlined color system with reduced color variations
 
 // ----------------------------------------
-// Primary Colors
+// Core Colors - Primary palette
 // ----------------------------------------
 $primary: #0d6efd;
 $primary-light: lighten($primary, 15%);
 $primary-dark: darken($primary, 10%);
 
 // ----------------------------------------
-// Secondary Colors
+// Secondary and Accent - Limited palette
 // ----------------------------------------
 $secondary: #6c757d;
-$secondary-light: lighten($secondary, 15%);
-$secondary-dark: darken($secondary, 10%);
+$accent: #ff5722; // Single accent color
 
 // ----------------------------------------
-// Accent Colors
+// Neutral Colors - For text and backgrounds
 // ----------------------------------------
-$accent: #ff5722; // Example accent color
-$accent-light: lighten($accent, 15%);
-$accent-dark: darken($accent, 10%);
-
-// ----------------------------------------
-// Brand Colors
-// ----------------------------------------
-$brand-blue: #1e88e5;
-$brand-red: #e53935;
-$brand-green: #43a047;
-
-// ----------------------------------------
-// Text Colors
-// ----------------------------------------
-$text-primary: #212529;
-$text-secondary: #6c757d;
-$text-muted: #6c757d;
-$text-light: #f8f9fa;
-$text-dark: #212529;
 $white: #fff;
+$light: #f8f9fa;    // Consolidated from bg-light and section-bg-light
+$dark: #212529;     // Consolidated from bg-dark and section-bg-dark
+$gray: #dee2e6;     // Consolidated border color
 
 // ----------------------------------------
-// Background Colors
+// Semantic Colors - Functional usage
 // ----------------------------------------
-$bg-light: #f8f9fa;
-$bg-dark: #212529;
-$header-bg: #ffffff;
-$header-color: $text-dark; // Added header text color
-
-// ----------------------------------------
-// Section Background Colors
-// ----------------------------------------
-$section-bg-light: #f8f9fa;
-$section-bg-dark: #212529;
-$section-bg-primary: #e9f2ff;
-$section-bg-secondary: #f1f1f1;
-
-// ----------------------------------------
-// Border Colors
-// ----------------------------------------
-$border-color: #dee2e6;
-
-// ----------------------------------------
-// Shadow Colors
-// ----------------------------------------
+$text-color: $dark;
+$text-muted: $secondary;
+$text-light: $light;
+$bg-light: $light;  // Using consolidated color
+$bg-dark: $dark;    // Using consolidated color
+$border-color: $gray;
 $shadow-color: rgba(0, 0, 0, 0.15);
-$box-shadow-color: $shadow-color;
+
+// ----------------------------------------
+// Component-specific colors
+// Only keep truly unique colors that can't use core palette
+// ----------------------------------------
+$section-bg-primary: #e9f2ff;  // Unique, keep
+$section-bg-secondary: #f1f1f1; // Could potentially use $light instead
 
 // Box shadows - defining here to ensure $shadow-color is available
 $box-shadow: 0 0.5rem 1rem $shadow-color;
@@ -73,68 +47,46 @@ $box-shadow: 0 0.5rem 1rem $shadow-color;
 // ----------------------------------------
 // Utility Class Color Map
 // ----------------------------------------
-// Add any custom colors to the Bootstrap theme-colors map
-// This will generate all the necessary Bootstrap utilities
+// Simplified theme colors map for Bootstrap
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "accent": $accent,
-  "light": $bg-light,
-  "dark": $bg-dark
+  "light": $light,
+  "dark": $dark
 );
 
 // ----------------------------------------
-// Dark Mode Colors
+// Dark Mode Colors - Simplified
 // ----------------------------------------
 $dark-mode-bg: #121212;
-$dark-mode-text: #f8f9fa;
+$dark-mode-text: $light;
 $dark-mode-border: #495057;
-$dark-mode-section-bg-light: #343a40;
-$dark-mode-section-bg-dark: #212529;
 
 // -----------------------------------------
-// Custom text colors - Only include what's not in Bootstrap
-// Use Bootstrap's .text-primary, .text-white, .text-muted, etc. when possible
+// Custom text colors - REDUCED to essential only
 // -----------------------------------------
 // For 'accent' color (which isn't in default Bootstrap)
 .text-accent { color: $accent !important; }
 
-// Specific transparent white variations not in Bootstrap
-.text-white-70 { color: rgba(255, 255, 255, 0.7) !important; }
-.text-white-80 { color: rgba(255, 255, 255, 0.8) !important; }
-
-// Use these custom classes only when Bootstrap doesn't have an equivalent
-.text-primary-light-emphasis { color: lighten($primary, 48%) !important; }
-
-// Consider standardizing on Bootstrap's .text-white-50 instead of these custom ones:
-.text-footer-link { color: rgba(255, 255, 255, 0.8) !important; }
+// Single white transparency class (instead of multiple)
+.text-white-75 { color: rgba(255, 255, 255, 0.75) !important; }
 
 // -----------------------------------------
-// Custom background colors - Only include what's not in Bootstrap
-// Use Bootstrap's .bg-primary, .bg-white, .bg-light, etc. when possible
+// Custom background colors - REDUCED
 // -----------------------------------------
 // For 'accent' color (which isn't in default Bootstrap)
 .bg-accent { background-color: $accent !important; }
 
-// For the header background when it needs to be specific
-.bg-header { background-color: $header-bg !important; }
-.bg-header-darken-5 { background-color: darken($header-bg, 5%) !important; }
-
 // -----------------------------------------
-// Custom background gradients
+// Custom background gradients - REDUCED to two key gradients
 // -----------------------------------------
-.bg-gradient-hero {
-  background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
+// Primary gradient - can be used for heroes, CTAs, and feature sections
+.bg-gradient-primary {
+  background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%) !important;
 }
 
-.bg-gradient-cta {
-  background: linear-gradient(135deg, lighten($info, 40%) 0%, $white 100%);
-}
-
-.bg-gradient-secondary-alt {
-  background: linear-gradient(135deg, lighten($secondary, 40%) 0%, $white 100%);
-}
-
-.bg-gradient-accent-alt {
-  background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%);
+// Accent gradient - for attention-grabbing elements
+.bg-gradient-accent {
+  background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%) !important;
 }

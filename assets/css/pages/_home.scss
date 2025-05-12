@@ -3,18 +3,16 @@
 
 .home-container {
   @extend .w-100;
-  
-  // Hero section
+    // Hero section
   .hero-section {
     @include flex-center; // Assumed custom mixin
     @include box-shadow-md; // Assumed custom mixin
-    @extend .bg-gradient-hero; // New custom utility class for background
+    @extend .bg-gradient-primary; // Using our consolidated gradient class
     @extend .rounded;
     @extend .text-center;
     @extend .mb-5;
     @extend .py-5; // Bootstrap padding (approx. for 4rem or 3rem vertical)
     @extend .px-3; // Bootstrap padding (approx. for 1rem horizontal)
-    
     .hero-content {
       @extend .mx-auto;
       @extend .mw-768; // New custom utility class for max-width
@@ -60,12 +58,11 @@
       }
     }
   }
-  
-  // Call to action section
+    // Call to action section
   .cta-section {
     @include flex-center; // Assumed custom mixin
     @include box-shadow-sm; // Assumed custom mixin
-    @extend .bg-gradient-cta; // New custom utility class for background
+    @extend .bg-gradient-accent; // Using our consolidated accent gradient
     @extend .rounded;
     @extend .text-center;
     @extend .mb-5;

@@ -2,39 +2,32 @@
 // Note: All color variables have been moved to _colors.scss
 
 // CSS Variables for consistent theming throughout the site
+// Simplified to use our reduced color palette
 :root {
-  // Primary color scheme
+  // Primary color 
   --color-primary: #{$primary};
   --color-primary-light: #{$primary-light};
   --color-primary-dark: #{$primary-dark};
   
-  // Secondary color scheme
+  // Secondary and Accent colors
   --color-secondary: #{$secondary};
-  --color-secondary-light: #{$secondary-light};
-  --color-secondary-dark: #{$secondary-dark};
+  --color-accent: #{$accent};
   
-  // Brand colors (custom to this project)
-  --color-brand-blue: #{$brand-blue};
-  --color-brand-red: #{$brand-red};
-  --color-brand-green: #{$brand-green};
+  // Neutral colors
+  --color-light: #{$light};
+  --color-dark: #{$dark};
   
   // Section backgrounds
-  --color-section-bg-light: #{$section-bg-light};
-  --color-section-bg-dark: #{$section-bg-dark};
   --color-section-bg-primary: #{$section-bg-primary};
   --color-section-bg-secondary: #{$section-bg-secondary};
 }
 
-// Dark mode theme variables
+// Dark mode theme variables - Simplified
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #{$dark-mode-bg};
     --color-text: #{$dark-mode-text};
     --color-border: #{$dark-mode-border};
-    
-    // Section backgrounds for dark mode
-    --color-section-bg-light: #{$dark-mode-section-bg-light};
-    --color-section-bg-dark: #{$dark-mode-section-bg-dark};
   }
   
   body {
@@ -43,15 +36,15 @@
   }
 }
 
-// Consistent theme styling for sections
+// Consistent theme styling for sections - Simplified
 .section {
   &.section-light {
-    background-color: var(--color-section-bg-light);
+    background-color: var(--color-light);
   }
   
   &.section-dark {
-    background-color: var(--color-section-bg-dark);
-    color: $text-light;
+    background-color: var(--color-dark);
+    color: $light;
   }
   
   &.section-primary {
@@ -63,16 +56,8 @@
   }
 }
 
-// Gradient backgrounds
-.gradient-primary {
-  background: linear-gradient(135deg, $primary, $primary-dark);
-  color: $text-light;
-}
-
-.gradient-secondary {
-  background: linear-gradient(135deg, $secondary, $secondary-dark);
-  color: $text-light;
-}
+// Simplified gradient backgrounds - moved to utilities
+// All gradient classes are now defined in _utilities.scss for consistency
 
 /* 
   Theme Usage Guidelines:
