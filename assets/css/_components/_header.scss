@@ -81,7 +81,7 @@
 
     // Ensure consistent styling when collapsed/expanded    &.collapsing,
     &.show {
-      @extend .dark; // Using our consolidated dark background color
+      @extend .bg-dark; // Using Bootstrap's dark background utility
       @extend .mt-2; // Add spacing when expanded on mobile
       @extend .p-2; // Add padding when expanded on mobile
       @extend .rounded; // Rounded corners when expanded
