@@ -131,7 +131,7 @@
 
           &::before {
             content: "\2713"; // Checkmark character
-            @extend .text-success;
+            color: var(--bs-success); // Using Bootstrap variable instead of extending class
             font-weight: bold;
             @extend .position-absolute;
             left: 0;
