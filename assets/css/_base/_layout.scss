@@ -2,7 +2,7 @@
 
 .site-main {
   @extend .w-100;
-  @extend .min-vh-50; // Using our custom utility class
+  @extend .min-vh-50; // Custom utility for min-height
   @extend .py-3;      // Bootstrap padding for 1rem top/bottom
 
   .site-content {
