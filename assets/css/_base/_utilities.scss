@@ -13,10 +13,15 @@
   - Borders: .border, .border-* (.border-primary, .border-1, etc.)
   - Sizing: .w-*, .h-* (.w-100, .h-auto, etc.)
   - Display: .d-* (.d-block, .d-none, etc.)
-  - Max-width: .mw-100, .container, .container-*
-  - Min-height: .min-vh-100
+  - Max-width: .mw-100, .container, .container-*  - Min-height: .min-vh-100
   - Ratio: .ratio, .ratio-16x9
 */
+
+// -----------------------------------------
+// Custom viewport height utilities that Bootstrap doesn't provide
+.min-vh-50 {
+  min-height: 50vh !important;
+}
 
 // -----------------------------------------
 // Custom button variants (for accent color not in Bootstrap)
