@@ -43,6 +43,11 @@
   background: linear-gradient(180deg, $accent, darken($accent, 10%)) !important;
 }
 
+// Custom background colors (non-gradient)
+.bg-primary-light {
+  background-color: $primary-light !important;
+}
+
 // Special gradients for specific sections
 .bg-gradient-hero {
   background: linear-gradient(135deg, lighten($primary, 25%), $white) !important;
@@ -113,6 +118,10 @@
 // Only include truly custom sizes that Bootstrap doesn't provide
 .mw-768 {
   max-width: 768px !important;
+}
+
+.mw-800 {
+  max-width: 800px !important;
 }
 
 // -----------------------------------------
