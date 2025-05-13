@@ -13,6 +13,13 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+# Exclude specific directories and files from being processed by Jekyll
+exclude:
+  - docs/
+  - LICENSE
+  - README.md
+  - website_structure.json
+
 # The defaults section allows you to set default values for certain variables
   # The scope key defines the default values for specific types of files
   - scope:
