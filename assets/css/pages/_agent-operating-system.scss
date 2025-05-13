@@ -1,0 +1,28 @@
+// filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\pages\_agent-operating-system.scss
+// Agent Operating System page specific styles
+// Most styles are now handled by the shared _product-page.scss component
+
+.agent-os-container {
+  // Only include styles that are specific to this product page
+  // and not covered by the shared product page component
+
+  // Override product-card hover effect for OS-specific style
+  .product-card {
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    // Custom checkmark for feature benefits
+    .product-card-list-item {
+      position: relative;
+      padding-left: 1.5rem;
+
+      &::before {
+        content: "\2713"; // Checkmark character
+        color: var(--color-primary);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

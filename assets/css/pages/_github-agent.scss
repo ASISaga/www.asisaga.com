@@ -1,0 +1,23 @@
+// filepath: c:\Development\RealmOfAgents\asisaga.github.io\assets\css\pages\_github-agent.scss
+// GitHub Agent page specific styles
+// Most styles are now handled by the shared _product-page.scss component
+
+.github-agent-container {
+  // Only include styles that are specific to this product page
+  // and not covered by the shared product page component
+
+  // GitHub-specific styling
+  .product-card {
+    // Special hover effect unique to GitHub agent
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  // GitHub-specific styling for code blocks
+  .product-code-example {
+    pre {
+      border-left: 4px solid var(--color-accent);
+    }
+  }
+}

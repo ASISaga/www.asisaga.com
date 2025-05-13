@@ -13,15 +13,10 @@
   - Borders: .border, .border-* (.border-primary, .border-1, etc.)
   - Sizing: .w-*, .h-* (.w-100, .h-auto, etc.)
   - Display: .d-* (.d-block, .d-none, etc.)
-  - Max-width: .mw-100, .container, .container-*  - Min-height: .min-vh-100
+  - Max-width: .mw-100, .container, .container-*
+  - Min-height: .min-vh-100
   - Ratio: .ratio, .ratio-16x9
 */
-
-// -----------------------------------------
-// Custom viewport height utilities that Bootstrap doesn't provide
-.min-vh-50 {
-  min-height: 50vh !important;
-}
 
 // -----------------------------------------
 // Custom button variants (for accent color not in Bootstrap)
@@ -86,30 +81,9 @@
   max-width: 768px !important;
 }
 
-.mw-800 {
-  max-width: 800px !important;
-}
-
 // -----------------------------------------
 // Transition utilities
 // -----------------------------------------
 .transition {
   transition: all 0.3s ease !important;
-}
-
-// -----------------------------------------
-// Custom background utilities
-// -----------------------------------------
-// These extend Bootstrap's background utilities with custom colors
-
-.bg-primary-light {
-  background-color: $primary-light !important;
-}
-
-// -----------------------------------------
-// Custom background gradient utilities
-// -----------------------------------------
-// These extend Bootstrap's background utilities with custom gradients
-.bg-gradient-primary-light {
-  background: linear-gradient(135deg, $primary-light, $primary) !important;
 }
