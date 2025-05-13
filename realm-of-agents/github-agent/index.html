@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: product
 title: GitHub Agent
+description: site.data.github_agent.description
+product_class: github-agent-container
 ---
 
 <!-- 
@@ -8,69 +10,40 @@ GitHub Agent product page
 This page showcases the GitHub Agent product features, benefits, and use cases
 Uses shared product page components for responsive design and consistent styling
 -->
-<div class="product-container github-agent-container">
-  <!-- Hero section with product introduction -->
-  {% include hero.html 
-    title=site.data.github_agent.title 
-    description=site.data.github_agent.description 
+
+<!-- Key features section with feature cards -->
+{% capture features_content %}
+  {% include section-header.html title=site.data.github_agent.features.section_title %}
+  {% include product-feature-grid.html 
+    items=site.data.github_agent.features.items
+    card_style="accent"
   %}
+{% endcapture %}
 
-  <!-- Key features section with feature cards -->
-  <section class="product-section">
-    {% include section-header.html title=site.data.github_agent.features.section_title %}
-    <div class="product-grid">
-      {% for feature in site.data.github_agent.features.items %}
-      <div class="product-card product-card-accent">
-        <div class="product-card-icon">
-          <i class="{{ feature.icon }}"></i>
-        </div>
-        <h3 class="product-card-title">{{ feature.title }}</h3>
-        <p class="product-card-description">{{ feature.description }}</p>
-        <ul class="product-card-list">
-          {% for item in feature.list_items %}
-          <li class="product-card-list-item">{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
+{% include product-section-container.html
+  title=site.data.github_agent.features.section_title
+  content=features_content
+%}
 
-  <!-- Technical implementation section with code sample -->
-  <section class="product-section product-section-light">
-    {% include section-header.html 
-      title=site.data.github_agent.technical.section_title 
-      description=site.data.github_agent.technical.section_description
-    %}
-    <div class="product-code-container">
-      <!-- Code example in a styled code block -->
-      <div class="product-code-example">
-        <h3 class="fw-bold mb-3">{{ site.data.github_agent.technical.code_example.title }}</h3>
-        <pre class="product-code-block"><code class="language-{{ site.data.github_agent.technical.code_example.language }}">{{ site.data.github_agent.technical.code_example.code }}</code></pre>
-      </div>
-    </div>
-  </section>
+<!-- Technical implementation section with code sample -->
+{% include product-code-example.html 
+  section_title=site.data.github_agent.technical.section_title
+  section_description=site.data.github_agent.technical.section_description
+  title=site.data.github_agent.technical.code_example.title
+  code_example=site.data.github_agent.technical.code_example
+%}
 
-  <!-- Use cases section -->
-  <section class="product-section">
-    {% include section-header.html title=site.data.github_agent.use_cases.section_title %}
-    <div class="product-grid">
-      {% for use_case in site.data.github_agent.use_cases.items %}
-      <div class="product-card">
-        <h3 class="product-card-title">{{ use_case.title }}</h3>
-        <p class="product-card-description">{{ use_case.description }}</p>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <!-- Call to action section -->
-  {% include cta.html 
-    title=site.data.github_agent.cta.title
-    description=site.data.github_agent.cta.description
-    button_text=site.data.github_agent.cta.button_text
-    button_url=site.data.github_agent.cta.button_url
-    secondary_button_text=site.data.github_agent.cta.secondary_button_text
-    secondary_button_url=site.data.github_agent.cta.secondary_button_url
-  %}
-</div>
+<!-- Use cases section -->
+{% include product-applications.html 
+  section_title=site.data.github_agent.use_cases.section_title
+  items=site.data.github_agent.use_cases.items
+%}
+<!-- Call to action section -->
+{% include cta.html 
+  title=site.data.github_agent.cta.title
+  description=site.data.github_agent.cta.description
+  button_text=site.data.github_agent.cta.button_text
+  button_url=site.data.github_agent.cta.button_url
+  secondary_button_text=site.data.github_agent.cta.secondary_button_text
+  secondary_button_url=site.data.github_agent.cta.secondary_button_url
+%}

@@ -1,5 +1,16 @@
 // Shared product page component styles
-// This file contains reusable styles for product pages to reduce duplication
+// This file contains legacy styles to maintain backward compatibility
+// New product pages should use the component-based approach with:
+// - _product-layout.scss (base container)
+// - _product-section-container.scss (section structure)
+// - _product-feature-grid.scss (feature cards)
+// - _product-applications.scss (applications/use cases)
+// - _product-benefits-list.scss (benefits list)
+// - _product-code-example.scss (code examples)
+// - _product-visual.scss (diagrams/images)
+
+// Note: This file will be deprecated in future updates
+// All product pages should migrate to the new component system
 
 .product-container {
   // Common styling for all product containers
@@ -7,7 +18,7 @@
   
   // Hero section is handled by _hero.scss
 
-  // Generic section styling
+  // Generic section styling (now in _product-section-container.scss)
   .product-section {
     @extend .py-5; // Bootstrap padding
     
@@ -29,8 +40,7 @@
       @extend .bg-gradient-accent;
     }
   }
-
-  // Features/Concepts grid
+  // Features/Concepts grid (now in _product-feature-grid.scss)
   .product-grid {
     @extend .container;
     @extend .row;
@@ -83,8 +93,7 @@
       }
     }
   }
-
-  // Visual content container (diagrams, images)
+  // Visual content container (now in _product-visual.scss)
   .product-visual-container {
     @extend .container;
     @extend .text-center;
@@ -97,7 +106,7 @@
     }
   }
   
-  // Implementation/code example container
+  // Implementation/code example container (now in _product-code-example.scss)
   .product-code-container {
     @extend .container;
     @extend .py-3;
@@ -116,7 +125,7 @@
     }
   }
   
-  // Benefits/List container
+  // Benefits/List container (now in _product-benefits-list.scss)
   .product-list-container {
     @extend .container;
     

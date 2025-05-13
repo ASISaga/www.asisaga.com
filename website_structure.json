@@ -3,6 +3,32 @@
   "type": "directory",
   "description": "Root of the Jekyll site",
   "children": [
+    {      "name": "docs",
+      "type": "directory",
+      "description": "Documentation files",
+      "children": [
+        {
+          "name": "adding-product-pages.md",
+          "type": "file",
+          "description": "Guide to adding new product pages to the website"
+        },
+        {
+          "name": "product-components.md",
+          "type": "file",
+          "description": "Documentation for product page components"
+        },
+        {
+          "name": "scss-structure.md",
+          "type": "file",
+          "description": "Documentation for SCSS architecture and organization"
+        },
+        {
+          "name": "using-components.md",
+          "type": "file",
+          "description": "Guide to using Jekyll components with examples"
+        }
+      ]
+    },
     {
       "name": "_config.yml",
       "type": "file",
@@ -60,8 +86,7 @@
         }
       ]
     },
-    {
-      "name": "_includes",
+    {      "name": "_includes",
       "type": "directory",
       "description": "Reusable UI components",
       "children": [
@@ -93,6 +118,42 @@
           "name": "header.html",
           "type": "file",
           "description": "Header component",
+          "children": []
+        },
+        {
+          "name": "product-applications.html",
+          "type": "file",
+          "description": "Product applications/use cases component",
+          "children": []
+        },
+        {
+          "name": "product-benefits-list.html",
+          "type": "file",
+          "description": "Product benefits list component",
+          "children": []
+        },
+        {
+          "name": "product-code-example.html",
+          "type": "file",
+          "description": "Product code example component",
+          "children": []
+        },
+        {
+          "name": "product-feature-grid.html",
+          "type": "file",
+          "description": "Product feature grid component",
+          "children": []
+        },
+        {
+          "name": "product-section-container.html",
+          "type": "file",
+          "description": "Product section container component",
+          "children": []
+        },
+        {
+          "name": "product-visual.html",
+          "type": "file",
+          "description": "Product visual/diagram component",
           "children": []
         },
         {
@@ -132,8 +193,7 @@
           "children": []
         }
       ]
-    },
-    {
+    },    {
       "name": "_layouts",
       "type": "directory",
       "description": "Layout templates for Jekyll",
@@ -142,6 +202,11 @@
           "name": "default.html",
           "type": "file",
           "description": "Default layout template"
+        },
+        {
+          "name": "product.html",
+          "type": "file",
+          "description": "Product page layout template"
         }
       ]
     },
@@ -217,8 +282,7 @@
                 }
               ]
             },
-            {
-              "name": "_components",
+            {              "name": "_components",
               "type": "directory",
               "description": "Component-specific styles",
               "children": [
@@ -258,9 +322,49 @@
                   "description": "Navigation bar styles"
                 },
                 {
+                  "name": "_product-applications.scss",
+                  "type": "file",
+                  "description": "Product applications/use cases component styles"
+                },
+                {
+                  "name": "_product-benefits-list.scss",
+                  "type": "file",
+                  "description": "Product benefits list component styles"
+                },
+                {
                   "name": "_product-card.scss",
                   "type": "file",
                   "description": "Product card component styles"
+                },
+                {
+                  "name": "_product-code-example.scss",
+                  "type": "file",
+                  "description": "Product code example component styles"
+                },
+                {
+                  "name": "_product-feature-grid.scss",
+                  "type": "file",
+                  "description": "Product feature grid component styles"
+                },
+                {
+                  "name": "_product-layout.scss",
+                  "type": "file",
+                  "description": "Product layout base styles"
+                },
+                {
+                  "name": "_product-page.scss",
+                  "type": "file",
+                  "description": "Legacy product page styles (for backward compatibility)"
+                },
+                {
+                  "name": "_product-section-container.scss",
+                  "type": "file",
+                  "description": "Product section container component styles"
+                },
+                {
+                  "name": "_product-visual.scss",
+                  "type": "file",
+                  "description": "Product visual/diagram component styles"
                 },
                 {
                   "name": "_section-header.scss",

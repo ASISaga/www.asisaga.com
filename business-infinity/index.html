@@ -1,6 +1,10 @@
 ---
-layout: default
+layout: product
 title: Business Infinity
+description: site.data.business_infinity.description
+product_class: business-infinity-container
+button_text: "Explore Features"
+button_url: "#features"
 ---
 
 <!-- 
@@ -8,50 +12,39 @@ Business Infinity product page
 This page introduces the Business Infinity product, its features, benefits and use cases
 Uses Bootstrap's responsive grid system and components for layout and design
 -->
-<div class="business-infinity-container">
-  <!-- Hero section with product introduction -->
-  {% include hero.html 
-    title=site.data.business_infinity.title 
-    description=site.data.business_infinity.description 
-    button_text="Explore Features" 
-    button_url="#features" 
+
+<!-- Key features section with feature cards -->
+<section id="features" class="product-section">
+  {% include section-header.html title=site.data.business_infinity.features.section_title %}
+  {% include product-feature-grid.html 
+    items=site.data.business_infinity.features.items
   %}
+</section>
 
-  <!-- Key features section with feature cards -->
-  <section id="features" class="business-features-section">
-    {% include section-header.html title=site.data.business_infinity.features.section_title %}
-    
-    {% include feature-grid.html 
-      items=site.data.business_infinity.features.items
-    %}
-  </section>
+<!-- Use cases section with tabs for different business segments -->
+<section class="product-section business-use-cases-section">
+  {% include section-header.html title=site.data.business_infinity.use_cases.section_title %}
+  <div class="business-use-cases-nav">
+    <!-- Tab navigation for different user segments -->
+    <ul class="business-tabs-list" role="tablist">
+      {% for segment in site.data.business_infinity.use_cases.segments %}
+      <li class="business-tab-item">
+        <a href="{{ segment.url }}" class="business-tab-link">{{ segment.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
-  <!-- Use cases section with tabs for different business segments -->
-  <section class="business-use-cases-section">
-    {% include section-header.html title=site.data.business_infinity.use_cases.section_title %}
-    <div class="business-use-cases-nav">
-      <!-- Tab navigation for different user segments -->
-      <ul class="business-tabs-list" role="tablist">
-        {% for segment in site.data.business_infinity.use_cases.segments %}
-        <li class="business-tab-item">
-          <a href="{{ segment.url }}" class="business-tab-link">{{ segment.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-
-  <!-- Testimonials section -->
-  {% include testimonial.html 
-    title=site.data.business_infinity.testimonials.section_title
-    testimonials=site.data.business_infinity.testimonials.items
-  %}
-
-  <!-- Contact section -->
-  {% include cta.html 
-    title=site.data.business_infinity.cta.title
-    description=site.data.business_infinity.cta.description
-    button_text=site.data.business_infinity.cta.button_text
-    button_url=site.data.business_infinity.cta.button_url
-  %}
-</div>
+<!-- Testimonials section -->
+{% include testimonial.html 
+  title=site.data.business_infinity.testimonials.section_title
+  testimonials=site.data.business_infinity.testimonials.items
+%}
+<!-- Contact section -->
+{% include cta.html 
+  title=site.data.business_infinity.cta.title
+  description=site.data.business_infinity.cta.description
+  button_text=site.data.business_infinity.cta.button_text
+  button_url=site.data.business_infinity.cta.button_url
+%}

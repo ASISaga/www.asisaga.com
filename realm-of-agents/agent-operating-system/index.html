@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: product
 title: Agent Operating System
+description: site.data.agent_operating_system.description
+product_class: agent-os-container
 ---
 
 <!-- 
@@ -8,102 +10,58 @@ Agent Operating System product page
 This page describes the Agent Operating System framework, concepts, and applications
 Uses shared product page components for responsive design and consistent styling
 -->
-<div class="product-container agent-os-container">
-  <!-- Hero section with product introduction -->
-  {% include hero.html 
-    title=site.data.agent_operating_system.title 
-    description=site.data.agent_operating_system.description 
+
+<!-- Concepts section with explanation -->
+{% capture additional_content %}
+<h3 class="fw-bold mb-3">{{ site.data.agent_operating_system.concepts.subtitle }}</h3>
+<ul class="product-list">
+  {% for principle in site.data.agent_operating_system.concepts.principles %}
+  <li class="product-list-item"><span class="product-list-highlight">{{ principle.title }}:</span> {{ principle.description }}</li>
+  {% endfor %}
+</ul>
+{% endcapture %}
+
+{% include product-visual.html
+  image_url=site.data.agent_operating_system.concepts.diagram_image
+  image_alt=site.data.agent_operating_system.concepts.diagram_alt
+  section_title=site.data.agent_operating_system.concepts.section_title
+  section_description=site.data.agent_operating_system.concepts.section_description
+  additional_content=additional_content
+%}
+
+<!-- Features section with cards -->
+<section class="product-section">
+  {% include section-header.html title=site.data.agent_operating_system.features.section_title %}
+  {% include product-feature-grid.html
+    items=site.data.agent_operating_system.features.items
+    card_style="primary"
   %}
+</section>
 
-  <!-- Concepts section with explanation -->
-  <section class="product-section product-section-light">
-    {% include section-header.html 
-      title=site.data.agent_operating_system.concepts.section_title 
-      description=site.data.agent_operating_system.concepts.section_description
-    %}
-    
-    <div class="product-visual-container">
-      <img src="{{ site.data.agent_operating_system.concepts.diagram_image | relative_url }}" alt="{{ site.data.agent_operating_system.concepts.diagram_alt }}" class="product-image">
-      
-      <div class="mt-4">
-        <h3 class="fw-bold mb-3">{{ site.data.agent_operating_system.concepts.subtitle }}</h3>
-        <ul class="product-list">
-          {% for principle in site.data.agent_operating_system.concepts.principles %}
-          <li class="product-list-item"><span class="product-list-highlight">{{ principle.title }}:</span> {{ principle.description }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </section>
+<!-- Implementation section with code example -->
+{% include product-code-example.html
+  section_title=site.data.agent_operating_system.implementation.section_title
+  section_description=site.data.agent_operating_system.implementation.section_description
+  code_example=site.data.agent_operating_system.implementation.code_example
+%}
 
-  <!-- Features section with cards -->
-  <section class="product-section">
-    {% include section-header.html title=site.data.agent_operating_system.features.section_title %}
-    <div class="product-grid">
-      {% for feature in site.data.agent_operating_system.features.items %}
-      <div class="product-card product-card-primary">
-        <div class="product-card-icon">
-          <i class="{{ feature.icon }}"></i>
-        </div>
-        <h3 class="product-card-title">{{ feature.title }}</h3>
-        <p class="product-card-description">{{ feature.description }}</p>
-        <ul class="product-card-list">
-          {% for benefit in feature.benefits %}
-          <li class="product-card-list-item">{{ benefit }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-  <!-- Implementation section with code example -->
-  <section class="product-section product-section-light">
-    {% include section-header.html 
-      title=site.data.agent_operating_system.implementation.section_title
-      description=site.data.agent_operating_system.implementation.section_description
-    %}
-    
-    <div class="product-code-container">
-      <div class="product-code-example">
-        <pre class="product-code-block"><code class="language-{{ site.data.agent_operating_system.implementation.code_example.language }}">{{ site.data.agent_operating_system.implementation.code_example.code }}</code></pre>
-      </div>
-    </div>
-  </section>
+<!-- Use cases section -->
+{% include product-applications.html
+  section_title=site.data.agent_operating_system.applications.section_title
+  items=site.data.agent_operating_system.applications.items
+%}
 
-  <!-- Use cases section -->
-  <section class="product-section">
-    {% include section-header.html title=site.data.agent_operating_system.applications.section_title %}
-    <div class="product-grid">
-      {% for application in site.data.agent_operating_system.applications.items %}
-      <div class="product-card">
-        <h3 class="product-card-title">{{ application.title }}</h3>
-        <p class="product-card-description">{{ application.description }}</p>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <!-- Benefits section -->
-  <section class="product-section product-section-light">
-    {% include section-header.html title=site.data.agent_operating_system.benefits.section_title %}
-    <div class="product-list-container">
-      <ul class="product-list">
-        {% for benefit in site.data.agent_operating_system.benefits.items %}
-        <li class="product-list-item">
-          <span class="product-list-highlight">{{ benefit.highlight }}:</span> {{ benefit.description }}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-
-  <!-- Call to action section -->
-  {% include cta.html 
-    title=site.data.agent_operating_system.cta.title
-    description=site.data.agent_operating_system.cta.description
-    button_text=site.data.agent_operating_system.cta.button_text
-    button_url=site.data.agent_operating_system.cta.button_url
-    secondary_button_text=site.data.agent_operating_system.cta.secondary_button_text
-    secondary_button_url=site.data.agent_operating_system.cta.secondary_button_url
-  %}
-</div>
+<!-- Benefits section -->
+{% include product-benefits-list.html
+  section_title=site.data.agent_operating_system.benefits.section_title
+  items=site.data.agent_operating_system.benefits.items
+%}
+<!-- Call to action section -->
+{% include cta.html
+  title=site.data.agent_operating_system.cta.title
+  description=site.data.agent_operating_system.cta.description
+  button_text=site.data.agent_operating_system.cta.button_text
+  button_url=site.data.agent_operating_system.cta.button_url
+  secondary_button_text=site.data.agent_operating_system.cta.secondary_button_text
+  secondary_button_url=site.data.agent_operating_system.cta.secondary_button_url
+%}
