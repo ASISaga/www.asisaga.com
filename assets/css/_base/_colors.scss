@@ -89,14 +89,7 @@ $dark-mode-border: #495057;
 .bg-accent { background-color: $accent !important; }
 
 // -----------------------------------------
-// Custom background gradients - REDUCED to two key gradients
+// Custom background gradients - MOVED TO _utilities.scss
 // -----------------------------------------
-// Primary gradient - can be used for heroes, CTAs, and feature sections
-.bg-gradient-primary {
-  background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%) !important;
-}
-
-// Accent gradient - for attention-grabbing elements
-.bg-gradient-accent {
-  background: linear-gradient(135deg, lighten($accent, 40%) 0%, $white 100%) !important;
-}
+// All gradient utilities are now consolidated in _utilities.scss for easier maintenance
+// The duplicate definitions here have been removed to prevent conflicts

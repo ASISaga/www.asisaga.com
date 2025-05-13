@@ -1,7 +1,7 @@
 // Base styles for generic section elements
 
 .section {
-  @extend .bg-gradient-primary-light; // New utility class for background
+  @extend .bg-gradient-primary-light; // Using our new custom utility class for gradient background
   @extend .rounded;
   @extend .shadow; // Bootstrap shadow utility
   @extend .mb-5;

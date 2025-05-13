@@ -25,6 +25,34 @@
 }
 
 // -----------------------------------------
+// Custom gradient backgrounds
+// -----------------------------------------
+// NOTE: There are gradient definitions in both _colors.scss and _utilities.scss
+// Consolidating all gradient utilities here for clarity
+
+// Main gradients (vertical)
+.bg-gradient-primary {
+  background: linear-gradient(180deg, $primary, darken($primary, 10%)) !important;
+}
+
+.bg-gradient-primary-light {
+  background: linear-gradient(180deg, $white, $primary-light) !important; 
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(180deg, $accent, darken($accent, 10%)) !important;
+}
+
+// Special gradients for specific sections
+.bg-gradient-hero {
+  background: linear-gradient(135deg, lighten($primary, 25%), $white) !important;
+}
+
+.bg-gradient-cta {
+  background: linear-gradient(135deg, lighten($accent, 25%), $white) !important;
+}
+
+// -----------------------------------------
 // Custom button variants (for accent color not in Bootstrap)
 // -----------------------------------------
 .btn-accent {
