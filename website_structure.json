@@ -11,11 +11,15 @@
           "name": "adding-product-pages.md",
           "type": "file",
           "description": "Guide to adding new product pages to the website"
-        },
-        {
+        },        {
           "name": "color-management.md",
           "type": "file",
           "description": "Guidelines for color management and using the centralized color system"
+        },
+        {
+          "name": "dimension-management.md",
+          "type": "file",
+          "description": "Guidelines for dimension management and using the centralized dimension system"
         },
         {
           "name": "product-components.md",
@@ -276,6 +280,11 @@
                   "name": "_colors.scss",
                   "type": "file",
                   "description": "Centralized color variables and definitions for all components and pages, including header, footer, and navbar specific colors"
+                },
+                {
+                  "name": "_dimensions.scss",
+                  "type": "file",
+                  "description": "Centralized dimension variables including spacing, sizes, borders, and breakpoints for consistent styling"
                 },
                 {
                   "name": "_common.scss",

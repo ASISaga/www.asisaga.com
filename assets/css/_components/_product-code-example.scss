@@ -22,15 +22,14 @@
         @extend .text-white;
         @extend .mb-3;
       }
-      
-      .product-code-block {
+        .product-code-block {
         @extend .m-0;
-        max-height: 500px;
+        max-height: $product-code-max-height; // Using centralized dimension variable
         overflow-y: auto;
         
         code {
           font-family: 'Courier New', Courier, monospace;
-          font-size: 14px;
+          font-size: $product-code-font-size; // Using centralized dimension variable
           line-height: 1.5;
         }
       }

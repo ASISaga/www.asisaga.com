@@ -2,7 +2,7 @@
 // Most responsive utilities have been removed as Bootstrap provides them through its utility classes
 
 // Component-specific responsive adjustments
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-sm) {
   .navbar-main { border-radius: 0 0 $border-radius-sm $border-radius-sm; }
   .product-card { border-radius: $border-radius-sm; }
   .section { border-radius: $border-radius-sm; }
@@ -13,11 +13,11 @@
 .fs-responsive-xl {
   font-size: $font-size-xl;
   
-  @media (max-width: 991.98px) {
+  @media (max-width: $breakpoint-lg-max) {
     font-size: $font-size-lg;
   }
   
-  @media (max-width: 575.98px) {
+  @media (max-width: $breakpoint-sm-max) {
     font-size: $font-size-base * 1.5;
   }
 }
@@ -25,11 +25,11 @@
 .fs-responsive-lg {
   font-size: $font-size-lg;
   
-  @media (max-width: 991.98px) {
+  @media (max-width: $breakpoint-lg-max) {
     font-size: $font-size-base * 1.1;
   }
   
-  @media (max-width: 575.98px) {
+  @media (max-width: $breakpoint-sm-max) {
     font-size: $font-size-base;
   }
 }

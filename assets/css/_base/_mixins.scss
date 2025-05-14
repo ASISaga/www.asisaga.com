@@ -140,6 +140,37 @@
   }
 }
 
+// Dimension-specific mixins
+// Use these for consistent dimensions across components
+
+// Apply standard spacing to an element
+@mixin standard-spacing($size: 'md') {
+  padding: map-get((
+    'xs': $spacing-xs,
+    'sm': $spacing-sm,
+    'md': $spacing-md,
+    'lg': $spacing-lg,
+    'xl': $spacing-xl,
+    '2xl': $spacing-2xl,
+    '3xl': $spacing-3xl
+  ), $size);
+}
+
+// Apply standard border with custom width
+@mixin accent-border($position: 'left', $width: $border-width-accent, $color: var(--color-primary)) {
+  border-#{$position}: $width solid $color;
+}
+
+// Apply standard hover transform
+@mixin hover-transform($y-value: $product-item-hover-translate) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY($y-value);
+    box-shadow: $box-shadow;
+  }
+}
+
 /*
   BOOTSTRAP FIRST APPROACH:
   

@@ -18,19 +18,18 @@
       @extend .rounded;
       @extend .border;
       @include transition(all, 0.3s, ease);
-      
-      &:hover {
-        transform: translateY(-5px);
+        &:hover {
+        transform: translateY($product-item-hover-translate); // Using centralized dimension variable
         @extend .shadow;
       }
       
       // Card style variations
       &.product-card-accent {
-        border-left: 4px solid var(--color-accent);
+        border-left: $product-border-accent-width solid var(--color-accent); // Using centralized dimension variable
       }
       
       &.product-card-primary {
-        border-left: 4px solid var(--color-primary);
+        border-left: $product-border-accent-width solid var(--color-primary); // Using centralized dimension variable
       }
       
       .product-card-title {

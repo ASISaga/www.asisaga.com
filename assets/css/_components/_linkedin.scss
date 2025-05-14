@@ -16,13 +16,12 @@
       @extend .justify-content-between; // Bootstrap flex utility
       @extend .mb-3; // Bootstrap margin utility
     }
-    
-    &-image {
+      &-image {
       @extend .rounded-circle; // Bootstrap border-radius utility
       @extend .shadow-sm; // Bootstrap shadow utility
       @extend .object-fit-cover; // Bootstrap object-fit utility
-      width: 60px; // Keep specific dimensions
-      height: 60px; // Keep specific dimensions
+      width: $linkedin-avatar-size; // Using centralized dimension variable
+      height: $linkedin-avatar-size; // Using centralized dimension variable
     }
     
     &-info {

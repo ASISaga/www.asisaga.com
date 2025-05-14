@@ -117,11 +117,11 @@
 //
 // Only include truly custom sizes that Bootstrap doesn't provide
 .mw-768 {
-  max-width: 768px !important;
+  max-width: $content-width-narrow !important; // Using centralized dimension variable
 }
 
 .mw-800 {
-  max-width: 800px !important;
+  max-width: $content-width-default !important; // Using centralized dimension variable
 }
 
 // -----------------------------------------

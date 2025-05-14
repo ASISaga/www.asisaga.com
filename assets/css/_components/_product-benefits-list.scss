@@ -18,9 +18,8 @@
       .product-list-item {
         @extend .p-3;
         @extend .mb-3;
-        @extend .rounded;
-        background-color: rgba(var(--color-light-rgb), 0.5);
-        border-left: 4px solid var(--color-primary);
+        @extend .rounded;        background-color: rgba(var(--color-light-rgb), 0.5);
+        border-left: $product-border-accent-width solid var(--color-primary); // Using centralized dimension variable
         
         .product-list-highlight {
           @extend .fw-bold;

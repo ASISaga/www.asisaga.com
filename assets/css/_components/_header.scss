@@ -52,12 +52,11 @@
     @extend .text-truncate;
     color: $header-text-muted; // Using centralized color variable
   }
-
   // Logo image - minimal custom styling needed
   .site-header__logo-img {
-    height: 40px;
+    height: $header-logo-height; // Using centralized dimension variable
     width: auto;
-  }  // Mobile menu toggle button
+  }// Mobile menu toggle button
   .site-header-toggler {
     @extend .navbar-toggler;
     @extend .ms-auto;
