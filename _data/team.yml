@@ -1,0 +1,34 @@
+# Team member information for the About page
+# This file contains data about team members displayed on the About page
+
+# Team members array
+members:
+  - name: Jane Doe
+    role: AI Research Lead
+    bio: With over 10 years of experience in AI research, Jane leads our technical initiatives and research partnerships. Her work focuses on developing responsible AI systems that prioritize human values and ethical considerations.
+    # image: jane-doe.jpg # Uncomment when image is available
+    linkedin: jane-doe
+
+  - name: John Smith
+    role: Ethics Director
+    bio: John focuses on the ethical implications of advanced AI systems and ensures our work aligns with responsible AI principles. He has a background in philosophy and computer science, bringing a multidisciplinary approach to AI ethics.
+    # image: john-smith.jpg # Uncomment when image is available
+    linkedin: john-smith
+
+  - name: Michael Johnson
+    role: Technical Advisor
+    bio: Michael brings 15+ years of experience in machine learning and AI systems architecture to our team, guiding our technical direction. He previously led AI initiatives at several major tech companies and research institutions.
+    # image: michael-johnson.jpg # Uncomment when image is available
+    linkedin: michael-johnson
+
+  - name: Sarah Chen
+    role: AI Safety Researcher
+    bio: Sarah specializes in AI alignment and safety protocols, helping us develop robust frameworks for responsible AI development. Her research focuses on ensuring AI systems remain beneficial and aligned with human values even as they become more sophisticated.
+    # image: sarah-chen.jpg # Uncomment when image is available
+    linkedin: sarah-chen
+    
+  - name: David Rodriguez
+    role: Product Development Lead
+    bio: David manages the development of our AI product suite, ensuring that our theoretical research translates into practical, usable tools. With a background in UX design and machine learning, he specializes in creating intuitive AI interfaces.
+    # image: david-rodriguez.jpg # Uncomment when image is available
+    linkedin: david-rodriguez

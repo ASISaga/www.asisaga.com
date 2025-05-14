@@ -21,11 +21,15 @@
           "name": "scss-structure.md",
           "type": "file",
           "description": "Documentation for SCSS architecture and organization"
-        },
-        {
+        },        {
           "name": "using-components.md",
           "type": "file",
           "description": "Guide to using Jekyll components with examples"
+        },
+        {
+          "name": "managing-team.md",
+          "type": "file",
+          "description": "Guide to managing team member information on the about page"
         }
       ]
     },
@@ -78,11 +82,15 @@
           "name": "products.yml",
           "type": "file",
           "description": "Product information data"
-        },
-        {
+        },        {
           "name": "purpose_driven_agent.yml",
           "type": "file",
           "description": "Purpose Driven Agent product data"
+        },
+        {
+          "name": "team.yml",
+          "type": "file",
+          "description": "Team member information for the About page that appears in the team section"
         }
       ]
     },
@@ -451,11 +459,24 @@
               "description": "Section-specific styles"
             }
           ]
-        },
-        {
+        },        {
           "name": "images",
           "type": "directory",
-          "description": "Image assets for the site"
+          "description": "Image assets for the site",
+          "children": [
+            {
+              "name": "team",
+              "type": "directory",
+              "description": "Team member profile images for the About page",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "description": "Documentation for team member image requirements"
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "js",

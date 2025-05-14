@@ -39,36 +39,27 @@ Uses Bootstrap's responsive grid system for layout and responsive design
       </p>
     </div>
   </section>
-
   <!-- Team section -->
   <section class="about-team-section">
     {% include section-header.html title="Our Team" %}
     
-    {% assign team_members = site.data.team | default: "[]" %}
-    {% unless team_members.size > 0 %}
-      {% assign team_members = "" | split: "" %}
-      {% assign member1 = 
-        "name=Jane Doe,
-         role=AI Research Lead,
-         bio=With over 10 years of experience in AI research, Jane leads our technical initiatives and research partnerships." 
-         | split: "," %}
-      {% assign member2 = 
-        "name=John Smith,
-         role=Ethics Director,
-         bio=John focuses on the ethical implications of advanced AI systems and ensures our work aligns with responsible AI principles." 
-         | split: "," %}
-      {% assign team_members = team_members | concat: member1 | concat: member2 %}
-    {% endunless %}
-    
     <div class="about-team-grid">
-      <!-- Team members can be dynamically loaded from data file or hardcoded -->
-      {% for member in team_members %}
-        <div class="about-team-member">
+      <!-- Team members are loaded from _data/team.yml -->
+      {% for member in site.data.team.members %}        <div class="about-team-member">          {% if member.image %}
+          <div class="about-team-member-image">
+            <img src="{{ '/assets/images/team/' | append: member.image | relative_url }}" alt="{{ member.name }}" class="img-fluid rounded-circle">
+          </div>
+          {% endif %}
           <h3 class="about-team-member-name">{{ member.name }}</h3>
           <p class="about-team-member-role">{{ member.role }}</p>
           <p class="about-team-member-bio">
             {{ member.bio }}
           </p>
+          {% if member.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ member.linkedin }}" class="about-team-member-link" target="_blank" rel="noopener">
+              <i class="bi bi-linkedin"></i> Connect on LinkedIn
+            </a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
