@@ -93,3 +93,29 @@ $dark-mode-border: #495057;
 // -----------------------------------------
 // All gradient utilities are now consolidated in _utilities.scss for easier maintenance
 // The duplicate definitions here have been removed to prevent conflicts
+
+// -----------------------------------------
+// Component-specific color variables
+// -----------------------------------------
+
+// Header component colors
+$header-text-color: $white;
+$header-text-muted: rgba(255, 255, 255, 0.75);
+$header-link-hover-color: rgba(255, 255, 255, 0.5);
+$header-link-hover-bg: rgba(255, 255, 255, 0.1);
+$header-toggle-color: rgba(255, 255, 255, 0.65);
+$header-toggle-focus-shadow: rgba(255, 255, 255, 0.25);
+$header-mobile-border: rgba(255, 255, 255, 0.1);
+
+// Footer component colors
+$footer-text-color: $white;
+$footer-text-muted: rgba(255, 255, 255, 0.75);
+$footer-link-color: $light;
+
+// Navbar component colors
+$navbar-link-color: $white;
+$navbar-link-hover-color: rgba(255, 255, 255, 0.5);
+$navbar-link-hover-bg: rgba(33, 37, 41, 0.5); // dark-subtle
+$navbar-dropdown-item-color: $white;
+$navbar-dropdown-item-hover-bg: $secondary;
+$navbar-divider-color: $secondary;

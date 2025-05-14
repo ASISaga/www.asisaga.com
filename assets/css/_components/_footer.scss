@@ -3,22 +3,21 @@
   @extend .py-4; // Bootstrap padding utility
   @extend .mt-5; // Bootstrap margin utility
   @extend .bg-dark; // Bootstrap background utility
-  @extend .text-white; // Bootstrap text color utility
+  color: $footer-text-color; // Using centralized color variable
 
   // Footer container
   .site-footer__container {
     @extend .container-xl; // Bootstrap container utility
   }
-
   // Copyright section
   .site-footer__copyright {
     @extend .text-center; // Bootstrap text alignment utility
     @extend .mb-4; // Bootstrap margin utility
 
     .site-footer__copyright-text {
-      @extend .text-white-75; // Bootstrap's semi-transparent white
       @extend .mb-0; // Bootstrap margin utility
       @extend .small; // Bootstrap text size utility
+      color: $footer-text-muted; // Using centralized color variable
     }
   }
 
@@ -64,15 +63,14 @@
       padding-bottom: 0.25rem !important; // Same effect as Bootstrap's .py-1
     }
   }
-
   // Navigation links
   .site-footer__nav-link {
     @extend .text-decoration-none; // Bootstrap text decoration utility
-    @extend .text-white-75; // Bootstrap's semi-transparent white
     @extend .transition; // Bootstrap transition utility if available
+    color: $footer-text-muted; // Using centralized color variable
 
     &:hover {
-      @extend .text-white; // Bootstrap text color utility
+      color: $footer-text-color; // Using centralized color variable
       @extend .text-decoration-underline; // Bootstrap text decoration utility
     }
   }

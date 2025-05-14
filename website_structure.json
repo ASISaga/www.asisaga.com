@@ -13,6 +13,11 @@
           "description": "Guide to adding new product pages to the website"
         },
         {
+          "name": "color-management.md",
+          "type": "file",
+          "description": "Guidelines for color management and using the centralized color system"
+        },
+        {
           "name": "product-components.md",
           "type": "file",
           "description": "Documentation for product page components"
@@ -267,11 +272,10 @@
                   "name": "_base-section.scss",
                   "type": "file",
                   "description": "Base styles for generic section elements"
-                },
-                {
+                },                {
                   "name": "_colors.scss",
                   "type": "file",
-                  "description": "Centralized color variables and definitions"
+                  "description": "Centralized color variables and definitions for all components and pages, including header, footer, and navbar specific colors"
                 },
                 {
                   "name": "_common.scss",

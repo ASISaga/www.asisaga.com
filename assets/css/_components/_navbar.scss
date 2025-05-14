@@ -26,17 +26,16 @@
       // Bootstrap's .active class handles the active state styling
     }
   }
-
   // Styling for navigation links
   .navbar-link {
     @extend .nav-link; // Bootstrap class for navigation links
-    @extend .text-white; // Bootstrap's text color for light text
     @extend .px-2; // Add padding to make clickable area larger
     @extend .rounded; // Rounded corners for hover states
+    color: $navbar-link-color; // Using centralized color variable
 
     &:hover {
-      @extend .text-white-50; // Bootstrap's semi-transparent white
-      @extend .bg-dark-subtle; // Bootstrap's subtle background for hover states
+      color: $navbar-link-hover-color; // Using centralized color variable
+      background-color: $navbar-link-hover-bg; // Using centralized color variable
     }
 
     // Styling for dropdown toggle links
@@ -56,23 +55,21 @@
 
   // Container for each dropdown item
   // Removed .navbar-dropdown-item-container as it was an empty ruleset
-
   // Styling for individual items within a dropdown menu
   .navbar-dropdown-item {
     @extend .dropdown-item; // Bootstrap class for a dropdown item
-    @extend .text-white; // Bootstrap's text color for light text
+    color: $navbar-dropdown-item-color; // Using centralized color variable
 
     &:hover,
     &:focus {
-      @extend .text-white; // Keep text white on hover/focus
-      @extend .bg-secondary; // Bootstrap's secondary color for hover/focus bg
+      color: $navbar-dropdown-item-color; // Keep text color same on hover/focus
+      background-color: $navbar-dropdown-item-hover-bg; // Using centralized color variable
     }
   }
-
   // Styling for dividers within a dropdown menu
   .navbar-divider {
     @extend .dropdown-divider; // Bootstrap class for a dropdown divider
     @extend .my-1; // Add vertical margin for better spacing
-    @extend .border-secondary; // Use Bootstrap's secondary color for the divider
+    border-color: $navbar-divider-color; // Using centralized color variable
   }
 }

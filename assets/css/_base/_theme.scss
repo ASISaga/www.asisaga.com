@@ -12,10 +12,11 @@
   // Secondary and Accent colors
   --color-secondary: #{$secondary};
   --color-accent: #{$accent};
-  
   // Neutral colors
   --color-light: #{$light};
+  --color-light-rgb: 248, 249, 250; // RGB values of $light for rgba() usage
   --color-dark: #{$dark};
+  --color-text: #{$text-color}; // For consistent text color
   
   // Section backgrounds
   --color-section-bg-primary: #{$section-bg-primary};
