@@ -25,11 +25,15 @@
           "name": "using-components.md",
           "type": "file",
           "description": "Guide to using Jekyll components with examples"
-        },
-        {
+        },        {
           "name": "managing-team.md",
           "type": "file",
           "description": "Guide to managing team member information on the about page"
+        },
+        {
+          "name": "data-services.md",
+          "type": "file",
+          "description": "Documentation for the data services middle tier architecture"
         }
       ]
     },
@@ -169,12 +173,33 @@
           "type": "file",
           "description": "Hero section component",
           "children": []
-        },
-        {
+        },        {
           "name": "linkedin.html",
           "type": "file",
           "description": "LinkedIn integration component",
           "children": []
+        },
+        {
+          "name": "data-services",
+          "type": "directory",
+          "description": "Middle tier data services for processing data before presentation",
+          "children": [
+            {
+              "name": "product-service.html",
+              "type": "file",
+              "description": "Product data processing service"
+            },
+            {
+              "name": "team-service.html",
+              "type": "file",
+              "description": "Team member data processing service"
+            },
+            {
+              "name": "helper.html",
+              "type": "file",
+              "description": "Helper functions for data services"
+            }
+          ]
         },
         {
           "name": "navbar.html",

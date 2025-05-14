@@ -1,0 +1,45 @@
+{% comment %}
+  Data Service Helper - Utility functions for data services
+  
+  This component provides common utility functions for data processing
+  that can be used across multiple data services.
+  
+  Functions:
+  - check_exists: Checks if a property exists and has content
+  - get_page_section: Retrieves a section from a data object with fallback
+  
+  Example usage:
+    {% include data-services/helper.html 
+       object=some_object
+       property="some_property"
+       function="check_exists"
+       assign_to="property_exists" %}
+{% endcomment %}
+
+{% if include.function == "check_exists" %}
+  {% assign result = false %}
+  {% if include.object[include.property] %}
+    {% if include.object[include.property].size > 0 %}
+      {% assign result = true %}
+    {% endif %}
+  {% endif %}
+  
+  {% if include.assign_to %}
+    {% assign variable_name = include.assign_to %}
+    {% capture outer_scope %}{{ variable_name }} = {{ result }}{% endcapture %}
+    {% capture _ %}{{ outer_scope }}{% endcapture %}
+  {% endif %}
+{% endif %}
+
+{% if include.function == "get_page_section" %}
+  {% assign result = include.default %}
+  {% if include.object[include.section] %}
+    {% assign result = include.object[include.section] %}
+  {% endif %}
+  
+  {% if include.assign_to %}
+    {% assign variable_name = include.assign_to %}
+    {% capture outer_scope %}{{ variable_name }} = result{% endcapture %}
+    {% capture _ %}{{ outer_scope }}{% endcapture %}
+  {% endif %}
+{% endif %}

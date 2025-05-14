@@ -3,12 +3,13 @@ layout: default
 title: GitHub Agent
 ---
 
-{% assign product = site.data.github_agent %}
+{% include data-services/product-service.html product_id="github_agent" assign_to="product" %}
 
 <!-- 
 GitHub Agent product page
 This page showcases the GitHub Agent product features, benefits, and use cases
 Uses shared product page components for responsive design and consistent styling
+Uses the data-services layer for data processing before presentation
 -->
 
 {% capture product_content %}
