@@ -13,11 +13,9 @@ Parameters:
 {% assign product_path = include.product_path | default: page.path %}
 {% assign product_data = site.data[product_path | split: '/' | slice: -2, 1 | first | replace: '-', '_'] %}
 
-<div class="product-container {{ include.product_class }}">
-  <!-- Hero section with product introduction -->
-  {% include hero.html 
-    title=include.title | default: page.title
-    description=product_data.description
+<div class="product-container {{ include.product_class }}">  <!-- Hero section with product introduction -->  {% include hero.html 
+    title=include.title
+    description=include.description
     button_text=include.button_text
     button_url=include.button_url
     style=include.hero_style
