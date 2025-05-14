@@ -1,8 +1,6 @@
 ---
-layout: product
+layout: default
 title: GitHub Agent
-description: site.data.github_agent.description
-product_class: github-agent-container
 ---
 
 {% assign product = site.data.github_agent %}
@@ -12,6 +10,8 @@ GitHub Agent product page
 This page showcases the GitHub Agent product features, benefits, and use cases
 Uses shared product page components for responsive design and consistent styling
 -->
+
+{% capture product_content %}
 
 <!-- Key features section with feature cards -->
 {% capture features_content %}
@@ -48,4 +48,14 @@ Uses shared product page components for responsive design and consistent styling
   button_url=product.cta.button_url
   secondary_button_text=product.cta.secondary_button_text
   secondary_button_url=product.cta.secondary_button_url
+%}
+
+{% endcapture %}
+
+{% include product.html 
+  title=page.title
+  product_class="github-agent-container"
+  button_text=product.cta.button_text
+  button_url=product.cta.button_url
+  content=product_content
 %}
