@@ -1,7 +1,7 @@
 // Styles for _includes/navbar.html - Leveraging Bootstrap's native classes
 
 // The main <ul> container for the navigation items
-.navbar { // This class name is used in navbar.html for the root <ul>
+.site-navbar { // This class name is used in navbar.html for the root <ul>
   @extend .navbar-nav; // Bootstrap class for a list of navigation links
 
   // Styling for individual list items within the navbar
