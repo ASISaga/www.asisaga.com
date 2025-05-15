@@ -3,13 +3,13 @@ layout: default
 title: Business Infinity
 ---
 
-{% include data-services/product-service.html product_id="business_infinity" assign_to="product" %}
+{% assign product = site.data.business_infinity %}
+{% assign product_id = "business_infinity" %}
 
 <!-- 
 Business Infinity product page
 This page introduces the Business Infinity product, its features, benefits and use cases
 Uses Bootstrap's responsive grid system and components for layout and design
-Uses the data-services layer for data processing before presentation
 -->
 
 {% capture product_content %}

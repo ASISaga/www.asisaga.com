@@ -40,9 +40,9 @@
           "description": "Guide to managing team member information on the about page"
         },
         {
-          "name": "data-services.md",
+          "name": "data-access.md",
           "type": "file",
-          "description": "Documentation for the data services middle tier architecture"
+          "description": "Documentation for directly accessing data in templates"
         }
       ]
     },
@@ -187,28 +187,6 @@
           "type": "file",
           "description": "LinkedIn integration component",
           "children": []
-        },
-        {
-          "name": "data-services",
-          "type": "directory",
-          "description": "Middle tier data services for processing data before presentation",
-          "children": [
-            {
-              "name": "product-service.html",
-              "type": "file",
-              "description": "Product data processing service"
-            },
-            {
-              "name": "team-service.html",
-              "type": "file",
-              "description": "Team member data processing service"
-            },
-            {
-              "name": "helper.html",
-              "type": "file",
-              "description": "Helper functions for data services"
-            }
-          ]
         },
         {
           "name": "navbar.html",
