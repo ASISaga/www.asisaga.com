@@ -1,0 +1,59 @@
+// Styles for the contact page
+
+.contact-page {
+  &__title {
+    @extend .display-4;
+    margin-bottom: 1rem;
+  }
+
+  &__intro {
+    @extend .mb-5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__form-container {
+    @extend .mb-5;
+  }
+
+  &__form-col {
+    @extend .p-4;
+    @extend .bg-light;
+    @extend .rounded;
+    @extend .shadow-sm;
+  }
+
+  &__form {
+    @extend .needs-validation;
+  }
+
+  &__form-group {
+    @extend .mb-4;
+  }
+
+  &__form-label {
+    @extend .fw-bold;
+    color: $dark;
+  }
+
+  &__form-input, &__form-textarea {
+    @extend .border-0;
+    @extend .shadow-sm;
+    
+    &:focus {
+      @extend .shadow;
+      border-color: $primary;
+    }
+  }
+
+  &__form-textarea {
+    min-height: 150px;
+  }
+
+  &__form-submit {
+    @extend .px-4;
+    @extend .py-2;
+    @extend .fw-bold;
+  }
+}

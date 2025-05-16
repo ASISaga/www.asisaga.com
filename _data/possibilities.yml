@@ -1,0 +1,17 @@
+# Possibilities page content
+
+# Core content for the possibilities page
+intro_content: "Envision a tomorrow where ASI transforms challenges into revolutionary breakthroughs—uplifting humanity and igniting a perpetual flame of innovation."
+
+# Possibility cards
+possibility_1_title: "Visionary Horizons"
+possibility_1_content: "Imagine a world where the frontiers of science and art merge, forging breakthroughs that redefine what is possible."
+possibility_1_image: "future,city"
+
+possibility_2_title: "Innovative Futures"
+possibility_2_content: "Witness a revolution where advancements—from curing disease to sustainable development—reimagine our shared future."
+possibility_2_image: "innovation,technology"
+
+possibility_3_title: "Artistic Revolution"
+possibility_3_content: "Experience the creative force where every innovation is painted with the enduring passion of the human spirit."
+possibility_3_image: "creativity,art"

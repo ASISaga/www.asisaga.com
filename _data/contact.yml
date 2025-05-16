@@ -1,0 +1,16 @@
+# Contact page content
+
+# Core content for the contact page
+intro_content: "Join us in shaping a future where every moment inspires innovation and boundless possibility."
+
+# Form labels and placeholders
+name_label: "Your Name"
+name_placeholder: "Enter your name"
+
+email_label: "Email Address"
+email_placeholder: "Enter your email"
+
+message_label: "Share Your Vision"
+message_placeholder: "Your message, reflection, or ideas"
+
+button_text: "Send Message & Join the Future"

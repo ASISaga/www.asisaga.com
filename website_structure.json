@@ -3,7 +3,8 @@
   "type": "directory",
   "description": "Root of the Jekyll site",
   "children": [
-    {      "name": "docs",
+    {
+      "name": "docs",
       "type": "directory",
       "description": "Documentation files",
       "children": [
@@ -17,9 +18,29 @@
           "description": "Guidelines for color management and using the centralized color system"
         },
         {
+          "name": "content-ui-separation.md",
+          "type": "file",
+          "description": "Guidelines for separating content from UI elements in data organization"
+        },
+        {
+          "name": "data-access.md",
+          "type": "file",
+          "description": "Documentation for directly accessing data in templates"
+        },
+        {
           "name": "dimension-management.md",
           "type": "file",
           "description": "Guidelines for dimension management and using the centralized dimension system"
+        },
+        {
+          "name": "managing-team.md",
+          "type": "file",
+          "description": "Guide to managing team member information on the about page"
+        },
+        {
+          "name": "page-assimilation.md",
+          "type": "file",
+          "description": "Guide to assimilating new pages using content-UI separation pattern"
         },
         {
           "name": "product-components.md",
@@ -43,6 +64,11 @@
           "name": "data-access.md",
           "type": "file",
           "description": "Documentation for directly accessing data in templates"
+        },
+        {
+          "name": "content-ui-separation.md",
+          "type": "file",
+          "description": "Guidelines for separating content from UI elements in data organization"
         }
       ]
     },
@@ -72,6 +98,11 @@
           "description": "Agent Operating System product data"
         },
         {
+          "name": "about.yml",
+          "type": "file",
+          "description": "About page content data"
+        },
+        {
           "name": "business_infinity.yml",
           "type": "file",
           "description": "Business Infinity product data"
@@ -82,9 +113,19 @@
           "description": "Business Infinity Entrepreneur page data"
         },
         {
+          "name": "contact.yml",
+          "type": "file",
+          "description": "Contact page content data"
+        },
+        {
           "name": "github_agent.yml",
           "type": "file",
           "description": "GitHub Agent product data"
+        },
+        {
+          "name": "legacy.yml",
+          "type": "file",
+          "description": "Legacy page content data"
         },
         {
           "name": "nav.yml",
@@ -92,18 +133,39 @@
           "description": "Navigation structure data"
         },
         {
+          "name": "possibilities.yml",
+          "type": "file",
+          "description": "Possibilities page content data"
+        },
+        {
           "name": "products.yml",
           "type": "file",
           "description": "Product information data"
-        },        {
+        },        
+        {
           "name": "purpose_driven_agent.yml",
           "type": "file",
           "description": "Purpose Driven Agent product data"
         },
         {
+          "name": "resources.yml",
+          "type": "file",
+          "description": "Resources page content data"
+        },
+        {
+          "name": "saga.yml",
+          "type": "file",
+          "description": "Saga page content data"
+        },
+        {
           "name": "team.yml",
           "type": "file",
           "description": "Team member information for the About page that appears in the team section"
+        },
+        {
+          "name": "thoughtlab.yml",
+          "type": "file",
+          "description": "Thought Lab page content data"
         }
       ]
     },
@@ -466,6 +528,36 @@
                   "name": "_startup.scss",
                   "type": "file",
                   "description": "Startup page styles"
+                },
+                {
+                  "name": "_contact-page.scss",
+                  "type": "file",
+                  "description": "Contact page styles"
+                },
+                {
+                  "name": "_legacy-page.scss",
+                  "type": "file",
+                  "description": "Legacy page styles"
+                },
+                {
+                  "name": "_possibilities-page.scss",
+                  "type": "file",
+                  "description": "Possibilities page styles"
+                },
+                {
+                  "name": "_resources-page.scss",
+                  "type": "file",
+                  "description": "Resources page styles"
+                },
+                {
+                  "name": "_saga-page.scss",
+                  "type": "file",
+                  "description": "Saga page styles"
+                },
+                {
+                  "name": "_thoughtlab-page.scss",
+                  "type": "file",
+                  "description": "Thought Lab page styles"
                 }
               ]
             },
@@ -521,12 +613,12 @@
     {
       "name": "about",
       "type": "directory",
-      "description": "About section pages",
+      "description": "About page",
       "children": [
         {
           "name": "index.html",
           "type": "file",
-          "description": "About page"
+          "description": "About page template"
         }
       ]
     },

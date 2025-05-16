@@ -1,0 +1,39 @@
+// Styles for the legacy page
+
+.legacy-page {
+  &__title {
+    @extend .display-4;
+    margin-bottom: 1rem;
+  }
+
+  &__intro {
+    @extend .mb-5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__content {
+    @extend .align-items-center;
+  }
+
+  &__image-container {
+    @extend .mb-4;
+    @extend .mb-md-0;
+  }
+
+  &__image {
+    @extend .rounded;
+    @extend .shadow;
+  }
+
+  &__text {
+    @extend .ps-md-4;
+  }
+
+  &__paragraph {
+    @extend .mb-4;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+}

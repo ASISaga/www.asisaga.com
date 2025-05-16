@@ -1,0 +1,36 @@
+/* Custom Styles for ASI Saga */
+
+/* Hero Section */
+.hero {
+  background-image: url('https://source.unsplash.com/1600x900/?space,technology');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  padding: 50px;
+}
+
+/* Ensure body content is not hidden behind the fixed navbar */
+body {
+  padding-top: 70px;
+}
+
+/* Section Padding */
+section {
+  padding: 60px 0;
+}
+
+/* Footer Link Hover */
+footer a:hover {
+  text-decoration: underline;
+}

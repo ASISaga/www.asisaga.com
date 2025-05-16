@@ -8,7 +8,11 @@ description: Learn about ASI Saga, our mission, vision, and the team behind our 
 About page main content
 This page provides information about ASI Saga's mission, vision, and team
 Uses Bootstrap's responsive grid system for layout and responsive design
+Data is loaded from _data/about.yml and _data/team.yml files
+UI elements are defined in the template
 -->
+{% assign about = site.data.about %}
+
 <div class="about-container">
   <!-- Page header section -->
   {% include hero.html 
@@ -25,8 +29,7 @@ Uses Bootstrap's responsive grid system for layout and responsive design
         alignment="left" 
       %}
       <p class="about-section-text">
-        At ASI Saga, we're dedicated to exploring and understanding the journey toward Artificial Super Intelligence (ASI). 
-        We believe in responsible AI development that benefits humanity while mitigating potential risks.
+        {{ about.mission_content }}
       </p>
       
       {% include section-header.html 
@@ -34,11 +37,13 @@ Uses Bootstrap's responsive grid system for layout and responsive design
         alignment="left" 
       %}
       <p class="about-section-text">
-        We envision a future where advanced AI systems work alongside humans, enhancing our capabilities while preserving human values and ethics.
-        ASI Saga aims to be at the forefront of this technological evolution, providing insights and guidance for responsible AI development.
+        {{ about.vision_content }}
       </p>
     </div>
-  </section>  <!-- Team section -->  <section class="about-team-section">
+  </section>
+
+  <!-- Team section -->  
+  <section class="about-team-section">
     {% include section-header.html title="Our Team" %}
     
     {% assign team_members = site.data.team.members %}
@@ -70,10 +75,10 @@ Uses Bootstrap's responsive grid system for layout and responsive design
   <!-- Contact information section -->
   {% assign linkedin_url = 'https://www.linkedin.com/in/' | append: site.linkedin_username %}
   {% include cta.html 
-    title='Get in Touch'
-    description='Have questions or interested in collaborating? Connect with us on LinkedIn or reach out via email.'
-    button_text='LinkedIn'
+    title="Get in Touch"
+    description="{{ about.contact_description }}"
+    button_text="LinkedIn"
     button_url=linkedin_url
-    style='secondary'
+    style="secondary"
   %}
 </div>

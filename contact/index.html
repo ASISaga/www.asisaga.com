@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Contact"
+permalink: /contact/
+---
+
+<section id="contact-page" class="contact-page">
+  <div class="container">
+    <h2 class="text-center contact-page__title">Contact & Engage</h2>
+    <p class="lead text-center contact-page__intro">
+      {{ site.data.contact.intro_content }}
+    </p>
+    <div class="row justify-content-center mt-4 contact-page__form-container">
+      <div class="col-md-8 contact-page__form-col">
+        <form class="contact-page__form">
+          <div class="mb-3 contact-page__form-group">
+            <label for="name" class="form-label contact-page__form-label">{{ site.data.contact.name_label }}</label>
+            <input type="text" class="form-control contact-page__form-input" id="name" placeholder="{{ site.data.contact.name_placeholder }}">
+          </div>
+          <div class="mb-3 contact-page__form-group">
+            <label for="email" class="form-label contact-page__form-label">{{ site.data.contact.email_label }}</label>
+            <input type="email" class="form-control contact-page__form-input" id="email" placeholder="{{ site.data.contact.email_placeholder }}">
+          </div>
+          <div class="mb-3 contact-page__form-group">
+            <label for="message" class="form-label contact-page__form-label">{{ site.data.contact.message_label }}</label>
+            <textarea class="form-control contact-page__form-textarea" id="message" rows="4" placeholder="{{ site.data.contact.message_placeholder }}"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary contact-page__form-submit">{{ site.data.contact.button_text }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+// Styles for the saga page
+
+.saga-page {
+  &__title {
+    @extend .display-4;
+    margin-bottom: 2rem;
+  }
+
+  &__chapters {
+    @extend .g-4;
+  }
+
+  &__chapter {
+    @extend .mb-4;
+  }
+
+  &__chapter-title {
+    @extend .h4;
+    color: $primary;
+    margin-bottom: 1rem;
+  }
+
+  &__chapter-content {
+    @extend .text-muted;
+    line-height: 1.8;
+  }
+}

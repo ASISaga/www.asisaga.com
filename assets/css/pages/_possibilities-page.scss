@@ -1,0 +1,53 @@
+// Styles for the possibilities page
+
+.possibilities-page {
+  &__title {
+    @extend .display-4;
+    margin-bottom: 1rem;
+  }
+
+  &__intro {
+    @extend .mb-5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__cards {
+    @extend .g-4;
+  }
+
+  &__card-container {
+    @extend .mb-4;
+  }
+
+  &__card {
+    @extend .h-100;
+    @extend .shadow-sm;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      @extend .shadow;
+    }
+  }
+
+  &__card-img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  &__card-body {
+    @extend .d-flex;
+    @extend .flex-column;
+  }
+
+  &__card-title {
+    @extend .fw-bold;
+    color: $primary;
+  }
+
+  &__card-text {
+    @extend .flex-grow-1;
+  }
+}

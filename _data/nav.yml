@@ -24,6 +24,30 @@
     - title: "Github Agent"
       url: "/realm-of-agents/github-agent/"
 
+# ASI Saga
+- title: "ASI Saga"
+  url: "/saga/"
+  subcategories:
+    - title: "The Saga"
+      url: "/saga/"
+    - title: "Possibilities"
+      url: "/possibilities/"
+    - title: "Human Legacy"
+      url: "/legacy/"
+
+# Resources
+- title: "Resources"
+  url: "/resources/"
+  subcategories:
+    - title: "Thought Lab"
+      url: "/thoughtlab/"
+    - title: "Resources"
+      url: "/resources/"
+
 # About
 - title: "About"
   url: "/about/"
+
+# Contact
+- title: "Contact"
+  url: "/contact/"
