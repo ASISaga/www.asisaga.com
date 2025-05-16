@@ -71,12 +71,11 @@ UI elements are defined in the template
       {% endfor %}
     </div>
   </section>
-
   <!-- Contact information section -->
   {% assign linkedin_url = 'https://www.linkedin.com/in/' | append: site.linkedin_username %}
-  {% include cta.html 
+  {% include cta.html
     title="Get in Touch"
-    description="{{ about.contact_description }}"
+    description=about.contact_description
     button_text="LinkedIn"
     button_url=linkedin_url
     style="secondary"
