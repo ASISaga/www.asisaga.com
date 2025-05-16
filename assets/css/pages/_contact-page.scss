@@ -23,9 +23,12 @@
     @extend .rounded;
     @extend .shadow-sm;
   }
-
   &__form {
-    @extend .needs-validation;
+    @extend .needs-validation !optional;
+    // Adding direct styles instead of relying on Bootstrap's .needs-validation
+    position: relative;
+    display: block;
+    width: 100%;
   }
 
   &__form-group {
