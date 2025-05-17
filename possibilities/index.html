@@ -75,10 +75,11 @@ permalink: /possibilities/
       
       <div class="row possibilities-modules">
         <!-- Interactive Module 1 -->
+        {% assign possibility_1_image_url = "https://source.unsplash.com/600x400/?" | append: site.data.possibilities.possibility_1_image %}
         <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
           {% include interactive-module.html 
             title=site.data.possibilities.possibility_1_title
-            image="https://source.unsplash.com/600x400/?{{ site.data.possibilities.possibility_1_image }}"
+            image=possibility_1_image_url
             content=site.data.possibilities.possibility_1_content
             id="possibility-1"
             hover_quote="The future belongs to those who believe in the beauty of their dreams."
@@ -86,10 +87,11 @@ permalink: /possibilities/
         </div>
         
         <!-- Interactive Module 2 -->
+        {% assign possibility_2_image_url = "https://source.unsplash.com/600x400/?" | append: site.data.possibilities.possibility_2_image %}
         <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
           {% include interactive-module.html 
             title=site.data.possibilities.possibility_2_title
-            image="https://source.unsplash.com/600x400/?{{ site.data.possibilities.possibility_2_image }}"
+            image=possibility_2_image_url
             content=site.data.possibilities.possibility_2_content
             id="possibility-2"
             hover_quote="Imagination is more important than knowledge."
@@ -97,10 +99,11 @@ permalink: /possibilities/
         </div>
         
         <!-- Interactive Module 3 -->
+        {% assign possibility_3_image_url = "https://source.unsplash.com/600x400/?" | append: site.data.possibilities.possibility_3_image %}
         <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
           {% include interactive-module.html 
             title=site.data.possibilities.possibility_3_title
-            image="https://source.unsplash.com/600x400/?{{ site.data.possibilities.possibility_3_image }}"
+            image=possibility_3_image_url
             content=site.data.possibilities.possibility_3_content
             id="possibility-3"
             hover_quote="The best way to predict the future is to create it."
