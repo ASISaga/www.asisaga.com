@@ -51,3 +51,59 @@
     @extend .flex-grow-1;
   }
 }
+
+.possibilities-container {
+  @extend .container;
+}
+
+.possibilities-title {
+  @extend .text-center;
+  @extend .display-4;
+  margin-bottom: 1rem;
+}
+
+.possibilities-intro {
+  @extend .lead;
+  @extend .text-center;
+  margin-bottom: 2rem;
+}
+
+.possibilities-cards-row {
+  @extend .row;
+  @extend .mt-4;
+}
+
+.possibilities-card-container {
+  @extend .col-md-4;
+  margin-bottom: 2rem;
+}
+
+.possibilities-card {
+  @extend .card;
+  @extend .shadow-sm;
+  height: 100%;
+}
+
+.possibilities-card-img {
+  @extend .card-img-top;
+  height: 200px;
+  object-fit: cover;
+}
+
+.possibilities-card-body {
+  @extend .card-body;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.possibilities-card-title {
+  @extend .card-title;
+  @extend .fw-bold;
+  color: $primary;
+}
+
+.possibilities-card-text {
+  @extend .card-text;
+  flex-grow: 1;
+}

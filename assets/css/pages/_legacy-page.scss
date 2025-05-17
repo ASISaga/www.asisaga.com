@@ -37,3 +37,47 @@
     line-height: 1.8;
   }
 }
+
+.legacy-container {
+  @extend .container;
+}
+
+.legacy-title {
+  @extend .text-center;
+  @extend .display-4;
+  margin-bottom: 1rem;
+}
+
+.legacy-intro {
+  @extend .lead;
+  @extend .text-center;
+  margin-bottom: 2rem;
+}
+
+.legacy-content-row {
+  @extend .row;
+  @extend .mt-4;
+  @extend .align-items-center;
+}
+
+.legacy-image-container {
+  @extend .col-md-6;
+  margin-bottom: 2rem;
+}
+
+.legacy-image {
+  @extend .img-fluid;
+  @extend .rounded;
+  @extend .shadow;
+}
+
+.legacy-text {
+  @extend .col-md-6;
+  padding-left: 2rem;
+}
+
+.legacy-paragraph {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}

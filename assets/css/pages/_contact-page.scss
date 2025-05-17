@@ -60,3 +60,76 @@
     @extend .fw-bold;
   }
 }
+
+.contact-container {
+  @extend .container;
+}
+
+.contact-title {
+  @extend .text-center;
+  @extend .display-4;
+  margin-bottom: 1rem;
+}
+
+.contact-intro {
+  @extend .lead;
+  @extend .text-center;
+  margin-bottom: 2rem;
+}
+
+.contact-form-row {
+  @extend .row;
+  @extend .justify-content-center;
+  @extend .mt-4;
+}
+
+.contact-form-col {
+  @extend .col-md-8;
+  @extend .p-4;
+  @extend .bg-light;
+  @extend .rounded;
+  @extend .shadow-sm;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.contact-form-group {
+  @extend .mb-4;
+}
+
+.contact-form-label {
+  @extend .form-label;
+  @extend .fw-bold;
+  color: $dark;
+}
+
+.contact-form-input {
+  @extend .form-control;
+  @extend .border-0;
+  @extend .shadow-sm;
+  &:focus {
+    @extend .shadow;
+    border-color: $primary;
+  }
+}
+
+.contact-form-textarea {
+  @extend .form-control;
+  @extend .border-0;
+  @extend .shadow-sm;
+  min-height: 150px;
+  &:focus {
+    @extend .shadow;
+    border-color: $primary;
+  }
+}
+
+.contact-form-submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .px-4;
+  @extend .py-2;
+  @extend .fw-bold;
+}

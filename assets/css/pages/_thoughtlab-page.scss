@@ -47,3 +47,53 @@
     @extend .flex-grow-1;
   }
 }
+
+.thoughtlab-container {
+  @extend .container;
+}
+
+.thoughtlab-title {
+  @extend .text-center;
+  @extend .display-4;
+  margin-bottom: 1rem;
+}
+
+.thoughtlab-intro {
+  @extend .lead;
+  @extend .text-center;
+  margin-bottom: 2rem;
+}
+
+.thoughtlab-cards-row {
+  @extend .row;
+  @extend .mt-4;
+}
+
+.thoughtlab-card-container {
+  @extend .col-md-4;
+  margin-bottom: 2rem;
+}
+
+.thoughtlab-card {
+  @extend .card;
+  @extend .shadow-sm;
+  height: 100%;
+}
+
+.thoughtlab-card-body {
+  @extend .card-body;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thoughtlab-card-title {
+  @extend .card-title;
+  @extend .fw-bold;
+  color: $primary;
+}
+
+.thoughtlab-card-text {
+  @extend .card-text;
+  flex-grow: 1;
+}
