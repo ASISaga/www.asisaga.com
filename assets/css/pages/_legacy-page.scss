@@ -1,83 +1,37 @@
 // Styles for the legacy page
 
-.legacy-page {
-  &__title {
-    @extend .display-4;
-    margin-bottom: 1rem;
-  }
+// Using section component mixin for main page structure
+@include section-component('legacy');
 
-  &__intro {
-    @extend .mb-5;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+// Using two-column layout for content
+@include page-layout('legacy');
 
-  &__content {
+// Additional page-specific styles
+.legacy {
+  &-content-row {
     @extend .align-items-center;
+    @extend .mt-4;
   }
-
-  &__image-container {
-    @extend .mb-4;
-    @extend .mb-md-0;
+  
+  &-image-container {
+    @extend .col-md-6;
+    margin-bottom: 2rem;
   }
-
-  &__image {
+  
+  &-image {
+    @extend .img-fluid;
     @extend .rounded;
     @extend .shadow;
   }
-
-  &__text {
-    @extend .ps-md-4;
+  
+  &-text {
+    @extend .col-md-6;
+    padding-left: 2rem;
   }
-
-  &__paragraph {
-    @extend .mb-4;
+  
+  &-paragraph {
+    margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.8;
   }
-}
-
-.legacy-container {
-  @extend .container;
-}
-
-.legacy-title {
-  @extend .text-center;
-  @extend .display-4;
-  margin-bottom: 1rem;
-}
-
-.legacy-intro {
-  @extend .lead;
-  @extend .text-center;
-  margin-bottom: 2rem;
-}
-
-.legacy-content-row {
-  @extend .row;
-  @extend .mt-4;
-  @extend .align-items-center;
-}
-
-.legacy-image-container {
-  @extend .col-md-6;
-  margin-bottom: 2rem;
-}
-
-.legacy-image {
-  @extend .img-fluid;
-  @extend .rounded;
-  @extend .shadow;
-}
-
-.legacy-text {
-  @extend .col-md-6;
-  padding-left: 2rem;
-}
-
-.legacy-paragraph {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
 }

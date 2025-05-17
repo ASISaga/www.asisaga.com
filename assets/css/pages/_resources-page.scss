@@ -1,99 +1,18 @@
 // Styles for the resources page
 
-.resources-page {
-  &__title {
-    @extend .display-4;
-    margin-bottom: 1rem;
+// Using section component mixin for main page structure
+@include section-component('resources');
+
+// Using featured card component mixin for cards with light background
+@include featured-card-component('resources-card', rgba($light, 0.8));
+
+// Additional page-specific styles
+.resources {
+  &-section {
+    @extend .py-5;
   }
-
-  &__intro {
-    @extend .mb-5;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+  
+  &-cards-row {
+    @extend .mt-4;
   }
-
-  &__cards {
-    @extend .g-4;
-  }
-
-  &__card-container {
-    @extend .mb-4;
-  }
-
-  &__card {
-    @extend .h-100;
-    @extend .shadow-sm;
-    background-color: rgba($light, 0.8);
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      @extend .shadow;
-    }
-  }
-
-  &__card-body {
-    @extend .d-flex;
-    @extend .flex-column;
-  }
-
-  &__card-title {
-    @extend .fw-bold;
-    color: $primary;
-  }
-
-  &__card-text {
-    @extend .flex-grow-1;
-  }
-}
-
-.resources-container {
-  @extend .container;
-}
-
-.resources-title {
-  @extend .text-center;
-  @extend .display-4;
-  margin-bottom: 1rem;
-}
-
-.resources-intro {
-  @extend .lead;
-  @extend .text-center;
-  margin-bottom: 2rem;
-}
-
-.resources-cards-row {
-  @extend .row;
-  @extend .mt-4;
-}
-
-.resources-card-container {
-  @extend .col-md-4;
-  margin-bottom: 2rem;
-}
-
-.resources-card {
-  @extend .card;
-  @extend .shadow-sm;
-  height: 100%;
-}
-
-.resources-card-body {
-  @extend .card-body;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.resources-card-title {
-  @extend .card-title;
-  @extend .fw-bold;
-  color: $primary;
-}
-
-.resources-card-text {
-  @extend .card-text;
-  flex-grow: 1;
 }

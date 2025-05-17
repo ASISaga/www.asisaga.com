@@ -1,180 +1,52 @@
 // About page specific styles
-.about-container {
-  width: 100%;
-  
-  // Header section
-  .about-header-section {
-    background: linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%);
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-    padding: 3rem 1rem;
-    margin-bottom: 3rem;
-    text-align: center;
-  }
-  
-  .about-title {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $primary;
-    margin-bottom: 1rem;
-  }
-  
-  .about-subtitle {
-    font-size: $font-size-lg;
-    color: $secondary;
-    margin-bottom: 0;
+
+// Using gradient header component for the about page header
+@include gradient-header-component('about-header');
+
+// Using content section component for mission/vision sections
+@include divider-content-section-component('about-content');
+
+// Using team component for team section
+@include team-component('about-team');
+
+// Additional page-specific styles
+.about {
+  &-container {
+    width: 100%;
   }
   
   // Mission and vision section
-  .about-mission-section {
-    margin-bottom: 3rem;
-    padding: 0 1rem;
-  }
-  
-  .about-section-content {
-    max-width: 768px;
-    margin: 0 auto;
-  }
-  
-  .about-section-title {
-    font-size: $font-size-lg;
-    font-weight: $font-weight-bold;
-    color: $primary;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-    
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  
-  .about-section-text {
-    margin-bottom: 1.5rem;
-    color: $body-color;
-  }
-  
-  // Team section
-  .about-team-section {
-    background: $gray-100;
-    border-radius: $border-radius;
-    padding: 3rem 1rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    
-    .about-team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .about-team-member {
-      background: $white;
-      padding: 1.5rem;
-      border-radius: $border-radius-sm;
-      box-shadow: $box-shadow;
-      flex: 0 0 100%;
-      max-width: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-      
-      @media (min-width: 768px) {
-        flex: 0 0 calc(50% - 2rem);
-        max-width: calc(50% - 2rem);
-      }
-      
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: $box-shadow-lg;
-      }
-    }
-    
-    .about-team-member-image {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 1.5rem;
-      overflow: hidden;
-      border: 3px solid rgba($primary, 0.2);
-      border-radius: 50%;
-      
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    
-    .about-team-member-name {
-      font-weight: $font-weight-bold;
-      color: $primary;
-      margin-bottom: 0.25rem;
-    }
-    
-    .about-team-member-role {
-      color: $secondary;
-      font-weight: $font-weight-medium;
-      margin-bottom: 1rem;
-    }
-      .about-team-member-bio {
-      margin-bottom: 1.25rem;
-    }
-    
-    .about-team-member-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: $white;
-      background-color: $primary;
-      font-weight: $font-weight-medium;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: $border-radius;
-      transition: all 0.15s ease-in-out;
-      
-      &:hover {
-        background-color: darken($primary, 10%);
-        color: $white;
-        text-decoration: none;
-      }
-      
-      .bi {
-        margin-right: 0.5rem;
-        font-size: 1.1em;
-      }
-    }
+  &-mission-section {
+    @extend .mb-5;
+    @extend .px-3;
   }
   
   // Contact section
-  .about-contact-section {
-    text-align: center;
-    max-width: 768px;
-    margin: 0 auto 3rem;
-    padding: 0 1rem;
-  }
-  
-  .about-contact-links {
-    margin-top: 1.5rem;
-  }
-  
-  .about-contact-link {
-    display: inline-block;
-    font-weight: $font-weight-medium;
-    text-align: center;
-    padding: 0.5rem 1.5rem;
-    font-size: $font-size-base;
-    line-height: 1.5;
-    border-radius: 50rem;
-    color: $white;
-    background-color: $primary;
-    border: 1px solid $primary;
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
+  &-contact {
+    &-section {
+      @extend .text-center;
+      max-width: 768px;
+      margin: 0 auto 3rem;
+      @extend .px-3;
+    }
     
-    &:hover {
-      background-color: darken($primary, 7.5%);
-      border-color: darken($primary, 10%);
-      color: $white;
+    &-links {
+      @extend .mt-4;
+    }
+    
+    &-link {
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .rounded-pill;
+      @extend .fw-medium;
+      @extend .px-4;
+      @extend .mx-2;
+      @extend .my-2;
+      
+      &:hover {
+        @extend .shadow-sm;
+        transform: translateY(-2px);
+      }
     }
   }
 }

@@ -373,6 +373,66 @@
               "description": "Component-specific styles",
               "children": [
                 {
+                  "name": "_card-component.scss",
+                  "type": "file",
+                  "description": "Reusable card component mixins for consistent card styling"
+                },
+                {
+                  "name": "_image-card-component.scss",
+                  "type": "file",
+                  "description": "Reusable image card component mixins for cards with images"
+                },
+                {
+                  "name": "_section-component.scss",
+                  "type": "file",
+                  "description": "Reusable section component mixins for consistent section layouts"
+                },
+                {
+                  "name": "_layout-component.scss",
+                  "type": "file",
+                  "description": "Reusable layout component mixins for page structures"
+                },
+                {
+                  "name": "_form-component.scss",
+                  "type": "file",
+                  "description": "Reusable form component mixins for form styling"
+                },
+                {
+                  "name": "_team-component.scss",
+                  "type": "file",
+                  "description": "Reusable team component mixins for team member profiles"
+                },
+                {
+                  "name": "_header-component.scss",
+                  "type": "file",
+                  "description": "Reusable header component mixins for page headers"
+                },
+                {
+                  "name": "_content-section-component.scss",
+                  "type": "file",
+                  "description": "Reusable content section component mixins for text-based content"
+                },
+                {
+                  "name": "_hero-component.scss",
+                  "type": "file",
+                  "description": "Reusable hero component mixins for hero sections"
+                },
+                {
+                  "name": "_products-grid-component.scss",
+                  "type": "file",
+                  "description": "Reusable products grid component mixins for product displays"
+                },
+                {
+                  "name": "_cta-component.scss",
+                  "type": "file",
+                  "description": "Reusable call-to-action component mixins"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "description": "Documentation for SCSS component system"
+                },
+                {
                   "name": "_cta.scss",
                   "type": "file",
                   "description": "Call-to-action component styles"

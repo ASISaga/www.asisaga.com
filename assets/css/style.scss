@@ -34,6 +34,21 @@ dummy {
 
 // Components - Reusable UI component styles
 // Each corresponds to an HTML partial in _includes/
+
+// Reusable component mixins (must be imported before other components)
+@import "_components/card-component";
+@import "_components/image-card-component";
+@import "_components/section-component";
+@import "_components/layout-component";
+@import "_components/form-component";
+@import "_components/team-component";
+@import "_components/header-component";
+@import "_components/content-section-component";
+@import "_components/hero-component";
+@import "_components/products-grid-component";
+@import "_components/cta-component";
+
+// Individual components
 @import "_components/cta";
 @import "_components/feature-grid";
 @import "_components/footer";

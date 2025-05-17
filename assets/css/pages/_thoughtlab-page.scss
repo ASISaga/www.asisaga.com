@@ -1,99 +1,18 @@
 // Styles for the thought lab page
 
-.thoughtlab-page {
-  &__title {
-    @extend .display-4;
-    margin-bottom: 1rem;
+// Using section component mixin for main page structure
+@include section-component('thoughtlab');
+
+// Using accent card component mixin for cards
+@include accent-card-component('thoughtlab-card');
+
+// Additional page-specific styles
+.thoughtlab {
+  &-section {
+    @extend .py-5;
   }
 
-  &__intro {
-    @extend .mb-5;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+  &-cards-row {
+    @extend .mt-4;
   }
-
-  &__cards {
-    @extend .g-4;
-  }
-
-  &__card-container {
-    @extend .mb-4;
-  }
-
-  &__card {
-    @extend .h-100;
-    @extend .shadow-sm;
-    border-left: 4px solid $primary;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      @extend .shadow;
-    }
-  }
-
-  &__card-body {
-    @extend .d-flex;
-    @extend .flex-column;
-  }
-
-  &__card-title {
-    @extend .fw-bold;
-    color: $primary;
-  }
-
-  &__card-text {
-    @extend .flex-grow-1;
-  }
-}
-
-.thoughtlab-container {
-  @extend .container;
-}
-
-.thoughtlab-title {
-  @extend .text-center;
-  @extend .display-4;
-  margin-bottom: 1rem;
-}
-
-.thoughtlab-intro {
-  @extend .lead;
-  @extend .text-center;
-  margin-bottom: 2rem;
-}
-
-.thoughtlab-cards-row {
-  @extend .row;
-  @extend .mt-4;
-}
-
-.thoughtlab-card-container {
-  @extend .col-md-4;
-  margin-bottom: 2rem;
-}
-
-.thoughtlab-card {
-  @extend .card;
-  @extend .shadow-sm;
-  height: 100%;
-}
-
-.thoughtlab-card-body {
-  @extend .card-body;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.thoughtlab-card-title {
-  @extend .card-title;
-  @extend .fw-bold;
-  color: $primary;
-}
-
-.thoughtlab-card-text {
-  @extend .card-text;
-  flex-grow: 1;
 }

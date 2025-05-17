@@ -1,102 +1,18 @@
 // Homepage specific styles
-// Uses @extend, @include, and Bootstrap utilities instead of direct CSS declarations
+// Uses component mixins and Bootstrap utilities
 
-.home-container {
-  @extend .w-100;
-  
-  // Hero section
-  .hero-section {
-    @include flex-center; // Assumed custom mixin
-    @include box-shadow-md; // Assumed custom mixin
-    @extend .bg-gradient-hero; // New custom utility class for background
-    @extend .rounded;
-    @extend .text-center;
-    @extend .mb-5;
-    @extend .py-5; // Bootstrap padding (approx. for 4rem or 3rem vertical)
-    @extend .px-3; // Bootstrap padding (approx. for 1rem horizontal)
-    
-    .hero-content {
-      @extend .mx-auto;
-      @extend .mw-768; // New custom utility class for max-width
-    }
-    
-    .hero-title {
-      @extend .fw-bold;
-      @extend .text-primary;
-      @extend .mb-3;
-      @extend .fs-3; // Bootstrap font size (approx. for $font-size-xl)
-    }
-    
-    .hero-description {
-      @extend .text-secondary;
-      @extend .mb-4;
-      @extend .fs-5; // Bootstrap font size (approx. for $font-size-lg)
-    }
+// Use gradient hero component for the homepage hero
+@include gradient-hero-component('hero', rgba($primary, 0.1), $white);
 
-    .hero-button {
-      @extend .btn;
-      @extend .btn-primary;
-      @extend .rounded-pill;
-    }
-  }
-  
-  // Products grid
-  .products-section {
-    @extend .mb-5;
-    
-    .products-title { // This might belong in _components/_section-header.scss
-      @extend .text-center;
-      @extend .mb-4;
-    }
-    
-    .products-grid {
-      @extend .row;
-      @extend .g-4;
-      
-      .product-item {
-        @extend .col-12;
-        @extend .col-md-6;
-        @extend .col-lg-4;
-      }
-    }
-  }
-  
-  // Call to action section
-  .cta-section {
-    @include flex-center; // Assumed custom mixin
-    @include box-shadow-sm; // Assumed custom mixin
-    @extend .bg-gradient-cta; // New custom utility class for background
-    @extend .rounded;
-    @extend .text-center;
-    @extend .mb-5;
-    @extend .py-5; // Bootstrap padding
-    @extend .px-3; // Bootstrap padding
-    
-    .cta-content {
-      @extend .mx-auto;
-      @extend .mw-768; // New custom utility class for max-width
-    }
-    
-    .cta-title {
-      @extend .fw-bold;
-      @extend .text-primary;
-      @extend .mb-3;
-      @extend .fs-5; // Bootstrap font size (approx. for $font-size-lg)
-    }
-    
-    .cta-description {
-      @extend .text-secondary;
-      @extend .mb-4;
-    }
-    
-    .cta-button {
-      @extend .btn;
-      @extend .btn-primary;
-      @extend .rounded-pill;
-      
-      &:hover {
-        @include transition(all); // Assumed custom mixin
-      }
-    }
+// Use featured products grid component for the products section
+@include featured-products-grid-component('products', $primary);
+
+// Use light CTA component for the CTA section
+@include light-cta-component('cta');
+
+// Additional page-specific styles
+.home {
+  &-container {
+    @extend .w-100;
   }
 }
