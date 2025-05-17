@@ -6,7 +6,8 @@
 
 // Timeline component
 .timeline-section {
-  @extend .section-padding;
+  @extend .py-5; // Bootstrap vertical padding
+  @extend .mb-5; // Bootstrap margin bottom
   position: relative;
   
   .timeline-title {
