@@ -1,5 +1,11 @@
 // Styles for the thought lab page
 
+// Import base styles
+@import '../_base/colors';
+@import '../_base/dimensions';
+@import '../_base/mixins';
+@import '../_base/animations';
+
 // Using section component mixin for main page structure
 @include section-component('thoughtlab');
 
@@ -8,11 +14,270 @@
 
 // Additional page-specific styles
 .thoughtlab {
-  &-section {
-    @extend .py-5;
+  &-page {
+    @extend .pb-5;
+  }
+  
+  &-intro-section {
+    @extend .py-4;
+    @extend .mb-4;
+    
+    .thoughtlab-intro {
+      @extend .text-center;
+      @extend .mx-auto;
+      @extend .col-lg-8;
+      @extend .lead;
+    }
   }
 
-  &-cards-row {
-    @extend .mt-4;
+  &-featured-section {
+    @extend .py-5;
+    @extend .mb-5;
+    background-color: rgba($light, 0.6);
+    
+    .thoughtlab-cards-row {
+      @extend .mt-4;
+    }
+  }
+  
+  // Forum section styles
+  &-forum-section {
+    @extend .py-5;
+    @extend .mb-5;
+    
+    .forum-container {
+      @extend .mt-4;
+      @extend .p-3;
+      @extend .p-md-4;
+      @extend .rounded;
+      @extend .shadow-sm;
+      background-color: $white;
+    }
+    
+    .forum-tabs {
+      @extend .mb-3;
+      
+      .nav-link {
+        font-weight: $font-weight-medium;
+        color: $gray-700;
+        
+        &.active {
+          color: $primary;
+          font-weight: $font-weight-bold;
+        }
+        
+        &:hover:not(.active) {
+          color: $primary;
+        }
+      }
+    }
+    
+    .forum-content {
+      min-height: 400px;
+    }
+    
+    .forum-discussion-item {
+      @extend .p-3;
+      @extend .mb-3;
+      @extend .rounded;
+      @extend .d-flex;
+      border: 1px solid $gray-200;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba($dark, 0.1);
+        border-color: $primary;
+      }
+      
+      .discussion-avatar {
+        @extend .me-3;
+        width: 60px;
+        
+        img {
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+        }
+      }
+      
+      .discussion-content {
+        flex: 1;
+      }
+      
+      .discussion-title {
+        @extend .mb-2;
+        font-size: 1.25rem;
+        
+        a {
+          color: $primary;
+          text-decoration: none;
+          
+          &:hover {
+            color: darken($primary, 10%);
+            text-decoration: underline;
+          }
+        }
+      }
+      
+      .discussion-meta {
+        @extend .mb-2;
+        @extend .d-flex;
+        @extend .flex-wrap;
+        @extend .gap-3;
+        color: $gray-600;
+        font-size: 0.85rem;
+      }
+      
+      .discussion-excerpt {
+        @extend .mb-2;
+        font-size: 0.95rem;
+      }
+      
+      .discussion-tags {
+        @extend .mt-2;
+        
+        .badge {
+          @extend .me-1;
+          font-size: 0.75rem;
+        }
+      }
+    }
+    
+    .forum-more {
+      @extend .mt-4;
+    }
+    
+    // Category styles
+    .forum-categories {
+      @extend .p-2;
+      
+      .category-card {
+        @extend .d-block;
+        @extend .p-4;
+        @extend .rounded;
+        @extend .text-center;
+        background-color: $light;
+        color: $dark;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        height: 100%;
+        
+        &:hover {
+          background-color: $primary;
+          color: $white;
+          transform: translateY(-5px);
+          box-shadow: 0 5px 15px rgba($primary, 0.3);
+          
+          .category-count {
+            color: rgba($white, 0.8);
+          }
+        }
+        
+        .category-icon {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        h5 {
+          @extend .mb-2;
+        }
+        
+        .category-count {
+          color: $gray-600;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  
+  // Events section styles
+  &-events-section {
+    @extend .py-5;
+    background-color: rgba($light, 0.6);
+    
+    .events-calendar {
+      @extend .mt-4;
+    }
+    
+    .calendar-month {
+      font-weight: $font-weight-bold;
+    }
+    
+    .events-list {
+      @extend .mt-4;
+    }
+    
+    .event-item {
+      @extend .d-flex;
+      @extend .mb-4;
+      @extend .p-3;
+      @extend .rounded;
+      background-color: $white;
+      box-shadow: 0 2px 10px rgba($dark, 0.05);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba($dark, 0.1);
+      }
+      
+      .event-date {
+        @extend .me-4;
+        @extend .d-flex;
+        @extend .flex-column;
+        @extend .justify-content-center;
+        @extend .align-items-center;
+        @extend .text-center;
+        min-width: 80px;
+        background-color: $primary;
+        color: $white;
+        padding: 0.75rem;
+        border-radius: 8px;
+        
+        .event-day {
+          font-size: 1.75rem;
+          font-weight: $font-weight-bold;
+          line-height: 1;
+        }
+        
+        .event-month {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+        }
+      }
+      
+      .event-content {
+        flex: 1;
+      }
+      
+      .event-title {
+        @extend .mb-2;
+        font-size: 1.25rem;
+        color: $primary;
+      }
+      
+      .event-meta {
+        @extend .d-flex;
+        @extend .flex-wrap;
+        @extend .gap-3;
+        @extend .mb-2;
+        color: $gray-600;
+        font-size: 0.85rem;
+      }
+      
+      .event-description {
+        font-size: 0.95rem;
+        color: $gray-700;
+      }
+      
+      .event-actions {
+        @extend .mt-3;
+        
+        .btn {
+          @extend .me-2;
+        }
+      }
+    }
   }
 }

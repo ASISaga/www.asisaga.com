@@ -1,7 +1,7 @@
 {
   "name": "asisaga.github.io",
   "type": "directory",
-  "description": "Root of the Jekyll site",
+  "description": "Root of the Jekyll site - A Jekyll-based static website that follows UX design document",
   "children": [
     {
       "name": "docs",
@@ -60,10 +60,23 @@
           "type": "file",
           "description": "Guide to managing team member information on the about page"
         },
-        {
-          "name": "data-access.md",
+        {          "name": "data-access.md",
           "type": "file",
           "description": "Documentation for directly accessing data in templates"
+        },
+        {
+          "name": "community-features.md",
+          "type": "file",
+          "description": "Documentation for forum features and community interactions in the Thought Lab page"
+        },        {
+          "name": "seo-and-accessibility.md",
+          "type": "file",
+          "description": "Guidelines for implementing SEO and accessibility best practices across the site"
+        },
+        {
+          "name": "accessibility-seo-implementation.md",
+          "type": "file",
+          "description": "Technical implementation guide for the accessibility and SEO enhancements made to the website"
         },
         {
           "name": "content-ui-separation.md",
@@ -168,11 +181,28 @@
           "description": "Thought Lab page content data"
         }
       ]
-    },
-    {      "name": "_includes",
+    },    {      "name": "_includes",
       "type": "directory",
       "description": "Reusable UI components",
       "children": [
+        {
+          "name": "content-modal.html",
+          "type": "file", 
+          "description": "Modal dialog component for interactive content",
+          "children": []
+        },
+        {
+          "name": "interactive-module.html",
+          "type": "file",
+          "description": "Interactive module component with hover effects and clickable content",
+          "children": []
+        },
+        {
+          "name": "timeline.html",
+          "type": "file",
+          "description": "Interactive timeline component with clickable markers and content panels",
+          "children": []
+        },
         {
           "name": "cta.html",
           "type": "file",
@@ -315,7 +345,15 @@
                 {
                   "name": "_base-section.scss",
                   "type": "file",
-                  "description": "Base styles for generic section elements"
+                  "description": "Base styles for generic section elements"                },                {
+                  "name": "_animations.scss",
+                  "type": "file",
+                  "description": "Animation and effects for the website including keyframes and transition effects"
+                },
+                {
+                  "name": "_accessibility.scss",
+                  "type": "file",
+                  "description": "Accessibility-specific styles for better usability and compliance with WCAG guidelines"
                 },                {
                   "name": "_colors.scss",
                   "type": "file",
@@ -367,20 +405,33 @@
                   "description": "SCSS variables for spacing, breakpoints, etc."
                 }
               ]
-            },
-            {              "name": "_components",
+            },            {              "name": "_components",
               "type": "directory",
               "description": "Component-specific styles",
               "children": [
                 {
+                  "name": "_timeline.scss",
+                  "type": "file",
+                  "description": "Timeline component styles for interactive timelines"
+                },
+                {
+                  "name": "_interactive-module.scss",
+                  "type": "file", 
+                  "description": "Interactive module component styles with hover effects"
+                },
+                {
                   "name": "_card-component.scss",
                   "type": "file",
                   "description": "Reusable card component mixins for consistent card styling"
-                },
-                {
+                },                {
                   "name": "_image-card-component.scss",
                   "type": "file",
                   "description": "Reusable image card component mixins for cards with images"
+                },
+                {
+                  "name": "_back-to-top.scss",
+                  "type": "file",
+                  "description": "Styles for the back-to-top button that appears when scrolling"
                 },
                 {
                   "name": "_section-component.scss",
@@ -645,12 +696,16 @@
               ]
             }
           ]
-        },
-        {
+        },        {
           "name": "js",
           "type": "directory",
           "description": "JavaScript files",
           "children": [
+            {
+              "name": "animations.js",
+              "type": "file",
+              "description": "Animation and interactive feature scripts including parallax effects, micro-interactions and timeline animations"
+            },
             {
               "name": "card-template.js",
               "type": "file",

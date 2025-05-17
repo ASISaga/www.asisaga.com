@@ -4,30 +4,212 @@ title: "Contact"
 permalink: /contact/
 ---
 
-<section id="contact-page" class="contact-page">
-  <div class="contact-container">
-    <h2 class="contact-title">Contact & Engage</h2>
-    <p class="contact-intro">
-      {{ site.data.contact.intro_content }}
-    </p>
-    <div class="contact-form-row">
-      <div class="contact-form-col">
-        <form class="contact-form">
-          <div class="contact-form-group">
-            <label for="name" class="contact-form-label">{{ site.data.contact.name_label }}</label>
-            <input type="text" class="contact-form-input" id="name" placeholder="{{ site.data.contact.name_placeholder }}">
+<main id="contact-page" class="contact-page">
+  <!-- Hero section with immersive background -->
+  {% include hero.html 
+    title="Contact & Connect" 
+    description="Reach out and join our community of forward thinkers." 
+    size="sm"
+    style="alt"
+    background_image="/assets/images/contact-background.jpg"
+  %}
+
+  <!-- Contact form and social integrations section -->
+  <section class="contact-main-section">
+    <div class="container">
+      <div class="row">
+        <!-- Contact form -->
+        <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-right">
+          <div class="contact-form-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="contact-intro">
+              {{ site.data.contact.intro_content }}
+            </p>
+            
+            <form id="contactForm" class="contact-form needs-validation" novalidate>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    <label for="name" class="form-label">{{ site.data.contact.name_label }}</label>
+                    <input type="text" class="form-control" id="name" placeholder="{{ site.data.contact.name_placeholder }}" required>
+                    <div class="invalid-feedback">
+                      Please provide your name.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    <label for="email" class="form-label">{{ site.data.contact.email_label }}</label>
+                    <input type="email" class="form-control" id="email" placeholder="{{ site.data.contact.email_placeholder }}" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid email address.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="How can we help?" required>
+                <div class="invalid-feedback">
+                  Please provide a subject.
+                </div>
+              </div>
+              
+              <div class="form-group mb-4">
+                <label for="message" class="form-label">{{ site.data.contact.message_label }}</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="{{ site.data.contact.message_placeholder }}" required></textarea>
+                <div class="invalid-feedback">
+                  Please provide your message.
+                </div>
+              </div>
+              
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                <label class="form-check-label" for="newsletter">
+                  Subscribe to our newsletter to receive updates
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">{{ site.data.contact.button_text }}</button>
+              
+              <div class="mt-3 form-response d-none">
+                <div class="alert alert-success">
+                  Thank you for your message! We'll get back to you soon.
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="contact-form-group">
-            <label for="email" class="contact-form-label">{{ site.data.contact.email_label }}</label>
-            <input type="email" class="contact-form-input" id="email" placeholder="{{ site.data.contact.email_placeholder }}">
+        </div>
+        
+        <!-- Connect section -->
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="contact-connect-container">
+            <h2 class="section-title">Connect With Us</h2>
+            
+            <!-- Social media connections -->
+            <div class="social-connections mb-5">
+              <h4 class="h5 mb-4">Follow Our Journey</h4>
+              
+              <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+              
+              <p class="social-description mt-4">
+                Stay updated with the latest developments in ASI research and community events.
+              </p>
+            </div>
+            
+            <!-- Newsletter signup -->
+            <div class="newsletter-signup mb-5">
+              <h4 class="h5 mb-4">Subscribe to Our Newsletter</h4>
+              
+              <form id="newsletterForm" class="newsletter-form needs-validation" novalidate>
+                <div class="input-group mb-3">
+                  <input type="email" class="form-control" placeholder="Your email address" aria-label="Email address" required>
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                  <div class="invalid-feedback">
+                    Please provide a valid email address.
+                  </div>
+                </div>
+                <p class="newsletter-note text-muted">
+                  Get monthly updates on events, research, and community news.
+                </p>
+              </form>
+            </div>
+            
+            <!-- Contact information -->
+            <div class="contact-info">
+              <h4 class="h5 mb-4">Contact Information</h4>
+              
+              <ul class="contact-info-list list-unstyled">
+                <li class="contact-info-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>1234 Innovation Drive, Tech Valley, CA 94043</span>
+                </li>
+                <li class="contact-info-item">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:info@asisaga.org">info@asisaga.org</a>
+                </li>
+                <li class="contact-info-item">
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+1234567890">(123) 456-7890</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="contact-form-group">
-            <label for="message" class="contact-form-label">{{ site.data.contact.message_label }}</label>
-            <textarea class="contact-form-textarea" id="message" rows="4" placeholder="{{ site.data.contact.message_placeholder }}"></textarea>
-          </div>
-          <button type="submit" class="contact-form-submit">{{ site.data.contact.button_text }}</button>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <!-- Interactive map section -->
+  <section class="contact-map-section">
+    <div class="map-container" data-aos="zoom-in">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101268.39372531053!2d-122.07335237966382!3d37.41354961147003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7495bec0189%3A0x7c17d44a466baf9b!2sMountain%20View%2C%20CA%2C%20USA!5e0!3m2!1sen!2sca!4v1628553573995!5m2!1sen!2sca" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+  
+  <!-- Initialize AOS animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+      
+      // Form validation
+      const validateForm = function(formId) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+        
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            event.preventDefault();
+            // Show success message
+            if (formId === 'contactForm') {
+              const responseDiv = form.querySelector('.form-response');
+              if (responseDiv) {
+                responseDiv.classList.remove('d-none');
+              }
+              // Reset form
+              form.reset();
+            }
+          }
+          
+          form.classList.add('was-validated');
+        });
+      };
+      
+      // Initialize validation
+      validateForm('contactForm');
+      validateForm('newsletterForm');
+    });
+  </script>
+</main>

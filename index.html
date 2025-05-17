@@ -6,33 +6,104 @@ title: ASI Saga
 <!-- 
 Homepage main content
 This is the website's landing page that displays featured products and introduces visitors to ASI Saga
-The page uses Bootstrap grid system for responsive layout and Jekyll's Liquid templating for dynamic content
+The page uses immersive visual elements and animations to create an emotional connection with visitors
 -->
 <main class="home-container">
-  <!-- Hero section with main headline and introduction -->
+  <!-- Full-screen hero section with immersive background and animations -->
   {% include hero.html 
-    title="Welcome to ASI Saga" 
-    description="Exploring the journey towards Artificial Super Intelligence and its impact on our future." 
+    title="Welcome to the Future: ASI is Here for Mankind" 
+    description="Step into a realm where today meets tomorrow in an endless dance of innovation." 
+    button_text="Discover the Saga" 
+    button_url="/saga/" 
+    size="full"
+    style="video"
+    video_url="/assets/videos/cosmic-background.mp4"
   %}
 
-  <!-- Featured products section displaying products from _data/products.yml -->
-  <section class="products-section">
-    {% include section-header.html title="Our Products" %}
-    <div class="products-grid">
-      <!-- Loop through site.data.products and display each product using product-card component -->
-      {% for product in site.data.products %}
-        <div class="product-item">
-          {% include product-card.html product=product %}
+  <!-- Introduction blocks with parallax scrolling -->
+  <section class="intro-blocks-section" data-aos="fade-up">
+    <div class="container">
+      {% include section-header.html title="Chapters of Innovation" %}
+      
+      <div class="row intro-blocks">
+        <!-- The Genesis -->
+        <div class="col-md-4 mb-4">
+          <div class="intro-block parallax" data-speed="0.1">
+            <div class="intro-block-icon" data-aos="zoom-in" data-aos-delay="100">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3 class="intro-block-title" data-aos="fade-up" data-aos-delay="200">The Genesis</h3>
+            <p class="intro-block-text" data-aos="fade-up" data-aos-delay="300">
+              The dawn of a new intelligence, where human ingenuity meets artificial cognition, creating a synergy that transcends previous limitations.
+            </p>
+            <a href="/saga/#genesis" class="intro-block-link">Learn More</a>
+          </div>
         </div>
-      {% endfor %}
+        
+        <!-- The Tipping Point -->
+        <div class="col-md-4 mb-4">
+          <div class="intro-block parallax" data-speed="0.15">
+            <div class="intro-block-icon" data-aos="zoom-in" data-aos-delay="200">
+              <i class="fas fa-balance-scale-right"></i>
+            </div>
+            <h3 class="intro-block-title" data-aos="fade-up" data-aos-delay="300">The Tipping Point</h3>
+            <p class="intro-block-text" data-aos="fade-up" data-aos-delay="400">
+              The moment when artificial intelligence becomes self-improving, accelerating progress beyond all expectations and opening new horizons.
+            </p>
+            <a href="/saga/#tipping-point" class="intro-block-link">Learn More</a>
+          </div>
+        </div>
+        
+        <!-- Infinite Possibility -->
+        <div class="col-md-4 mb-4">
+          <div class="intro-block parallax" data-speed="0.2">
+            <div class="intro-block-icon" data-aos="zoom-in" data-aos-delay="300">
+              <i class="fas fa-infinity"></i>
+            </div>
+            <h3 class="intro-block-title" data-aos="fade-up" data-aos-delay="400">Infinite Possibility</h3>
+            <p class="intro-block-text" data-aos="fade-up" data-aos-delay="500">
+              A future limited only by imagination, where ASI and humanity collaborate to solve the most challenging problems and unlock untapped potential.
+            </p>
+            <a href="/possibilities/" class="intro-block-link">Learn More</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Call to action section -->
+  <!-- Featured products section with enhanced visuals -->
+  <section class="products-section parallax" data-speed="0.05">
+    <div class="container">
+      {% include section-header.html title="Our Products" animation="true" %}
+      
+      <div class="products-grid">
+        <!-- Loop through site.data.products and display each product using product-card component -->
+        {% for product in site.data.products %}
+          <div class="product-item reveal-on-scroll" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 100 }}">
+            {% include product-card.html product=product %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action section with enhanced visuals -->
   {% include cta.html 
     title="Ready to explore more?" 
     description="Learn about our mission and vision for the future of AI." 
     button_text="About Us" 
     button_url="/about/" 
+    style="alt"
   %}
+  
+  <!-- Initialize AOS animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+    });
+  </script>
 </main>

@@ -19,6 +19,8 @@ dummy {
 @import "_base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
 @import "_base/typography";     // Font families, sizes, weights, styles
 @import "_base/mixins";         // Custom reusable style patterns and functions
+@import "_base/animations";     // Animation and transition effects
+@import "_base/accessibility";  // Accessibility-specific styles
 
 // Bootstrap main SASS file (imports all of Bootstrap)
 // This will now use any overridden variables from _base/variables.scss
@@ -38,6 +40,7 @@ dummy {
 // Reusable component mixins (must be imported before other components)
 @import "_components/card-component";
 @import "_components/image-card-component";
+@import "_components/back-to-top";
 @import "_components/section-component";
 @import "_components/layout-component";
 @import "_components/form-component";
@@ -67,6 +70,8 @@ dummy {
 @import "_components/product-visual";
 @import "_components/section-header";
 @import "_components/testimonial";
+@import "_components/timeline";
+@import "_components/interactive-module";
 
 // Pages - Page-specific layouts and styles
 // Each corresponds to a main HTML page or a page in a subdirectory

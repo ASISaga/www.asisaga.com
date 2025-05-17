@@ -1,0 +1,143 @@
+{% comment %}
+Interactive Timeline Component
+Parameters:
+- title: The title for the timeline section
+- items: An array of timeline items, each with title, date, content, and image
+{% endcomment %}
+
+<section class="timeline-section" aria-labelledby="timeline-heading">
+  {% if include.title %}
+    <h2 class="timeline-title" id="timeline-heading">{{ include.title }}</h2>
+  {% endif %}
+  
+  <div class="timeline-container">
+    <!-- Timeline track -->
+    <div class="timeline-track" aria-hidden="true"></div>
+    
+    <!-- Timeline markers -->
+    <div class="timeline-markers" role="tablist" aria-label="Timeline navigation">
+      {% for item in include.items %}
+        <div class="timeline-marker {% if forloop.first %}active{% endif %}" 
+             id="timeline-tab-{{ forloop.index }}"
+             data-content-id="timeline-content-{{ forloop.index }}"
+             role="tab"
+             aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+             aria-controls="timeline-content-{{ forloop.index }}"
+             tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+             data-title="{{ item.title }}"
+             data-aos="fade-up" 
+             data-aos-delay="{{ forloop.index | times: 100 }}" 
+             data-aos-duration="800">
+          <div class="timeline-marker-dot"></div>
+          <div class="timeline-marker-label">{{ item.date }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Timeline content panels -->
+    <div class="timeline-content-container">
+      {% for item in include.items %}
+        <div id="timeline-content-{{ forloop.index }}" 
+             class="timeline-content {% if forloop.first %}active{% endif %}"
+             role="tabpanel"
+             aria-labelledby="timeline-tab-{{ forloop.index }}"
+             tabindex="0"
+             {% if forloop.first != true %}aria-hidden="true"{% endif %}
+             data-aos="fade-in"
+             data-aos-duration="1000">
+          <div class="timeline-content-inner">
+            <div class="timeline-content-image">
+              {% if item.image %}
+                <img src="{{ item.image }}" alt="{{ item.title }} - {{ item.date }}" class="img-fluid">
+              {% endif %}
+            </div>
+            <div class="timeline-content-text">
+              <h3 class="timeline-content-title">{{ item.title }}</h3>
+              <div class="timeline-content-body">
+                {{ item.content }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Timeline interaction with keyboard support
+    const timelineMarkers = document.querySelectorAll('.timeline-marker');
+    if (timelineMarkers.length === 0) return;
+    
+    timelineMarkers.forEach(marker => {
+      // Click event
+      marker.addEventListener('click', function() {
+        activateTimelineItem(marker);
+      });
+      
+      // Keyboard event
+      marker.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateTimelineItem(marker);
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          const nextMarker = marker.nextElementSibling;
+          if (nextMarker && nextMarker.classList.contains('timeline-marker')) {
+            nextMarker.focus();
+            activateTimelineItem(nextMarker);
+          }
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prevMarker = marker.previousElementSibling;
+          if (prevMarker && prevMarker.classList.contains('timeline-marker')) {
+            prevMarker.focus();
+            activateTimelineItem(prevMarker);
+          }
+        }
+      });
+    });
+    
+    function activateTimelineItem(activeMarker) {
+      // Update marker states
+      timelineMarkers.forEach(m => {
+        m.classList.remove('active');
+        m.setAttribute('aria-selected', 'false');
+        m.setAttribute('tabindex', '-1');
+      });
+      
+      activeMarker.classList.add('active');
+      activeMarker.setAttribute('aria-selected', 'true');
+      activeMarker.setAttribute('tabindex', '0');
+      
+      // Update content panels
+      const contentId = activeMarker.getAttribute('data-content-id');
+      const contentPanels = document.querySelectorAll('.timeline-content');
+      
+      contentPanels.forEach(panel => {
+        if (panel.id === contentId) {
+          panel.classList.add('active');
+          panel.removeAttribute('aria-hidden');
+        } else {
+          panel.classList.remove('active');
+          panel.setAttribute('aria-hidden', 'true');
+        }
+      });
+      
+      // Announce to screen readers
+      const activeContentTitle = document.querySelector('#' + contentId + ' .timeline-content-title').textContent;
+      const liveRegion = document.getElementById('timeline-live-region') || createLiveRegion();
+      liveRegion.textContent = 'Displayed timeline item: ' + activeContentTitle;
+    }
+    
+    function createLiveRegion() {
+      const liveRegion = document.createElement('div');
+      liveRegion.id = 'timeline-live-region';
+      liveRegion.className = 'sr-only';
+      liveRegion.setAttribute('aria-live', 'polite');
+      document.body.appendChild(liveRegion);
+      return liveRegion;
+    }
+  });
+</script>
