@@ -1,31 +1,31 @@
 // Bootstrap dependencies - core functions, variables, and mixins
 @import "bootstrap/functions";
-@import "bootstrap/variables";      // Standard Bootstrap variables
-@import "bootstrap/variables-dark"; // Standard Bootstrap dark variables
-@import "bootstrap/mixins";         // Standard Bootstrap mixins
+@import "bootstrap/variables";
+@import "bootstrap/variables-dark";
+@import "bootstrap/mixins";
 
 // Custom Base Styles 
 // These are imported before the main Bootstrap SASS file to allow 
 // Bootstrap's !default variables to be overridden if needed.
-@import "base/colors";         // Centralized color definitions (ensure no conflict with _variables.scss)
-@import "base/dimensions";     // Centralized dimensions (spacing, sizes, etc.)
-@import "base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
-@import "base/typography";     // Font families, sizes, weights, styles
-@import "base/mixins";         // Custom reusable style patterns and functions
-@import "base/animations";     // Animation and transition effects
-@import "base/accessibility";  // Accessibility-specific styles
+@import "base/colors";
+@import "base/dimensions";
+@import "base/variables";
+@import "base/typography";
+@import "base/mixins";
+@import "base/animations";
+@import "base/accessibility";
 
 // Bootstrap main SASS file (imports all of Bootstrap)
 // This will now use any overridden variables from base/variables.scss
 @import "bootstrap/bootstrap";
 
 // Remaining base styles that don't impact Bootstrap variables
-@import "base/utilities";      // Custom helper classes
-@import "base/layout";         // Base layout styles for overall site structure
-@import "base/common";         // Common base styles, resets, or global settings
-@import "base/responsive";     // Responsive design helpers and media query management
-@import "base/theme";          // Theme-specific styles or variables
-@import "base/base-section";   // Base styles for generic section elements
+@import "base/utilities";
+@import "base/layout";
+@import "base/common";
+@import "base/responsive";
+@import "base/theme";
+@import "base/base-section";
 
 // Components - Reusable UI component styles
 // Each corresponds to an HTML partial in _includes/
