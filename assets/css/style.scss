@@ -1,8 +1,4 @@
 ---
 ---
-
-dummy {
-  display: none
-}
-
-@import "main"
+// Central SCSS imports only, no direct code
+@import "main";
