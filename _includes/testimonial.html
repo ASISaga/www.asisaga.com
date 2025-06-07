@@ -11,6 +11,8 @@ Parameters:
   {% assign section_class = section_class | append: " testimonial-section-alt" %}
 {% endif %}
 
+{% assign testimonials = include.testimonials | default: [] %}
+
 <section class="{{ section_class }}">
   <div class="testimonial-container">
     {% if include.title %}
@@ -18,7 +20,7 @@ Parameters:
     {% endif %}
     
     <div class="testimonial-grid">
-      {% for item in include.testimonials %}
+      {% for item in testimonials %}
         <div class="testimonial-item">
           <div class="testimonial-card">
             <p class="testimonial-text">{{ item.text }}</p>

@@ -10,12 +10,13 @@ Parameters:
 {% if include.card_style %}
   {% assign card_class = card_class | append: " product-card-" | append: include.card_style %}
 {% endif %}
+{% assign items = include.items | default: [] %}
 
 <section class="product-applications-section">
   {% include section-header.html title=include.section_title %}
   
   <div class="product-grid">
-    {% for item in include.items %}
+    {% for item in items %}
     <div class="{{ card_class }}">
       <h3 class="product-card-title">{{ item.title }}</h3>
       <p class="product-card-description">{{ item.description }}</p>

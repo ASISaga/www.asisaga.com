@@ -33,7 +33,7 @@ Parameters:
       <div class="timeline-progress-fill"></div>
     </div>
     <div class="timeline-progress-text">
-      <span class="current-chapter">1</span> / <span class="total-chapters">{{ include.items.size }}</span>
+      <span class="current-chapter">1</span> / <span class="total-chapters">{{ items.size }}</span>
     </div>
   </div>
   {% endif %}
@@ -46,7 +46,7 @@ Parameters:
     
     <!-- Timeline markers with enhanced interactions -->
     <div class="timeline-markers" role="tablist" aria-label="Timeline navigation">
-      {% for item in include.items %}
+      {% for item in items %}
         <div class="timeline-marker {% if forloop.first %}active{% endif %}" 
              id="timeline-tab-{{ forloop.index }}"
              data-content-id="timeline-content-{{ forloop.index }}"
@@ -73,7 +73,7 @@ Parameters:
     
     <!-- Timeline content panels with enhanced layout -->
     <div class="timeline-content-container">
-      {% for item in include.items %}
+      {% for item in items %}
         <div class="timeline-content {% if forloop.first %}active{% endif %}"
              id="timeline-content-{{ forloop.index }}"
              role="tabpanel"
