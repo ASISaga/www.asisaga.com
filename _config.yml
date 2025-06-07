@@ -3,11 +3,6 @@ title: ASI Saga
 description: Genesis of Artificial Super Intelligence (ASI)
 #remote_theme: pages-themes/time-machine@v0.2.0
 
-sass:
-  load_paths:
-    - assets/css/bootstrap
-    - assets/css
-
 plugins:
   #- jekyll-remote-theme # add this line to the plugins list if you already have one
   - jekyll-feed

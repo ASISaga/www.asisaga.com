@@ -14,70 +14,70 @@ dummy {
 // Custom Base Styles 
 // These are imported before the main Bootstrap SASS file to allow 
 // Bootstrap's !default variables to be overridden if needed.
-@import "_base/colors";         // Centralized color definitions (ensure no conflict with _variables.scss)
-@import "_base/dimensions";     // Centralized dimensions (spacing, sizes, etc.)
-@import "_base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
-@import "_base/typography";     // Font families, sizes, weights, styles
-@import "_base/mixins";         // Custom reusable style patterns and functions
-@import "_base/animations";     // Animation and transition effects
-@import "_base/accessibility";  // Accessibility-specific styles
+@import "base/colors";         // Centralized color definitions (ensure no conflict with _variables.scss)
+@import "base/dimensions";     // Centralized dimensions (spacing, sizes, etc.)
+@import "base/variables";      // Custom SCSS variables (colors, breakpoints, spacing)
+@import "base/typography";     // Font families, sizes, weights, styles
+@import "base/mixins";         // Custom reusable style patterns and functions
+@import "base/animations";     // Animation and transition effects
+@import "base/accessibility";  // Accessibility-specific styles
 
 // Bootstrap main SASS file (imports all of Bootstrap)
-// This will now use any overridden variables from _base/variables.scss
+// This will now use any overridden variables from base/variables.scss
 @import "bootstrap/bootstrap";
 
 // Remaining base styles that don't impact Bootstrap variables
-@import "_base/utilities";      // Custom helper classes
-@import "_base/layout";         // Base layout styles for overall site structure
-@import "_base/common";         // Common base styles, resets, or global settings
-@import "_base/responsive";     // Responsive design helpers and media query management
-@import "_base/theme";          // Theme-specific styles or variables
-@import "_base/base-section";   // Base styles for generic section elements
+@import "base/utilities";      // Custom helper classes
+@import "base/layout";         // Base layout styles for overall site structure
+@import "base/common";         // Common base styles, resets, or global settings
+@import "base/responsive";     // Responsive design helpers and media query management
+@import "base/theme";          // Theme-specific styles or variables
+@import "base/base-section";   // Base styles for generic section elements
 
 // Components - Reusable UI component styles
 // Each corresponds to an HTML partial in _includes/
 
 // Reusable component mixins (must be imported before other components)
-@import "_components/card-component";
-@import "_components/image-card-component";
-@import "_components/back-to-top";
-@import "_components/section-component";
-@import "_components/layout-component";
-@import "_components/form-component";
-@import "_components/team-component";
-@import "_components/header-component";
-@import "_components/content-section-component";
-@import "_components/hero-component";
-@import "_components/products-grid-component";
-@import "_components/cta-component";
+@import "components/card-component";
+@import "components/image-card-component";
+@import "components/back-to-top";
+@import "components/section-component";
+@import "components/layout-component";
+@import "components/form-component";
+@import "components/team-component";
+@import "components/header-component";
+@import "components/content-section-component";
+@import "components/hero-component";
+@import "components/products-grid-component";
+@import "components/cta-component";
 
 // Individual components
-@import "_components/cta";
-@import "_components/feature-grid";
-@import "_components/footer";
-@import "_components/header";
-@import "_components/hero";
-@import "_components/linkedin";
-@import "_components/navbar";
-@import "_components/product-card";
-@import "_components/product-layout";
-@import "_components/product-page";
-@import "_components/product-applications";
-@import "_components/product-benefits-list";
-@import "_components/product-code-example";
-@import "_components/product-feature-grid";
-@import "_components/product-section-container";
-@import "_components/product-visual";
-@import "_components/section-header";
-@import "_components/testimonial";
-@import "_components/timeline";
-@import "_components/interactive-module";
+@import "components/cta";
+@import "components/feature-grid";
+@import "components/footer";
+@import "components/header";
+@import "components/hero";
+@import "components/linkedin";
+@import "components/navbar";
+@import "components/product-card";
+@import "components/product-layout";
+@import "components/product-page";
+@import "components/product-applications";
+@import "components/product-benefits-list";
+@import "components/product-code-example";
+@import "components/product-feature-grid";
+@import "components/product-section-container";
+@import "components/product-visual";
+@import "components/section-header";
+@import "components/testimonial";
+@import "components/timeline";
+@import "components/interactive-module";
 
 // Transcendent Experience Components - New ASI Saga Transcendent Design System
-@import "_components/transcendent-hero";
-@import "_components/genesis-blocks";
-@import "_components/transcendent-threshold";
-@import "_components/genesis-invitation";
+@import "components/transcendent-hero";
+@import "components/genesis-blocks";
+@import "components/transcendent-threshold";
+@import "components/genesis-invitation";
 
 // Pages - Page-specific layouts and styles
 // Each corresponds to a main HTML page or a page in a subdirectory
