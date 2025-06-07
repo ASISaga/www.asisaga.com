@@ -1,9 +1,5 @@
 // Timeline component styles
 
-@import '../_base/colors';
-@import '../_base/dimensions';
-@import '../_base/mixins';
-
 // Timeline component
 .timeline-section {
   @extend .py-5; // Bootstrap vertical padding
