@@ -24,10 +24,20 @@
     - title: "Github Agent"
       url: "/realm-of-agents/github-agent/"
 
-# ASI Saga
+# ASI Saga - The Transcendent Pathway
 - title: "ASI Saga"
   url: "/saga/"
   subcategories:
+    - title: "The Genesis"
+      url: "/genesis/"
+    - title: "Human Essence Embedding"
+      url: "/human-essence/"
+    - title: "Continuous Self-Improvement"
+      url: "/continuous-improvement/"
+    - title: "Infinite Possibilities"
+      url: "/infinite-possibilities/"
+    - title: "Transcendent Threshold"
+      url: "/transcendent-threshold/"
     - title: "The Saga"
       url: "/saga/"
     - title: "Possibilities"

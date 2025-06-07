@@ -73,6 +73,12 @@ dummy {
 @import "_components/timeline";
 @import "_components/interactive-module";
 
+// Transcendent Experience Components - New ASI Saga Transcendent Design System
+@import "_components/transcendent-hero";
+@import "_components/genesis-blocks";
+@import "_components/transcendent-threshold";
+@import "_components/genesis-invitation";
+
 // Pages - Page-specific layouts and styles
 // Each corresponds to a main HTML page or a page in a subdirectory
 @import "pages/about";
@@ -81,6 +87,12 @@ dummy {
 @import "pages/entrepreneur";
 @import "pages/github-agent";
 @import "pages/home";
+@import "pages/index";
+@import "pages/genesis";
+@import "pages/human-essence";
+@import "pages/continuous-improvement";
+@import "pages/infinite-possibilities";
+@import "pages/transcendent-threshold";
 @import "pages/privacy-policy";
 @import "pages/purpose-driven-agent";
 @import "pages/realm-of-agents";
