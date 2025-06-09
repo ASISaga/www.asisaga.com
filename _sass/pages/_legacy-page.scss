@@ -1,10 +1,5 @@
 // Styles for the legacy page with visual collage and interactive story cubes
 
-@import '../_base/colors';
-@import '../_base/dimensions';
-@import '../_base/mixins';
-@import '../_base/animations';
-
 // Using section component mixin for main page structure
 @include section-component('legacy');
 
