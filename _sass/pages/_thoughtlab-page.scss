@@ -1,11 +1,5 @@
 // Styles for the thought lab page
 
-// Import base styles
-@import '../_base/colors';
-@import '../_base/dimensions';
-@import '../_base/mixins';
-@import '../_base/animations';
-
 // Using section component mixin for main page structure
 @include section-component('thoughtlab');
 
