@@ -1,10 +1,5 @@
 // Styles for the possibilities page with interactive modules and visual enhancements
 
-@import '../_base/colors';
-@import '../_base/dimensions';
-@import '../_base/mixins';
-@import '../_base/animations';
-
 // Using section component mixin for main page structure
 @include section-component('possibilities');
 
