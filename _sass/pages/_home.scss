@@ -1,12 +1,6 @@
 // Homepage specific styles
 // Uses component mixins and Bootstrap utilities, with enhanced visual elements
 
-// Import base styles
-@import '../_base/colors';
-@import '../_base/dimensions';
-@import '../_base/mixins';
-@import '../_base/animations';
-
 // Use enhanced hero component for the homepage hero
 @include gradient-hero-component('hero', rgba($primary, 0.1), $white);
 
