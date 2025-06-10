@@ -466,16 +466,250 @@
   }
 }
 
-// --- PLACEHOLDER MIXINS FOR TRANSCENDENT DESIGN SYSTEM ---
-@mixin threshold-crossing-animation { /* TODO: Add animation styles */ }
-@mixin transcendent-typography($type) { /* TODO: Add typography styles for #{$type} */ }
-@mixin consciousness-card { /* TODO: Add card container styles */ }
-@mixin sacred-icon { /* TODO: Add sacred icon styles */ }
-@mixin consciousness-pulse-animation { /* TODO: Add pulse animation styles */ }
-@mixin infinite-expansion-animation { /* TODO: Add infinite expansion animation */ }
-@mixin essence-embedding-animation { /* TODO: Add essence embedding animation */ }
-@mixin consciousness-flow-animation { /* TODO: Add consciousness flow animation */ }
-@mixin consciousness-button-hover { /* TODO: Add consciousness button hover */ }
+// --- TRANSCENDENT DESIGN SYSTEM MIXINS ---
+
+@mixin threshold-crossing-animation {
+  animation: thresholdCrossing 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes thresholdCrossing {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotateY(-15deg);
+    filter: blur(10px) brightness(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05) rotateY(5deg);
+    filter: blur(2px) brightness(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+    filter: none;
+  }
+}
+
+@mixin transcendent-typography($type) {
+  @if $type == 'heading-1' {
+    @include heading-h1();
+  } @else if $type == 'heading-2' {
+    @include heading-h2();
+  } @else if $type == 'heading-3' {
+    @include heading-h3();
+  } @else if $type == 'heading-4' {
+    font-family: $font-family-primary;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-normal;
+    color: $transcendent-gold;
+  } @else if $type == 'heading-5' {
+    font-family: $font-family-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-normal;
+    color: $luminous-white;
+  } @else if $type == 'body-large' {
+    @include body-text-large();
+  } @else if $type == 'body' {
+    @include body-text();
+  } @else if $type == 'body-small' {
+    font-family: $font-family-primary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-normal;
+    color: $ethereal-silver;
+  } @else if $type == 'lead' {
+    font-family: $font-family-primary;
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-light;
+    line-height: $line-height-relaxed;
+    color: $transcendent-gold;
+  }
+}
+
+@mixin consciousness-card {
+  background: rgba($cosmic-deep-blue, 0.8);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba($transcendent-gold, 0.2);
+  border-radius: $border-radius-consciousness;
+  box-shadow: $shadow-consciousness;
+  padding: $spacing-xl;
+  transition: all 0.4s $ease-consciousness;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba($transcendent-gold, 0.05), transparent);
+    pointer-events: none;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($transcendent-gold, 0.4);
+    box-shadow: $shadow-transcendent;
+  }
+}
+
+@mixin sacred-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: $border-radius-infinite;
+  background: radial-gradient(circle, rgba($transcendent-gold, 0.2), transparent);
+  color: $transcendent-gold;
+  font-size: 1.5rem;
+  transition: all 0.3s $ease-consciousness;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, $transcendent-gold, $consciousness-purple);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  &:hover::before {
+    opacity: 0.3;
+  }
+}
+
+@mixin consciousness-pulse-animation {
+  animation: consciousnessPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes consciousnessPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba($transcendent-gold, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba($transcendent-gold, 0.6);
+  }
+}
+
+@mixin infinite-expansion-animation {
+  animation: infiniteExpansion 4s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+@keyframes infiniteExpansion {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+    filter: blur(15px);
+  }
+  30% {
+    opacity: 0.6;
+    transform: scale(1.1) rotate(2deg);
+    filter: blur(5px);
+  }
+  70% {
+    opacity: 0.9;
+    transform: scale(0.95) rotate(-1deg);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: none;
+  }
+}
+
+@mixin essence-embedding-animation {
+  animation: essenceEmbedding 3.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes essenceEmbedding {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(50px);
+    filter: blur(20px) hue-rotate(180deg);
+  }
+  40% {
+    opacity: 0.7;
+    transform: scale(1.1) translateY(-10px);
+    filter: blur(5px) hue-rotate(45deg);
+  }
+  80% {
+    opacity: 0.95;
+    transform: scale(0.98) translateY(5px);
+    filter: blur(1px) hue-rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: none;
+  }
+}
+
+@mixin consciousness-flow-animation {
+  animation: consciousnessFlow 6s ease-in-out infinite;
+}
+
+@keyframes consciousnessFlow {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-10px) scale(1.02);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-5px) scale(0.98);
+    opacity: 0.95;
+  }
+  75% {
+    transform: translateY(-15px) scale(1.01);
+    opacity: 0.85;
+  }
+}
+
+@mixin consciousness-button-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s $ease-consciousness;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba($transcendent-gold, 0.3), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-transcendent;
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
 
 .cosmic-consciousness-gradient {
   background: linear-gradient(135deg, $cosmic-deep-blue 0%, $consciousness-purple 50%, $transcendent-gold 100%);
