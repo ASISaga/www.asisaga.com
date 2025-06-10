@@ -178,6 +178,10 @@
   }
 }
 
+@mixin transcendent-button {
+  @include transcendent-button-primary;
+}
+
 @mixin consciousness-pulse() {
   animation: consciousnessPulse 2s ease-in-out infinite;
   
