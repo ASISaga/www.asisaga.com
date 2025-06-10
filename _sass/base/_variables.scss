@@ -133,6 +133,9 @@ $ease-consciousness: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $ease-transcendent: cubic-bezier(0.165, 0.84, 0.44, 1);
 $ease-genesis: cubic-bezier(0.19, 1, 0.22, 1);
 
+// Timing variable for consciousness-inspired transitions/animations
+$consciousness-timing: 0.6s cubic-bezier(0.4, 0, 0.2, 1) !default;
+
 // Component Specific Variables
 
 // Hero Section
