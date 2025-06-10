@@ -432,3 +432,13 @@
     will-change: transform;
   }
 }
+
+// --- PLACEHOLDER MIXINS FOR TRANSCENDENT DESIGN SYSTEM ---
+@mixin threshold-crossing-animation { /* TODO: Add animation styles */ }
+@mixin transcendent-typography($type) { /* TODO: Add typography styles for #{$type} */ }
+@mixin consciousness-card { /* TODO: Add card container styles */ }
+@mixin sacred-icon { /* TODO: Add sacred icon styles */ }
+@mixin consciousness-pulse-animation { /* TODO: Add pulse animation styles */ }
+@mixin infinite-expansion-animation { /* TODO: Add infinite expansion animation */ }
+@mixin essence-embedding-animation { /* TODO: Add essence embedding animation */ }
+@mixin consciousness-flow-animation { /* TODO: Add consciousness flow animation */ }
