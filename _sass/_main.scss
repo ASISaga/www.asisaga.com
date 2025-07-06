@@ -1,63 +1,63 @@
 // Components - Reusable UI component styles
 // Each corresponds to an HTML partial in _includes/
 
-// Reusable component mixins (must be imported before other components)
-@import "components/card-component";
-@import "components/image-card-component";
-@import "components/back-to-top";
-@import "components/form-component";
-@import "components/team-component";
-@import "components/content-section-component";
-@import "components/hero-component";
-@import "components/products-grid-component";
-@import "components/cta-component";
+// Reusable component mixins (must be loaded before other components)
+@use "components/card-component";
+@use "components/image-card-component";
+@use "components/back-to-top";
+@use "components/form-component";
+@use "components/team-component";
+@use "components/content-section-component";
+@use "components/hero-component";
+@use "components/products-grid-component";
+@use "components/cta-component";
 
 // Individual components
-@import "components/cta";
-@import "components/feature-grid";
-@import "components/hero";
-@import "components/linkedin";
-@import "components/product-card";
-@import "components/product-layout";
-@import "components/product-page";
-@import "components/product-applications";
-@import "components/product-benefits-list";
-@import "components/product-code-example";
-@import "components/product-feature-grid";
-@import "components/product-section-container";
-@import "components/product-visual";
-@import "components/testimonial";
-@import "components/timeline";
-@import "components/interactive-module";
+@use "components/cta";
+@use "components/feature-grid";
+@use "components/hero";
+@use "components/linkedin";
+@use "components/product-card";
+@use "components/product-layout";
+@use "components/product-page";
+@use "components/product-applications";
+@use "components/product-benefits-list";
+@use "components/product-code-example";
+@use "components/product-feature-grid";
+@use "components/product-section-container";
+@use "components/product-visual";
+@use "components/testimonial";
+@use "components/timeline";
+@use "components/interactive-module";
 
 // Transcendent Experience Components - New ASI Saga Transcendent Design System
-@import "components/transcendent-hero";
-@import "components/genesis-blocks";
-@import "components/transcendent-threshold";
-@import "components/genesis-invitation";
+@use "components/transcendent-hero";
+@use "components/genesis-blocks";
+@use "components/transcendent-threshold";
+@use "components/genesis-invitation";
 
 // Pages - Page-specific layouts and styles
 // Each corresponds to a main HTML page or a page in a subdirectory
-@import "pages/about";
-@import "pages/agent-operating-system";
-@import "pages/business-infinity";
-@import "pages/entrepreneur";
-@import "pages/github-agent";
-@import "pages/home";
-@import "pages/index";
-@import "pages/genesis";
-@import "pages/human-essence";
-@import "pages/continuous-improvement";
-@import "pages/infinite-possibilities";
-@import "pages/transcendent-threshold";
-@import "pages/privacy-policy";
-@import "pages/purpose-driven-agent";
-@import "pages/realm-of-agents";
-@import "pages/sitemap";
-@import "pages/startup";
-@import "pages/saga-page";
-@import "pages/possibilities-page";
-@import "pages/legacy-page";
-@import "pages/thoughtlab-page";
-@import "pages/resources-page";
-@import "pages/contact-page";
+@use "pages/about";
+@use "pages/agent-operating-system";
+@use "pages/business-infinity";
+@use "pages/entrepreneur";
+@use "pages/github-agent";
+@use "pages/home";
+@use "pages/index";
+@use "pages/genesis";
+@use "pages/human-essence";
+@use "pages/continuous-improvement";
+@use "pages/infinite-possibilities";
+@use "pages/transcendent-threshold";
+@use "pages/privacy-policy";
+@use "pages/purpose-driven-agent";
+@use "pages/realm-of-agents";
+@use "pages/sitemap";
+@use "pages/startup";
+@use "pages/saga-page";
+@use "pages/possibilities-page";
+@use "pages/legacy-page";
+@use "pages/thoughtlab-page";
+@use "pages/resources-page";
+@use "pages/contact-page";
