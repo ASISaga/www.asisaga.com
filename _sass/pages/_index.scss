@@ -91,7 +91,7 @@
       bottom: 0;
       background: linear-gradient(
         45deg,
-        rgba($luminous-white, 0.02),
+        rgba($transcendent-white, 0.02),
         rgba($luminous-gold, 0.05),
         rgba($transformation-purple, 0.02)
       );
@@ -153,7 +153,7 @@
     @include heading-h3;
     @include transcendent-text;
     margin-bottom: 1rem;
-    color: $luminous-white;
+    color: $transcendent-white;
   }
   
   .genesis-block-text {
@@ -238,7 +238,7 @@
   
   .threshold-description {
     @include body-text-large;
-    color: $luminous-white;
+    color: $transcendent-white;
     line-height: 1.8;
     margin-bottom: 2.5rem;
   }
