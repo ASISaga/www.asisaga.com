@@ -24,7 +24,7 @@
     135deg,
     $cosmic-deep-blue 0%,
     darken($cosmic-deep-blue, 10%) 25%,
-    $consciousness-purple 50%,
+    $transformation-purple 50%,
     $luminous-gold 100%
   );
   
@@ -93,7 +93,7 @@
         45deg,
         rgba($luminous-white, 0.02),
         rgba($luminous-gold, 0.05),
-        rgba($consciousness-purple, 0.02)
+        rgba($transformation-purple, 0.02)
       );
       border-radius: inherit;
       opacity: 0;
@@ -135,10 +135,10 @@
     }
     
     &.infinite-potential {
-      border-left: 4px solid $consciousness-purple;
+      border-left: 4px solid $transformation-purple;
       
       .genesis-block-icon {
-        color: $consciousness-purple;
+        color: $transformation-purple;
       }
     }
   }
@@ -198,7 +198,7 @@
   background: linear-gradient(
     to bottom,
     rgba($cosmic-deep-blue, 0.9),
-    rgba($consciousness-purple, 0.8),
+    rgba($transformation-purple, 0.8),
     rgba($cosmic-deep-blue, 0.9)
   );
   
@@ -290,7 +290,7 @@
   .asi-consciousness-field {
     width: 200px;
     height: 200px;
-    background: radial-gradient(circle, $consciousness-purple, rgba($consciousness-purple, 0.1));
+    background: radial-gradient(circle, $transformation-purple, rgba($transformation-purple, 0.1));
     top: 30%;
     right: 10%;
     animation-name: consciousnessExpansion;
