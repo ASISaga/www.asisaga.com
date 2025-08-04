@@ -25,7 +25,7 @@
     $cosmic-deep-blue 0%,
     darken($cosmic-deep-blue, 10%) 25%,
     $consciousness-purple 50%,
-    $transcendent-gold 100%
+    $luminous-gold 100%
   );
   
   // Ensure full viewport coverage
@@ -92,7 +92,7 @@
       background: linear-gradient(
         45deg,
         rgba($luminous-white, 0.02),
-        rgba($transcendent-gold, 0.05),
+        rgba($luminous-gold, 0.05),
         rgba($consciousness-purple, 0.02)
       );
       border-radius: inherit;
@@ -109,7 +109,7 @@
       
       .genesis-block-icon {
         transform: scale(1.2) rotate(5deg);
-        color: $transcendent-gold;
+        color: $luminous-gold;
       }
       
       .transcendent-cta {
@@ -127,10 +127,10 @@
     }
     
     &.transcendent-evolution {
-      border-left: 4px solid $transcendent-gold;
+      border-left: 4px solid $luminous-gold;
       
       .genesis-block-icon {
-        color: $transcendent-gold;
+        color: $luminous-gold;
       }
     }
     
@@ -178,7 +178,7 @@
         left: 50%;
         width: 0;
         height: 0;
-        background: radial-gradient(circle, rgba($transcendent-gold, 0.3), transparent);
+        background: radial-gradient(circle, rgba($luminous-gold, 0.3), transparent);
         transition: all 0.4s ease;
         transform: translate(-50%, -50%);
       }
@@ -221,7 +221,7 @@
   
   .threshold-subtitle {
     @include heading-h3;
-    color: $transcendent-gold;
+    color: $luminous-gold;
     margin-bottom: 1.5rem;
     position: relative;
     
@@ -232,7 +232,7 @@
       left: 0;
       width: 60px;
       height: 2px;
-      background: linear-gradient(to right, $transcendent-gold, transparent);
+      background: linear-gradient(to right, $luminous-gold, transparent);
     }
   }
   
@@ -299,7 +299,7 @@
   .transcendent-emergence {
     width: 80px;
     height: 80px;
-    background: radial-gradient(circle, $transcendent-gold, rgba($transcendent-gold, 0.3));
+    background: radial-gradient(circle, $luminous-gold, rgba($luminous-gold, 0.3));
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -312,9 +312,9 @@
 .essence-particle {
   width: 3px;
   height: 3px;
-  background: $transcendent-gold;
+  background: $luminous-gold;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba($transcendent-gold, 0.8);
+  box-shadow: 0 0 10px rgba($luminous-gold, 0.8);
   animation: essenceFloat 8s ease-in-out;
 }
 
