@@ -119,10 +119,10 @@
     
     // Specialized block types
     &.consciousness-embedding {
-      border-left: 4px solid $human-essence-pink;
+      border-left: 4px solid $border-color;
       
       .genesis-block-icon {
-        color: $human-essence-pink;
+        color: $border-color;
       }
     }
     
@@ -281,7 +281,7 @@
   .human-essence-stream {
     width: 120px;
     height: 120px;
-    background: radial-gradient(circle, $human-essence-pink, rgba($human-essence-pink, 0.2));
+    background: radial-gradient(circle, $border-color, rgba($border-color, 0.2));
     top: 20%;
     left: 10%;
     animation-name: essenceFlow;
