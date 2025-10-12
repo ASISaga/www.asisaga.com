@@ -13,34 +13,34 @@
 // Additional page-specific styles
 .home {
   &-container {
-    @extend .w-100;
+    @include w-100;
   }
 }
 
 // Enhanced hero styling for full-screen immersive experience
 .hero-section-full {
-  height: 100vh;
-  min-height: 700px;
+  @include height-screen;
+  @include min-height(700px);
   position: relative;
   
   .hero-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    @include width-full;
+    @include height-full;
     z-index: 1;
     
     &-gradient {
-      width: 100%;
-      height: 100%;
+      @include width-full;
+      @include height-full;
       background: linear-gradient(135deg, $primary-dark 0%, $primary 50%, $accent 100%);
       opacity: 0.9;
     }
     
     &-video {
-      width: 100%;
-      height: 100%;
+      @include width-full;
+      @include height-full;
       object-fit: cover;
     }
     
@@ -49,27 +49,27 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      @include width-full;
+      @include height-full;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
       z-index: 2;
     }
   }
   
   .hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    padding: $spacing-xl;
-    color: $white;
-    max-width: 800px;
-    margin: 0 auto;
+  @include position-relative;
+  z-index: 3;
+  @include text-center;
+  @include pad(5);
+  @include color($white);
+  @include max-width(800px);
+  @include mar-x(auto);
     
     .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: $spacing-lg;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  @include font-size(3.5rem);
+  @include font-weight(700);
+  @include mar-b($spacing-lg);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       
       @include media-breakpoint-down(md) {
         font-size: 2.5rem;
@@ -77,8 +77,8 @@
     }
     
     .hero-description {
-      font-size: 1.3rem;
-      margin-bottom: $spacing-lg;
+  @include font-size(1.3rem);
+
       text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
       
       @include media-breakpoint-down(md) {
@@ -97,8 +97,8 @@
     color: $white;
     
     .hero-scroll-text {
-      display: block;
-      margin-bottom: 5px;
+      @include d-block;
+      @include mar-b(1);
       font-size: 0.8rem;
       opacity: 0.7;
     }
@@ -111,19 +111,17 @@
 
 // Introduction blocks with parallax effects
 .intro-blocks-section {
-  padding: $spacing-xl 0;
-  background-color: $light;
+  @include pad-y(5);
+  @include bg-light;
   
-  .intro-blocks {
-    margin-top: $spacing-lg;
-  }
+
   
   .intro-block {
-    background-color: $white;
+    @include bg-white;
     border-radius: $border-radius;
-    padding: $spacing-lg;
-    height: 100%;
-    text-align: center;
+    @include pad(4);
+    @include h-100;
+    @include text-center;
     box-shadow: $box-shadow;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
@@ -146,7 +144,7 @@
     }
     
     &-title {
-      margin-bottom: $spacing-sm;
+
       font-weight: $font-weight-semibold;
       color: $primary-dark;
     }

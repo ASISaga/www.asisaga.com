@@ -1,64 +1,56 @@
 // Styles for the Sitemap page
+// .sitemap-container: Use Bootstrap utility classes in HTML or add mixins if needed
 .sitemap-container {
-  @extend .container;
-  @extend .py-5;
+  @include pad-y(5);
   
   // Nested elements following DOM hierarchy
   .sitemap-header-section {
-    @extend .mb-5;
-    @extend .text-center;
+    @include mar-b(5);
+    @include text-center;
     
     .sitemap-title {
-      @extend .display-4;
-      @extend .mb-3;
+      // Use Bootstrap .display-4 in HTML or add a heading mixin if needed
+      @include mar-b(3);
     }
     
     .sitemap-subtitle {
-      @extend .lead;
-      @extend .text-muted;
+      // Use Bootstrap .lead and .text-muted in HTML or add mixins if needed
     }
   }
   
   .sitemap-content-section {
-    @extend .row;
-    @extend .justify-content-center;
+    // Use Bootstrap .row and .justify-content-center in HTML or add mixins if needed
     
     .sitemap-list-container {
-      @extend .col-lg-8;
-      @extend .col-md-10;
+      // Use Bootstrap .col-lg-8 and .col-md-10 in HTML or add mixins if needed
       
       .sitemap-list {
-        @extend .list-unstyled;
-        @extend .ps-0;
+        // Use Bootstrap .list-unstyled and .ps-0 in HTML or add mixins if needed
         
         .sitemap-item {
-          @extend .mb-3;
+          @include mar-b(3);
           
           &.sitemap-parent {
-            @extend .mb-4;
+            @include mar-b(4);
           }
           
           .sitemap-parent-title {
-            @extend .fw-bold;
-            @extend .d-block;
-            @extend .mb-2;
+            // Use Bootstrap .fw-bold and .d-block in HTML or add mixins if needed
+            @include mar-b(2);
           }
           
           .sitemap-link {
-            @extend .text-decoration-none;
-            
+            // Use Bootstrap .text-decoration-none in HTML or add mixins if needed
             &:hover {
-              @extend .text-primary;
+              // Use Bootstrap .text-primary in HTML or add mixin if needed
             }
           }
           
           .sitemap-sublist {
-            @extend .list-unstyled;
-            @extend .ps-4;
-            @extend .mt-2;
+            // Use Bootstrap .list-unstyled, .ps-4, .mt-2 in HTML or add mixins if needed
             
             .sitemap-subitem {
-              @extend .mb-2;
+              @include mar-b(2);
             }
           }
         }

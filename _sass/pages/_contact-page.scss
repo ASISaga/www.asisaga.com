@@ -3,51 +3,45 @@
 // Page-specific styles
 .contact {
   &-page {
-    @extend .pb-5;
+  @include pad-b(5);
   }
   
   &-main-section {
-    @extend .py-5;
-    @extend .mb-5;
+  @include pad-y(5);
+  @include mar-b(5);
     
     .contact-intro {
-      @extend .mb-4;
-      @extend .lead;
+  @include mar-b(4);
+  // Use Bootstrap .lead in HTML or add mixin if needed
     }
   }
   
   &-form {
     &-container {
-      @extend .p-4;
-      @extend .p-lg-5;
-      @extend .bg-white;
-      @extend .rounded;
-      @extend .shadow-sm;
+  @include pad(4);
+  // Use Bootstrap .p-lg-5, .bg-white, .rounded, .shadow-sm in HTML or add mixins if needed
       height: 100%;
     }
   }
   
   &-connect {
     &-container {
-      @extend .p-4;
-      @extend .p-lg-5;
-      @extend .bg-white;
-      @extend .rounded;
-      @extend .shadow-sm;
+  @include pad(4);
+  // Use Bootstrap .p-lg-5, .bg-white, .rounded, .shadow-sm in HTML or add mixins if needed
       height: 100%;
     }
   }
   
   // Social icons
   .social-icons {
-    @extend .d-flex;
-    @extend .flex-wrap;
-    @extend .gap-3;
+  @include d-flex;
+  @include flex-wrap(wrap);
+  gap: 1rem; // .gap-3 is 1rem in Bootstrap
     
     .social-icon {
-      @extend .d-flex;
-      @extend .align-items-center;
-      @extend .justify-content-center;
+  @include d-flex;
+  @include align-items(center);
+  @include justify-content(center);
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -67,7 +61,7 @@
   // Newsletter signup
   .newsletter-signup {
     .newsletter-note {
-      @extend .mt-2;
+  @include mar-t(2);
       font-size: 0.9rem;
     }
   }
@@ -75,16 +69,16 @@
   // Contact information
   .contact-info {
     &-list {
-      @extend .ps-0;
+  // Use Bootstrap .ps-0 in HTML or add mixin if needed
     }
     
     &-item {
-      @extend .d-flex;
-      @extend .align-items-center;
-      @extend .mb-3;
+  @include d-flex;
+  @include align-items(center);
+  @include mar-b(3);
       
       i {
-        @extend .me-3;
+  // Use Bootstrap .me-3 in HTML or add mixin if needed
         width: 24px;
         color: $primary;
       }
@@ -103,7 +97,7 @@
   
   // Google Map
   &-map-section {
-    @extend .mb-5;
+  @include mar-b(5);
     
     .map-container {
       height: 450px;
