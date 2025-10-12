@@ -161,7 +161,7 @@
       transition: color 0.3s ease;
       
       &:hover {
-  color: color.adjust($accent, $lightness: -10%);
+  color: darken($accent, 10%);
         text-decoration: underline;
       }
     }

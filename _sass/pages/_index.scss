@@ -23,7 +23,7 @@
 .genesis-home-container {
   position: relative;
   overflow-x: hidden;
-  @include background-gradient(linear-gradient(135deg, $cosmic-deep-blue 0%, color.adjust($cosmic-deep-blue, $lightness: -10%) 25%, $transformation-purple 50%, $luminous-gold 100%));
+  @include background-gradient(linear-gradient(135deg, $cosmic-deep-blue 0%, darken($cosmic-deep-blue, 10%) 25%, $transformation-purple 50%, $luminous-gold 100%));
   @include min-height(100vh);
   
   // Global consciousness particle effects
