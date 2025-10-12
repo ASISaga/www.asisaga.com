@@ -1,41 +1,45 @@
 ---
 title: About
 layout: default
-description: Learn about ASI Saga, our mission, vision, and the team behind our journey toward understanding Artificial Superintelligence.
+description: Learn about ASI Saga, our mission, vision, and the team behind our journey toward understanding Artificial
+Superintelligence.
 ---
 
-<!-- 
+<!--  
 About page main content
 This page provides information about ASI Saga's mission, vision, and team
 Uses Bootstrap's responsive grid system for layout and responsive design
 -->
 <div class="about-container">
   <!-- Page header section -->
-  {% include hero.html 
-    title="About ASI Saga" 
-    description="Understanding the future of Artificial Intelligence" 
-    size="sm"
+  {% include hero.html
+  title="About ASI Saga"
+  description="Understanding the future of Artificial Intelligence"
+  size="sm"
   %}
 
   <!-- Mission and vision section -->
   <section class="about-mission-section">
     <div class="about-section-content">
-      {% include section-header.html 
-        title="Our Mission" 
-        alignment="left" 
+      {% include section-header.html
+      title="Our Mission"
+      alignment="left"
       %}
       <p class="about-section-text">
-        At ASI Saga, we're dedicated to exploring and understanding the journey toward Artificial Superintelligence (ASI). 
+        At ASI Saga, we're dedicated to exploring and understanding the journey toward Artificial Superintelligence
+        (ASI).
         We believe in responsible AI development that benefits humanity while mitigating potential risks.
       </p>
-      
-      {% include section-header.html 
-        title="Our Vision" 
-        alignment="left" 
+
+      {% include section-header.html
+      title="Our Vision"
+      alignment="left"
       %}
       <p class="about-section-text">
-        We envision a future where advanced AI systems work alongside humans, enhancing our capabilities while preserving human values and ethics.
-        ASI Saga aims to be at the forefront of this technological evolution, providing insights and guidance for responsible AI development.
+        We envision a future where advanced AI systems work alongside humans, enhancing our capabilities while
+        preserving human values and ethics.
+        ASI Saga aims to be at the forefront of this technological evolution, providing insights and guidance for
+        responsible AI development.
       </p>
     </div>
   </section>
@@ -43,44 +47,46 @@ Uses Bootstrap's responsive grid system for layout and responsive design
   <!-- Team section -->
   <section class="about-team-section">
     {% include section-header.html title="Our Team" %}
-    
+
     {% assign team_members = site.data.team | default: "[]" %}
     {% unless team_members.size > 0 %}
-      {% assign team_members = "" | split: "" %}
-      {% assign member1 = 
-        "name=Jane Doe,
-         role=AI Research Lead,
-         bio=With over 10 years of experience in AI research, Jane leads our technical initiatives and research partnerships." 
-         | split: "," %}
-      {% assign member2 = 
-        "name=John Smith,
-         role=Ethics Director,
-         bio=John focuses on the ethical implications of advanced AI systems and ensures our work aligns with responsible AI principles." 
-         | split: "," %}
-      {% assign team_members = team_members | concat: member1 | concat: member2 %}
+    {% assign team_members = "" | split: "" %}
+    {% assign member1 =
+    "name=Jane Doe,
+    role=AI Research Lead,
+    bio=With over 10 years of experience in AI research, Jane leads our technical initiatives and research
+    partnerships."
+    | split: "," %}
+    {% assign member2 =
+    "name=John Smith,
+    role=Ethics Director,
+    bio=John focuses on the ethical implications of advanced AI systems and ensures our work aligns with responsible AI
+    principles."
+    | split: "," %}
+    {% assign team_members = team_members | concat: member1 | concat: member2 %}
     {% endunless %}
-    
+
     <div class="about-team-grid">
       <!-- Team members can be dynamically loaded from data file or hardcoded -->
       {% for member in team_members %}
-        <div class="about-team-member">
-          <h3 class="about-team-member-name">{{ member.name }}</h3>
-          <p class="about-team-member-role">{{ member.role }}</p>
-          <p class="about-team-member-bio">
-            {{ member.bio }}
-          </p>
-        </div>
+      <div class="about-team-member">
+        <h3 class="about-team-member-name">{{ member.name }}</h3>
+        <p class="about-team-member-role">{{ member.role }}</p>
+        <p class="about-team-member-bio">
+          {{ member.bio }}
+        </p>
+      </div>
       {% endfor %}
     </div>
   </section>
 
   <!-- Contact information section -->
   {% assign linkedin_url = 'https://www.linkedin.com/in/' | append: site.linkedin_username %}
-  {% include cta.html 
-    title='Get in Touch'
-    description='Have questions or interested in collaborating? Connect with us on LinkedIn or reach out via email.'
-    button_text='LinkedIn'
-    button_url=linkedin_url
-    style='secondary'
+  {% include cta.html
+  title='Get in Touch'
+  description='Have questions or interested in collaborating? Connect with us on LinkedIn or reach out via email.'
+  button_text='LinkedIn'
+  button_url=linkedin_url
+  style='secondary'
   %}
 </div>
