@@ -42,18 +42,17 @@
   @include d-flex;
   @include align-items(center);
   @include justify-content(center);
-      width: 50px;
-      height: 50px;
+      @include size-icon-2xl;
       border-radius: 50%;
-      background-color: $light;
-      color: $primary;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
+      @include bg-light;
+      @include text-primary;
+      @include font-size-lg;
+      @include transition(all, $animation-duration-normal, $ease-out);
       
       &:hover {
-        background-color: $primary;
-        color: $white;
-        transform: translateY(-5px);
+        @include bg-primary;
+        @include text-white;
+        @include animate-hover-lift;
       }
     }
   }
@@ -62,7 +61,7 @@
   .newsletter-signup {
     .newsletter-note {
   @include mar-t(2);
-      font-size: 0.9rem;
+      @include font-size-sm;
     }
   }
   
@@ -79,17 +78,17 @@
       
       i {
   // Use Bootstrap .me-3 in HTML or add mixin if needed
-        width: 24px;
-        color: $primary;
+        @include width(24px);
+        @include text-primary;
       }
       
       a {
-        color: $body-color;
+        @include text-body-color;
         text-decoration: none;
-        transition: color 0.3s ease;
+        @include transition(color, $animation-duration-normal, $ease-out);
         
         &:hover {
-          color: $primary;
+          @include text-primary;
         }
       }
     }
@@ -100,14 +99,14 @@
   @include mar-b(5);
     
     .map-container {
-      height: 450px;
+      @include height(450px);
       overflow: hidden;
       border-radius: $border-radius;
-      box-shadow: $box-shadow-sm;
+      @include shadow-soft;
       
       iframe {
-        width: 100%;
-        height: 100%;
+        @include width-full;
+        @include height-full;
         border: 0;
       }
     }
