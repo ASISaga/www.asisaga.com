@@ -4,61 +4,61 @@
   
   // Header section
   .about-header-section {
-  @include background-gradient(linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%));
+  @include background-gradient(linear-gradient(135deg, color.adjust($primary, $lightness: 40%) 0%, $white 100%));
   @include border-radius($border-radius);
   @include box-shadow($box-shadow);
-    @include pad-y(5);
-    @include pad-x(3);
-    @include mar-b(5);
+  @include padding-vertical(5);
+  @include padding-horizontal(3);
+  @include margin-bottom(5);
     @include text-center;
   }
   
   .about-title {
   @include font-size($font-size-xl);
   @include font-weight($font-weight-bold);
-  @include color($primary);
-  @include mar-b(2);
+  color: $primary;
+  @include margin-bottom(2);
   }
   
   .about-subtitle {
   @include font-size($font-size-lg);
-  @include color($secondary);
+  color: $secondary;
 
   }
   
   // Mission and vision section
   .about-mission-section {
-    @include mar-b(5);
-    @include pad-x(3);
+  @include margin-bottom(5);
+  @include padding-horizontal(3);
   }
   
   .about-section-content {
   @include max-width(768px);
-  @include mar-x(auto);
+  @include margin-center;
   }
   
   .about-section-title {
   @include font-size($font-size-lg);
   @include font-weight($font-weight-bold);
-  @include color($primary);
-  @include mar-b(2);
-  @include mar-t(4);
+  color: $primary;
+  @include margin-bottom(2);
+  @include margin-top(4);
     
 
   }
   
   .about-section-text {
-  @include mar-b(3);
-  @include color($body-color);
+  @include margin-bottom(3);
+  color: $body-color;
   }
   
   // Team section
   .about-team-section {
   @include bg-light;
   @include border-radius($border-radius);
-    @include pad-y(5);
-    @include pad-x(3);
-    @include mar-b(5);
+  @include padding-vertical(5);
+  @include padding-horizontal(3);
+  @include margin-bottom(5);
     @include text-center;
     
     .about-team-grid {
@@ -66,12 +66,12 @@
       @include flex-wrap(wrap);
       @include justify-content(center);
       gap: 2rem;
-      @include mar-t(4);
+  @include margin-top(4);
     }
     
     .about-team-member {
   @include bg-white;
-  @include pad(4);
+  @include padding(4);
   @include border-radius($border-radius-sm);
   @include box-shadow($box-shadow);
   @include flex(0 0 100%);
@@ -90,8 +90,8 @@
     
     .about-team-member-image {
   @include size(120px);
-  @include mar-x(auto);
-  @include mar-b(3);
+  @include margin-center;
+  @include margin-bottom(3);
   overflow: hidden;
   border: 3px solid rgba($primary, 0.2);
   @include border-radius(50%);
@@ -105,34 +105,34 @@
     
     .about-team-member-name {
   @include font-weight($font-weight-bold);
-  @include color($primary);
-  @include mar-b(1);
+  color: $primary;
+  @include margin-bottom(1);
     }
     
     .about-team-member-role {
-  @include color($secondary);
+  color: $secondary;
   @include font-weight($font-weight-medium);
-  @include mar-b(2);
+  @include margin-bottom(2);
     }
       .about-team-member-bio {
-  @include mar-b(2);
+  @include margin-bottom(2);
     }
     
     .about-team-member-link {
       display: inline-flex;
       @include align-items(center);
       @include justify-content(center);
-      @include color($white);
+  color: $white;
       @include bg-primary;
       @include font-weight($font-weight-medium);
       text-decoration: none;
-      @include pad-y(2);
-      @include pad-x(3);
+  @include padding-vertical(2);
+  @include padding-horizontal(3);
       @include border-radius($border-radius);
       transition: all 0.15s ease-in-out;
       &:hover {
-        background-color: darken($primary, 10%);
-        @include color($white);
+  background-color: color.adjust($primary, $lightness: -10%);
+  color: $white;
         text-decoration: none;
       }
       .bi {
@@ -158,20 +158,20 @@
     display: inline-block;
     @include font-weight($font-weight-medium);
     @include text-center;
-    @include pad-y(2);
-    @include pad-x(4);
+  @include padding-vertical(2);
+  @include padding-horizontal(4);
     @include font-size($font-size-base);
     line-height: 1.5;
     @include border-radius(50rem);
-    @include color($white);
+  color: $white;
     @include bg-primary;
     border: 1px solid $primary;
     text-decoration: none;
     transition: all 0.15s ease-in-out;
     &:hover {
-      background-color: darken($primary, 7.5%);
-      border-color: darken($primary, 10%);
-      @include color($white);
+  background-color: color.adjust($primary, $lightness: -7.5%);
+  border-color: color.adjust($primary, $lightness: -10%);
+  color: $white;
     }
   }
 }

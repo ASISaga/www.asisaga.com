@@ -1,16 +1,16 @@
 // Styles for the Sitemap page
 // .sitemap-container: Use Bootstrap utility classes in HTML or add mixins if needed
 .sitemap-container {
-  @include pad-y(5);
+  @include padding-vertical(5);
   
   // Nested elements following DOM hierarchy
   .sitemap-header-section {
-    @include mar-b(5);
+  @include margin-bottom(5);
     @include text-center;
     
     .sitemap-title {
       // Use Bootstrap .display-4 in HTML or add a heading mixin if needed
-      @include mar-b(3);
+  @include margin-bottom(3);
     }
     
     .sitemap-subtitle {
@@ -28,15 +28,15 @@
         // Use Bootstrap .list-unstyled and .ps-0 in HTML or add mixins if needed
         
         .sitemap-item {
-          @include mar-b(3);
+          @include margin-bottom(3);
           
           &.sitemap-parent {
-            @include mar-b(4);
+            @include margin-bottom(4);
           }
           
           .sitemap-parent-title {
             // Use Bootstrap .fw-bold and .d-block in HTML or add mixins if needed
-            @include mar-b(2);
+            @include margin-bottom(2);
           }
           
           .sitemap-link {
@@ -50,7 +50,7 @@
             // Use Bootstrap .list-unstyled, .ps-4, .mt-2 in HTML or add mixins if needed
             
             .sitemap-subitem {
-              @include mar-b(2);
+              @include margin-bottom(2);
             }
           }
         }

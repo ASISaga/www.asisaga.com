@@ -3,22 +3,22 @@
 // Page-specific styles
 .contact {
   &-page {
-  @include pad-b(5);
+    @include padding-bottom(5);
   }
   
   &-main-section {
-  @include pad-y(5);
-  @include mar-b(5);
+  @include padding-vertical(5);
+  @include margin-bottom(5);
     
     .contact-intro {
-  @include mar-b(4);
+  @include margin-bottom(4);
   // Use Bootstrap .lead in HTML or add mixin if needed
     }
   }
   
   &-form {
     &-container {
-  @include pad(4);
+    @include padding(4);
   // Use Bootstrap .p-lg-5, .bg-white, .rounded, .shadow-sm in HTML or add mixins if needed
       height: 100%;
     }
@@ -26,7 +26,7 @@
   
   &-connect {
     &-container {
-  @include pad(4);
+    @include padding(4);
   // Use Bootstrap .p-lg-5, .bg-white, .rounded, .shadow-sm in HTML or add mixins if needed
       height: 100%;
     }
@@ -60,7 +60,7 @@
   // Newsletter signup
   .newsletter-signup {
     .newsletter-note {
-  @include mar-t(2);
+    @include margin-top(2);
       @include font-size-sm;
     }
   }
@@ -74,7 +74,7 @@
     &-item {
   @include d-flex;
   @include align-items(center);
-  @include mar-b(3);
+  @include margin-bottom(3);
       
       i {
   // Use Bootstrap .me-3 in HTML or add mixin if needed
@@ -83,7 +83,7 @@
       }
       
       a {
-        @include text-body-color;
+      @include margin-bottom(3);
         text-decoration: none;
         @include transition(color, $animation-duration-normal, $ease-out);
         
@@ -96,7 +96,7 @@
   
   // Google Map
   &-map-section {
-  @include mar-b(5);
+  @include margin-bottom(5);
     
     .map-container {
       @include height(450px);

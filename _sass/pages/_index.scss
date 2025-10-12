@@ -13,11 +13,17 @@
 @import 'components/transcendent-threshold';
 @import 'components/genesis-invitation';
 
+.genesis-block-icon {
+  @include icon-large;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s ease;
+}
+
 // Genesis Home Container
 .genesis-home-container {
   position: relative;
   overflow-x: hidden;
-  @include background-gradient(linear-gradient(135deg, $cosmic-deep-blue 0%, darken($cosmic-deep-blue, 10%) 25%, $transformation-purple 50%, $luminous-gold 100%));
+  @include background-gradient(linear-gradient(135deg, $cosmic-deep-blue 0%, color.adjust($cosmic-deep-blue, $lightness: -10%) 25%, $transformation-purple 50%, $luminous-gold 100%));
   @include min-height(100vh);
   
   // Global consciousness particle effects
@@ -28,8 +34,7 @@
     left: 0;
     @include width-full;
     @include height-full;
-    background: url('/assets/images/consciousness-particles.png') repeat;
-    opacity: 0.1;
+    background: $bg-sacred url('/assets/images/consciousness-particles.png') repeat;
     animation: floatParticles 60s linear infinite;
     pointer-events: none;
     z-index: 1;
@@ -41,6 +46,9 @@
     z-index: 2;
   }
 }
+
+
+
 
 // Genesis Blocks Section - Human Essence Embedding Display
 .genesis-blocks-section {
@@ -58,9 +66,10 @@
   @include consciousness-glow;
   @include position-relative;
   @include h-100;
-  @include pad-y(5);
-  @include pad-x(4);
+  @include padding-vertical(5);
+  @include padding-horizontal(4);
   @include text-center;
+ 
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     
     // Consciousness flow background
@@ -119,37 +128,32 @@
       .genesis-block-icon {
         color: $transformation-purple;
       }
+
     }
   }
-  
-  .genesis-block-icon {
-    @include icon-large;
-    margin-bottom: 1.5rem;
-    transition: all 0.4s ease;
-  }
-  
-  .genesis-block-title {
+}
+
+.genesis-block-title {
   @include heading-h3;
   @include transcendent-text;
-  @include mar-b(2);
-  @include color($transcendent-white);
-  }
-  
-  .genesis-block-text {
+  @include margin-bottom(2);
+  color: $transcendent-white;
+}
+
+.genesis-block-text {
   @include body-text-large;
-  @include color($ethereal-silver);
-  @include mar-b(4);
+  color: $ethereal-silver;
+  @include margin-bottom(4);
   @include line-height(1.7);
-  }
-  
-  .genesis-block-link {
-    @include transcendent-button-secondary;
-    &.transcendent-cta {
-      @include transcendent-button-primary;
-      position: relative;
-      overflow: hidden;
-      // ...existing code...
-    }
+}
+
+.genesis-block-link {
+  @include transcendent-button-secondary;
+  &.transcendent-cta {
+    @include transcendent-button-primary;
+    position: relative;
+    overflow: hidden;
+    // ...existing code...
   }
 }
 
@@ -286,12 +290,12 @@
 }
 
 @keyframes essenceFlow {
-  0%, 100% { transform: translateX(0) scale(1); opacity: 0.8; }
+  0%, 100% { transform: translateX(0) scale(1); opacity: $essence-flow-opacity; }
   50% { transform: translateX(20px) scale(1.1); opacity: 1; }
 }
 
 @keyframes consciousnessExpansion {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: $consciousness-expansion-opacity; }
   50% { transform: scale(1.05) rotate(180deg); opacity: 0.9; }
 }
 
