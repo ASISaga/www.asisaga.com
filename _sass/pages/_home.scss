@@ -120,7 +120,7 @@
     @include bg-white;
     border-radius: $border-radius;
     @include padding(4);
-    @include h-100;
+  @include height-full;
     @include text-center;
     box-shadow: $box-shadow;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
