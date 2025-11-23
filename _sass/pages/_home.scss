@@ -13,7 +13,7 @@
 // Additional page-specific styles
 .home {
   &-container {
-    @include w-100;
+    @include width-full;
   }
 }
 
