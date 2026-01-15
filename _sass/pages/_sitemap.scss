@@ -1,56 +1,40 @@
-// Styles for the Sitemap page
-// .sitemap-container: Use Bootstrap utility classes in HTML or add mixins if needed
+// Sitemap page - Hierarchical site navigation
+// Uses focused environment for reading and navigation clarity
+
 .sitemap-container {
-  @include padding-vertical(5);
+  @include genesis-environment('focused');
   
-  // Nested elements following DOM hierarchy
   .sitemap-header-section {
-  @include margin-bottom(5);
-    @include text-center;
+    @include genesis-entity('secondary');
     
     .sitemap-title {
-      // Use Bootstrap .display-4 in HTML or add a heading mixin if needed
-  @include margin-bottom(3);
+      @include genesis-cognition('axiom');
     }
     
     .sitemap-subtitle {
-      // Use Bootstrap .lead and .text-muted in HTML or add mixins if needed
+      @include genesis-cognition('gloss');
     }
   }
   
   .sitemap-content-section {
-    // Use Bootstrap .row and .justify-content-center in HTML or add mixins if needed
-    
     .sitemap-list-container {
-      // Use Bootstrap .col-lg-8 and .col-md-10 in HTML or add mixins if needed
-      
       .sitemap-list {
-        // Use Bootstrap .list-unstyled and .ps-0 in HTML or add mixins if needed
-        
         .sitemap-item {
-          @include margin-bottom(3);
-          
           &.sitemap-parent {
-            @include margin-bottom(4);
-          }
-          
-          .sitemap-parent-title {
-            // Use Bootstrap .fw-bold and .d-block in HTML or add mixins if needed
-            @include margin-bottom(2);
-          }
-          
-          .sitemap-link {
-            // Use Bootstrap .text-decoration-none in HTML or add mixins if needed
-            &:hover {
-              // Use Bootstrap .text-primary in HTML or add mixin if needed
+            .sitemap-parent-title {
+              @include genesis-cognition('motive');
             }
           }
           
+          .sitemap-link {
+            @include genesis-synapse('navigate');
+          }
+          
           .sitemap-sublist {
-            // Use Bootstrap .list-unstyled, .ps-4, .mt-2 in HTML or add mixins if needed
-            
             .sitemap-subitem {
-              @include margin-bottom(2);
+              .sitemap-link {
+                @include genesis-synapse('navigate');
+              }
             }
           }
         }
