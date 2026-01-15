@@ -154,8 +154,6 @@ SCSS:
 ## Complete Example: Blog Post Page
 
 ```scss
----
----
 @import "ontology/index";
 
 .blog-post {

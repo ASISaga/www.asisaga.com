@@ -32,6 +32,10 @@
     .hero-scroll-text {
       @include genesis-cognition('gloss');
     }
+    
+    .hero-scroll-icon {
+      @include genesis-cognition('quantum');
+    }
   }
 }
 

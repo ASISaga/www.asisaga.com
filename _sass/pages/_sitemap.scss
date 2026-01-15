@@ -26,15 +26,14 @@
             }
           }
           
+          // All sitemap links use navigate synapse
           .sitemap-link {
             @include genesis-synapse('navigate');
           }
           
           .sitemap-sublist {
             .sitemap-subitem {
-              .sitemap-link {
-                @include genesis-synapse('navigate');
-              }
+              // Links already styled by parent selector
             }
           }
         }

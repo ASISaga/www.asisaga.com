@@ -4,7 +4,7 @@
 
 This document summarizes the successful migration of the `www.asisaga.com` subdomain to the **Genesis Ontological Design System** from the theme repository.
 
-**Migration Date:** January 15, 2026  
+**Migration Date:** January 2025  
 **Theme Repository:** https://github.com/ASISaga/theme.asisaga.com  
 **Branch:** `copilot/refactor-scss-to-genesis`
 
