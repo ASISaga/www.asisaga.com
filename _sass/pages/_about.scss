@@ -1,177 +1,70 @@
-// About page specific styles
+// About page - Mission, vision, and team presentation
+// Uses focused environment for reading with entity cards for content sections
+
 .about-container {
-  width: 100%;
+  @include genesis-environment('focused');
   
   // Header section
   .about-header-section {
-  @include background-gradient(linear-gradient(135deg, lighten($primary, 40%) 0%, $white 100%));
-  @include border-radius($border-radius);
-  @include box-shadow($box-shadow);
-  @include padding-vertical(5);
-  @include padding-horizontal(3);
-  @include margin-bottom(5);
-    @include text-center;
+    @include genesis-entity('primary');
+    @include genesis-atmosphere('ethereal');
   }
   
   .about-title {
-  @include font-size($font-size-xl);
-  @include font-weight($font-weight-bold);
-  color: $primary;
-  @include margin-bottom(2);
+    @include genesis-cognition('axiom');
   }
   
   .about-subtitle {
-  @include font-size($font-size-lg);
-  color: $secondary;
-
+    @include genesis-cognition('motive');
   }
   
   // Mission and vision section
   .about-mission-section {
-  @include margin-bottom(5);
-  @include padding-horizontal(3);
-  }
-  
-  .about-section-content {
-  @include max-width(768px);
-  @include margin-center;
-  }
-  
-  .about-section-title {
-  @include font-size($font-size-lg);
-  @include font-weight($font-weight-bold);
-  color: $primary;
-  @include margin-bottom(2);
-  @include margin-top(4);
-    
-
-  }
-  
-  .about-section-text {
-  @include margin-bottom(3);
-  color: $body-color;
+    .about-section-content {
+      .about-section-title {
+        @include genesis-cognition('axiom');
+      }
+      
+      .about-section-text {
+        @include genesis-cognition('discourse');
+      }
+    }
   }
   
   // Team section
   .about-team-section {
-  @include bg-light;
-  @include border-radius($border-radius);
-  @include padding-vertical(5);
-  @include padding-horizontal(3);
-  @include margin-bottom(5);
-    @include text-center;
+    @include genesis-entity('secondary');
+    @include genesis-atmosphere('neutral');
     
     .about-team-grid {
-      @include d-flex;
-      @include flex-wrap(wrap);
-      @include justify-content(center);
-      gap: 2rem;
-  @include margin-top(4);
-    }
-    
-    .about-team-member {
-  @include bg-white;
-  @include padding(4);
-  @include border-radius($border-radius-sm);
-  @include box-shadow($box-shadow);
-  @include flex(0 0 100%);
-  max-width: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      @include text-center;
-      @media (min-width: 768px) {
-        @include flex(0 0 calc(50% - 2rem));
-        max-width: calc(50% - 2rem);
-      }
-      &:hover {
-        transform: translateY(-5px);
-        @include box-shadow($box-shadow-lg);
-      }
-    }
-    
-    .about-team-member-image {
-  @include size(120px);
-  @include margin-center;
-  @include margin-bottom(3);
-  overflow: hidden;
-  border: 3px solid rgba($primary, 0.2);
-  @include border-radius(50%);
+      @include genesis-environment('distributed');
       
-      img {
-        @include width-full;
-        @include height-full;
-        object-fit: cover;
-      }
-    }
-    
-    .about-team-member-name {
-  @include font-weight($font-weight-bold);
-  color: $primary;
-  @include margin-bottom(1);
-    }
-    
-    .about-team-member-role {
-  color: $secondary;
-  @include font-weight($font-weight-medium);
-  @include margin-bottom(2);
-    }
-      .about-team-member-bio {
-  @include margin-bottom(2);
-    }
-    
-    .about-team-member-link {
-      display: inline-flex;
-      @include align-items(center);
-      @include justify-content(center);
-  color: $white;
-      @include bg-primary;
-      @include font-weight($font-weight-medium);
-      text-decoration: none;
-  @include padding-vertical(2);
-  @include padding-horizontal(3);
-      @include border-radius($border-radius);
-      transition: all 0.15s ease-in-out;
-      &:hover {
-  background-color: darken($primary, 10%);
-  color: $white;
-        text-decoration: none;
-      }
-      .bi {
-        margin-right: 0.5rem;
-        @include font-size(1.1em);
+      .about-team-member {
+        @include genesis-entity('primary');
+        
+        .about-team-member-name {
+          @include genesis-cognition('motive');
+        }
+        
+        .about-team-member-role {
+          @include genesis-cognition('gloss');
+        }
+        
+        .about-team-member-bio {
+          @include genesis-cognition('discourse');
+        }
+        
+        .about-team-member-link {
+          @include genesis-synapse('navigate');
+        }
       }
     }
   }
   
   // Contact section
   .about-contact-section {
-  @include text-center;
-  @include max-width(768px);
-  margin: 0 auto 3rem;
-  @include padding-horizontal(1rem);
-  }
-  
-  .about-contact-links {
-    margin-top: 1.5rem;
-  }
-  
-  .about-contact-link {
-    display: inline-block;
-    @include font-weight($font-weight-medium);
-    @include text-center;
-  @include padding-vertical(2);
-  @include padding-horizontal(4);
-    @include font-size($font-size-base);
-    line-height: 1.5;
-    @include border-radius(50rem);
-  color: $white;
-    @include bg-primary;
-    border: 1px solid $primary;
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
-    &:hover {
-  background-color: darken($primary, 7.5%);
-  border-color: darken($primary, 10%);
-  color: $white;
+    .about-contact-link {
+      @include genesis-synapse('execute');
     }
   }
 }

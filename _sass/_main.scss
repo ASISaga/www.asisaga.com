@@ -1,7 +1,11 @@
-// Pages - Page-specific layouts and styles
-// Each corresponds to a main HTML page or a page in a subdirectory
-@import "pages/about";
-@import "pages/home";
+// REQUIRED: Import Genesis Ontology System first
+// This provides the complete semantic design system via mixins
+@import "ontology/index";
+
+// Pages - Page-specific semantic mappings
+// Each page maps HTML classes to ontological roles using mixins
 @import "pages/index";
-@import "pages/sitemap";
+@import "pages/home";
+@import "pages/about";
 @import "pages/contact-page";
+@import "pages/sitemap";

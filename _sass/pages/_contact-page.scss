@@ -1,114 +1,56 @@
-// Styles for the contact page
+// Contact page - Communication and connection interface
+// Uses focused environment for form interaction and clear information hierarchy
 
-// Page-specific styles
 .contact {
   &-page {
-    @include padding-bottom(5);
+    @include genesis-environment('focused');
   }
   
   &-main-section {
-  @include padding-vertical(5);
-  @include margin-bottom(5);
-    
     .contact-intro {
-  @include margin-bottom(4);
-  // Use Bootstrap .lead in HTML or add mixin if needed
+      @include genesis-cognition('discourse');
     }
   }
   
   &-form {
     &-container {
-    @include padding(4);
-  // Use Bootstrap .p-lg-5, .bg-white, .rounded, .shadow-sm in HTML or add mixins if needed
-      height: 100%;
+      @include genesis-entity('primary');
     }
   }
   
   &-connect {
     &-container {
-    @include padding(4);
-  // Use Bootstrap .p-lg-5, .bg-white, .rounded, .shadow-sm in HTML or add mixins if needed
-      height: 100%;
+      @include genesis-entity('secondary');
     }
   }
   
-  // Social icons
+  // Social icons - social connection points
   .social-icons {
-  @include d-flex;
-  @include flex-wrap(wrap);
-  gap: 1rem; // .gap-3 is 1rem in Bootstrap
-    
     .social-icon {
-  @include d-flex;
-  @include align-items(center);
-  @include justify-content(center);
-      @include size-icon-2xl;
-      border-radius: 50%;
-      @include bg-light;
-      @include text-primary;
-      @include font-size-lg;
-      @include transition(all, $animation-duration-normal, $ease-out);
-      
-      &:hover {
-        @include bg-primary;
-        @include text-white;
-        @include animate-hover-lift;
-      }
+      @include genesis-synapse('social');
     }
   }
   
   // Newsletter signup
   .newsletter-signup {
     .newsletter-note {
-    @include margin-top(2);
-      @include font-size-sm;
+      @include genesis-cognition('gloss');
     }
   }
   
   // Contact information
   .contact-info {
-    &-list {
-  // Use Bootstrap .ps-0 in HTML or add mixin if needed
-    }
-    
     &-item {
-  @include d-flex;
-  @include align-items(center);
-  @include margin-bottom(3);
-      
-      i {
-  // Use Bootstrap .me-3 in HTML or add mixin if needed
-        @include width(24px);
-        @include text-primary;
-      }
-      
-      a {
-      @include margin-bottom(3);
-        text-decoration: none;
-        @include transition(color, $animation-duration-normal, $ease-out);
-        
-        &:hover {
-          @include text-primary;
-        }
+      .contact-info-link {
+        @include genesis-synapse('navigate');
       }
     }
   }
   
   // Google Map
   &-map-section {
-  @include margin-bottom(5);
-    
     .map-container {
-      @include height(450px);
-      overflow: hidden;
-      border-radius: $border-radius;
-      @include shadow-soft;
-      
-      iframe {
-        @include width-full;
-        @include height-full;
-        border: 0;
-      }
+      @include genesis-entity('secondary');
     }
   }
 }

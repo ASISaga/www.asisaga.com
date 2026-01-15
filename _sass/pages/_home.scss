@@ -1,169 +1,66 @@
-// Homepage specific styles
-// Uses component mixins and Bootstrap utilities, with enhanced visual elements
+// Homepage - Marketing and product showcase
+// Uses distributed environment for product grids and focused sections for hero/CTA
 
-// Use enhanced hero component for the homepage hero
-@include gradient-hero-component('hero', rgba($primary, 0.1), $white);
-
-// Use featured products grid component for the products section
-@include featured-products-grid-component('products', $primary);
-
-// Use light CTA component for the CTA section
-@include light-cta-component('cta');
-
-// Additional page-specific styles
 .home {
   &-container {
-    @include width-full;
+    @include genesis-environment('focused');
   }
 }
 
-// Enhanced hero styling for full-screen immersive experience
+// Enhanced hero section for immersive experience
 .hero-section-full {
-  @include height-screen;
-  @include min-height(700px);
-  position: relative;
+  @include genesis-entity('primary');
+  @include genesis-atmosphere('vibrant');
   
   .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include width-full;
-    @include height-full;
-    z-index: 1;
-    
     &-gradient {
-      @include width-full;
-      @include height-full;
-      background: linear-gradient(135deg, $primary-dark 0%, $primary 50%, $accent 100%);
-      opacity: 0.9;
-    }
-    
-    &-video {
-      @include width-full;
-      @include height-full;
-      object-fit: cover;
-    }
-    
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      @include width-full;
-      @include height-full;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
-      z-index: 2;
+      @include genesis-atmosphere('vibrant');
     }
   }
   
   .hero-content {
-  @include position-relative;
-  z-index: 3;
-  @include text-center;
-  @include padding(5);
-  color: $white;
-  @include max-width(800px);
-  @include margin-center;
-    
     .hero-title {
-  @include font-size(3.5rem);
-  @include font-weight(700);
-  @include margin-bottom($spacing-lg);
-
-      
-      @include media-breakpoint-down(md) {
-        font-size: 2.5rem;
-      }
+      @include genesis-cognition('axiom');
     }
     
     .hero-description {
-  @include font-size(1.3rem);
-
-
-      
-      @include media-breakpoint-down(md) {
-        font-size: 1.1rem;
-      }
+      @include genesis-cognition('discourse');
     }
   }
   
   .hero-scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 3;
-    color: $white;
-    
     .hero-scroll-text {
-      @include d-block;
-      @include margin-bottom(1);
-      font-size: 0.8rem;
-      opacity: $consciousness-expansion-opacity;
+      @include genesis-cognition('gloss');
     }
     
     .hero-scroll-icon {
-      font-size: 1.2rem;
+      @include genesis-cognition('quantum');
     }
   }
 }
 
-// Introduction blocks with parallax effects
+// Introduction blocks with cards
 .intro-blocks-section {
-  @include padding-vertical(5);
-  @include bg-light;
-  
-
+  @include genesis-environment('distributed');
   
   .intro-block {
-    @include bg-white;
-    border-radius: $border-radius;
-    @include padding(4);
-  @include height-full;
-    @include text-center;
-    box-shadow: $box-shadow;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
+    @include genesis-entity('primary');
+    @include genesis-atmosphere('ethereal');
     
     &-icon {
-      font-size: 3rem;
-      margin-bottom: $spacing-md;
-      color: $primary;
-      
-      i {
-        background: linear-gradient(135deg, $primary, $accent);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+      @include genesis-cognition('motive');
     }
     
     &-title {
-
-      font-weight: $font-weight-semibold;
-      color: $primary-dark;
+      @include genesis-cognition('axiom');
     }
     
     &-text {
-      color: $text-color;
-      margin-bottom: $spacing-md;
+      @include genesis-cognition('discourse');
     }
     
     &-link {
-      color: $accent;
-      text-decoration: none;
-      font-weight: $font-weight-medium;
-      transition: color 0.3s ease;
-      
-      &:hover {
-  color: darken($accent, 10%);
-        text-decoration: underline;
-      }
+      @include genesis-synapse('navigate');
     }
   }
 }
