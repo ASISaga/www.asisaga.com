@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Theme cache for SCSS compilation testing
+.theme-cache/
+
+# Test output
+.test-output/
+
+# Build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# macOS
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

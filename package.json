@@ -1,0 +1,22 @@
+{
+  "name": "www.asisaga.com",
+  "version": "1.0.0",
+  "description": "ASI Saga main website - Genesis of Artificial Superintelligence",
+  "private": true,
+  "scripts": {
+    "test:scss": "node scripts/test-scss-compilation.js",
+    "scss:compile": "sass _sass/_main.scss assets/css/main.css --load-path=_sass --load-path=.theme-cache/theme.asisaga.com/_sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ASISaga/www.asisaga.com.git"
+  },
+  "devDependencies": {
+    "sass": "^1.97.2"
+  },
+  "keywords": [
+    "ASI",
+    "artificial-superintelligence",
+    "genesis-ontology"
+  ]
+}

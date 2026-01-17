@@ -95,6 +95,7 @@ The following is a comprehensive list of tests and checks that should be part of
 
 - Integration tests (PR or merge)
 	- Template compile checks, SCSS compilation, asset pipeline smoke tests, and basic data render checks (liquid includes render without errors).
+	- **SCSS Compilation Test:** Run `npm run test:scss` to validate all SCSS files compile successfully with Genesis Ontology mixins. This test clones the theme repository to access required ontology mixins and compiles all SCSS partials. See `.github/instructions/scss.instructions.md` for details.
 
 - End-to-end (E2E) functional tests (merge / scheduled)
 	- Playwright flows covering top user journeys, form submissions, navigation, authentication flows (if applicable), and critical user path assertions.
@@ -135,6 +136,56 @@ For each check above, prompts should declare the test name/version to run on MCP
 - Unit tests: repository root (`test_*.py`) or `tests/` / `tests/unit/` when present. Keep unit tests close to the package they exercise.
 - Integration / E2E: `tests_playwright/` (Playwright suites) or `tests/e2e/` where used. Place small example pages and fixtures in `tests_playwright/fixtures/` or `examples/`.
 - Accessibility reports and long-term artifacts: `a11y-reports/` at the repository root (store axe/lighthouse outputs, screenshots, remediation notes).
+- SCSS compilation test: `scripts/test-scss-compilation.js` - validates all SCSS files compile with Genesis Ontology system.
+
+## SCSS Compilation Testing (Local Test)
+
+Unlike most tests which run via MCP, **SCSS compilation testing is a local test** that runs directly in the repository:
+
+### Purpose
+Validates that all SCSS files in `_sass/` can compile successfully with the Genesis Ontology mixins from the theme repository.
+
+### Running the Test
+```bash
+npm install
+npm run test:scss
+```
+
+### What It Does
+1. Clones/updates `ASISaga/theme.asisaga.com` to `.theme-cache/` for Genesis Ontology access
+2. Compiles each SCSS file with proper load paths to theme mixins
+3. Detects missing mixins, variables, imports, or syntax errors
+4. Outputs compiled CSS to `.test-output/` (gitignored)
+5. Returns exit code 0 on success, 1 on failure
+
+### Integration with CI
+Add to GitHub Actions workflow:
+
+```yaml
+- name: Setup Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: '20'
+
+- name: Install dependencies
+  run: npm install
+
+- name: Test SCSS compilation
+  run: npm run test:scss
+```
+
+### Why Local Test?
+- **Fast iteration:** Developers can test SCSS changes instantly without waiting for CI
+- **No MCP dependency:** Compilation testing is deterministic and doesn't need cross-repo coordination
+- **Theme access:** Script manages theme cache automatically, simplifying developer workflow
+- **Clear errors:** Provides immediate feedback on missing mixins or syntax errors
+
+### Error Handling
+- **Undefined mixin:** Check mixin name against `.github/instructions/scss.instructions.md`
+- **Can't find stylesheet:** Verify import paths and that `_main.scss` imports `ontology/index`
+- **Invalid CSS:** Raw CSS properties detected (violates zero raw CSS rule)
+
+See `.github/instructions/scss.instructions.md` for complete SCSS testing documentation.
 
 ## CI conventions
 
