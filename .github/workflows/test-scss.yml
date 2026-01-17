@@ -1,0 +1,44 @@
+name: SCSS Compilation Test
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '_sass/**'
+      - 'scripts/test-scss-compilation.js'
+      - 'package.json'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '_sass/**'
+      - 'scripts/test-scss-compilation.js'
+      - 'package.json'
+
+jobs:
+  test-scss:
+    name: Test SCSS Compilation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Test SCSS compilation with Genesis Ontology
+        run: npm run test:scss
+      
+      - name: Upload compiled CSS artifacts (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scss-compilation-output
+          path: .test-output/
+          retention-days: 7
