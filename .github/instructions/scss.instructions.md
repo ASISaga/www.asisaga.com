@@ -239,6 +239,66 @@ Before committing subdomain SCSS:
 - **Zero raw CSS enforcement:** CI fails if raw CSS properties detected in subdomain SCSS
 - **Manual review required:** For any exceptions or vendor code additions
 
+## Testing SCSS Compilation
+
+### Running SCSS Tests Locally
+
+The repository includes a test compilation script that validates all SCSS files can compile successfully with the Genesis Ontology system:
+
+```bash
+npm install
+npm run test:scss
+```
+
+This script:
+1. **Clones/updates the theme repository** to `.theme-cache/theme.asisaga.com/` to access Genesis Ontology mixins
+2. **Compiles all SCSS files** in `_sass/` directory with proper load paths
+3. **Reports compilation errors** including missing mixins, variables, or syntax errors
+4. **Outputs CSS files** to `.test-output/` for inspection (gitignored)
+
+### What the Test Validates
+
+- ✅ All Genesis ontological mixins are available from the theme
+- ✅ No missing variables or imports
+- ✅ SCSS syntax is valid
+- ✅ Proper import paths for ontology system
+- ✅ All partials can compile when wrapped with ontology imports
+
+### Theme Cache
+
+The test script maintains a local cache of the theme repository in `.theme-cache/` (gitignored). This:
+- **Speeds up repeat test runs** - only clones once, then pulls updates
+- **Ensures consistency** - tests against the same ontology version
+- **Works offline** - after initial clone, tests run without network access
+
+### CI Integration
+
+Add this to your CI workflow to validate SCSS compilation:
+
+```yaml
+- name: Install dependencies
+  run: npm install
+
+- name: Test SCSS compilation
+  run: npm run test:scss
+```
+
+### Troubleshooting
+
+**Error: Undefined mixin**
+- The Genesis Ontology mixin is missing from the theme or misspelled
+- Check `.github/instructions/scss.instructions.md` for correct mixin names
+- Verify theme cache is up to date: `rm -rf .theme-cache && npm run test:scss`
+
+**Error: Can't find stylesheet to import**
+- Import path is incorrect
+- Verify `@import "ontology/index";` is present in `_main.scss`
+- Check that partial file names start with underscore (e.g., `_about.scss`)
+
+**Error: Invalid CSS**
+- Raw CSS properties detected in subdomain SCSS (violates zero raw CSS rule)
+- Refactor to use Genesis ontological mixins instead
+
 ## Documentation & Resources
 - **Theme Ontology README:** `https://github.com/ASISaga/theme.asisaga.com/blob/main/_sass/ontology/Readme.md`
 - **Complete API Reference:** `https://github.com/ASISaga/theme.asisaga.com/blob/main/_sass/ontology/INTEGRATION-GUIDE.md`
