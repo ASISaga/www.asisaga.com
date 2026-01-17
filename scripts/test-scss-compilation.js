@@ -37,7 +37,7 @@ function ensureThemeCache() {
     console.log(`   Theme cache exists at ${THEME_CACHE_DIR}`);
     try {
       console.log('   Updating theme cache...');
-      execSync('git pull --quiet', { cwd: THEME_CACHE_DIR, stdio: 'inherit' });
+      execSync('git pull --quiet', { cwd: THEME_CACHE_DIR, stdio: 'pipe' });
       console.log('   ✓ Theme cache updated');
     } catch (error) {
       console.warn('   ⚠ Could not update cache, using existing version');
@@ -95,9 +95,14 @@ function findScssFiles() {
  * Create a temporary wrapper file that imports ontology and the target partial
  */
 function createWrapperFile(partialPath) {
+  // Use path utilities for robust path handling
+  const relativePath = path.relative(SASS_DIR, partialPath);
+  const parsed = path.parse(relativePath);
+  const importPath = path.join(parsed.dir, parsed.name).replace(/\\/g, '/');
+  
   const wrapperContent = `// Temporary test wrapper
 @import "ontology/index";
-@import "${partialPath.replace('_sass/', '').replace('.scss', '')}";
+@import "${importPath}";
 `;
   
   const wrapperPath = path.join(OUTPUT_DIR, '_test-wrapper.scss');
@@ -106,13 +111,23 @@ function createWrapperFile(partialPath) {
 }
 
 /**
+ * Check if a file is a SCSS partial (not the main entry file)
+ */
+function isPartialFile(scssFile) {
+  const basename = path.basename(scssFile);
+  const mainFile = path.join(SASS_DIR, '_main.scss');
+  return basename.startsWith('_') && scssFile !== mainFile;
+}
+
+/**
  * Compile a single SCSS file to test for errors
  */
 function testCompileFile(scssFile) {
-  const outputFile = path.join(
-    OUTPUT_DIR,
-    scssFile.replace(SASS_DIR, '').replace('.scss', '.css')
-  );
+  // Use path utilities for robust output file path
+  const relativePath = path.relative(SASS_DIR, scssFile);
+  const parsed = path.parse(relativePath);
+  const outputFileName = parsed.name + '.css';
+  const outputFile = path.join(OUTPUT_DIR, parsed.dir, outputFileName);
   const outputDir = path.dirname(outputFile);
   
   // Ensure output directory exists
@@ -122,9 +137,7 @@ function testCompileFile(scssFile) {
   
   // For partial files (starting with _), we need to wrap them to include ontology
   let fileToCompile = scssFile;
-  let isPartial = path.basename(scssFile).startsWith('_') && scssFile !== path.join(SASS_DIR, '_main.scss');
-  
-  if (isPartial) {
+  if (isPartialFile(scssFile)) {
     // Create a wrapper that imports ontology first, then the partial
     fileToCompile = createWrapperFile(scssFile);
   }
