@@ -11,7 +11,8 @@
 .hero-section-full {
   @include genesis-entity('primary');
   @include genesis-atmosphere('vibrant');
-  @include genesis-atmosphere('viewport-aware');  // NEW: Viewport-relative sizing with mobile chrome handling
+  // TODO: Add genesis-atmosphere('viewport-aware') when theme enhancement is available
+  // This will provide viewport-relative sizing with mobile chrome handling
   
   .hero-background {
     &-gradient {
@@ -43,7 +44,8 @@
 // Introduction blocks with cards
 .intro-blocks-section {
   @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
-  @include genesis-atmosphere('dense-desktop');  // NEW: High density desktop → single column mobile
+  // TODO: Add genesis-atmosphere('dense-desktop') when theme enhancement is available
+  // This will provide high density desktop → single column mobile behavior
   
   .intro-block {
     @include genesis-entity('primary');
