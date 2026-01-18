@@ -11,7 +11,7 @@ This subdomain uses the **Genesis Semantic SCSS Engine** from the theme reposito
 
 The Genesis Ontology has been enhanced with comprehensive responsive design capabilities. Key improvements:
 
-- **7th Category Added:** `genesis-media($format)` for responsive images and embedded content
+- **Responsive Media in `genesis-entity`:** New `'image-adaptive'` and `'embed-responsive'` variants for responsive images and embedded content
 - **Auto-Responsive Typography:** All `genesis-cognition` variants now scale automatically (2rem mobile → 3.5rem desktop)
 - **Touch-Optimized Interactions:** All `genesis-synapse` variants now meet WCAG 2.1 (44x44px minimum on mobile)
 - **Responsive Grid:** `genesis-environment('distributed')` now adapts automatically (1 col mobile → auto-fit desktop)
@@ -76,9 +76,9 @@ Use these mixins exclusively - NO raw CSS properties allowed:
 - `'associative'` - Network/connection layout (flexbox wrap)
 - `'chronological'` - Time-linear vertical stream (timeline, feed)
 - `'manifest'` - High-density dashboard (12-column grid)
-- `'navigation-primary'` - **NEW:** Main site navigation (horizontal desktop → mobile drawer with hamburger)
-- `'navigation-secondary'` - **NEW:** Contextual navigation (breadcrumbs, section nav, footer nav) that simplifies on mobile
-- `'interaction-form'` - **NEW:** Form layout optimized for data entry (multi-column desktop → single-column mobile)
+- `'navigation-primary'` - **NEW v2.2.0:** Main site navigation (horizontal desktop → mobile drawer with hamburger)
+- `'navigation-secondary'` - **NEW v2.2.0:** Contextual navigation (breadcrumbs, section nav, footer nav) that simplifies on mobile
+- `'interaction-form'` - **NEW v2.2.0:** Form layout optimized for data entry (multi-column desktop → single-column mobile)
 
 ### 2. `genesis-entity($nature)` - Visual Presence & Glassmorphism
 - `'primary'` - Main content object (active glassmorphism, elevated)
@@ -87,6 +87,8 @@ Use these mixins exclusively - NO raw CSS properties allowed:
 - `'latent'` - Dormant/inactive content (dimmed, grayscale)
 - `'aggregate'` - Container for multiple items (wrapper styling)
 - `'ancestral'` - Archived/historical data (muted, legacy)
+- `'image-adaptive'` - **NEW v2.1.0:** Responsive images with srcset support, aspect ratio preservation, lazy loading
+- `'embed-responsive'` - **NEW v2.1.0:** Embedded content (iframes, videos) with aspect ratio preservation (eliminates need for inline styles)
 
 ### 3. `genesis-cognition($intent)` - Typography & Information Type
 **All typography variants are now responsive by default** - text scales appropriately across viewports with 16px minimum on mobile for accessibility.
@@ -106,7 +108,7 @@ Use these mixins exclusively - NO raw CSS properties allowed:
 - `'inquiry'` - Request for data (search, expand, secondary action, touch-optimized)
 - `'destructive'` - Delete/reset action (danger button, red, touch-optimized)
 - `'social'` - Social sharing (rounded, social colors, 44px touch target mobile)
-- `'input-primary'` - **NEW:** Primary form input (responsive sizing: 44-48px height mobile, 16px font minimum)
+- `'input-primary'` - **NEW v2.2.0:** Primary form input (responsive sizing: 44-48px height mobile, 16px font minimum)
 
 ### 5. `genesis-state($condition)` - Temporal State
 - `'stable'` - Content in equilibrium (normal, verified)
@@ -114,22 +116,16 @@ Use these mixins exclusively - NO raw CSS properties allowed:
 - `'deprecated'` - No longer verified (strikethrough, warning)
 - `'locked'` - Requires clearance (blur effect, lock icon)
 - `'simulated'` - Projected data (dashed border, stripes)
-- `'scroll-triggered'` - **NEW:** Content with scroll-based behavior (fade-in animations, respects prefers-reduced-motion)
+- `'scroll-triggered'` - **NEW v2.2.0:** Content with scroll-based behavior (fade-in animations, respects prefers-reduced-motion)
 
 ### 6. `genesis-atmosphere($vibe)` - Sensory Texture
 - `'neutral'` - Standard transparency (default, balanced)
 - `'ethereal'` - High-transparency, light (bright, minimal)
 - `'void'` - Deep-space, high-contrast (dark, immersive)
 - `'vibrant'` - High-energy, colorful (energetic, neon)
-- `'spacious-mobile'` - **NEW:** Content needing generous spacing on mobile (3x padding mobile → compact desktop)
-- `'dense-desktop'` - **NEW:** High information density on large screens (grid desktop → single column mobile)
-- `'viewport-aware'` - **NEW:** Content sized relative to viewport (hero sections with vh units, handles mobile chrome)
-
-### 7. `genesis-media($format)` - Media & Embedded Content
-**NEW CATEGORY** for responsive images and embedded media:
-
-- `'image-adaptive'` - **NEW:** Responsive images with srcset support, aspect ratio preservation, lazy loading
-- `'embed-responsive'` - **NEW:** Embedded content (iframes, videos) with aspect ratio preservation (eliminates need for inline styles)
+- `'spacious-mobile'` - **NEW v2.1.0:** Content needing generous spacing on mobile (3x padding mobile → compact desktop)
+- `'dense-desktop'` - **NEW v2.1.0:** High information density on large screens (grid desktop → single column mobile)
+- `'viewport-aware'` - **NEW v2.2.0:** Content sized relative to viewport (hero sections with vh units, handles mobile chrome)
 
 ## ZERO Raw CSS Property Rule (MANDATORY)
 
@@ -251,11 +247,11 @@ SCSS:
 
 ```scss
 .map-container {
-  @include genesis-media('embed-responsive');  // Aspect-ratio preserved iframe wrapper
+  @include genesis-entity('embed-responsive');  // Aspect-ratio preserved iframe wrapper
 }
 
 .hero-image {
-  @include genesis-media('image-adaptive');    // Responsive image with srcset support
+  @include genesis-entity('image-adaptive');    // Responsive image with srcset support
 }
 ```
 

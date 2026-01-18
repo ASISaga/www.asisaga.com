@@ -47,12 +47,10 @@
     }
   }
   
-  // Google Map - TODO: Use genesis-media when theme PR is merged
+  // Google Map - using responsive embed entity variant
   &-map-section {
     .map-container {
-      @include genesis-entity('secondary');
-      // TODO: Add genesis-media('embed-responsive') when theme enhancement is available
-      // This will eliminate need for width/height attributes and inline styles on iframe
+      @include genesis-entity('embed-responsive');  // Responsive iframe wrapper (v2.1.0)
     }
   }
 }

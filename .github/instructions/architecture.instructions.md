@@ -34,15 +34,14 @@ This subdomain uses the **Genesis Semantic SCSS Engine** from the theme reposito
 2. **Tier 2: Interface (SCSS)** - Defines the ROLE of the content (ontological mixins only)
 3. **Tier 3: Engine (Theme)** - Defines the LOOK (OKLCH, Glassmorphism, Bento Grid)
 
-### Seven Ontological Categories
+### Six Ontological Categories
 All subdomain SCSS uses these semantic mixins exclusively:
 1. `genesis-environment($logic)` - Layout and spatial organization (includes responsive navigation and form layouts)
-2. `genesis-entity($nature)` - Visual presence and glassmorphism
+2. `genesis-entity($nature)` - Visual presence and glassmorphism (includes responsive media: `'image-adaptive'`, `'embed-responsive'`)
 3. `genesis-cognition($intent)` - Typography and information type (auto-responsive scaling)
 4. `genesis-synapse($vector)` - Interaction and navigation (touch-optimized by default)
 5. `genesis-state($condition)` - Temporal state (includes scroll-triggered animations)
 6. `genesis-atmosphere($vibe)` - Sensory texture (includes content density and viewport awareness)
-7. `genesis-media($format)` - Media and embedded content (responsive images and iframes) **[NEW]**
 
 ### Responsive Design Enhancements (2026-01-18)
 The Genesis Ontology now includes comprehensive responsive capabilities:

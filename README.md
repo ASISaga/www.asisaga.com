@@ -33,14 +33,13 @@ This subdomain uses the **Genesis Semantic SCSS Engine** - a three-tier architec
 
 All styling uses semantic mixins from six categories:
 1. `genesis-environment($logic)` - Layout and spatial organization
-2. `genesis-entity($nature)` - Visual presence and glassmorphism
+2. `genesis-entity($nature)` - Visual presence and glassmorphism (includes responsive media)
 3. `genesis-cognition($intent)` - Typography and information type
 4. `genesis-synapse($vector)` - Interaction and navigation
 5. `genesis-state($condition)` - Temporal state
 6. `genesis-atmosphere($vibe)` - Sensory texture
-7. `genesis-media($format)` - Media and embedded content **[NEW - 2026-01-18]**
 
-**Recent Enhancement:** The Genesis Ontology was enhanced with comprehensive responsive design capabilities (January 2026). Typography auto-scales, interactions are touch-optimized, and new variants support mobile navigation, responsive media, and viewport-aware layouts. See [Responsive Migration Guide](RESPONSIVE_MIGRATION.md) for details.
+**Recent Enhancement:** The Genesis Ontology was enhanced with comprehensive responsive design capabilities (January 2026). Typography auto-scales, interactions are touch-optimized, and new variants support mobile navigation, responsive media (via `genesis-entity`), and viewport-aware layouts. See [Responsive Migration Guide](RESPONSIVE_MIGRATION.md) for details.
 
 See [SCSS Instructions](.github/instructions/scss.instructions.md) for the complete API.
 
