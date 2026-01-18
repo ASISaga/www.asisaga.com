@@ -38,6 +38,9 @@ All styling uses semantic mixins from six categories:
 4. `genesis-synapse($vector)` - Interaction and navigation
 5. `genesis-state($condition)` - Temporal state
 6. `genesis-atmosphere($vibe)` - Sensory texture
+7. `genesis-media($format)` - Media and embedded content **[NEW - 2026-01-18]**
+
+**Recent Enhancement:** The Genesis Ontology was enhanced with comprehensive responsive design capabilities (January 2026). Typography auto-scales, interactions are touch-optimized, and new variants support mobile navigation, responsive media, and viewport-aware layouts. See [Responsive Migration Guide](RESPONSIVE_MIGRATION.md) for details.
 
 See [SCSS Instructions](.github/instructions/scss.instructions.md) for the complete API.
 

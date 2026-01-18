@@ -47,11 +47,12 @@
     }
   }
   
-  // Google Map - using responsive embed mixin
+  // Google Map - TODO: Use genesis-media when theme PR is merged
   &-map-section {
     .map-container {
       @include genesis-entity('secondary');
-      @include genesis-media('embed-responsive');  // NEW: Responsive iframe wrapper (eliminates inline styles)
+      // TODO: Add genesis-media('embed-responsive') when theme enhancement is available
+      // This will eliminate need for width/height attributes and inline styles on iframe
     }
   }
 }
