@@ -11,6 +11,7 @@
 .hero-section-full {
   @include genesis-entity('primary');
   @include genesis-atmosphere('vibrant');
+  @include genesis-atmosphere('viewport-aware');  // NEW: Viewport-relative sizing with mobile chrome handling
   
   .hero-background {
     &-gradient {
@@ -20,47 +21,48 @@
   
   .hero-content {
     .hero-title {
-      @include genesis-cognition('axiom');
+      @include genesis-cognition('axiom');  // Auto-responsive: 2rem mobile → 3.5rem desktop
     }
     
     .hero-description {
-      @include genesis-cognition('discourse');
+      @include genesis-cognition('discourse');  // Auto-responsive: 1rem mobile → 1.125rem desktop
     }
   }
   
   .hero-scroll-indicator {
     .hero-scroll-text {
-      @include genesis-cognition('gloss');
+      @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
     }
     
     .hero-scroll-icon {
-      @include genesis-cognition('quantum');
+      @include genesis-cognition('quantum');  // Auto-responsive
     }
   }
 }
 
 // Introduction blocks with cards
 .intro-blocks-section {
-  @include genesis-environment('distributed');
+  @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
+  @include genesis-atmosphere('dense-desktop');  // NEW: High density desktop → single column mobile
   
   .intro-block {
     @include genesis-entity('primary');
     @include genesis-atmosphere('ethereal');
     
     &-icon {
-      @include genesis-cognition('motive');
+      @include genesis-cognition('motive');  // Auto-responsive
     }
     
     &-title {
-      @include genesis-cognition('axiom');
+      @include genesis-cognition('axiom');  // Auto-responsive
     }
     
     &-text {
-      @include genesis-cognition('discourse');
+      @include genesis-cognition('discourse');  // Auto-responsive
     }
     
     &-link {
-      @include genesis-synapse('navigate');
+      @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
     }
   }
 }
