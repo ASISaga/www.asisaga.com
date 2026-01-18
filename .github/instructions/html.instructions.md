@@ -7,6 +7,7 @@ description: "HTML and Jekyll/Liquid guidance for www.asisaga.com: templates, in
 - This repo is the `www.asisaga.com` subdomain. The canonical theme lives in `ASISaga/theme.asisaga.com` and supplies `_layouts`, `_includes`, `_sass`, and shared `assets`.
 - Theme-provided head, navigation, and footer are authoritative across subdomains. Only override them when strictly necessary and documented.
 - The theme provides the **Genesis Ontological Design System** - a semantic SCSS engine that separates content from presentation.
+- **Responsive Design Enhancements (2026-01-18):** The Genesis Ontology now includes comprehensive responsive capabilities - typography auto-scales, interactions are touch-optimized, and new variants support mobile navigation, form layouts, and responsive media.
 
 # File Locations & Conventions (HTML/Liquid)
 - Custom partials / UI components: place under `_includes/` only if they are subdomain-specific and not available in the theme.
