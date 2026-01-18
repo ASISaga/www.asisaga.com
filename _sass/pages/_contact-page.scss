@@ -8,7 +8,7 @@
   
   &-main-section {
     .contact-intro {
-      @include genesis-cognition('discourse');
+      @include genesis-cognition('discourse');  // Auto-responsive: 1rem mobile → 1.125rem desktop
     }
   }
   
@@ -27,14 +27,14 @@
   // Social icons - social connection points
   .social-icons {
     .social-icon {
-      @include genesis-synapse('social');
+      @include genesis-synapse('social');  // Touch-optimized: 44x44px minimum on mobile
     }
   }
   
   // Newsletter signup
   .newsletter-signup {
     .newsletter-note {
-      @include genesis-cognition('gloss');
+      @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
     }
   }
   
@@ -42,15 +42,15 @@
   .contact-info {
     &-item {
       .contact-info-link {
-        @include genesis-synapse('navigate');
+        @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
       }
     }
   }
   
-  // Google Map
+  // Google Map - using responsive embed entity variant
   &-map-section {
     .map-container {
-      @include genesis-entity('secondary');
+      @include genesis-entity('embed-responsive');  // Responsive iframe wrapper (v2.1.0)
     }
   }
 }

@@ -8,11 +8,11 @@
     @include genesis-entity('secondary');
     
     .sitemap-title {
-      @include genesis-cognition('axiom');
+      @include genesis-cognition('axiom');  // Auto-responsive: 2rem mobile → 3.5rem desktop
     }
     
     .sitemap-subtitle {
-      @include genesis-cognition('gloss');
+      @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
     }
   }
   
@@ -22,13 +22,13 @@
         .sitemap-item {
           &.sitemap-parent {
             .sitemap-parent-title {
-              @include genesis-cognition('motive');
+              @include genesis-cognition('motive');  // Auto-responsive
             }
           }
           
           // All sitemap links use navigate synapse
           .sitemap-link {
-            @include genesis-synapse('navigate');
+            @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
           }
           
           .sitemap-sublist {

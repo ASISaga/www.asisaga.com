@@ -11,22 +11,22 @@
   }
   
   .about-title {
-    @include genesis-cognition('axiom');
+    @include genesis-cognition('axiom');  // Auto-responsive: 2rem mobile → 3.5rem desktop
   }
   
   .about-subtitle {
-    @include genesis-cognition('motive');
+    @include genesis-cognition('motive');  // Auto-responsive
   }
   
   // Mission and vision section
   .about-mission-section {
     .about-section-content {
       .about-section-title {
-        @include genesis-cognition('axiom');
+        @include genesis-cognition('axiom');  // Auto-responsive
       }
       
       .about-section-text {
-        @include genesis-cognition('discourse');
+        @include genesis-cognition('discourse');  // Auto-responsive: 1rem mobile → 1.125rem desktop
       }
     }
   }
@@ -37,25 +37,25 @@
     @include genesis-atmosphere('neutral');
     
     .about-team-grid {
-      @include genesis-environment('distributed');
+      @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
       
       .about-team-member {
         @include genesis-entity('primary');
         
         .about-team-member-name {
-          @include genesis-cognition('motive');
+          @include genesis-cognition('motive');  // Auto-responsive
         }
         
         .about-team-member-role {
-          @include genesis-cognition('gloss');
+          @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
         }
         
         .about-team-member-bio {
-          @include genesis-cognition('discourse');
+          @include genesis-cognition('discourse');  // Auto-responsive
         }
         
         .about-team-member-link {
-          @include genesis-synapse('navigate');
+          @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
         }
       }
     }
@@ -64,7 +64,7 @@
   // Contact section
   .about-contact-section {
     .about-contact-link {
-      @include genesis-synapse('execute');
+      @include genesis-synapse('execute');  // Touch-optimized: 44px minimum on mobile
     }
   }
 }

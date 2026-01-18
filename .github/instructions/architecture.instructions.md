@@ -36,12 +36,23 @@ This subdomain uses the **Genesis Semantic SCSS Engine** from the theme reposito
 
 ### Six Ontological Categories
 All subdomain SCSS uses these semantic mixins exclusively:
-1. `genesis-environment($logic)` - Layout and spatial organization
-2. `genesis-entity($nature)` - Visual presence and glassmorphism
-3. `genesis-cognition($intent)` - Typography and information type
-4. `genesis-synapse($vector)` - Interaction and navigation
-5. `genesis-state($condition)` - Temporal state
-6. `genesis-atmosphere($vibe)` - Sensory texture
+1. `genesis-environment($logic)` - Layout and spatial organization (includes responsive navigation and form layouts)
+2. `genesis-entity($nature)` - Visual presence and glassmorphism (includes responsive media: `'image-adaptive'`, `'embed-responsive'`)
+3. `genesis-cognition($intent)` - Typography and information type (auto-responsive scaling)
+4. `genesis-synapse($vector)` - Interaction and navigation (touch-optimized by default)
+5. `genesis-state($condition)` - Temporal state (includes scroll-triggered animations)
+6. `genesis-atmosphere($vibe)` - Sensory texture (includes content density and viewport awareness)
+
+### Responsive Design Enhancements (2026-01-18)
+The Genesis Ontology now includes comprehensive responsive capabilities:
+- **Auto-responsive typography** - Text scales appropriately across all viewports
+- **Touch-optimized interactions** - All buttons/links meet WCAG 2.1 (44x44px mobile)
+- **Responsive grids** - Automatic column adaptation (1 col mobile → auto-fit desktop)
+- **Mobile navigation patterns** - Built-in drawer/hamburger menu support
+- **Responsive media** - Eliminates need for inline styles on images/iframes
+- **Content density variants** - Viewport-appropriate spacing and layouts
+
+These enhancements are **non-breaking and additive**. Existing code benefits automatically from improved typography and touch targets.
 
 ### Zero Raw CSS Rule
 Subdomain SCSS files **MUST NOT** contain raw CSS properties. All styling comes from ontological mixins in the theme engine.
