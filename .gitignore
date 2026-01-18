@@ -6,6 +6,7 @@ node_modules/
 
 # Test output
 .test-output/
+responsive-test-results/
 
 # Build artifacts
 _site/
@@ -22,3 +23,6 @@ _site/
 *.swp
 *.swo
 *~
+
+# Temporary test scripts (not for commit)
+responsive-test.js

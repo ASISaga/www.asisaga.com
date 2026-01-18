@@ -12,6 +12,7 @@
     "url": "https://github.com/ASISaga/www.asisaga.com.git"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "sass": "^1.97.2"
   },
   "keywords": [
