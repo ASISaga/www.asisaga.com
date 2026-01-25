@@ -8,6 +8,7 @@ description: "HTML and Jekyll/Liquid guidance for www.asisaga.com: templates, in
 - Theme-provided head, navigation, and footer are authoritative across subdomains. Only override them when strictly necessary and documented.
 - The theme provides the **Genesis Ontological Design System** - a semantic SCSS engine that separates content from presentation.
 - **Responsive Design Enhancements (2026-01-18):** The Genesis Ontology now includes comprehensive responsive capabilities - typography auto-scales, interactions are touch-optimized, and new variants support mobile navigation, form layouts, and responsive media.
+- **Futuristic Theme (2026-01-25):** Theme now features profound blacks, neon blue accents, complete OKLCH color conversion, and Three.js particle effects via `{% include futuristic-effects.html %}`.
 
 # File Locations & Conventions (HTML/Liquid)
 - Custom partials / UI components: place under `_includes/` only if they are subdomain-specific and not available in the theme.
@@ -80,3 +81,25 @@ description: "HTML and Jekyll/Liquid guidance for www.asisaga.com: templates, in
   5. `genesis-state($condition)` - Temporal state
   6. `genesis-atmosphere($vibe)` - Sensory texture
 - See `.github/instructions/scss.instructions.md` for complete details on the ontological system
+
+## Theme Enhancements
+
+### Three.js Futuristic Effects (Available since 2026-01-25)
+
+The theme provides optional Three.js particle system and neural network effects:
+
+```liquid
+<!-- Add to any page for visual enhancement -->
+{% include futuristic-effects.html %}
+```
+
+**Features:**
+- 150-particle animated system with neon blue glow
+- 30-node neural network with dynamic connections
+- Respects `prefers-reduced-motion` accessibility preference
+- Loads dynamically from CDN with integrity verification
+
+**Usage Guidelines:**
+- Add to high-impact pages like homepage for enhanced visual experience
+- Loads asynchronously to avoid blocking page render
+- Automatically disabled for users with `prefers-reduced-motion` enabled
