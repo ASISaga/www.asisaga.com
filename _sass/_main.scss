@@ -2,6 +2,10 @@
 // This provides the complete semantic design system via mixins
 @import "ontology/index";
 
+// TEMPORARY: Theme fixes for missing mixins from PR #47
+// Remove when theme is updated with proper mixin definitions
+@import "theme-fixes";
+
 // Pages - Page-specific semantic mappings
 // Each page maps HTML classes to ontological roles using mixins
 @import "pages/index";
