@@ -8,6 +8,8 @@ Genesis of Artificial Superintelligence - Main Website
 
 This repository contains the main website for ASI Saga (`www.asisaga.com`). The site is built using Jekyll with GitHub Pages and implements the **Genesis Ontological Design System** from the [theme repository](https://github.com/ASISaga/theme.asisaga.com).
 
+**Design:** Futuristic theme with profound blacks, neon blue accents (#3A86FF), and Three.js particle effects. Built on 100% OKLCH color space for perceptual uniformity.
+
 ## Genesis Ontological Design System
 
 This subdomain uses the **Genesis Semantic SCSS Engine** - a three-tier architecture that separates content semantics from visual presentation.
