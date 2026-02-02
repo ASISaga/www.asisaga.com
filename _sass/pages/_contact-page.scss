@@ -29,32 +29,31 @@
   &-connect {
     &-container {
       @include genesis-entity('secondary');
-    }
-  }
-  
-  // Social icons - social connection points
-  .social-icons {
-    .social-icon {
-      @include genesis-synapse('social');  // Touch-optimized: 44x44px minimum on mobile
-    }
-  }
-  
-  .social-description {
-    @include genesis-cognition('discourse');  // Auto-responsive
-  }
-  
-  // Newsletter signup
-  .newsletter-signup {
-    .newsletter-note {
-      @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
-    }
-  }
-  
-  // Contact information
-  .contact-info {
-    &-item {
-      .contact-info-link {
-        @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
+      
+      .social-connections {
+        .social-icons {
+          .social-icon {
+            @include genesis-synapse('social');  // Touch-optimized: 44x44px minimum on mobile
+          }
+        }
+        
+        .social-description {
+          @include genesis-cognition('discourse');  // Auto-responsive
+        }
+      }
+      
+      .newsletter-signup {
+        .newsletter-note {
+          @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
+        }
+      }
+      
+      .contact-info {
+        &-item {
+          .contact-info-link {
+            @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
+          }
+        }
       }
     }
   }
