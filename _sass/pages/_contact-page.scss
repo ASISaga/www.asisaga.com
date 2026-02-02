@@ -12,37 +12,48 @@
     }
   }
   
+  &-main-grid {
+    @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
+  }
+  
   &-form {
     &-container {
       @include genesis-entity('primary');
+    }
+    
+    .form-fields {
+      @include genesis-environment('interaction-form');  // v2.2.0: Multi-column desktop → single-column mobile
     }
   }
   
   &-connect {
     &-container {
       @include genesis-entity('secondary');
-    }
-  }
-  
-  // Social icons - social connection points
-  .social-icons {
-    .social-icon {
-      @include genesis-synapse('social');  // Touch-optimized: 44x44px minimum on mobile
-    }
-  }
-  
-  // Newsletter signup
-  .newsletter-signup {
-    .newsletter-note {
-      @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
-    }
-  }
-  
-  // Contact information
-  .contact-info {
-    &-item {
-      .contact-info-link {
-        @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
+      
+      .social-connections {
+        .social-icons {
+          .social-icon {
+            @include genesis-synapse('social');  // Touch-optimized: 44x44px minimum on mobile
+          }
+        }
+        
+        .social-description {
+          @include genesis-cognition('discourse');  // Auto-responsive
+        }
+      }
+      
+      .newsletter-signup {
+        .newsletter-note {
+          @include genesis-cognition('gloss');  // Auto-responsive, never smaller than 0.75rem
+        }
+      }
+      
+      .contact-info {
+        &-item {
+          .contact-info-link {
+            @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
+          }
+        }
       }
     }
   }
@@ -53,4 +64,9 @@
       @include genesis-entity('embed-responsive');  // Responsive iframe wrapper (v2.1.0)
     }
   }
+}
+
+// Section titles
+.section-title {
+  @include genesis-cognition('axiom');  // Auto-responsive: 2rem mobile → 3.5rem desktop
 }
