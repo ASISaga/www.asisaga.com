@@ -7,6 +7,7 @@ node_modules/
 # Test output
 .test-output/
 responsive-test-results/
+mobile-test-results/
 
 # Live test results (screenshots are large, findings documented in markdown)
 live-responsive-test-results/screenshots/
@@ -30,3 +31,5 @@ _site/
 
 # Temporary test scripts (not for commit)
 responsive-test.js
+test-mobile-fix.html
+test-mobile-header.js
