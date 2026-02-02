@@ -19,17 +19,9 @@
     @include genesis-environment('focused');
   }
   
-  &-wrapper {
-    // Wrapper for the section content
-  }
-  
   &-grid {
     @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
     @include genesis-atmosphere('spacious-mobile');  // v2.1.0: Generous spacing on mobile
-  }
-  
-  &-block-item {
-    // Grid item wrapper - styling comes from .genesis-block
   }
 }
 
@@ -60,24 +52,11 @@
     @include genesis-environment('focused');
     @include genesis-atmosphere('vibrant');
   }
-  
-  &-wrapper {
-    // Wrapper for the section content
-  }
 }
 
 .threshold {
-  &-experience {
-    // Container for the threshold content and visualization
-  }
-  
   &-content-grid {
     @include genesis-environment('distributed');  // Auto-responsive grid
-  }
-  
-  &-content-column,
-  &-visualization-column {
-    // Grid column items - styling comes from child elements
   }
   
   &-content {

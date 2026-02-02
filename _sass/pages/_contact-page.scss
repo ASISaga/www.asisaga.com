@@ -12,17 +12,8 @@
     }
   }
   
-  &-main-wrapper {
-    // Wrapper for contact section content
-  }
-  
   &-main-grid {
     @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
-  }
-  
-  &-form-column,
-  &-connect-column {
-    // Grid column items - styling comes from child containers
   }
   
   &-form {
@@ -33,11 +24,6 @@
     .form-fields {
       @include genesis-environment('interaction-form');  // v2.2.0: Multi-column desktop → single-column mobile
     }
-    
-    .form-field-half,
-    .form-field-full {
-      // Form field containers - styling comes from form controls
-    }
   }
   
   &-connect {
@@ -47,10 +33,6 @@
   }
   
   // Social icons - social connection points
-  .social-connections {
-    // Section spacing handled by Genesis
-  }
-  
   .social-icons {
     .social-icon {
       @include genesis-synapse('social');  // Touch-optimized: 44x44px minimum on mobile
