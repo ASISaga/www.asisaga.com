@@ -12,9 +12,31 @@
     }
   }
   
+  &-main-wrapper {
+    // Wrapper for contact section content
+  }
+  
+  &-main-grid {
+    @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
+  }
+  
+  &-form-column,
+  &-connect-column {
+    // Grid column items - styling comes from child containers
+  }
+  
   &-form {
     &-container {
       @include genesis-entity('primary');
+    }
+    
+    .form-fields {
+      @include genesis-environment('interaction-form');  // v2.2.0: Multi-column desktop → single-column mobile
+    }
+    
+    .form-field-half,
+    .form-field-full {
+      // Form field containers - styling comes from form controls
     }
   }
   
@@ -25,10 +47,18 @@
   }
   
   // Social icons - social connection points
+  .social-connections {
+    // Section spacing handled by Genesis
+  }
+  
   .social-icons {
     .social-icon {
       @include genesis-synapse('social');  // Touch-optimized: 44x44px minimum on mobile
     }
+  }
+  
+  .social-description {
+    @include genesis-cognition('discourse');  // Auto-responsive
   }
   
   // Newsletter signup
@@ -53,4 +83,9 @@
       @include genesis-entity('embed-responsive');  // Responsive iframe wrapper (v2.1.0)
     }
   }
+}
+
+// Section titles
+.section-title {
+  @include genesis-cognition('axiom');  // Auto-responsive: 2rem mobile → 3.5rem desktop
 }

@@ -7,6 +7,100 @@
   }
 }
 
+.genesis {
+  &-home-container {
+    @include genesis-environment('focused');
+  }
+}
+
+// Genesis blocks section - 3-column grid for core concepts
+.genesis-blocks {
+  &-section {
+    @include genesis-environment('focused');
+  }
+  
+  &-wrapper {
+    // Wrapper for the section content
+  }
+  
+  &-grid {
+    @include genesis-environment('distributed');  // Auto-responsive: 1 col mobile → 2 col tablet → auto-fit desktop
+    @include genesis-atmosphere('spacious-mobile');  // v2.1.0: Generous spacing on mobile
+  }
+  
+  &-block-item {
+    // Grid item wrapper - styling comes from .genesis-block
+  }
+}
+
+.genesis-block {
+  @include genesis-entity('primary');
+  @include genesis-atmosphere('ethereal');
+  
+  &-icon {
+    @include genesis-cognition('motive');  // Auto-responsive
+  }
+  
+  &-title {
+    @include genesis-cognition('axiom');  // Auto-responsive: 2rem mobile → 3.5rem desktop
+  }
+  
+  &-text {
+    @include genesis-cognition('discourse');  // Auto-responsive: 1rem mobile → 1.125rem desktop
+  }
+  
+  &-link {
+    @include genesis-synapse('navigate');  // Touch-optimized: 44px minimum on mobile
+  }
+}
+
+// Transcendent threshold section - 2-column layout
+.transcendent-threshold {
+  &-section {
+    @include genesis-environment('focused');
+    @include genesis-atmosphere('vibrant');
+  }
+  
+  &-wrapper {
+    // Wrapper for the section content
+  }
+}
+
+.threshold {
+  &-experience {
+    // Container for the threshold content and visualization
+  }
+  
+  &-content-grid {
+    @include genesis-environment('distributed');  // Auto-responsive grid
+  }
+  
+  &-content-column,
+  &-visualization-column {
+    // Grid column items - styling comes from child elements
+  }
+  
+  &-content {
+    @include genesis-entity('primary');
+  }
+  
+  &-subtitle {
+    @include genesis-cognition('axiom');  // Auto-responsive
+  }
+  
+  &-description {
+    @include genesis-cognition('discourse');  // Auto-responsive
+  }
+  
+  &-cta {
+    @include genesis-synapse('execute');  // Touch-optimized button
+  }
+  
+  &-visualization {
+    @include genesis-entity('secondary');
+  }
+}
+
 // Enhanced hero section for immersive experience
 .hero-section-full {
   @include genesis-entity('primary');
