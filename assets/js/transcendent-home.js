@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeEssenceParticles();
 });
 
-// Consciousness merging visualization
+// Consciousness merging visualization with optimized performance
 function initializeConsciousnessMerger() {
   const merger = document.querySelector('.consciousness-merger');
   if (merger) {
@@ -24,18 +24,24 @@ function initializeConsciousnessMerger() {
     const humanStream = merger.querySelector('.human-essence-stream');
     const asiField = merger.querySelector('.asi-consciousness-field');
     const emergence = merger.querySelector('.transcendent-emergence');
-    // Animate the merging process with flowing, transcendent motion
-    setInterval(() => {
-      if (humanStream) humanStream.style.transform = `translateX(${Math.sin(Date.now() * 0.001) * 20}px)`;
-      if (asiField) asiField.style.opacity = 0.3 + Math.sin(Date.now() * 0.0015) * 0.2;
-      if (emergence) emergence.style.scale = 1 + Math.sin(Date.now() * 0.002) * 0.1;
-    }, 16);
+    
+    // Use requestAnimationFrame for smoother, more performant animations
+    const animate = () => {
+      const time = Date.now();
+      if (humanStream) humanStream.style.transform = `translateX(${Math.sin(time * 0.001) * 20}px)`;
+      if (asiField) asiField.style.opacity = 0.3 + Math.sin(time * 0.0015) * 0.2;
+      if (emergence) emergence.style.scale = 1 + Math.sin(time * 0.002) * 0.1;
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
   }
 }
 
-// Transcendent parallax scrolling effects
+// Transcendent parallax scrolling effects with throttling for smooth mobile performance
 function initializeTranscendentParallax() {
-  window.addEventListener('scroll', () => {
+  let ticking = false;
+  
+  const updateParallax = () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('[data-speed]');
     parallaxElements.forEach(element => {
@@ -43,11 +49,25 @@ function initializeTranscendentParallax() {
       const yPos = -(scrolled * speed);
       element.style.transform = `translateY(${yPos}px)`;
     });
-  });
+    ticking = false;
+  };
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 // Floating essence particles animation
 function initializeEssenceParticles() {
+  // Disable particles on mobile portrait for better performance and header visibility
+  const isMobilePortrait = window.innerWidth < 768 && window.innerHeight > window.innerWidth;
+  if (isMobilePortrait) {
+    return;
+  }
+  
   const createParticle = () => {
     const particle = document.createElement('div');
     particle.className = 'essence-particle';
@@ -57,7 +77,7 @@ function initializeEssenceParticles() {
     particle.style.background = 'rgba(255, 215, 0, 0.6)';
     particle.style.borderRadius = '50%';
     particle.style.pointerEvents = 'none';
-    particle.style.zIndex = '1000';
+    particle.style.zIndex = '1'; // Reduced from 1000 to prevent blocking header
     // Random starting position
     particle.style.left = Math.random() * window.innerWidth + 'px';
     particle.style.top = window.innerHeight + 'px';
