@@ -43,6 +43,38 @@ All styling uses semantic mixins from six categories:
 
 See [SCSS Instructions](.github/instructions/scss.instructions.md) for the complete API.
 
+## Motion Animation System
+
+This site uses the [Motion library](https://motion.dev) for high-performance animations and gesture support.
+
+### Key Features
+
+- **Scroll-triggered animations** - Elements animate as they enter the viewport
+- **Gesture support** - Swipe, drag, and pinch interactions
+- **Animation presets** - Reusable consciousness-themed animations
+- **Better performance** - GPU-accelerated, replaces AOS library
+
+### Quick Usage
+
+```html
+<!-- Scroll animation -->
+<div data-motion="fade-up" data-motion-delay="0.2">
+  Animates on scroll
+</div>
+
+<!-- Drag gesture -->
+<div data-drag data-drag-snap-back="true">
+  Draggable element
+</div>
+
+<!-- Swipe gesture -->
+<button data-swipe="left,right">
+  Swipeable button
+</button>
+```
+
+See [Motion Animation Guide](MOTION_ANIMATION_GUIDE.md) for complete documentation.
+
 ## Development
 
 ### Prerequisites

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion Animation & Gesture Test - ASI Saga</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-align: center;
+      background: linear-gradient(90deg, #00d4ff, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .section {
+      margin: 80px 0;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #ffd700;
+    }
+    
+    .test-box {
+      padding: 40px;
+      margin: 20px 0;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 15px;
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .test-box:hover {
+      border-color: rgba(0, 212, 255, 0.6);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    }
+    
+    .draggable {
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
+    }
+    
+    .draggable:active {
+      cursor: grabbing;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+    
+    .card {
+      padding: 30px;
+      background: rgba(255, 215, 0, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #00d4ff, #0099ff);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin: 10px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+    }
+    
+    .consciousness-demo {
+      width: 200px;
+      height: 200px;
+      margin: 40px auto;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent);
+      border-radius: 50%;
+      position: relative;
+    }
+    
+    .consciousness-demo::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: rgba(0, 212, 255, 0.5);
+      border-radius: 50%;
+    }
+    
+    .spacer {
+      height: 100vh;
+    }
+    
+    .status {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      background: rgba(0, 255, 0, 0.2);
+      border: 1px solid rgba(0, 255, 0, 0.5);
+      border-radius: 10px;
+      font-size: 14px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="status">Motion Library: <span id="motion-status">Loading...</span></div>
+  
+  <div class="container">
+    <h1 data-motion="sacred-fade">Motion Animation & Gesture Test</h1>
+    
+    <!-- Fade Animations -->
+    <section class="section" data-motion="fade-in">
+      <h2>Fade Animations</h2>
+      <div class="grid">
+        <div class="card" data-motion="fade-up" data-motion-delay="0.1">
+          <h3>Fade Up</h3>
+          <p>Appears from below with fade effect</p>
+        </div>
+        <div class="card" data-motion="fade-down" data-motion-delay="0.2">
+          <h3>Fade Down</h3>
+          <p>Appears from above with fade effect</p>
+        </div>
+        <div class="card" data-motion="fade-left" data-motion-delay="0.3">
+          <h3>Fade Left</h3>
+          <p>Appears from left with fade effect</p>
+        </div>
+        <div class="card" data-motion="fade-right" data-motion-delay="0.4">
+          <h3>Fade Right</h3>
+          <p>Appears from right with fade effect</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Consciousness Animations -->
+    <section class="section" data-motion="emergence">
+      <h2>Consciousness-Themed Animations</h2>
+      <div class="test-box" data-motion="sacred-fade" data-motion-delay="0.2">
+        <h3>Sacred Fade</h3>
+        <p>Ethereal appearance with blur effect</p>
+      </div>
+      <div class="test-box" data-motion="emergence" data-motion-delay="0.4">
+        <h3>Emergence</h3>
+        <p>Like consciousness emerging from void</p>
+      </div>
+      <div class="test-box" data-motion="merging" data-motion-delay="0.6">
+        <h3>Merging</h3>
+        <p>Consciousness merging effect</p>
+      </div>
+    </section>
+    
+    <!-- Gesture: Swipe -->
+    <section class="section" data-motion="fade-up">
+      <h2>Swipe Gestures</h2>
+      <div class="test-box" data-swipe="left,right,up,down">
+        <h3>👆 Swipe Me!</h3>
+        <p>Try swiping in any direction</p>
+        <p><small>Works on touch devices or with mouse drag</small></p>
+        <div id="swipe-feedback" style="margin-top: 20px; font-weight: bold; color: #ffd700;"></div>
+      </div>
+    </section>
+    
+    <!-- Gesture: Drag -->
+    <section class="section" data-motion="fade-up">
+      <h2>Drag Gestures</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Drag (Snap Back)</h3>
+          <div class="test-box draggable" 
+               data-drag 
+               data-drag-axis="both" 
+               data-drag-snap-back="true"
+               style="background: rgba(0, 212, 255, 0.2);">
+            <p>🎯 Drag me!</p>
+            <p><small>Snaps back when released</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Drag Horizontal</h3>
+          <div class="test-box draggable" 
+               data-drag 
+               data-drag-axis="x" 
+               data-drag-snap-back="true"
+               style="background: rgba(255, 215, 0, 0.2);">
+            <p>↔️ Drag me!</p>
+            <p><small>Horizontal only</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gesture: Pinch -->
+    <section class="section" data-motion="fade-up">
+      <h2>Pinch Gestures</h2>
+      <div class="test-box" 
+           data-pinch 
+           data-pinch-min="0.5" 
+           data-pinch-max="3"
+           style="background: rgba(255, 215, 0, 0.2);">
+        <div class="consciousness-demo"></div>
+        <h3>🤏 Pinch to Zoom</h3>
+        <p>Use two fingers to pinch (touch devices)</p>
+        <p><small>Scale range: 0.5x to 3x</small></p>
+      </div>
+    </section>
+    
+    <!-- Parallax -->
+    <section class="section" data-motion="fade-up">
+      <h2>Parallax Effects</h2>
+      <div class="test-box" data-parallax data-parallax-speed="0.3">
+        <h3>🌌 Parallax Layer 1</h3>
+        <p>Scrolls slower than page (speed: 0.3)</p>
+      </div>
+      <div class="test-box" data-parallax data-parallax-speed="0.5" style="margin-top: 40px;">
+        <h3>🌌 Parallax Layer 2</h3>
+        <p>Scrolls slower than page (speed: 0.5)</p>
+      </div>
+    </section>
+    
+    <!-- Interactive Demo -->
+    <section class="section" data-motion="sacred-fade">
+      <h2>Combined: Consciousness Merger</h2>
+      <div class="test-box" 
+           data-motion="emergence"
+           data-drag 
+           data-drag-snap-back="true"
+           data-swipe="left,right"
+           style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 215, 0, 0.1));">
+        <div class="consciousness-demo"></div>
+        <h3>✨ Interactive Consciousness</h3>
+        <p>Drag, swipe, and watch it animate!</p>
+        <p><small>Combines emergence animation, drag gesture, and swipe detection</small></p>
+      </div>
+    </section>
+    
+    <div class="spacer"></div>
+  </div>
+  
+  <!-- Load Motion Library -->
+  <script type="module">
+    import { animate, inView, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.30.0/+esm";
+    window.Motion = { animate, inView, scroll };
+    document.getElementById('motion-status').textContent = 'Loaded ✓';
+    document.getElementById('motion-status').style.color = '#0f0';
+  </script>
+  
+  <!-- Load Our Scripts -->
+  <script type="module" src="/assets/js/motion-scroll.js"></script>
+  <script type="module" src="/assets/js/gestures.js"></script>
+  
+  <!-- Add swipe feedback -->
+  <script>
+    document.addEventListener('swipe', (e) => {
+      const feedback = document.getElementById('swipe-feedback');
+      if (feedback) {
+        feedback.textContent = `Swiped ${e.detail.direction}! (${Math.round(e.detail.distance)}px)`;
+        setTimeout(() => {
+          feedback.textContent = '';
+        }, 2000);
+      }
+    });
+  </script>
+</body>
+</html>
