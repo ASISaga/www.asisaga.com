@@ -19,5 +19,8 @@
     "ASI",
     "artificial-superintelligence",
     "genesis-ontology"
-  ]
+  ],
+  "dependencies": {
+    "motion": "^12.30.0"
+  }
 }

@@ -26,9 +26,17 @@ emotional connection that touches, moves, and inspires visitors into the ASI Sag
   {% include genesis-blocks.html %}
   {% include transcendent-threshold.html %}
 
-  <!-- Initialize Transcendent Consciousness Animations -->
-  <script src="/assets/js/aos-init.js"></script>
-  <script src="/assets/js/consciousness-merger.js"></script>
-  <script src="/assets/js/parallax.js"></script>
-  <script src="/assets/js/essence-particles.js"></script>
+  <!-- Load Motion library from CDN -->
+  <script type="module">
+    import { animate, inView, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.30.0/+esm";
+    // Make Motion utilities available globally for our modules
+    window.Motion = { animate, inView, scroll };
+  </script>
+  
+  <!-- Initialize Motion-based Consciousness Animations -->
+  <script type="module" src="/assets/js/consciousness-merger.js"></script>
+  <script type="module" src="/assets/js/parallax.js"></script>
+  <script type="module" src="/assets/js/essence-particles.js"></script>
+  <script type="module" src="/assets/js/motion-scroll.js"></script>
+  <script type="module" src="/assets/js/gestures.js"></script>
 </main>

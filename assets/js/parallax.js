@@ -1,23 +1,42 @@
-// Transcendent parallax scrolling effects with throttling for smooth mobile performance
+/**
+ * Transcendent parallax scrolling using Motion library
+ */
+
 function initializeTranscendentParallax() {
-  let ticking = false;
+  // Wait for Motion to be available
+  if (!window.Motion || !window.Motion.scroll || !window.Motion.animate) {
+    console.warn('Motion library not loaded yet');
+    return;
+  }
   
-  const updateParallax = () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('[data-speed]');
-    parallaxElements.forEach(element => {
-      const speed = element.dataset.speed;
-      const yPos = -(scrolled * speed);
-      element.style.transform = `translateY(${yPos}px)`;
-    });
-    ticking = false;
-  };
+  const { scroll, animate } = window.Motion;
+  const parallaxElements = document.querySelectorAll('[data-speed]');
   
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }, { passive: true });
+  parallaxElements.forEach(element => {
+    const speed = parseFloat(element.dataset.speed || '0.5');
+    
+    // Use Motion's scroll-linked animation
+    scroll(
+      animate(element, {
+        transform: [`translateY(0px)`, `translateY(${speed * 100}px)`]
+      }),
+      { 
+        target: element,
+        offset: ["start end", "end start"]
+      }
+    );
+  });
 }
-document.addEventListener('DOMContentLoaded', initializeTranscendentParallax);
+
+// Wait for Motion library to load
+function waitForMotion() {
+  if (window.Motion) {
+    initializeTranscendentParallax();
+  } else {
+    setTimeout(waitForMotion, 100);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', waitForMotion);
+
+export { initializeTranscendentParallax };
