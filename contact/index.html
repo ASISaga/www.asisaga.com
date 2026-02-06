@@ -13,7 +13,7 @@ privacy_link: "/business-infinity/privacy-policy.html"
     <div class="contact-main-wrapper">
       <div class="contact-main-grid">
         <!-- Contact form -->
-        <div class="contact-form-column" data-aos="fade-right">
+        <div class="contact-form-column" data-motion="fade-right">
           <div class="contact-form-container">
             <h2 class="section-title">Get in Touch</h2>
             <p class="contact-intro">
@@ -77,7 +77,7 @@ privacy_link: "/business-infinity/privacy-policy.html"
         </div>
         
         <!-- Connect section -->
-        <div class="contact-connect-column" data-aos="fade-left">
+        <div class="contact-connect-column" data-motion="fade-left">
           <div class="contact-connect-container">
             <h2 class="section-title">Connect With Us</h2>
             
@@ -153,7 +153,7 @@ privacy_link: "/business-infinity/privacy-policy.html"
   
   <!-- Interactive map section -->
   <section class="contact-map-section">
-    <div class="map-container" data-aos="zoom-in">
+    <div class="map-container" data-motion="zoom-in">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101268.39372531053!2d-122.07335237966382!3d37.41354961147003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7495bec0189%3A0x7c17d44a466baf9b!2sMountain%20View%2C%20CA%2C%20USA!5e0!3m2!1sen!2sca!4v1628553573995!5m2!1sen!2sca" 
         allowfullscreen
@@ -162,16 +162,12 @@ privacy_link: "/business-infinity/privacy-policy.html"
     </div>
   </section>
   
-  <!-- Initialize AOS animations -->
+  <!-- Initialize Motion animations -->
+  <script src="/assets/js/motion-init.js"></script>
+  
+  <!-- Form validation -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-      });
-      
       // Form validation
       const validateForm = function(formId) {
         const form = document.getElementById(formId);
