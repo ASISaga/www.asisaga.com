@@ -1,5 +1,7 @@
 # Mobile Header Visibility & Scroll Performance Fix - Summary
 
+> **Note (2026-02-06):** The animation system described in this document has been superseded by the Motion library refactoring. All custom JavaScript animations have been replaced with the Motion API from the theme. See `assets/js/motion-init.js` for the current implementation.
+
 ## Problem Statement
 The site header was not visible in mobile portrait mode, and initiating scroll required double drag due to performance issues.
 

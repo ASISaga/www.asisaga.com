@@ -113,8 +113,14 @@
         <div id="scroll-info"></div>
     </div>
     
-    <script src="/assets/js/parallax.js"></script>
-    <script src="/assets/js/essence-particles.js"></script>
+    <!-- Motion Library (from theme) -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@12.32.0/dist/motion.js" type="module"></script>
+    <script type="module">
+      import * as Motion from 'https://cdn.jsdelivr.net/npm/motion@12.30.0/dist/index.es.js';
+      window.Motion = Motion;
+    </script>
+    
+    <script src="/assets/js/motion-init.js"></script>
     
     <script>
         // Test status monitoring
