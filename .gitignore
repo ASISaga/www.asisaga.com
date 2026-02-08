@@ -6,12 +6,6 @@ node_modules/
 
 # Test output
 .test-output/
-responsive-test-results/
-mobile-test-results/
-
-# Live test results (screenshots are large, findings documented in markdown)
-live-responsive-test-results/screenshots/
-live-responsive-test-results/live-findings.json
 
 # Build artifacts
 _site/
@@ -28,8 +22,3 @@ _site/
 *.swp
 *.swo
 *~
-
-# Temporary test scripts (not for commit)
-responsive-test.js
-test-mobile-fix.html
-test-mobile-header.js

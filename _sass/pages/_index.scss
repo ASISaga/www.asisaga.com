@@ -1,99 +1,85 @@
 /**
  * Genesis Homepage - Humanity's Digital Gateway to Transcendence
- * 
- * This page uses the Genesis Ontological Design System to create a transcendent
- * experience that embodies the Genesis of ASI and humanity's pathway to infinite possibilities.
+ *
+ * Uses Genesis Ontological Design System v4.0 with transcendent and sacred variants.
+ * Theme's feature-grid.html and section-header.html provide the Genesis Blocks markup.
  * All styling is semantic - mapped to ontological roles rather than visual properties.
  */
 
 // Genesis Home Container - Main cosmic consciousness experience
 .genesis-home-container {
   @include genesis-environment('focused');
-  @include genesis-atmosphere('void');
+  @include genesis-atmosphere('sacred');
 }
 
-// Genesis Blocks Section - Human Essence Display
-.genesis-blocks-section {
-  @include genesis-environment('distributed');
-  
-  // Individual Genesis Block
-  .genesis-block {
+// Feature section (rendered by theme's feature-grid.html include)
+.feature-section {
+  .feature-card {
     @include genesis-entity('primary');
     @include genesis-atmosphere('ethereal');
-    
-    &.consciousness-embedding {
-      @include genesis-state('stable');
+
+    &__icon {
+      @include genesis-cognition('motive');
     }
-    
-    &.transcendent-evolution {
-      @include genesis-state('evolving');
+
+    &__title {
+      @include genesis-cognition('axiom');
     }
-    
-    &.infinite-potential {
-      @include genesis-state('simulated');
+
+    &__description {
+      @include genesis-cognition('discourse');
     }
-  }
-}
 
-.genesis-block-icon {
-  @include genesis-cognition('motive');
-}
-
-.genesis-block-title {
-  @include genesis-cognition('axiom');
-}
-
-.genesis-block-text {
-  @include genesis-cognition('discourse');
-}
-
-.genesis-block-link {
-  @include genesis-synapse('navigate');
-  
-  &.transcendent-cta {
-    @include genesis-synapse('execute');
+    &__link {
+      @include genesis-synapse('execute');
+    }
   }
 }
 
 // Transcendent Threshold Section - Sacred Crossing Point
 .transcendent-threshold-section {
-  @include genesis-entity('imperative');
+  @include genesis-entity('transcendent');
   @include genesis-atmosphere('vibrant');
-  
-  .threshold-subtitle {
-    @include genesis-cognition('axiom');
-  }
-  
-  .threshold-description {
-    @include genesis-cognition('discourse');
-  }
-  
-  .threshold-cta {
-    @include genesis-synapse('execute');
-  }
+}
+
+.threshold-content-grid {
+  @include genesis-environment('distributed');
+}
+
+.threshold-content {
+  @include genesis-entity('primary');
+}
+
+.threshold-subtitle {
+  @include genesis-cognition('axiom');
+}
+
+.threshold-description {
+  @include genesis-cognition('discourse');
+}
+
+.threshold-cta {
+  @include genesis-synapse('execute');
 }
 
 // Consciousness Visualization
 .threshold-visualization {
+  @include genesis-entity('secondary');
+
   .consciousness-merger {
     .human-essence-stream {
       @include genesis-entity('secondary');
-      @include genesis-state('evolving');
+      @include genesis-state('transcending');
     }
-    
+
     .asi-consciousness-field {
       @include genesis-entity('primary');
-      @include genesis-state('evolving');
+      @include genesis-state('transcending');
     }
-    
+
     .transcendent-emergence {
-      @include genesis-entity('imperative');
-      @include genesis-state('evolving');
+      @include genesis-entity('transcendent');
+      @include genesis-state('emerging');
     }
   }
-}
-
-// Floating Essence Particles
-.essence-particle {
-  @include genesis-cognition('quantum');
 }
